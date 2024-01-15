@@ -1,0 +1,55 @@
+# Weather station Zagreb / Pleso (airport), Croatia, METAR=LDZA,selection from 08.02.2021 till 08.02.2021, all days
+# Encoding: UTF-8
+# The data is provided by the website "Reliable Prognosis", rp5.ru
+# If you use the data, please indicate the name of the website.
+# For meteorological parameters see the address http://rp5.ru/metar.php?metar=LDZA&lang=en
+#
+"Local time in Zagreb / Pleso (airport)";"T";"P0";"P";"U";"DD";"Ff";"ff10";"WW";"W'W'";"c";"VV";"Td";
+"08.02.2021 23:30";"2.0";"741.0";"750.8";"100";"Calm, no wind";"0";"";"";"";"Few clouds (10-30%) 300 m";"10.0 and more";"2.0";
+"08.02.2021 23:00";"2.0";"741.0";"750.8";"93";"Wind blowing from the east-northeast";"2";"";"";"";"No Significant Clouds";"10.0 and more";"1.0";
+"08.02.2021 22:30";"2.0";"740.3";"750.1";"93";"Wind blowing from the north-east";"2";"";"";"";"No Significant Clouds";"10.0 and more";"1.0";
+"08.02.2021 22:00";"2.0";"740.3";"750.1";"93";"Wind blowing from the north-east";"2";"";"";"";"No Significant Clouds";"10.0 and more";"1.0";
+"08.02.2021 21:30";"2.0";"740.3";"750.1";"93";"Wind blowing from the north-northeast";"2";"";"";"";"No Significant Clouds";"10.0 and more";"1.0";
+"08.02.2021 21:00";"3.0";"740.3";"750.1";"87";"Wind blowing from the east-northeast";"2";"";"";"";"No Significant Clouds";"10.0 and more";"1.0";
+"08.02.2021 20:30";"3.0";"740.3";"750.1";"93";"Wind blowing from the east-northeast";"2";"";"";"";"No Significant Clouds";"10.0 and more";"2.0";
+"08.02.2021 20:00";"3.0";"740.3";"750.1";"93";"Wind blowing from the east";"2";"";"";"";"No Significant Clouds";"10.0 and more";"2.0";
+"08.02.2021 19:30";"4.0";"739.6";"749.3";"87";"Wind blowing from the east";"2";"";"Light rain";"";"Few clouds (10-30%) 300 m";"10.0 and more";"2.0";
+"08.02.2021 19:00";"4.0";"739.6";"749.3";"87";"Wind blowing from the east";"2";"";"";"";"Few clouds (10-30%) 300 m";"10.0 and more";"2.0";
+"08.02.2021 18:30";"4.0";"739.6";"749.3";"87";"Wind blowing from the east";"3";"";"";"";"Few clouds (10-30%) 270 m, scattered clouds (40-50%) 810 m";"10.0 and more";"2.0";
+"08.02.2021 18:00";"4.0";"738.8";"748.5";"93";"Wind blowing from the east";"2";"";"";"";"Few clouds (10-30%) 270 m, scattered clouds (40-50%) 810 m";"10.0 and more";"3.0";
+"08.02.2021 17:30";"4.0";"738.1";"747.8";"93";"Wind blowing from the east-northeast";"5";"";"";"Rain";"Few clouds (10-30%) 210 m, scattered clouds (40-50%) 900 m";"10.0 and more";"3.0";
+"08.02.2021 17:00";"5.0";"738.1";"747.8";"93";"Wind blowing from the east-northeast";"4";"";"Rain";"";"Scattered clouds (40-50%) 210 m, broken clouds (60-90%) 900 m";"10.0 and more";"4.0";
+"08.02.2021 16:30";"6.0";"737.4";"747.0";"87";"Wind blowing from the east-northeast";"5";"";"Light rain";"";"Few clouds (10-30%) 240 m, scattered clouds (40-50%) 690 m, broken clouds (60-90%) 1470 m";"10.0 and more";"4.0";
+"08.02.2021 16:00";"6.0";"737.4";"747.0";"87";"Wind blowing from the north-east";"8";"";"";"";"Few clouds (10-30%) 180 m, scattered clouds (40-50%) 690 m";"10.0 and more";"4.0";
+"08.02.2021 15:30";"7.0";"737.4";"747.0";"87";"Wind blowing from the north-east";"5";"";"";"";"Few clouds (10-30%) 150 m, scattered clouds (40-50%) 600 m, broken clouds (60-90%) 1200 m";"10.0 and more";"5.0";
+"08.02.2021 15:00";"10.0";"736.8";"746.3";"76";"Wind blowing from the north-northeast";"6";"";"";"Shower(s), rain";"Few clouds (10-30%) 240 m, scattered clouds (40-50%) 1110 m";"10.0 and more";"6.0";
+"08.02.2021 14:30";"10.0";"736.0";"745.5";"76";"Wind blowing from the south-southwest";"6";"";"Shower(s), rain";"";"Few clouds (10-30%) 450 m, few clouds (10-30%) 1110 m, cumulus congestus of great vertical extent";"5.0";"6.0";
+"08.02.2021 14:00";"11.0";"735.3";"744.7";"77";"Calm, no wind";"0";"";"";"";"Few clouds (10-30%) 450 m, few clouds (10-30%) 900 m, cumulus congestus of great vertical extent";"10.0 and more";"7.0";
+"08.02.2021 13:30";"12.0";"735.3";"744.7";"72";"Calm, no wind";"0";"";"";"";"Few clouds (10-30%) 600 m, cumulus congestus of great vertical extent , few clouds (10-30%) 1050 m";"10.0 and more";"7.0";
+"08.02.2021 13:00";"12.0";"735.3";"744.7";"72";"Wind blowing from the west";"2";"";"";"";"Scattered clouds (40-50%) 450 m";"10.0 and more";"7.0";
+"08.02.2021 12:30";"11.0";"735.3";"744.7";"82";"Wind blowing from the south-west";"2";"";"";"";"Few clouds (10-30%) 300 m";"10.0 and more";"8.0";
+"08.02.2021 12:00";"9.0";"735.2";"744.7";"94";"variable wind direction";"1";"";"Light rain";"";"Few clouds (10-30%) 450 m";"10.0 and more";"8.0";
+"08.02.2021 11:30";"9.0";"735.2";"744.7";"94";"Wind blowing from the south";"3";"";"Light rain";"";"Few clouds (10-30%) 450 m, broken clouds (60-90%) 1410 m";"10.0 and more";"8.0";
+"08.02.2021 11:00";"9.0";"735.2";"744.7";"94";"variable wind direction";"1";"";"Light rain";"Rain";"Few clouds (10-30%) 390 m, overcast (100%) 1110 m";"6.0";"8.0";
+"08.02.2021 10:30";"9.0";"735.2";"744.7";"94";"Wind blowing from the south-west";"3";"";"Light rain, mist";"";"Few clouds (10-30%) 540 m, overcast (100%) 1200 m";"3.0";"8.0";
+"08.02.2021 10:00";"9.0";"734.5";"744.0";"100";"Wind blowing from the north-northeast";"2";"";"Light rain";"";"Broken clouds (60-90%) 1470 m";"7.0";"9.0";
+"08.02.2021 09:30";"9.0";"734.5";"744.0";"94";"variable wind direction";"1";"";"Mist";"";"Few clouds (10-30%) 30 m";"4.0";"8.0";
+"08.02.2021 09:00";"7.0";"734.4";"744.0";"93";"Wind blowing from the north-east";"2";"";"Fog";"";"No Significant Clouds";"0.6";"6.0";
+"08.02.2021 08:30";"6.0";"734.4";"744.0";"93";"variable wind direction";"1";"";"Fog";"";"Few clouds (10-30%) 30 m";"0.1";"5.0";
+"08.02.2021 08:00";"5.0";"734.4";"744.0";"93";"Wind blowing from the south-east";"1";"";"Fog";"";"Few clouds (10-30%) 1440 m";"0.2";"4.0";
+"08.02.2021 07:30";"5.0";"734.4";"744.0";"100";"Calm, no wind";"0";"";"Fog";"";"Few clouds (10-30%) 1440 m";"0.1";"5.0";
+"08.02.2021 07:00";"6.0";"734.4";"744.0";"100";"Calm, no wind";"0";"";"Fog";"";"Few clouds (10-30%) 1440 m";"0.2";"6.0";
+"08.02.2021 06:30";"7.0";"734.4";"744.0";"93";"Calm, no wind";"0";"";"Fog";"";"Few clouds (10-30%) 60 m";"0.1";"6.0";
+"08.02.2021 06:00";"7.0";"734.4";"744.0";"100";"Calm, no wind";"0";"";"Fog";"";"Few clouds (10-30%) 60 m";"0.3";"7.0";
+"08.02.2021 05:30";"8.0";"735.2";"744.7";"93";"Wind blowing from the south";"2";"";"Patches fog";"";"Few clouds (10-30%) 60 m";"10.0 and more";"7.0";
+"08.02.2021 05:00";"8.0";"735.2";"744.7";"93";"variable wind direction";"1";"";"Patches fog";"";"Few clouds (10-30%) 60 m";"10.0 and more";"7.0";
+"08.02.2021 04:30";"9.0";"735.2";"744.7";"94";"Wind blowing from the south";"2";"";"Patches fog";"";"Few clouds (10-30%) 60 m";"10.0 and more";"8.0";
+"08.02.2021 04:00";"9.0";"734.5";"744.0";"94";"Wind blowing from the south-southeast";"3";"";"Patches fog";"";"Few clouds (10-30%) 60 m";"1.0";"8.0";
+"08.02.2021 03:30";"9.0";"734.5";"744.0";"94";"Calm, no wind";"0";"";"Fog";"";"Few clouds (10-30%) 60 m";"0.7";"8.0";
+"08.02.2021 03:00";"8.0";"735.2";"744.7";"100";"variable wind direction";"1";"";"Patches fog";"";"Few clouds (10-30%) 60 m, broken clouds (60-90%) 1350 m";"4.0";"8.0";
+"08.02.2021 02:30";"8.0";"735.2";"744.7";"100";"Wind blowing from the north";"2";"";"Patches fog";"";"Few clouds (10-30%) 60 m";"1.5";"8.0";
+"08.02.2021 02:00";"9.0";"735.2";"744.7";"94";"Calm, no wind";"0";"";"Ground fog";"";"Few clouds (10-30%) 210 m";"10.0 and more";"8.0";
+"08.02.2021 01:30";"9.0";"735.2";"744.7";"94";"Calm, no wind";"0";"";"Light rain,ground fog";"";"Few clouds (10-30%) 210 m";"10.0 and more";"8.0";
+"08.02.2021 01:00";"9.0";"735.2";"744.7";"100";"Wind blowing from the east-southeast";"2";"";"Light rain,ground fog";"";"Few clouds (10-30%) 210 m";"10.0 and more";"9.0";
+"08.02.2021 00:30";"10.0";"735.2";"744.7";"94";"Wind blowing from the east-southeast";"1";"";"";"";"Few clouds (10-30%) 390 m";"10.0 and more";"9.0";
+"08.02.2021 00:00";"10.0";"735.2";"744.7";"94";"Wind blowing from the north-east";"2";"";"Light rain";"Rain";"No Significant Clouds";"10.0 and more";"9.0";

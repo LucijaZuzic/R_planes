@@ -1,0 +1,55 @@
+# Weather station Zagreb / Pleso (airport), Croatia, METAR=LDZA,selection from 15.11.2021 till 15.11.2021, all days
+# Encoding: UTF-8
+# The data is provided by the website "Reliable Prognosis", rp5.ru
+# If you use the data, please indicate the name of the website.
+# For meteorological parameters see the address http://rp5.ru/metar.php?metar=LDZA&lang=en
+#
+"Local time in Zagreb / Pleso (airport)";"T";"P0";"P";"U";"DD";"Ff";"ff10";"WW";"W'W'";"c";"VV";"Td";
+"15.11.2021 23:30";"7.0";"759.7";"769.6";"93";"Wind blowing from the north-east";"3";"";"";"";"Few clouds (10-30%) 690 m, overcast (100%) 1200 m";"6.0";"6.0";
+"15.11.2021 23:00";"7.0";"759.7";"769.6";"93";"Wind blowing from the north-east";"3";"";"";"";"Few clouds (10-30%) 300 m, overcast (100%) 690 m";"6.0";"6.0";
+"15.11.2021 22:30";"7.0";"759.7";"769.6";"93";"Wind blowing from the north-east";"2";"";"Mist";"";"Few clouds (10-30%) 300 m, overcast (100%) 600 m";"5.0";"6.0";
+"15.11.2021 22:00";"7.0";"759.7";"769.6";"87";"variable wind direction";"1";"";"Mist";"";"Broken clouds (60-90%) 300 m, overcast (100%) 690 m";"5.0";"5.0";
+"15.11.2021 21:30";"7.0";"759.7";"769.6";"87";"variable wind direction";"1";"";"";"";"Overcast (100%) 300 m";"6.0";"5.0";
+"15.11.2021 21:00";"7.0";"759.7";"769.6";"87";"Wind blowing from the west";"1";"";"";"";"Scattered clouds (40-50%) 390 m, overcast (100%) 810 m";"6.0";"5.0";
+"15.11.2021 20:30";"7.0";"759.7";"769.6";"87";"Calm, no wind";"0";"";"";"";"Broken clouds (60-90%) 390 m, overcast (100%) 810 m";"6.0";"5.0";
+"15.11.2021 20:00";"7.0";"759.7";"769.6";"87";"Calm, no wind";"0";"";"Mist";"";"Overcast (100%) 390 m";"5.0";"5.0";
+"15.11.2021 19:30";"7.0";"759.7";"769.6";"87";"Calm, no wind";"0";"";"Mist";"";"Overcast (100%) 510 m";"5.0";"5.0";
+"15.11.2021 19:00";"7.0";"759.7";"769.6";"87";"variable wind direction";"1";"";"Mist";"";"Broken clouds (60-90%) 300 m, overcast (100%) 510 m";"5.0";"5.0";
+"15.11.2021 18:30";"7.0";"759.7";"769.6";"87";"Wind blowing from the east";"1";"";"Mist";"";"Overcast (100%) 240 m";"5.0";"5.0";
+"15.11.2021 18:00";"7.0";"759.7";"769.6";"87";"Wind blowing from the east";"2";"";"";"";"Overcast (100%) 300 m";"6.0";"5.0";
+"15.11.2021 17:30";"7.0";"759.7";"769.6";"87";"Wind blowing from the east";"2";"";"";"";"Overcast (100%) 330 m";"6.0";"5.0";
+"15.11.2021 17:00";"7.0";"759.7";"769.6";"87";"Wind blowing from the east";"2";"";"";"";"Overcast (100%) 330 m";"6.0";"5.0";
+"15.11.2021 16:30";"8.0";"759.8";"769.6";"82";"Wind blowing from the east-southeast";"3";"";"";"";"Overcast (100%) 330 m";"6.0";"5.0";
+"15.11.2021 16:00";"8.0";"759.8";"769.6";"82";"variable wind direction";"1";"";"";"";"Overcast (100%) 390 m";"6.0";"5.0";
+"15.11.2021 15:30";"8.0";"759.1";"768.9";"82";"variable wind direction";"1";"";"";"";"Overcast (100%) 450 m";"8.0";"5.0";
+"15.11.2021 15:00";"8.0";"759.8";"769.6";"82";"Wind blowing from the east-southeast";"2";"";"";"";"Overcast (100%) 450 m";"8.0";"5.0";
+"15.11.2021 14:30";"8.0";"759.8";"769.6";"82";"Wind blowing from the south-east";"2";"";"";"";"Broken clouds (60-90%) 450 m";"8.0";"5.0";
+"15.11.2021 14:00";"8.0";"759.1";"768.9";"82";"Wind blowing from the east";"3";"";"";"";"Broken clouds (60-90%) 450 m";"8.0";"5.0";
+"15.11.2021 13:30";"8.0";"759.8";"769.6";"87";"Wind blowing from the east-northeast";"2";"";"";"";"Broken clouds (60-90%) 390 m";"8.0";"6.0";
+"15.11.2021 13:00";"8.0";"759.8";"769.6";"82";"Wind blowing from the east-northeast";"3";"";"";"";"Overcast (100%) 390 m";"8.0";"5.0";
+"15.11.2021 12:30";"8.0";"759.8";"769.6";"87";"Wind blowing from the east-northeast";"3";"";"";"";"Overcast (100%) 300 m";"7.0";"6.0";
+"15.11.2021 12:00";"8.0";"759.8";"769.6";"82";"Wind blowing from the east";"2";"";"";"";"Overcast (100%) 300 m";"6.0";"5.0";
+"15.11.2021 11:30";"7.0";"759.7";"769.6";"87";"Wind blowing from the east";"3";"";"";"";"Overcast (100%) 270 m";"6.0";"5.0";
+"15.11.2021 11:00";"7.0";"760.5";"770.4";"87";"Wind blowing from the east";"2";"";"";"";"Overcast (100%) 240 m";"6.0";"5.0";
+"15.11.2021 10:30";"7.0";"760.5";"770.4";"87";"Wind blowing from the east";"2";"";"";"";"Overcast (100%) 210 m";"6.0";"5.0";
+"15.11.2021 10:00";"7.0";"759.7";"769.6";"87";"Wind blowing from the east-northeast";"3";"";"";"";"Overcast (100%) 210 m";"6.0";"5.0";
+"15.11.2021 09:30";"7.0";"759.7";"769.6";"87";"Wind blowing from the east-northeast";"4";"";"";"";"Overcast (100%) 210 m";"6.0";"5.0";
+"15.11.2021 09:00";"7.0";"759.7";"769.6";"87";"Wind blowing from the east-northeast";"3";"";"Mist";"";"Overcast (100%) 210 m";"5.0";"5.0";
+"15.11.2021 08:30";"7.0";"759.7";"769.6";"87";"Wind blowing from the east-northeast";"3";"";"Mist";"";"Overcast (100%) 210 m";"5.0";"5.0";
+"15.11.2021 08:00";"7.0";"759.7";"769.6";"87";"Wind blowing from the east-northeast";"3";"";"Mist";"";"Overcast (100%) 180 m";"5.0";"5.0";
+"15.11.2021 07:30";"7.0";"759.0";"768.9";"87";"Wind blowing from the north-east";"4";"";"Mist";"";"Overcast (100%) 210 m";"4.5";"5.0";
+"15.11.2021 07:00";"7.0";"759.0";"768.9";"87";"Wind blowing from the north-east";"4";"";"Mist";"";"Overcast (100%) 210 m";"5.0";"5.0";
+"15.11.2021 06:30";"7.0";"759.0";"768.9";"87";"Wind blowing from the north-east";"3";"";"Mist";"";"Overcast (100%) 210 m";"5.0";"5.0";
+"15.11.2021 06:00";"7.0";"759.0";"768.9";"87";"Wind blowing from the north-east";"3";"";"Mist";"";"Overcast (100%) 210 m";"5.0";"5.0";
+"15.11.2021 05:30";"7.0";"759.0";"768.9";"87";"Wind blowing from the east-northeast";"2";"";"Mist";"";"Overcast (100%) 210 m";"5.0";"5.0";
+"15.11.2021 05:00";"7.0";"758.2";"768.1";"87";"Wind blowing from the east-northeast";"3";"";"Mist";"";"Overcast (100%) 240 m";"5.0";"5.0";
+"15.11.2021 04:30";"7.0";"758.2";"768.1";"87";"Wind blowing from the east-northeast";"2";"";"Mist";"";"Overcast (100%) 240 m";"5.0";"5.0";
+"15.11.2021 04:00";"7.0";"758.2";"768.1";"87";"Wind blowing from the north-east";"3";"";"Mist";"";"Overcast (100%) 240 m";"5.0";"5.0";
+"15.11.2021 03:30";"7.0";"758.2";"768.1";"93";"Wind blowing from the north-east";"3";"";"Mist";"";"Overcast (100%) 240 m";"5.0";"6.0";
+"15.11.2021 03:00";"7.0";"758.2";"768.1";"93";"Wind blowing from the north-east";"3";"";"Mist";"";"Overcast (100%) 210 m";"5.0";"6.0";
+"15.11.2021 02:30";"7.0";"758.2";"768.1";"93";"Wind blowing from the north-east";"4";"";"";"";"Overcast (100%) 240 m";"6.0";"6.0";
+"15.11.2021 02:00";"7.0";"758.2";"768.1";"93";"Wind blowing from the east-northeast";"2";"";"";"";"Broken clouds (60-90%) 450 m, overcast (100%) 690 m";"6.0";"6.0";
+"15.11.2021 01:30";"7.0";"758.2";"768.1";"93";"Wind blowing from the east-northeast";"3";"";"";"";"Scattered clouds (40-50%) 300 m, overcast (100%) 600 m";"6.0";"6.0";
+"15.11.2021 01:00";"7.0";"758.2";"768.1";"93";"Wind blowing from the east-northeast";"3";"";"";"";"Overcast (100%) 300 m";"7.0";"6.0";
+"15.11.2021 00:30";"7.0";"758.2";"768.1";"93";"Wind blowing from the north-east";"4";"";"";"";"Overcast (100%) 240 m";"7.0";"6.0";
+"15.11.2021 00:00";"7.0";"758.2";"768.1";"93";"Wind blowing from the north-east";"2";"";"";"";"Overcast (100%) 270 m";"8.0";"6.0";

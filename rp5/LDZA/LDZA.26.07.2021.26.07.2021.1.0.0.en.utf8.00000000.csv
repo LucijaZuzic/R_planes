@@ -1,0 +1,55 @@
+# Weather station Zagreb / Pleso (airport), Croatia, METAR=LDZA,selection from 26.07.2021 till 26.07.2021, all days
+# Encoding: UTF-8
+# The data is provided by the website "Reliable Prognosis", rp5.ru
+# If you use the data, please indicate the name of the website.
+# For meteorological parameters see the address http://rp5.ru/metar.php?metar=LDZA&lang=en
+#
+"Local time in Zagreb / Pleso (airport)";"T";"P0";"P";"U";"DD";"Ff";"ff10";"WW";"W'W'";"c";"VV";"Td";
+"26.07.2021 23:30";"22.0";"751.2";"760.5";"73";"Wind blowing from the west-southwest";"3";"";"";"";"No Significant Clouds";"10.0 and more";"17.0";
+"26.07.2021 23:00";"22.0";"751.2";"760.5";"73";"Wind blowing from the north-west";"3";"";"";"";"No Significant Clouds";"10.0 and more";"17.0";
+"26.07.2021 22:30";"23.0";"751.3";"760.5";"69";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"17.0";
+"26.07.2021 22:00";"24.0";"750.5";"759.7";"65";"Calm, no wind";"0";"";"";"";"No Significant Clouds";"10.0 and more";"17.0";
+"26.07.2021 21:30";"23.0";"750.5";"759.7";"74";"Calm, no wind";"0";"";"";"";"No Significant Clouds";"10.0 and more";"18.0";
+"26.07.2021 21:00";"24.0";"751.3";"760.5";"69";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"18.0";
+"26.07.2021 20:30";"25.0";"750.5";"759.7";"65";"Calm, no wind";"0";"";"";"";"No Significant Clouds";"10.0 and more";"18.0";
+"26.07.2021 20:00";"26.0";"750.6";"759.7";"61";"Calm, no wind";"0";"";"";"";"No Significant Clouds";"10.0 and more";"18.0";
+"26.07.2021 19:30";"27.0";"750.6";"759.7";"62";"Calm, no wind";"0";"";"";"";"No Significant Clouds";"10.0 and more";"19.0";
+"26.07.2021 19:00";"28.0";"750.6";"759.7";"62";"Wind blowing from the south-southwest";"2";"";"";"";"No Significant Clouds";"10.0 and more";"20.0";
+"26.07.2021 18:30";"29.0";"750.7";"759.7";"62";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"21.0";
+"26.07.2021 18:00";"29.0";"750.7";"759.7";"66";"Wind blowing from the south-southwest";"2";"";"";"";"No Significant Clouds";"10.0 and more";"22.0";
+"26.07.2021 17:30";"30.0";"750.7";"759.7";"59";"Wind blowing from the south-southwest";"2";"";"";"";"No Significant Clouds";"10.0 and more";"21.0";
+"26.07.2021 17:00";"30.0";"750.7";"759.7";"55";"Wind blowing from the west";"2";"";"";"";"No Significant Clouds";"10.0 and more";"20.0";
+"26.07.2021 16:30";"31.0";"750.7";"759.7";"49";"Wind blowing from the west";"2";"";"";"";"No Significant Clouds";"10.0 and more";"19.0";
+"26.07.2021 16:00";"31.0";"750.7";"759.7";"46";"Wind blowing from the west";"2";"";"";"";"No Significant Clouds";"10.0 and more";"18.0";
+"26.07.2021 15:30";"31.0";"750.7";"759.7";"46";"Wind blowing from the west";"3";"";"";"";"No Significant Clouds";"10.0 and more";"18.0";
+"26.07.2021 15:00";"32.0";"750.7";"759.7";"43";"Wind blowing from the south-west";"2";"";"";"";"No Significant Clouds";"10.0 and more";"18.0";
+"26.07.2021 14:30";"32.0";"750.7";"759.7";"46";"Wind blowing from the west-southwest";"2";"";"";"";"No Significant Clouds";"10.0 and more";"19.0";
+"26.07.2021 14:00";"32.0";"750.7";"759.7";"43";"Wind blowing from the south-west";"2";"";"";"";"No Significant Clouds";"10.0 and more";"18.0";
+"26.07.2021 13:30";"31.0";"750.7";"759.7";"49";"Wind blowing from the south-southwest";"2";"";"";"";"No Significant Clouds";"10.0 and more";"19.0";
+"26.07.2021 13:00";"31.0";"750.7";"759.7";"46";"variable wind direction";"2";"";"";"";"No Significant Clouds";"10.0 and more";"18.0";
+"26.07.2021 12:30";"30.0";"751.5";"760.5";"43";"Wind blowing from the west-southwest";"2";"";"";"";"Few clouds (10-30%) 1350 m";"10.0 and more";"16.0";
+"26.07.2021 12:00";"29.0";"751.4";"760.5";"55";"Wind blowing from the south-southwest";"2";"";"";"";"Few clouds (10-30%) 1350 m";"10.0 and more";"19.0";
+"26.07.2021 11:30";"29.0";"751.4";"760.5";"58";"variable wind direction";"1";"";"Light rain";"";"Few clouds (10-30%) 1350 m";"10.0 and more";"20.0";
+"26.07.2021 11:00";"29.0";"751.4";"760.5";"51";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"18.0";
+"26.07.2021 10:30";"28.0";"751.4";"760.5";"55";"variable wind direction";"2";"";"";"";"No Significant Clouds";"10.0 and more";"18.0";
+"26.07.2021 10:00";"27.0";"751.4";"760.5";"62";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"19.0";
+"26.07.2021 09:30";"26.0";"751.4";"760.5";"65";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"19.0";
+"26.07.2021 09:00";"25.0";"751.3";"760.5";"69";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"19.0";
+"26.07.2021 08:30";"24.0";"751.3";"760.5";"69";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"18.0";
+"26.07.2021 08:00";"23.0";"750.5";"759.7";"74";"Calm, no wind";"0";"";"";"";"No Significant Clouds";"10.0 and more";"18.0";
+"26.07.2021 07:30";"22.0";"750.4";"759.7";"83";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"19.0";
+"26.07.2021 07:00";"21.0";"750.4";"759.7";"88";"Calm, no wind";"0";"";"";"";"No Significant Clouds";"10.0 and more";"19.0";
+"26.07.2021 06:30";"20.0";"750.4";"759.7";"88";"Calm, no wind";"0";"";"";"";"No Significant Clouds";"10.0 and more";"18.0";
+"26.07.2021 06:00";"19.0";"749.7";"759.0";"94";"Calm, no wind";"0";"";"";"";"No Significant Clouds";"10.0 and more";"18.0";
+"26.07.2021 05:30";"18.0";"749.6";"759.0";"94";"Wind blowing from the south-southwest";"1";"";"";"";"No Significant Clouds";"10.0 and more";"17.0";
+"26.07.2021 05:00";"18.0";"749.6";"759.0";"94";"Calm, no wind";"0";"";"";"";"No Significant Clouds";"10.0 and more";"17.0";
+"26.07.2021 04:30";"18.0";"749.6";"759.0";"94";"Wind blowing from the south-west";"1";"";"";"";"No Significant Clouds";"10.0 and more";"17.0";
+"26.07.2021 04:00";"19.0";"749.7";"759.0";"88";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"17.0";
+"26.07.2021 03:30";"18.0";"748.8";"758.2";"94";"Wind blowing from the west";"2";"";"";"";"No Significant Clouds";"10.0 and more";"17.0";
+"26.07.2021 03:00";"18.0";"748.8";"758.2";"94";"Calm, no wind";"0";"";"";"";"No Significant Clouds";"10.0 and more";"17.0";
+"26.07.2021 02:30";"19.0";"748.9";"758.2";"88";"Calm, no wind";"0";"";"";"";"No Significant Clouds";"10.0 and more";"17.0";
+"26.07.2021 02:00";"19.0";"748.9";"758.2";"88";"Calm, no wind";"0";"";"";"";"No Significant Clouds";"10.0 and more";"17.0";
+"26.07.2021 01:30";"20.0";"748.9";"758.2";"83";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"17.0";
+"26.07.2021 01:00";"20.0";"748.9";"758.2";"88";"Calm, no wind";"0";"";"";"";"No Significant Clouds";"10.0 and more";"18.0";
+"26.07.2021 00:30";"21.0";"748.9";"758.2";"83";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"18.0";
+"26.07.2021 00:00";"21.0";"748.9";"758.2";"83";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"18.0";

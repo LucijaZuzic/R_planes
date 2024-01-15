@@ -1,0 +1,55 @@
+# Weather station Zagreb / Pleso (airport), Croatia, METAR=LDZA,selection from 13.09.2021 till 13.09.2021, all days
+# Encoding: UTF-8
+# The data is provided by the website "Reliable Prognosis", rp5.ru
+# If you use the data, please indicate the name of the website.
+# For meteorological parameters see the address http://rp5.ru/metar.php?metar=LDZA&lang=en
+#
+"Local time in Zagreb / Pleso (airport)";"T";"P0";"P";"U";"DD";"Ff";"ff10";"WW";"W'W'";"c";"VV";"Td";
+"13.09.2021 23:30";"15.0";"753.3";"762.8";"88";"Wind blowing from the south-west";"1";"";"";"";"No Significant Clouds";"10.0 and more";"13.0";
+"13.09.2021 23:00";"15.0";"753.3";"762.8";"88";"Wind blowing from the west-southwest";"2";"";"";"";"No Significant Clouds";"10.0 and more";"13.0";
+"13.09.2021 22:30";"16.0";"753.3";"762.8";"77";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"12.0";
+"13.09.2021 22:00";"17.0";"753.3";"762.8";"73";"Wind blowing from the north";"1";"";"";"";"No Significant Clouds";"10.0 and more";"12.0";
+"13.09.2021 21:30";"18.0";"753.4";"762.8";"73";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"13.0";
+"13.09.2021 21:00";"19.0";"753.4";"762.8";"68";"Wind blowing from the north-east";"2";"";"";"";"No Significant Clouds";"10.0 and more";"13.0";
+"13.09.2021 20:30";"19.0";"752.6";"762.0";"64";"Calm, no wind";"0";"";"";"";"No Significant Clouds";"10.0 and more";"12.0";
+"13.09.2021 20:00";"20.0";"752.6";"762.0";"64";"Calm, no wind";"0";"";"";"";"No Significant Clouds";"10.0 and more";"13.0";
+"13.09.2021 19:30";"21.0";"752.7";"762.0";"64";"Calm, no wind";"0";"";"";"";"No Significant Clouds";"10.0 and more";"14.0";
+"13.09.2021 19:00";"23.0";"752.7";"762.0";"53";"Calm, no wind";"0";"";"";"";"No Significant Clouds";"10.0 and more";"13.0";
+"13.09.2021 18:30";"25.0";"752.0";"761.2";"42";"Calm, no wind";"0";"";"";"";"No Significant Clouds";"10.0 and more";"11.0";
+"13.09.2021 18:00";"27.0";"752.1";"761.2";"37";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"11.0";
+"13.09.2021 17:30";"28.0";"752.1";"761.2";"35";"variable wind direction";"2";"";"";"";"No Significant Clouds";"10.0 and more";"11.0";
+"13.09.2021 17:00";"28.0";"752.1";"761.2";"32";"Wind blowing from the south-southwest";"2";"";"";"";"No Significant Clouds";"10.0 and more";"10.0";
+"13.09.2021 16:30";"29.0";"752.1";"761.2";"33";"Wind blowing from the south-west";"2";"";"";"";"No Significant Clouds";"10.0 and more";"11.0";
+"13.09.2021 16:00";"30.0";"752.2";"761.2";"29";"Wind blowing from the south-west";"2";"";"";"";"No Significant Clouds";"10.0 and more";"10.0";
+"13.09.2021 15:30";"30.0";"752.2";"761.2";"29";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"10.0";
+"13.09.2021 15:00";"30.0";"753.0";"762.0";"29";"Wind blowing from the west-southwest";"2";"";"";"";"No Significant Clouds";"10.0 and more";"10.0";
+"13.09.2021 14:30";"30.0";"753.0";"762.0";"29";"variable wind direction";"2";"";"";"";"No Significant Clouds";"10.0 and more";"10.0";
+"13.09.2021 14:00";"30.0";"753.0";"762.0";"31";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"11.0";
+"13.09.2021 13:30";"29.0";"752.9";"762.0";"31";"Wind blowing from the west";"3";"";"";"";"No Significant Clouds";"10.0 and more";"10.0";
+"13.09.2021 13:00";"29.0";"753.7";"762.8";"33";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"11.0";
+"13.09.2021 12:30";"29.0";"753.7";"762.8";"33";"variable wind direction";"2";"";"";"";"No Significant Clouds";"10.0 and more";"11.0";
+"13.09.2021 12:00";"28.0";"753.7";"762.8";"40";"variable wind direction";"2";"";"";"";"No Significant Clouds";"10.0 and more";"13.0";
+"13.09.2021 11:30";"27.0";"753.7";"762.8";"42";"variable wind direction";"2";"";"";"";"No Significant Clouds";"10.0 and more";"13.0";
+"13.09.2021 11:00";"27.0";"753.7";"762.8";"42";"variable wind direction";"2";"";"";"";"No Significant Clouds";"10.0 and more";"13.0";
+"13.09.2021 10:30";"26.0";"754.3";"763.5";"45";"variable wind direction";"2";"";"";"";"No Significant Clouds";"10.0 and more";"13.0";
+"13.09.2021 10:00";"24.0";"754.3";"763.5";"50";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"13.0";
+"13.09.2021 09:30";"23.0";"753.5";"762.8";"53";"variable wind direction";"2";"";"";"";"No Significant Clouds";"10.0 and more";"13.0";
+"13.09.2021 09:00";"21.0";"753.5";"762.8";"60";"Wind blowing from the south-west";"2";"";"";"";"No Significant Clouds";"10.0 and more";"13.0";
+"13.09.2021 08:30";"19.0";"753.4";"762.8";"68";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"13.0";
+"13.09.2021 08:00";"17.0";"753.3";"762.8";"77";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"13.0";
+"13.09.2021 07:30";"15.0";"753.3";"762.8";"88";"Wind blowing from the west-southwest";"2";"";"";"";"No Significant Clouds";"10.0 and more";"13.0";
+"13.09.2021 07:00";"14.0";"753.2";"762.8";"88";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"12.0";
+"13.09.2021 06:30";"12.0";"753.2";"762.8";"94";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"11.0";
+"13.09.2021 06:00";"11.0";"752.4";"762.0";"94";"Wind blowing from the west-southwest";"2";"";"";"";"No Significant Clouds";"10.0 and more";"10.0";
+"13.09.2021 05:30";"11.0";"752.4";"762.0";"94";"Wind blowing from the south-west";"2";"";"";"";"No Significant Clouds";"10.0 and more";"10.0";
+"13.09.2021 05:00";"11.0";"752.4";"762.0";"94";"Wind blowing from the west-southwest";"2";"";"";"";"No Significant Clouds";"10.0 and more";"10.0";
+"13.09.2021 04:30";"11.0";"752.4";"762.0";"94";"Wind blowing from the west-southwest";"2";"";"";"";"No Significant Clouds";"10.0 and more";"10.0";
+"13.09.2021 04:00";"11.0";"752.4";"762.0";"94";"Wind blowing from the west-southwest";"2";"";"";"";"No Significant Clouds";"10.0 and more";"10.0";
+"13.09.2021 03:30";"12.0";"752.4";"762.0";"88";"Wind blowing from the west-southwest";"2";"";"";"";"No Significant Clouds";"10.0 and more";"10.0";
+"13.09.2021 03:00";"12.0";"752.4";"762.0";"88";"Wind blowing from the west-southwest";"1";"";"";"";"No Significant Clouds";"10.0 and more";"10.0";
+"13.09.2021 02:30";"12.0";"752.4";"762.0";"88";"Wind blowing from the south-west";"2";"";"";"";"No Significant Clouds";"10.0 and more";"10.0";
+"13.09.2021 02:00";"12.0";"752.4";"762.0";"88";"Wind blowing from the west";"1";"";"";"";"No Significant Clouds";"10.0 and more";"10.0";
+"13.09.2021 01:30";"12.0";"752.4";"762.0";"88";"Wind blowing from the south-west";"2";"";"";"";"No Significant Clouds";"10.0 and more";"10.0";
+"13.09.2021 01:00";"13.0";"752.4";"762.0";"82";"variable wind direction";"1";"";"";"";"No Significant Clouds";"10.0 and more";"10.0";
+"13.09.2021 00:30";"13.0";"752.4";"762.0";"82";"Wind blowing from the west-southwest";"1";"";"";"";"No Significant Clouds";"10.0 and more";"10.0";
+"13.09.2021 00:00";"13.0";"752.4";"762.0";"88";"Wind blowing from the south-southwest";"2";"";"";"";"No Significant Clouds";"10.0 and more";"11.0";
