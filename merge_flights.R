@@ -1,14 +1,30 @@
 # Uključivanje knjižnice dplyr za filtriranje stupaca u podatkovnom okviru
 
 library(dplyr)
+ 
+# Uključivanje knjižnice tidyverse za funkciju koja dohvaća direktorij u kojem se nalazi skripta
+
+library(tidyverse)
 
 # Čišćenje radne površine 
 
 rm(list = ls()) 
 
-# Postavljanje radnog direktorija i putanje na kojoj su pohranjeni vektori stanja
+# Postavljanje radnog direktorija na direktorij u kojem se nalazi skripta
 
-setwd("C://Users//lzuzi//Documents//R_planes")
+getCurrentFileLocation <-  function() {
+  this_file <- commandArgs() %>% 
+    tibble::enframe(name = NULL) %>%
+    tidyr::separate(col=value, into=c("key", "value"), sep="=", fill='right') %>%
+    dplyr::filter(key == "--file") %>%
+    dplyr::pull(value)
+  if (length(this_file)==0) {
+    this_file <- rstudioapi::getSourceEditorContext()$path
+  }
+  return(dirname(this_file))
+}
+
+setwd(getCurrentFileLocation())
 
 path_to_state_vectors <- "..//GitHub//PlaneTraj//states"
 

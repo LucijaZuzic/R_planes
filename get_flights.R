@@ -1,16 +1,32 @@
-# Ukljucivanje knjiznice openSkies za dohvat letova iz Zagrebacke zracne luke
+# Uključivanje knjižnice openSkies za dohvat letova iz Zagrebačke zračne luke
 
 library(openSkies)
 
-# Ciscenje radne povrsine 
+# Uključivanje knjižnice tidyverse za funkciju koja dohvaća direktorij u kojem se nalazi skripta
+ 
+library(tidyverse)
+
+# Čiscenje radne površine 
 
 rm(list = ls()) 
 
-# Postavljanje radnog direktorija
+# Postavljanje radnog direktorija na direktorij u kojem se nalazi skripta
 
-setwd("C://Users//lzuzi//Documents//R_planes")
+getCurrentFileLocation <-  function() {
+  this_file <- commandArgs() %>% 
+    tibble::enframe(name = NULL) %>%
+    tidyr::separate(col=value, into=c("key", "value"), sep="=", fill='right') %>%
+    dplyr::filter(key == "--file") %>%
+    dplyr::pull(value)
+  if (length(this_file)==0) {
+    this_file <- rstudioapi::getSourceEditorContext()$path
+  }
+  return(dirname(this_file))
+}
 
-# Funkcija za dohvat svih letova iz polazisne zracne luke i spremanje u .csv datoteku
+setwd(getCurrentFileLocation())
+
+# Funkcija za dohvat svih letova iz polazišne zračne luke i spremanje u .csv datoteku
 
 get_data <- function(start_airport) {
   
@@ -23,23 +39,23 @@ get_data <- function(start_airport) {
   firstSeen <- c()
   lastSeen <- c()
   
-  # Pocetni datum za razmatranje je 25.5.2020., a zadnji 27.6.2022.
+  # Početni datum za razmatranje je 25.5.2020., a zadnji 27.6.2022.
   
   dt <- as.POSIXct("2020-05-25 00:00:00", tz = "Europe/Zagreb")
   dt_end <- as.POSIXct("2022-06-27 00:00:00", tz = "Europe/Zagreb")
      
-  # Dohvacanje letova za datume u rasponu
+  # Dohvaćanje letova za datume u rasponu
   
   while (dt <= dt_end) { 
     
     repeating <- TRUE
     n_retries <- 0
     
-    # Ponavljanje zahtjeva ako posluzitelj ne odgovara
+    # Ponavljanje zahtjeva ako poslužitelj ne odgovara
     
     while (repeating & n_retries <= 10) {
       
-      # Prijava i zahtjev prema bazi podataka
+      # Prijava i zahtjev prema bazi podataka za letove u određenom danu iz određene zračne luke
     
       data_res <- getAirportDepartures(start_airport, as.character(dt), as.character(dt + 24 * 3600), timeZone = "Europe/Zagreb", maxQueryAttempts = 1000000, username = "lzuzic", password = "uGJp64kA")
       
@@ -47,7 +63,7 @@ get_data <- function(start_airport) {
       
       for (flight in data_res) {  
       
-        # Pohrana podataka o letu u podatkovni okvir ako je definirana odredisnja zracna luka
+        # Pohrana podataka o letu u podatkovni okvir ako je definirana odredišnja zracna luka
         
         if (!is.null(flight$destination_airport)) { 
           

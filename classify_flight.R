@@ -12,8 +12,30 @@ library(MASS) # qda
 library(fdm2id) # mlp
 library(nnet) # mlp
 library(JOUSBoost)
+library(tidyverse)
+# Ukljucivanje knjiznice tidyverse za funkciju koja dohvaća direktorij u kojem se nalazi skripta
 
-setwd("C://Users//lzuzi//Documents//R_planes")
+library(tidyverse)
+
+# Ciscenje radne povrsine 
+
+rm(list = ls()) 
+
+# Postavljanje radnog direktorija na direktorij u kojem se nalazi skripta
+
+getCurrentFileLocation <-  function() {
+  this_file <- commandArgs() %>% 
+    tibble::enframe(name = NULL) %>%
+    tidyr::separate(col=value, into=c("key", "value"), sep="=", fill='right') %>%
+    dplyr::filter(key == "--file") %>%
+    dplyr::pull(value)
+  if (length(this_file)==0) {
+    this_file <- rstudioapi::getSourceEditorContext()$path
+  }
+  return(dirname(this_file))
+}
+
+setwd(getCurrentFileLocation())
 
 set.seed(42)
 

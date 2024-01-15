@@ -66,15 +66,20 @@ mid_y <- (cord_start.UTM$coords.x2[1] + cord_start.UTM$coords.x2[2]) / 2
 
 dir_for_trajs <- "weather_trajs"
 
-filenames_for_trajs <- list.files(dir_for_trajs) 
+filenames_for_trajs <- list.files(dir_for_trajs)
 
-# Pohrana minimalne i maksimalne vrijednosti za x i y koordinate trajektorija u metrima
+# Definicija raspona veličina koraka za izračun fraktalne dimenzije trajektorija
 
-mini_traj_x <- 10000000
-maxi_traj_x <- -10000000
-mini_traj_y <- 10000000
-maxi_traj_y <- -10000000
+fractalSteps <- TrajLogSequence(1000, 2000, 1000)
 
+# Postavljanje direktorija za dijagrame ovisnosti duljine puta o duljini koraka
+
+dir_for_fractal <- "fractal_dim_vals"
+
+if (!dir.exists(dir_for_fractal)){
+  dir.create(dir_for_fractal)
+}  
+  
 for (filename_for_traj in filenames_for_trajs) {
   
   # Otvaranje datoteke s vektorima stanja za trajektoriju
@@ -113,75 +118,28 @@ for (filename_for_traj in filenames_for_trajs) {
   # Izglađivanje trajektorije koristeci Savitzky-Golay filtar veličine prozora 11 i polinoma stupnja 3  
   
   smoothed  <- Traj3DSmoothSG(resampled, p = 3, n = 11) 
+     
+  # Razdvajanje imena trajektorije na pozivni znak, ICAO24 te datum i vrijeme za naslov dijagrama
   
-  mini_traj_x <- min(smoothed$x, mini_traj_x)
-  maxi_traj_x <- max(smoothed$x, maxi_traj_x)
-  mini_traj_y <- min(smoothed$y, mini_traj_y)
-  maxi_traj_y <- max(smoothed$y, maxi_traj_y)
+  split_name <- unlist(strsplit(gsub("weather_", "", gsub(".csv", "", filename_for_traj)), "_")) 
+  callsign <- split_name[1]
+  icao24 <- split_name[2] 
+  date_first <- format(as.POSIXct(as.numeric(split_name[3]), origin = "1970-01-01", tz = "Europe/Zagreb"), format = "%d.%m.%Y %H:%M:%S") 
+  date_last <- format(as.POSIXct(as.numeric(split_name[4]), origin = "1970-01-01", tz = "Europe/Zagreb"), format = "%d.%m.%Y %H:%M:%S")
   
-}
-
-first = TRUE 
-
-for (filename_for_traj in filenames_for_trajs) {
+  new_name <- paste("Pozivni znak:", callsign, "ICAO24:", icao24, "\nPočetak:", date_first, "Kraj:", date_last)
   
-  # Otvaranje datoteke s vektorima stanja za trajektoriju
+  # Računanje i crtanje dijagrama ovisnosti duljine puta o duljini koraka
   
-  filepath_for_traj <- paste(dir_for_trajs, filename_for_traj, sep = "//")
+  fractalDimensions <- TrajFractalDimensionValues(smoothed, fractalSteps)
   
-  file_for_traj <- data.frame(read.csv(filepath_for_traj)) 
+  relation <- lm(fractalDimensions$pathlength~fractalDimensions$stepsize)  
   
-  # Izostavljanje zapisa s nedostajućim vrijednostima geografske dužine ili širine ili nadmorske visine
+  plot(fractalDimensions$stepsize, fractalDimensions$pathlength, main = new_name, type = "l", xlab = "Duljina koraka (m)", ylab = "Duljna puta (m)", col = "blue")
   
-  file_for_traj <- file_for_traj %>% drop_na(lat)
-  file_for_traj <- file_for_traj %>% drop_na(lon)
-  file_for_traj <- file_for_traj %>% drop_na(geoaltitude)
+  abline(relation)
   
-  # Filtriranje zapisa prema granicama promatranog područja 
+  dev.copy(png, filename = paste(dir_for_fractal, gsub("csv", "png", gsub("weather_", "", filename_for_traj)), sep = "//"))
+  dev.off()
   
-  file_for_traj <- filter(file_for_traj, lat >= mini_lat)
-  file_for_traj <- filter(file_for_traj, lat <= maxi_lat) 
-  file_for_traj <- filter(file_for_traj, lon >= mini_long)
-  file_for_traj <- filter(file_for_traj, lon <= maxi_long) 
-  
-  # Pretvorba koordinati položaja zrakoplova iz stupnjeva geografske širine i dužine u metre EPSG 3765 projekcijom koja vrijedi za Zagreb
-  
-  cord.dec <- SpatialPoints(cbind(file_for_traj$lon, file_for_traj$lat), proj4string = CRS("+proj=longlat")) 
-  cord.UTM <- spTransform(cord.dec, CRS("+init=epsg:3765")) 
-  
-  # Stvaranje trodimenzionalne trajektorije
-  
-  newCols <- data.frame(cord.UTM$coords.x1, cord.UTM$coords.x2, file_for_traj$geoaltitude, file_for_traj$time) 
-  trj <- Traj3DFromCoords(track = newCols, xCol = 1, yCol = 2, zCol = 3, timeCol = 4)
-  
-  # Ponovno uzorkovanje trajektorije s konstantnim vremenskim razmakom od deset sekundi između zapisa
-  
-  resampled <- Traj3DResampleTime(trj, 10)  
-  
-  # Izglađivanje trajektorije koristeci Savitzky-Golay filtar veličine prozora 11 i polinoma stupnja 3  
-  
-  smoothed  <- Traj3DSmoothSG(resampled, p = 3, n = 11) 
-  
-  color_use <- "red"
-  
-  # Ako je treća točka izgladene trajektorije desno ili iznad središnje točke promatanog područja, dajemo oznaku 1 
-  
-  if (smoothed$x[3] > mid_x | smoothed$y[3] > mid_y) {
-    color_use <- "green"
-  } 
-  
-  if (!first) { 
-    
-    lines(smoothed$x[3:length(smoothed$x)], smoothed$y[3:length(smoothed$y)], lwd = 2, col = color_use)
-    
-  } else { 
-    
-    plot(smoothed$x[3:length(smoothed$x)], smoothed$y[3:length(smoothed$y)], lwd = 2, asp = 1, col = color_use, type = "l", xlim = c(mini_traj_x, maxi_traj_x), ylim = c(mini_traj_y, maxi_traj_y), xlab = "x (m)", ylab = "y (m)")
-    abline(v = mid_x, lty = 2, col = "blue")
-    abline(h = mid_y, lty = 2, col = "blue")
-    
-  }
-  
-  first = FALSE  
-  
-}
+} 
