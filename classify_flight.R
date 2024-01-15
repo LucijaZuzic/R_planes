@@ -16,19 +16,19 @@ library(JOUSBoost)
 setwd("C://Users//lzuzi//Documents//R_planes")
 
 set.seed(42)
-  
+
 data_fr <- data.frame(read.csv("features_traj.csv"))
- 
+
 data_fr <- subset(data_fr, select = -c(METAR_VV, METAR_ff10, filenames_for_trajs))
 
 labels_all <- data_fr$label_col
 data_fr <- subset(data_fr, select = -c(label_col))
 # https://www.r-bloggers.com/2021/12/how-to-use-the-scale-function-in-r/
-data_fr <- data.frame(scale(data_fr[, 1:length(data_fr)]))  
+# data_fr <- data.frame(scale(data_fr[, 1:length(data_fr)]))  
 data_fr$label_col <- labels_all 
- 
+
 data_fr_no_METAR <- subset(data_fr, select = -c(METAR_T, METAR_P, METAR_P0, METAR_U, METAR_Ff, METAR_Td))
- 
+
 data_fr_yes <- filter(data_fr, label_col == 1) 
 data_fr_yes <- subset(data_fr_yes, select = -c(label_col)) 
 
@@ -40,10 +40,10 @@ data_fr_no_METAR_yes <- subset(data_fr_no_METAR_yes, select = -c(label_col))
 
 data_fr_no_METAR_no <- filter(data_fr_no_METAR, label_col == 0) 
 data_fr_no_METAR_no <- subset(data_fr_no_METAR_no, select = -c(label_col)) 
- 
+
 ind_yes <- sample(2, nrow(data_fr_yes), replace = TRUE, prob = c(0.7, 0.3))
 ind_no <- sample(2, nrow(data_fr_no), replace = TRUE, prob = c(0.7, 0.3))
-   
+
 train_yes <- data_fr_yes[ind_yes == 1, ]
 train_no <- data_fr_no[ind_no == 1, ]
 train_data <- rbind(train_yes, train_no)
@@ -186,16 +186,16 @@ print(table(predict(rf_no_METAR, test_data_no_METAR), test_label))
 # https://search.r-project.org/CRAN/refmans/naivebayes/html/gaussian_naive_bayes.html
 # https://www.r-bloggers.com/2021/04/naive-bayes-classification-in-r/
 
-naive_bayes_model <- naive_bayes(x = train_data, y = train_label, usekernel = T)   
+naive_bayes_model <- gaussian_naive_bayes(x = data.matrix(train_data), y = train_label)   
 print("Naive Bayes")      
-print(table(predict(naive_bayes_model, train_data), train_label))
-print(table(predict(naive_bayes_model, test_data), test_label))
+print(table(predict(naive_bayes_model, data.matrix(train_data)), train_label))
+print(table(predict(naive_bayes_model, data.matrix(test_data)), test_label))
 
-naive_bayes_model_no_METAR <- naive_bayes(x = train_data_no_METAR, y = train_label, usekernel = T)   
+naive_bayes_model_no_METAR <- gaussian_naive_bayes(x = data.matrix(train_data_no_METAR), y = train_label)   
 print("Naive Bayes - no METAR")      
-print(table(predict(naive_bayes_model_no_METAR, train_data_no_METAR), train_label))
-print(table(predict(naive_bayes_model_no_METAR, test_data_no_METAR), test_label))
- 
+print(table(predict(naive_bayes_model_no_METAR, data.matrix(train_data_no_METAR)), train_label))
+print(table(predict(naive_bayes_model_no_METAR, data.matrix(test_data_no_METAR)), test_label))
+
 # https://search.r-project.org/CRAN/refmans/fdm2id/html/MLP.html
 
 multilayer_perceptron <- MLP(train = train_data, labels = train_label)
@@ -210,7 +210,7 @@ print(table(predict(multilayer_perceptron_no_METAR, test_data_no_METAR), test_la
 
 # https://search.r-project.org/CRAN/refmans/JOUSBoost/html/adaboost.html
 # https://stat.ethz.ch/R-manual/R-devel/library/base/html/data.matrix.html
- 
+
 adaboost_model <- adaboost(X = data.matrix(train_data), y = train_label)
 print("AdaBoost")      
 print(table(predict(adaboost_model, data.matrix(train_data)), train_label))
@@ -220,7 +220,7 @@ adaboost_model_no_METAR <- adaboost(X = data.matrix(train_data_no_METAR), y = tr
 print("AdaBoost - no METAR")      
 print(table(predict(adaboost_model_no_METAR, data.matrix(train_data_no_METAR)), train_label))
 print(table(predict(adaboost_model_no_METAR, data.matrix(test_data_no_METAR)), test_label))
-  
+
 # https://www.statology.org/quadratic-discriminant-analysis-in-r/
 # https://rpubs.com/aaronsc32/quadratic-discriminant-analysis 
 # https://www.rdocumentation.org/packages/MASS/versions/7.3-58.3/topics/qda
@@ -229,7 +229,7 @@ qda_model <- qda(x = train_data, grouping = train_label)
 print("Quadratic Discriminant Analysis")      
 print(table(predict(qda_model, train_data)$class, train_label))
 print(table(predict(qda_model, test_data)$class, test_label))
- 
+
 qda_model_no_METAR <- qda(x = train_data_no_METAR, grouping = train_label)   
 print("Quadratic Discriminant Analysis - no METAR")      
 print(table(predict(qda_model_no_METAR, train_data_no_METAR)$class, train_label))
