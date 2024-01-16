@@ -175,6 +175,6 @@ for (filename_for_traj in filenames_for_trajs) {
 
 # Pohrana oznaka trajektorija, značajki trajektorija i meteoroloških značajki u zajednički podatkovni okvir
 
-df_clus <- data.frame(filenames_for_trajs, label_col, TrajDistance_all, TrajLength_all, TrajDuration_all, TrajSpeed_all, TrajAcceleration_all, TrajStraightness_all, TrajSinuosity2_all, TrajEmax_all, TrajDC_all, TrajSDDC_all, TrajFractalDimension_all, METAR_T, METAR_P, METAR_P0, METAR_U, METAR_Ff, METAR_ff10, METAR_VV, METAR_Td)
+df_clus <- data.frame(filenames_for_trajs, label_col, TrajDistance_all, TrajLength_all, TrajDuration_all, TrajSpeed_all, TrajAcceleration_all, TrajStraightness_all, TrajSinuosity2_all, TrajEmax_all, TrajDC_all, TrajSDDC_all, TrajFractalDimension_all, METAR_T, METAR_P, METAR_P0, METAR_U, METAR_Ff, METAR_Td)
 
 write.csv(df_clus, "features_traj.csv", row.names = FALSE)

@@ -29,7 +29,7 @@ source("preprocess_for_training.R")
 source("use_model.R")
 
 data_fr <- data.frame(read.csv("features_traj.csv"))
-data_fr <- subset(data_fr, select = -c(METAR_VV, METAR_ff10, filenames_for_trajs))
+data_fr <- subset(data_fr, select = -c(filenames_for_trajs))
 data_fr_no_METAR <- subset(data_fr, select = -c(METAR_T, METAR_P, METAR_P0, METAR_U, METAR_Ff, METAR_Td))
 
 data_fr_list <- preprocesing_function(data_fr)
