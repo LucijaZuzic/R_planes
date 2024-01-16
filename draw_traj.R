@@ -1,6 +1,6 @@
 # Uključivanje knjižnice dplyr za filtriranje stupaca u podatkovnom okviru
 
-library(dplyr)   
+library(dplyr)
 
 # Uključivanje knjižnice openSkies za dohvat geografske širine i dužine Zagrebačke zračne luke
 
@@ -22,19 +22,19 @@ library(tidyr)
 
 library(tidyverse)
 
-# Čišćenje radne površine 
+# Čišćenje radne površine
 
-rm(list = ls()) 
+rm(list = ls())
 
 # Postavljanje radnog direktorija na direktorij u kojem se nalazi skripta
 
-getCurrentFileLocation <-  function() {
-  this_file <- commandArgs() %>% 
+getCurrentFileLocation <- function() {
+  this_file <- commandArgs() %>%
     tibble::enframe(name = NULL) %>%
-    tidyr::separate(col=value, into=c("key", "value"), sep="=", fill='right') %>%
+    tidyr::separate(col = value, into = c("key", "value"), sep = "=", fill = "right") %>%
     dplyr::filter(key == "--file") %>%
     dplyr::pull(value)
-  if (length(this_file)==0) {
+  if (length(this_file) == 0) {
     this_file <- rstudioapi::getSourceEditorContext()$path
   }
   return(dirname(this_file))
@@ -54,8 +54,8 @@ maxi_lat <- meta_airport$latitude + 0.4
 
 # Pretvorba koordinati granica područja iz stupnjeva geografske širine i dužine u metre EPSG 3765 projekcijom koja vrijedi za Zagreb
 
-cord_start.dec <- SpatialPoints(cbind(c(mini_long, maxi_long), c(mini_lat, maxi_lat)), proj4string = CRS("+proj=longlat")) 
-cord_start.UTM <- spTransform(cord_start.dec, CRS("+init=epsg:3765")) 
+cord_start.dec <- SpatialPoints(cbind(c(mini_long, maxi_long), c(mini_lat, maxi_lat)), proj4string = CRS("+proj=longlat"))
+cord_start.UTM <- spTransform(cord_start.dec, CRS("+init=epsg:3765"))
 
 # Izračun središnje točke promatanog područja
 
@@ -66,7 +66,7 @@ mid_y <- (cord_start.UTM$coords.x2[1] + cord_start.UTM$coords.x2[2]) / 2
 
 dir_for_trajs <- "weather_trajs"
 
-filenames_for_trajs <- list.files(dir_for_trajs) 
+filenames_for_trajs <- list.files(dir_for_trajs)
 
 # Pohrana minimalne i maksimalne vrijednosti za x i y koordinate trajektorija u metrima
 
@@ -76,123 +76,122 @@ mini_traj_y <- 10000000
 maxi_traj_y <- -10000000
 
 for (filename_for_traj in filenames_for_trajs) {
-  
   # Otvaranje datoteke s vektorima stanja za trajektoriju
-  
+
   filepath_for_traj <- paste(dir_for_trajs, filename_for_traj, sep = "//")
-  
-  file_for_traj <- data.frame(read.csv(filepath_for_traj)) 
-  
+
+  file_for_traj <- data.frame(read.csv(filepath_for_traj))
+
   # Izostavljanje zapisa s nedostajućim vrijednostima geografske dužine ili širine ili nadmorske visine
-  
+
   file_for_traj <- file_for_traj %>% drop_na(lat)
   file_for_traj <- file_for_traj %>% drop_na(lon)
   file_for_traj <- file_for_traj %>% drop_na(geoaltitude)
-  
-  # Filtriranje zapisa prema granicama promatranog područja 
-  
+
+  # Filtriranje zapisa prema granicama promatranog područja
+
   file_for_traj <- filter(file_for_traj, lat >= mini_lat)
-  file_for_traj <- filter(file_for_traj, lat <= maxi_lat) 
+  file_for_traj <- filter(file_for_traj, lat <= maxi_lat)
   file_for_traj <- filter(file_for_traj, lon >= mini_long)
-  file_for_traj <- filter(file_for_traj, lon <= maxi_long) 
-  
+  file_for_traj <- filter(file_for_traj, lon <= maxi_long)
+
   # Pretvorba koordinati položaja zrakoplova iz stupnjeva geografske širine i dužine u metre EPSG 3765 projekcijom koja vrijedi za Zagreb
-  
-  cord.dec <- SpatialPoints(cbind(file_for_traj$lon, file_for_traj$lat), proj4string = CRS("+proj=longlat")) 
-  cord.UTM <- spTransform(cord.dec, CRS("+init=epsg:3765")) 
-  
+
+  cord.dec <- SpatialPoints(cbind(file_for_traj$lon, file_for_traj$lat), proj4string = CRS("+proj=longlat"))
+  cord.UTM <- spTransform(cord.dec, CRS("+init=epsg:3765"))
+
   # Stvaranje trodimenzionalne trajektorije
-  
-  newCols <- data.frame(cord.UTM$coords.x1, cord.UTM$coords.x2, file_for_traj$geoaltitude, file_for_traj$time) 
+
+  newCols <- data.frame(cord.UTM$coords.x1, cord.UTM$coords.x2, file_for_traj$geoaltitude, file_for_traj$time)
   trj <- Traj3DFromCoords(track = newCols, xCol = 1, yCol = 2, zCol = 3, timeCol = 4)
-  
+
   # Ponovno uzorkovanje trajektorije s konstantnim vremenskim razmakom od deset sekundi između zapisa
-  
-  resampled <- Traj3DResampleTime(trj, 10)  
-  
-  # Izglađivanje trajektorije koristeci Savitzky-Golay filtar veličine prozora 11 i polinoma stupnja 3  
-  
-  smoothed  <- Traj3DSmoothSG(resampled, p = 3, n = 11) 
-  
+
+  resampled <- Traj3DResampleTime(trj, 10)
+
+  # Izglađivanje trajektorije koristeci Savitzky-Golay filtar veličine prozora 11 i polinoma stupnja 3
+
+  smoothed <- Traj3DSmoothSG(resampled, p = 3, n = 11)
+
   mini_traj_x <- min(smoothed$x, mini_traj_x)
   maxi_traj_x <- max(smoothed$x, maxi_traj_x)
   mini_traj_y <- min(smoothed$y, mini_traj_y)
   maxi_traj_y <- max(smoothed$y, maxi_traj_y)
-  
 }
 
-first = TRUE 
+first <- TRUE
 
+# Spremanje dijagrama
+
+png(filename = "all_2D.png", width = 480, height = 480, units = "px")
+  
 for (filename_for_traj in filenames_for_trajs) {
-  
   # Otvaranje datoteke s vektorima stanja za trajektoriju
-  
+
   filepath_for_traj <- paste(dir_for_trajs, filename_for_traj, sep = "//")
-  
-  file_for_traj <- data.frame(read.csv(filepath_for_traj)) 
-  
+
+  file_for_traj <- data.frame(read.csv(filepath_for_traj))
+
   # Izostavljanje zapisa s nedostajućim vrijednostima geografske dužine ili širine ili nadmorske visine
-  
+
   file_for_traj <- file_for_traj %>% drop_na(lat)
   file_for_traj <- file_for_traj %>% drop_na(lon)
   file_for_traj <- file_for_traj %>% drop_na(geoaltitude)
-  
-  # Filtriranje zapisa prema granicama promatranog područja 
-  
+
+  # Filtriranje zapisa prema granicama promatranog područja
+
   file_for_traj <- filter(file_for_traj, lat >= mini_lat)
-  file_for_traj <- filter(file_for_traj, lat <= maxi_lat) 
+  file_for_traj <- filter(file_for_traj, lat <= maxi_lat)
   file_for_traj <- filter(file_for_traj, lon >= mini_long)
-  file_for_traj <- filter(file_for_traj, lon <= maxi_long) 
-  
+  file_for_traj <- filter(file_for_traj, lon <= maxi_long)
+
   # Pretvorba koordinati položaja zrakoplova iz stupnjeva geografske širine i dužine u metre EPSG 3765 projekcijom koja vrijedi za Zagreb
-  
-  cord.dec <- SpatialPoints(cbind(file_for_traj$lon, file_for_traj$lat), proj4string = CRS("+proj=longlat")) 
-  cord.UTM <- spTransform(cord.dec, CRS("+init=epsg:3765")) 
-  
+
+  cord.dec <- SpatialPoints(cbind(file_for_traj$lon, file_for_traj$lat), proj4string = CRS("+proj=longlat"))
+  cord.UTM <- spTransform(cord.dec, CRS("+init=epsg:3765"))
+
   # Stvaranje trodimenzionalne trajektorije
-  
-  newCols <- data.frame(cord.UTM$coords.x1, cord.UTM$coords.x2, file_for_traj$geoaltitude, file_for_traj$time) 
+
+  newCols <- data.frame(cord.UTM$coords.x1, cord.UTM$coords.x2, file_for_traj$geoaltitude, file_for_traj$time)
   trj <- Traj3DFromCoords(track = newCols, xCol = 1, yCol = 2, zCol = 3, timeCol = 4)
-  
+
   # Ponovno uzorkovanje trajektorije s konstantnim vremenskim razmakom od deset sekundi između zapisa
-  
-  resampled <- Traj3DResampleTime(trj, 10)  
-  
-  # Izglađivanje trajektorije koristeci Savitzky-Golay filtar veličine prozora 11 i polinoma stupnja 3  
-  
-  smoothed  <- Traj3DSmoothSG(resampled, p = 3, n = 11) 
-  
+
+  resampled <- Traj3DResampleTime(trj, 10)
+
+  # Izglađivanje trajektorije koristeci Savitzky-Golay filtar veličine prozora 11 i polinoma stupnja 3
+
+  smoothed <- Traj3DSmoothSG(resampled, p = 3, n = 11)
+
   color_use <- "red"
-  
+
   # Ako je treća točka izgladene trajektorije desno ili iznad središnje točke promatanog područja, boja je zelena
-  
+
   if (smoothed$x[3] > mid_x | smoothed$y[3] > mid_y) {
     color_use <- "green"
-  } 
-  
+  }
+
   # Ako je trajektorija prva koja se crta započinjemo novi dijagram, inače dodajemo na postojeći
-  
-  if (!first) { 
-    
+
+  if (!first) {
     lines(smoothed$x[3:length(smoothed$x)], smoothed$y[3:length(smoothed$y)], lwd = 2, col = color_use)
-    
-  } else { 
-    
+  } else {
     plot(smoothed$x[3:length(smoothed$x)], smoothed$y[3:length(smoothed$y)], main = "Klasifikacija trajektorija od 3. koraka", lwd = 2, asp = 1, col = color_use, type = "l", xlim = c(mini_traj_x, maxi_traj_x), ylim = c(mini_traj_y, maxi_traj_y), xlab = "x (m)", ylab = "y (m)")
     abline(v = mid_x, lty = 2, col = "blue")
     abline(h = mid_y, lty = 2, col = "blue")
-    
+
     # Dodavanje legende
-    
+
     legend("bottomright", legend = c("1", "-1", "Linija podjele"), col = c("green", "red", "blue"), lty = c(1, 1, 2), lwd = c(2, 2, 1))
-    
   }
-  
-  first = FALSE  
-  
+
+  first <- FALSE
 }
  
-# Spremanje dijagrama
+# Zatvaranje dijagrama
 
-dev.copy(png, filename = "all_2D.png")
-dev.off()
+if (length(dev.list()) > 0) {
+  for (dev_sth_open in dev.list()[1]:dev.list()[length(dev.list())]) {
+    dev.off()
+  }
+}
