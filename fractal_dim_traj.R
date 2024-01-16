@@ -135,9 +135,9 @@ for (filename_for_traj in filenames_for_trajs) {
   
   relation <- lm(fractalDimensions$pathlength~fractalDimensions$stepsize)  
   
-  plot(fractalDimensions$stepsize, fractalDimensions$pathlength, main = new_name, type = "l", xlab = "Duljina koraka (m)", ylab = "Duljna puta (m)", col = "blue")
+  plot(fractalDimensions$stepsize, fractalDimensions$pathlength, main = new_name, type = "l", xlab = "Duljina koraka (m)", ylab = "Duljna puta (m)", lwd = 2, col = "blue")
   
-  abline(relation)
+  abline(relation, lty = 2)
   
   dev.copy(png, filename = paste(dir_for_fractal, gsub("csv", "png", gsub("weather_", "", filename_for_traj)), sep = "//"))
   dev.off()

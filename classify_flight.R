@@ -46,7 +46,7 @@ data_fr <- subset(data_fr, select = -c(METAR_VV, METAR_ff10, filenames_for_trajs
 labels_all <- data_fr$label_col
 data_fr <- subset(data_fr, select = -c(label_col))
 # https://www.r-bloggers.com/2021/12/how-to-use-the-scale-function-in-r/
-# data_fr <- data.frame(scale(data_fr[, 1:length(data_fr)]))  
+data_fr <- data.frame(scale(data_fr[, 1:length(data_fr)]))  
 data_fr$label_col <- labels_all 
 
 data_fr_no_METAR <- subset(data_fr, select = -c(METAR_T, METAR_P, METAR_P0, METAR_U, METAR_Ff, METAR_Td))
@@ -137,10 +137,10 @@ print(table(predict(classifier_knn_no_METAR, test_data_no_METAR, type = "class")
 # https://www.datacamp.com/tutorial/support-vector-machines-r
 # NOT USED https://search.r-project.org/CRAN/refmans/less/html/SVC.html
 
-lsvm <- svm(x = train_data, y = train_label, type = "C-classification", kernel = "linear")
+lsvm <- svm(y~., data = data.frame(x = train_data, y = train_label), type = "C-classification", kernel = "linear")
 print("LSVM")      
 print(table(fitted(lsvm), train_label)) 
-print(table(predict(lsvm, test_data), test_label))  
+print(table(predict(lsvm, data.frame(x = test_data, y = test_label)), test_label))   
 
 lsvm_no_METAR <- svm(x = train_data_no_METAR, y = train_label, type = "C-classification", kernel = "linear")
 print("LSVM - no METAR")          
@@ -256,3 +256,43 @@ qda_model_no_METAR <- qda(x = train_data_no_METAR, grouping = train_label)
 print("Quadratic Discriminant Analysis - no METAR")      
 print(table(predict(qda_model_no_METAR, train_data_no_METAR)$class, train_label))
 print(table(predict(qda_model_no_METAR, test_data_no_METAR)$class, test_label))
+ 
+X1 <- seq(min(train_data$TrajLength_all) - 1, max(train_data$TrajLength_all) + 1, by = 0.01) 
+X2 <- seq(min(train_data$TrajDC_all) - 1, max(train_data$TrajDC_all) + 1, by = 0.01) 
+
+grid_set <- expand.grid(X1, X2) 
+colnames(grid_set) <- c("TrajLength_all", "TrajDC_all") 
+
+new_train <- data.frame(train_data$TrajLength_all, train_data$TrajDC_all)
+names(new_train) <- c("TrajLength_all", "TrajDC_all") 
+clsfe <- qda(x = new_train, grouping = train_label)  
+
+y_grid <- predict(clsfe, grid_set)$class
+
+print(new_train[, -2])
+
+
+#contour(X1, X2, matrix(as.numeric(y_grid), length(X1), length(X2)), add = TRUE) 
+
+print(y_grid)
+
+par()
+points(grid_set, pch = '.', col = ifelse(y_grid == 1, 'aquamarine', 'coral1')) 
+par(new = TRUE)
+#plot(x = new_train[, 1], y = new_train[, 2], main = 'SVM (Training set)',  xlab = 'Length', ylab = 'DC', xlim = range(X1), ylim = range(X2)) 
+
+new_train_with_lab <- cbind(new_train, train_label)
+points(x = new_train_with_lab[, 1], y = new_train_with_lab[, 2], main = 'SVM (Training set)',  xlab = 'Length', ylab = 'DC', xlim = range(X1), ylim = range(X2), pch = 21, bg = ifelse(new_train_with_lab[, 3] == 1, 'green4', 'red3')) 
+  
+#data.pca <- princomp(train_data)
+#print(summary(data.pca))
+#print(data.pca$loadings[, 1:3])
+
+# Assuming X_train and y_train are your training data
+# cm_bright is not a standard color map in R, you might want to define your own colormap or use existing ones like rainbow(), heat.colors(), etc.
+
+# Create a scatter plot
+#plot(X_train[, 1], X_train[, 2], col = y_train, pch = 19, cex = 1.5, main = "Training Points", xlab = "X-axis", ylab = "Y-axis")
+
+# Add a legend
+#legend("topright", legend = unique(y_train), col = unique(y_train), pch = 19, cex = 1.5, title = "Class")

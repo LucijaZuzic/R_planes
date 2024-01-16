@@ -21,53 +21,52 @@ getCurrentFileLocation <-  function() {
 }
 
 setwd(getCurrentFileLocation())
-
-# Postavljanje granica promatranog područja na 0.4 stupnja oko Zagrebačke zračne luke
-
-start_airport <- "LDZA"
-meta_airport <- getAirportMetadata(start_airport)
-
-mini_long <- meta_airport$longitude - 0.4
-maxi_long <- meta_airport$longitude + 0.4
-mini_lat <- meta_airport$latitude - 0.4
-maxi_lat <- meta_airport$latitude + 0.4
-
-# Pretvorba koordinati granica područja iz stupnjeva geografske širine i dužine u metre EPSG 3765 projekcijom koja vrijedi za Zagreb
-
-cord_start.dec <- SpatialPoints(cbind(c(mini_long, maxi_long), c(mini_lat, maxi_lat)), proj4string = CRS("+proj=longlat")) 
-cord_start.UTM <- spTransform(cord_start.dec, CRS("+init=epsg:3765")) 
-
-# Izračun središnje točke promatanog područja
-
-mid_x <- (cord_start.UTM$coords.x1[1] + cord_start.UTM$coords.x1[2]) / 2
-mid_y <- (cord_start.UTM$coords.x2[1] + cord_start.UTM$coords.x2[2]) / 2
-
+    
 # Dohvat imena svih datoteka s trajektorijama i meteorološkim izvješćima
 
 dir_for_trajs <- "weather_trajs"
 
 filenames_for_trajs <- list.files(dir_for_trajs)
 
-# Definicija raspona veličina koraka za izračun fraktalne dimenzije trajektorija
+# Postavljanje direktorija za dijagrame
 
-fractalSteps <- TrajLogSequence(1000, 2000, 1000)
+dir_for_plot <- paste("hist", sep = "_")
+
+if (!dir.exists(dir_for_plot)){
+  dir.create(dir_for_plot)
+}  
 
 # Otvaranje datoteke sa oznaka trajektorija, značajkama trajektorija i meteorološkim značajkama
 
 df_clus <- data.frame(read.csv("features_traj.csv")) 
-df_clus <- subset(df_clus, select = -c(METAR_VV, METAR_ff10, filenames_for_trajs, label_col))
+df_clus <- subset(df_clus, select = -c(METAR_VV, METAR_ff10, filenames_for_trajs))
+
+# Filtriranje trajektorija prema oznaci
+
+df_clus_yes <- filter(df_clus, label_col == 1)
+df_clus_no <- filter(df_clus, label_col == 0)
+
+# Brisanje oznaka
+
+df_clus_yes <- subset(df_clus_yes, select = -c(label_col))
+df_clus_no <- subset(df_clus_no, select = -c(label_col))
+
+print(names(df_clus_yes))
+print(names(df_clus_no))
  
-for (i in 1:length(names(df_clus))) {  
+for (i in 1:length(names(df_clus_yes))) {  
    
   # Postavljanje imena značajke i mjerne jedinice koja se koristi
   
-  original_name <- gsub("METAR_", "", gsub("Traj", "", gsub("_all", "", names(df_clus)[i])))
+  original_name <- gsub("METAR_", "", gsub("Traj", "", gsub("_all", "", names(df_clus_yes)[i])))
   new_name <- original_name
+  
+  print(original_name)
   
   units_use <- ""
   
   if (new_name == "Distance") {
-    new_name <- "Udaljenost od početka do kraja trajektorije"
+    new_name <- "Difuzijska udaljenost trajektorije"
     units_use <- "m"
   }
   
@@ -108,12 +107,11 @@ for (i in 1:length(names(df_clus))) {
   }
   
   if (new_name == "Acceleration") {
-    new_name <- "Akceleracija"
-    units_use <- "m/s^{2}"
+    new_name <- "Akceleracija" 
   } 
   
   if (new_name == "DC") {
-    new_name <- "Promjena smjera (aritmetička sredina)"
+    new_name <- "Promjena smjera (prosjek)"
     units_use <- "°/s"
   } 
   
@@ -128,7 +126,7 @@ for (i in 1:length(names(df_clus))) {
   } 
   
   if (new_name == "U") {
-    new_name <- "Vlažnost"
+    new_name <- "Relativni udio vlage u zraku"
     units_use <- "%"
   } 
     
@@ -138,7 +136,7 @@ for (i in 1:length(names(df_clus))) {
   }
   
   if (new_name == "Td") {
-    new_name <- "Rosište"
+    new_name <- "Temperatura kondenzacije"
     units_use <- "°"
   }
   
@@ -151,21 +149,54 @@ for (i in 1:length(names(df_clus))) {
     new_name <- "Tlak zraka na nadmorskoj visini mjerne stanice"
     units_use <- "mmHg"
   }
-  
-  if (new_name == "U") {
-    new_name <- "Vlažnost"
-    units_use <- "%"
-  } 
-  
+   
   if (units_use != "") {
     units_use <- paste("(", units_use, ")", sep = "")
   }
   
+  new_lab <- paste(new_name, units_use)
+  
+  if (new_name == "Akceleracija") {
+    new_lab <- expression(Akceleracija ~ (m/s^2))
+  } 
+  
+  # Traženje minimuma i maksimuma vrijednosti
+  
+  mini_yes <- min(df_clus_yes[, i])
+  mini_no <- min(df_clus_no[, i])
+  mini_all <- min(mini_yes, mini_no)
+  
+  maxi_yes <- max(df_clus_yes[, i])
+  maxi_no <- max(df_clus_no[, i])
+  maxi_all <- max(maxi_yes, maxi_no)
+  
+  # Definiranje oznaka na x osi histograma
+  
+  xrange_use = seq(mini_all, maxi_all, length.out = 20)
+  
+  # Broj elemenata u svakom segmentu histograma
+  
+  hv_yes = hist(df_clus_yes[, i], breaks = xrange_use, plot = F)$counts
+  hv_no = hist(df_clus_no[, i], breaks = xrange_use, plot = F)$counts
+  
+  # Crtanje histograma sa vjerojatnošću
+  
+  total = sum(hv_yes, hv_no)
+  barplot(rbind(hv_yes / total, hv_no / total), col = c("green", "red"), main = new_name, space = 0, xlab = new_lab, ylab = "Vjerojatnost")
+  
+  # Oznake na osi x
+  
+  new_data_x <- c()
+  
+  for (val in xrange_use) {
+    new_data_x <- c(new_data_x, round(val, 2))
+  }
+  
+  axis(1, at = 0:19, labels = new_data_x)
+  
   # Spremanje histograma
   
-  hist(x = df_clus[, i], main = new_name, xlab = paste(new_name, units_use), ylab = "Frekvencija", freq = TRUE)
-  
-  dev.copy(png, filename = paste(original_name, "png", sep = "."))
+  dev.copy(png, filename = paste(paste(dir_for_plot, original_name, sep = "//"), "png", sep = "."))
   dev.off()
   
 }

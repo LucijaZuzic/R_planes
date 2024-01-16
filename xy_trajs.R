@@ -1,10 +1,26 @@
-# Uključivanje knjižnice tidyverse za funkciju koja dohvaća direktorij u kojem se nalazi skripta
+# Uključivanje knjižnice dplyr za filtriranje stupaca u podatkovnom okviru
 
-library(tidyverse)
+library(dplyr)   
 
 # Uključivanje knjižnice openSkies za dohvat geografske širine i dužine Zagrebačke zračne luke
 
 library(openSkies)
+
+# Uključivanje knjižnice sp za pretvorbu geografske širine i dužine u metre projekcijama
+
+library(sp)
+
+# Uključivanje knjižnice trajr za rad s trajektorijama
+
+library(trajr)
+
+# Uključivanje knjižnice tidyr za izostavljanje redova s nedostajućim vrijednostima
+
+library(tidyr)
+
+# Uključivanje knjižnice tidyverse za funkciju koja dohvaća direktorij u kojem se nalazi skripta
+
+library(tidyverse)
 
 # Čišćenje radne površine 
 
@@ -133,7 +149,7 @@ plot_2D <- function(first_dim, second_dim) {
     date_first <- format(as.POSIXct(as.numeric(split_name[3]), origin = "1970-01-01", tz = "Europe/Zagreb"), format = "%d.%m.%Y %H:%M:%S") 
     date_last <- format(as.POSIXct(as.numeric(split_name[4]), origin = "1970-01-01", tz = "Europe/Zagreb"), format = "%d.%m.%Y %H:%M:%S")
     
-    new_name <- paste("Pozivni znak:", callsign, "ICAO24:", icao24, "\nPočetak:", date_first, "Kraj:", date_last)
+    new_name <- paste("Pozivni znak:", callsign, "ICAO24:", icao24, "\n", date_first, "-", date_last)
     
     # Crtanje dijagrama odabranih dimenzija s originalnom i izglađenom trajektorijom
     

@@ -1,16 +1,32 @@
-# Uključivanje knjižnice tidyverse za funkciju koja dohvaća direktorij u kojem se nalazi skripta
+# Uključivanje knjižnice dplyr za filtriranje stupaca u podatkovnom okviru
 
-library(tidyverse)
+library(dplyr)   
 
 # Uključivanje knjižnice openSkies za dohvat geografske širine i dužine Zagrebačke zračne luke
 
 library(openSkies)
 
-# Uključivanje knjižnice rgl za trodimenzionalne dijagrame
+# Uključivanje knjižnice sp za pretvorbu geografske širine i dužine u metre projekcijama
+
+library(sp)
+
+# Uključivanje knjižnice trajr za rad s trajektorijama
+
+library(trajr)
+
+# Uključivanje knjižnice tidyr za izostavljanje redova s nedostajućim vrijednostima
+
+library(tidyr)
+
+# Uključivanje knjižnice tidyverse za funkciju koja dohvaća direktorij u kojem se nalazi skripta
+
+library(tidyverse)
+
+# Uključivanje knjiÅ¾nice rgl za trodimenzionalne dijagrame
 
 library(rgl)
 
-# Čišćenje radne površine 
+# Čišćenje radne površine
 
 rm(list = ls()) 
 
@@ -101,14 +117,14 @@ for (filename_for_traj in filenames_for_trajs) {
   date_first <- format(as.POSIXct(as.numeric(split_name[3]), origin = "1970-01-01", tz = "Europe/Zagreb"), format = "%d.%m.%Y %H:%M:%S") 
   date_last <- format(as.POSIXct(as.numeric(split_name[4]), origin = "1970-01-01", tz = "Europe/Zagreb"), format = "%d.%m.%Y %H:%M:%S")
   
-  new_name <- paste("Pozivni znak:", callsign, "ICAO24:", icao24, "\nPočetak:", date_first, "Kraj:", date_last)
+  new_name <- paste("Pozivni znak:", callsign, "ICAO24:", icao24, "\n:", date_first, "-", date_last)
   
   # Crtanje dijagrama odabranih dimenzija s originalnom i izglađenom trajektorijom
-  par3d(windowRect = c(20, 30, 800, 800))
-  plot3d(x = smoothed$x, y = smoothed$y, axes = FALSE, z = smoothed$z, asp = 1, type = "l", xlab = "x (m)", ylab = "y (m)", zlab = "z (m)", col = "blue") 
-  lines3d(x = trj$x, y = trj$y, z = trj$z, asp = 1, xlab = "x (m)", ylab = "y (m)", zlab = "z (m)", col = "red") 
-  axes3d(edges = c("x--", "y--", "z++"), tick = FALSE, nticks = 2) 
-  axes3d(edges = c("x++", "y++", "z--"), tick = FALSE, nticks = 2)
+  
+  par3d(windowRect = c(30, 45, 900, 900))
+  plot3d(x = smoothed$x, y = smoothed$y, z = smoothed$z, asp = 1, lwd = 2, type = "l", xlab = "x (m)", ylab = "y (m)", zlab = "z (m)", col = "red") 
+  lines3d(x = trj$x, y = trj$y, z = trj$z, col = "blue")  
+  
   # Spremanje dijagrama 
   
   rgl.snapshot(file = paste(dir_for_plot, gsub("csv", "png", gsub("weather", dir_for_plot, filename_for_traj)), sep = "//"), fmt = 'png')
