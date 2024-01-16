@@ -39,8 +39,6 @@ if (!dir.exists("feature_combination")) {
 
 model_list <- c("k-NN", "Linear SVM", "RBF SVM", "Gaussian Process", "Decision Tree", "Random Forest", "Naive Bayes", "Multilayer Perceptron", "AdaBoost", "Quadratic Discriminant Analysis")
 
-model_list <- c("Gaussian Process")
-
 data_fr <- data.frame(read.csv("features_traj.csv"))
 data_fr <- subset(data_fr, select = -c(METAR_VV, METAR_ff10, filenames_for_trajs))
 
@@ -50,7 +48,7 @@ if (!dir.exists("feature_combination")) {
 
 for (i in 2:ncol(data_fr)) {
   if (i != ncol(data_fr)) {
-    for (j in (i + 1):ncol(data_fr)) { 
+    for (j in (i + 1):ncol(data_fr)) {
       print(paste(names(data_fr)[i], names(data_fr)[j]))
       data_fr_new <- data.frame(data_fr[, i], data_fr[, j], data_fr$label_col)
 
@@ -155,5 +153,5 @@ for (i in 2:ncol(data_fr)) {
         write.csv(df_predictions_test, gsub("classifier_visual_all.png", "predictions_test.csv", new_file_all), row.names = FALSE)
       }
     }
-  } 
+  }
 }

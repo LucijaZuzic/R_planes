@@ -93,19 +93,25 @@ model_use <- function(model_name, train_data, test_data, train_label, test_label
   }
 
   if (model_name == "Gaussian Process") {
-    train_label <- as.factor(as.numeric(as.character(train_label)))
     gaussian_process <- gausspr(x = train_data, y = train_label)
     train_predicted <- predict(gaussian_process, train_data)
     test_predicted <- predict(gaussian_process, test_data)
     if (length(grid_data) != 0) {
-      grid_predicted <- predict(gaussian_process, grid_data)
+      len_of_frame <- length(train_data[, 1]) - 1
+      start_frame <- 1
+      grid_predicted <- c()
+      while (start_frame < length(grid_data[, 1])) {
+        grid_predicted_1 <- predict(gaussian_process, grid_data[start_frame:min(start_frame + len_of_frame, length(grid_data[, 1])), ])
+        grid_predicted <- c(grid_predicted, grid_predicted_1)
+        start_frame <- min(start_frame + len_of_frame, length(grid_data[, 1])) + 1
+      }
     }
   }
 
-  if (model_name == "Decision Tree") {  
+  if (model_name == "Decision Tree") {
     train_data_with_label <- data.frame(x = train_data, y = as.factor(train_label))
     test_data_with_label <- data.frame(x = test_data, y = as.factor(test_label))
-    tree <- rpart(y ~ ., data = train_data_with_label, method = "class") 
+    tree <- rpart(y ~ ., data = train_data_with_label, method = "class")
     train_predicted <- predict(tree, train_data_with_label, type = "class")
     test_predicted <- predict(tree, test_data_with_label, type = "class")
     print("here")
@@ -147,7 +153,7 @@ model_use <- function(model_name, train_data, test_data, train_label, test_label
   }
 
   if (model_name == "AdaBoost") {
-    train_label <- as.numeric(as.character(train_label))    
+    train_label <- as.numeric(as.character(train_label))
     adaboost_model <- adaboost(X = data.matrix(train_data), y = train_label)
     train_predicted <- predict(adaboost_model, data.matrix(train_data))
     test_predicted <- predict(adaboost_model, data.matrix(test_data))
