@@ -101,9 +101,11 @@ model_use <- function(model_name, train_data, test_data, train_label, test_label
       start_frame <- 1
       grid_predicted <- c()
       while (start_frame < length(grid_data[, 1])) {
-        grid_predicted_1 <- predict(gaussian_process, grid_data[start_frame:min(start_frame + len_of_frame, length(grid_data[, 1])), ])
-        grid_predicted <- c(grid_predicted, grid_predicted_1)
+        grid_predicted_1 <- predict(gaussian_process, grid_data[start_frame:min(start_frame + len_of_frame, length(grid_data[, 1])), ]) 
         start_frame <- min(start_frame + len_of_frame, length(grid_data[, 1])) + 1
+        for (sv in grid_predicted_1) {
+          grid_predicted <- c(grid_predicted, sv)
+        } 
       }
     }
   }
