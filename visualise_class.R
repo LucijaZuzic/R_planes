@@ -39,6 +39,8 @@ if (!dir.exists("feature_combination")) {
 
 model_list <- c("k-NN", "Linear SVM", "RBF SVM", "Gaussian Process", "Decision Tree", "Random Forest", "Naive Bayes", "Multilayer Perceptron", "AdaBoost", "Quadratic Discriminant Analysis")
 
+model_list <- c("Gaussian Process")
+
 data_fr <- data.frame(read.csv("features_traj.csv"))
 data_fr <- subset(data_fr, select = -c(METAR_VV, METAR_ff10, filenames_for_trajs))
 

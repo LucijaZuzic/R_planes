@@ -93,7 +93,7 @@ model_use <- function(model_name, train_data, test_data, train_label, test_label
   }
 
   if (model_name == "Gaussian Process") {
-    train_label <- as.numeric(as.character(train_label))    
+    train_label <- as.factor(as.numeric(as.character(train_label)))
     gaussian_process <- gausspr(x = train_data, y = train_label)
     train_predicted <- predict(gaussian_process, train_data)
     test_predicted <- predict(gaussian_process, test_data)
