@@ -22,9 +22,13 @@ library(tidyr)
 
 library(tidyverse)
 
-# Ukljucivanje knjiznice rworldmap za kartu u pozadini putanje
+# Ukljucivanje knjiznice leaflet za prikaz podloge OpenStreetMap (OSM)
 
-library(rworldmap)
+library(leaflet)
+
+# Ukljucivanje knjiznice mapview za spremanje slike karte u .png datoteku
+
+library(mapview) 
 
 # Čišćenje radne površine
 
@@ -55,89 +59,29 @@ mini_long <- meta_airport$longitude - 0.4
 maxi_long <- meta_airport$longitude + 0.4
 mini_lat <- meta_airport$latitude - 0.4
 maxi_lat <- meta_airport$latitude + 0.4
- 
+
 # Dohvat imena svih datoteka s trajektorijama i meteorološkim izvješćima
 
 dir_for_trajs <- "weather_trajs"
 
 filenames_for_trajs <- list.files(dir_for_trajs)
 
-# Pohrana minimalne i maksimalne vrijednosti geografske sirine i duzine trajektorija  
+# Postavljanje direktorija za dijagrame
 
-mini_traj_long <- 10000000
-maxi_traj_long <- -10000000
-mini_traj_lat <- 10000000
-maxi_traj_lat <- -10000000
+dir_for_plot <- "x_y_leaflet"
 
-for (filename_for_traj in filenames_for_trajs) {
-  # Otvaranje datoteke s vektorima stanja za trajektoriju
+if (!dir.exists(dir_for_plot)) {
+  dir.create(dir_for_plot)
+}
 
-  filepath_for_traj <- paste(dir_for_trajs, filename_for_traj, sep = "//")
+lon <- c()
+lat <- c()
 
-  file_for_traj <- data.frame(read.csv(filepath_for_traj))
+data_frame_coords_y <- data.frame(matrix(ncol = 2, nrow = 0))
+names(data_frame_coords_y) <- c("lon", "lat")
 
-  # Izostavljanje zapisa s nedostajućim vrijednostima geografske dužine ili širine ili nadmorske visine
-
-  file_for_traj <- file_for_traj %>% drop_na(lat)
-  file_for_traj <- file_for_traj %>% drop_na(lon)
-  file_for_traj <- file_for_traj %>% drop_na(geoaltitude)
-
-  # Filtriranje zapisa prema granicama promatranog područja
-
-  file_for_traj <- filter(file_for_traj, lat >= mini_lat)
-  file_for_traj <- filter(file_for_traj, lat <= maxi_lat)
-  file_for_traj <- filter(file_for_traj, lon >= mini_long)
-  file_for_traj <- filter(file_for_traj, lon <= maxi_long)
-
-  # Pretvorba koordinati položaja zrakoplova iz stupnjeva geografske širine i dužine u metre EPSG 3765 projekcijom koja vrijedi za Zagreb
-
-  cord.dec <- SpatialPoints(cbind(file_for_traj$lon, file_for_traj$lat), proj4string = CRS("+proj=longlat"))
-  cord.UTM <- spTransform(cord.dec, CRS("+init=epsg:3765"))
-
-  # Stvaranje trodimenzionalne trajektorije
-
-  newCols <- data.frame(cord.UTM$coords.x1, cord.UTM$coords.x2, file_for_traj$geoaltitude, file_for_traj$time)
-  trj <- Traj3DFromCoords(track = newCols, xCol = 1, yCol = 2, zCol = 3, timeCol = 4)
-
-  # Ponovno uzorkovanje trajektorije s konstantnim vremenskim razmakom od deset sekundi između zapisa
-
-  resampled <- Traj3DResampleTime(trj, 10)
-
-  # Izglađivanje trajektorije koristeci Savitzky-Golay filtar veličine prozora 11 i polinoma stupnja 3
-
-  smoothed <- Traj3DSmoothSG(resampled, p = 3, n = 11)
-
-  # Zapis geografske širine i dužine za izglađenu trajektoriju
-
-  cord.UTM_new <- SpatialPoints(cbind(smoothed$x, smoothed$y), proj4string = CRS("+init=epsg:3765"))
-  
-  cord.dec_new <- SpatialPoints(spTransform(cord.UTM_new, CRS("+proj=longlat")), proj4string = CRS("+proj=longlat"))
-   
-  # Spremanje minimalne i maksimalne geografske sirine i duzine
-  
-  mini_traj_long <- min(cord.dec_new$coords.x1, mini_traj_long)
-  maxi_traj_long <- max(cord.dec_new$coords.x1, maxi_traj_long)
-  mini_traj_lat <- min(cord.dec_new$coords.x2, mini_traj_lat)
-  maxi_traj_lat <- max(cord.dec_new$coords.x2, maxi_traj_lat)
-} 
-
-# Spremanje dijagrama
-
-png(filename = "all_2D_map.png", width = 480, height = 480, units = "px")
-
-# Učitavanje karte
-
-newmap <- getMap(resolution = "low")
-
-# Crtanje karte 
-  
-plot(newmap, 
-     xlim = c(mini_traj_long, maxi_traj_long),
-     ylim = c(mini_traj_lat, maxi_traj_lat), 
-     main = "Klasifikacija trajektorija od 3. koraka",
-     asp = 1,  
-     xlab = "long. (°)", 
-     ylab = "lat. (°)")
+data_frame_coords_n <- data.frame(matrix(ncol = 2, nrow = 0))
+names(data_frame_coords_n) <- c("lon", "lat")
 
 for (filename_for_traj in filenames_for_trajs) {
   # Otvaranje datoteke s vektorima stanja za trajektoriju
@@ -183,32 +127,41 @@ for (filename_for_traj in filenames_for_trajs) {
   
   cord.dec_new <- SpatialPoints(spTransform(cord.UTM_new, CRS("+proj=longlat")), proj4string = CRS("+proj=longlat"))
   
-  color_use <- "red"
+  data_frame_new <- data.frame(cord.dec_new$coords.x1[3:length(cord.dec_new$coords.x1)], cord.dec_new$coords.x2[3:length(cord.dec_new$coords.x2)])
+  
+  names(data_frame_new) <- c("lon", "lat")
   
   # Ako je treća točka izgladene trajektorije desno ili iznad središnje točke promatanog područja, boja je zelena
   
   if (cord.dec_new$coords.x1[3] > meta_airport$longitude | cord.dec_new$coords.x2[3] > meta_airport$latitude) {
-    color_use <- "green"
+    data_frame_coords_y <- rbind(data_frame_coords_y, data_frame_new)
+  } else {
+    data_frame_coords_n <- rbind(data_frame_coords_n, data_frame_new)
   }
-   
-  # Crtanje izgladene trajektorije
   
-  lines(cord.dec_new$coords.x1[3:length(cord.dec_new$coords.x1)], cord.dec_new$coords.x2[3:length(cord.dec_new$coords.x2)], lwd = 2, col = color_use)
 }
+# Prikaz podataka na podlozi OpenStreetMap (OSM)
 
-# Dodavanje linija podjele izmedu klasa
+# Naredba print(m) osigurava da se kreirana karta prikaze u konzoli prilikom izvrsavanja skripte.
 
-abline(v = meta_airport$longitude, lty = 2, col = "blue")
-abline(h = meta_airport$latitude, lty = 2, col = "blue")
+m <- leaflet() %>%
+  addTiles() %>%# koristi se zadana pozadinska karta s OpenStreetMap plocicama (engl. tiles)
+  
+  addPolylines(
+    lng = data_frame_coords_n$lon, 
+    lat = data_frame_coords_n$lat,  
+    col = "red"
+  ) %>% 
+  
+  addPolylines(
+    lng = data_frame_coords_y$lon, 
+    lat = data_frame_coords_y$lat,  
+    col = "green"
+  )  
+ 
+  print(m)
+m
 
-# Dodavanje legende
+# Spremanje slike karte u .png datoteku funkcijom mapshot
 
-legend("bottomright", legend = c("1", "-1", "Linija podjele"), col = c("green", "red", "blue"), lty = c(1, 1, 2), lwd = c(2, 2, 1))
-
-# Zatvaranje dijagrama
-
-if (length(dev.list()) > 0) {
-  for (dev_sth_open in dev.list()[1]:dev.list()[length(dev.list())]) {
-    dev.off()
-  }
-}
+mapshot(m, file = "all_2D_leaflet.png")
