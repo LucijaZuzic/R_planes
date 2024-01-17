@@ -1,49 +1,48 @@
+# Uključivanje knjižnice e1071 za SVM
+
+library(e1071)
+
+# Uključivanje knjižnice kernlab za Gaussov proces
+
+library(kernlab)
+
+# Uključivanje knjižnice rpart za stablo odluke
+
+library(rpart)
+
+# Uključivanje knjižnice rpart.plot za dijagram stabla odluke
+
+library(rpart.plot)
+
+# Uključivanje knjižnice randomForest za RF
+
 library(randomForest)
-library(kernlab) # SVM methodology
-library(e1071) # SVM methodology
-library(naivebayes) # naive bayes
-library(caret) # confusionMatrix
+
+# Uključivanje knjižnice naivebayes za naivni Bayesov klasifikator
+
+library(naivebayes)
+
+# Uključivanje knjižnice fdm2id za MLP
+
+library(fdm2id)
+
+# Uključivanje knjižnice nnet za MLP
+
+library(nnet)
+
+# Uključivanje knjižnice caret za funkciju confusionMatrix
+
+library(caret)
+
 library(class)
-library(rpart) # DECISION TREE
-library(rpart.plot) # DECISION TREE
-library(MASS) # qda
-library(fdm2id) # mlp
-library(nnet) # mlp
+
+# Uključivanje knjižnice MASS za QDA
+
+library(MASS)
+
+# Uključivanje knjižnice JOUSBoost za AdaBoost
+
 library(JOUSBoost)
-
-# https://rpubs.com/pmtam/knn
-# https://www.geeksforgeeks.org/k-nn-classifier-in-r-programming/
-# https://www.datacamp.com/tutorial/k-nearest-neighbors-knn-classification-with-r-tutorial
-
-# https://uc-r.github.io/svm
-# https://www.rdocumentation.org/packages/e1071/versions/1.7-14/topics/svm
-# https://www.datacamp.com/tutorial/support-vector-machines-r
-# NOT USED https://search.r-project.org/CRAN/refmans/less/html/SVC.html
-
-# https://www.projectpro.io/recipes/use-gaussian-process-classifier-r
-
-# https://www.r-bloggers.com/2021/04/decision-trees-in-r/
-# https://cran.r-project.org/web/packages/rpart/rpart.pdf
-# https://cran.r-project.org/web/packages/rpart/index.html
-# https://www.rdocumentation.org/packages/rpart/versions/4.1.23/topics/rpart
-
-
-# https://cran.r-project.org/web/packages/randomForest/index.html
-# https://www.r-bloggers.com/2021/04/random-forest-in-r/
-# https://www.rdocumentation.org/packages/randomForest/versions/4.7-1.1/topics/randomForest
-# https://cran.r-project.org/web/packages/randomForest/randomForest.pdf
-
-# https://search.r-project.org/CRAN/refmans/naivebayes/html/gaussian_naive_bayes.html
-# https://www.r-bloggers.com/2021/04/naive-bayes-classification-in-r/
-
-# https://search.r-project.org/CRAN/refmans/fdm2id/html/MLP.html
-
-# https://search.r-project.org/CRAN/refmans/JOUSBoost/html/adaboost.html
-# https://stat.ethz.ch/R-manual/R-devel/library/base/html/data.matrix.html
-
-# https://www.statology.org/quadratic-discriminant-analysis-in-r/
-# https://rpubs.com/aaronsc32/quadratic-discriminant-analysis
-# https://www.rdocumentation.org/packages/MASS/versions/7.3-58.3/topics/qda
 
 model_use <- function(model_name, train_data, test_data, train_label, test_label, grid_data = list()) {
   set.seed(42)
@@ -101,11 +100,11 @@ model_use <- function(model_name, train_data, test_data, train_label, test_label
       start_frame <- 1
       grid_predicted <- c()
       while (start_frame < length(grid_data[, 1])) {
-        grid_predicted_1 <- predict(gaussian_process, grid_data[start_frame:min(start_frame + len_of_frame, length(grid_data[, 1])), ]) 
+        grid_predicted_1 <- predict(gaussian_process, grid_data[start_frame:min(start_frame + len_of_frame, length(grid_data[, 1])), ])
         start_frame <- min(start_frame + len_of_frame, length(grid_data[, 1])) + 1
         for (sv in grid_predicted_1) {
           grid_predicted <- c(grid_predicted, sv)
-        } 
+        }
       }
     }
   }
@@ -116,7 +115,6 @@ model_use <- function(model_name, train_data, test_data, train_label, test_label
     tree <- rpart(y ~ ., data = train_data_with_label, method = "class")
     train_predicted <- predict(tree, train_data_with_label, type = "class")
     test_predicted <- predict(tree, test_data_with_label, type = "class")
-    print("here")
     if (length(grid_data) != 0) {
       grid_class <- c()
       for (i in grid_data) {

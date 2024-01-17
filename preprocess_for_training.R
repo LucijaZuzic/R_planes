@@ -1,3 +1,7 @@
+# Uključivanje knjižnice dplyr za filtriranje stupaca u podatkovnom okviru
+
+library(dplyr)
+
 preprocesing_function <- function(data_fr) {
   set.seed(42)
 
