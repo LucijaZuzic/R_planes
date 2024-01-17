@@ -34,6 +34,8 @@ library(nnet)
 
 library(caret)
 
+# Uključivanje knjižnice class za rad s klasama
+
 library(class)
 
 # Uključivanje knjižnice MASS za QDA
