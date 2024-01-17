@@ -140,6 +140,27 @@ for (filename_for_traj in filenames_for_trajs) {
   }
   
 }
+ 
+# Definiranje linija podjele između klasa
+
+up_line_long <- c()
+up_line_lat <- c()
+right_line_long <- c()
+right_line_lat <- c()
+
+long_seq <- 0.01
+
+for (lat_val in seq(mini_lat, maxi_lat, 0.01)) {
+  up_line_long <- c(up_line_long, meta_airport$longitude)
+  up_line_lat <- c(up_line_lat, lat_val)
+}
+
+for (lon_val in seq(mini_long, maxi_long, 0.01)) {
+  right_line_long <- c(right_line_long, lon_val)
+  right_line_lat <- c(right_line_lat, meta_airport$latitude)
+  print(right_line_long)
+}
+
 # Prikaz podataka na podlozi OpenStreetMap (OSM)
 
 # Naredba print(m) osigurava da se kreirana karta prikaze u konzoli prilikom izvrsavanja skripte.
@@ -148,17 +169,35 @@ m <- leaflet() %>%
   addTiles() %>%# koristi se zadana pozadinska karta s OpenStreetMap plocicama (engl. tiles)
   
   addPolylines(
+    lng = up_line_long, 
+    lat = up_line_lat,  
+    weight = 1,
+    dashArray = "2, 2",  
+    col = "blue"
+  ) %>% 
+ 
+  addPolylines(
+    lng = right_line_long, 
+    lat = right_line_lat,  
+    weight = 1,
+    dashArray = "2, 2",  
+    col = "blue"
+  ) %>% 
+
+  addPolylines(
     lng = data_frame_coords_n$lon, 
     lat = data_frame_coords_n$lat,  
+    weight = 2, 
     col = "red"
   ) %>% 
   
   addPolylines(
     lng = data_frame_coords_y$lon, 
-    lat = data_frame_coords_y$lat,  
+    lat = data_frame_coords_y$lat,   
+    weight = 2, 
     col = "green"
-  )  
- 
+  )  %>%
+
   print(m)
 m
 

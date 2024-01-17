@@ -146,7 +146,8 @@ for (filename_for_traj in filenames_for_trajs) {
     addPolylines(
       lng = cord.dec_new$coords.x1[3:length(cord.dec_new$coords.x1)], 
       lat = cord.dec_new$coords.x2[3:length(cord.dec_new$coords.x2)],  
-      col = color_use
+      col = color_use,
+      weight = 2
     ) %>% 
     
   print(m)
