@@ -197,7 +197,7 @@ for (filename_for_traj in filenames_for_trajs) {
   
   # Učitavanje karte
   
-  newmap <- getMap(resolution = "low")
+  newmap <- getMap(resolution = "low")  
   
   # Crtanje karte 
   
@@ -208,6 +208,11 @@ for (filename_for_traj in filenames_for_trajs) {
        asp = 1,  
        xlab = "long. (°)", 
        ylab = "lat. (°)")
+  
+  # Dodavanje x i y osi
+  
+  axis(side = 1) 
+  axis(side = 2) 
   
   # Crtanje izgladene trajektorije
   

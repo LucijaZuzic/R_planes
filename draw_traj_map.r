@@ -201,6 +201,11 @@ for (filename_for_traj in filenames_for_trajs) {
 abline(v = meta_airport$longitude, lty = 2, col = "blue")
 abline(h = meta_airport$latitude, lty = 2, col = "blue")
 
+# Dodavanje x i y osi
+
+axis(side = 1) 
+axis(side = 2) 
+
 # Dodavanje legende
 
 legend("bottomright", legend = c("1", "-1", "Linija podjele"), col = c("green", "red", "blue"), lty = c(1, 1, 2), lwd = c(2, 2, 1))
