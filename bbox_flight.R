@@ -2,11 +2,13 @@
 
 library(dplyr)
 
-# Uključivanje knjižnice openSkies za dohvat geografske širine i dužine Zagrebačke zračne luke
+# Uključivanje knjižnice openSkies za dohvat geografske širine i dužine
+# Zagrebačke zračne luke
 
 library(openSkies)
 
-# Uključivanje knjižnice sp za pretvorbu geografske širine i dužine u metre projekcijama
+# Uključivanje knjižnice sp za pretvorbu geografske širine i dužine
+# u metre projekcijama
 
 library(sp)
 
@@ -14,11 +16,13 @@ library(sp)
 
 library(trajr)
 
-# Uključivanje knjižnice tidyr za izostavljanje redova s nedostajućim vrijednostima
+# Uključivanje knjižnice tidyr za izostavljanje
+# redova s nedostajućim vrijednostima
 
 library(tidyr)
 
-# Uključivanje knjižnice tidyverse za funkciju koja dohvaća direktorij u kojem se nalazi skripta
+# Uključivanje knjižnice tidyverse za funkciju
+# koja dohvaća direktorij u kojem se nalazi skripta
 
 library(tidyverse)
 
@@ -28,10 +32,15 @@ rm(list = ls())
 
 # Postavljanje radnog direktorija na direktorij u kojem se nalazi skripta
 
-getCurrentFileLocation <- function() {
+get_current_file_location <- function() {
   this_file <- commandArgs() %>%
     tibble::enframe(name = NULL) %>%
-    tidyr::separate(col = value, into = c("key", "value"), sep = "=", fill = "right") %>%
+    tidyr::separate(
+      col = value,
+      into = c("key", "value"),
+      sep = "=",
+      fill = "right"
+    ) %>%
     dplyr::filter(key == "--file") %>%
     dplyr::pull(value)
   if (length(this_file) == 0) {
@@ -40,9 +49,10 @@ getCurrentFileLocation <- function() {
   return(dirname(this_file))
 }
 
-setwd(getCurrentFileLocation())
+setwd(get_current_file_location())
 
-# Postavljanje granica promatranog područja na 0.4 stupnja oko Zagrebačke zračne luke
+# Postavljanje granica promatranog područja
+# na 0.4 stupnja oko Zagrebačke zračne luke
 
 start_airport <- "LDZA"
 meta_airport <- getAirportMetadata(start_airport)
@@ -52,15 +62,22 @@ maxi_long <- meta_airport$longitude + 0.4
 mini_lat <- meta_airport$latitude - 0.4
 maxi_lat <- meta_airport$latitude + 0.4
 
-# Pretvorba koordinati granica područja iz stupnjeva geografske širine i dužine u metre EPSG 3765 projekcijom koja vrijedi za Zagreb
+# Pretvorba koordinati granica područja iz stupnjeva geografske širine i dužine
+# u metre EPSG 3765 projekcijom koja vrijedi za Zagreb
 
-cord_start.dec <- SpatialPoints(cbind(c(mini_long, maxi_long), c(mini_lat, maxi_lat)), proj4string = CRS("+proj=longlat"))
-cord_start.UTM <- spTransform(cord_start.dec, CRS("+init=epsg:3765"))
+cord_start_dec <- SpatialPoints(
+  cbind(
+    c(mini_long, maxi_long),
+    c(mini_lat, maxi_lat)
+  ),
+  proj4string = CRS("+proj=longlat")
+)
+cord_start_utm <- spTransform(cord_start_dec, CRS("+init=epsg:3765"))
 
 # Izračun središnje točke promatanog područja
 
-mid_x <- (cord_start.UTM$coords.x1[1] + cord_start.UTM$coords.x1[2]) / 2
-mid_y <- (cord_start.UTM$coords.x2[1] + cord_start.UTM$coords.x2[2]) / 2
+mid_x <- (cord_start_utm$coords.x1[1] + cord_start_utm$coords.x1[2]) / 2
+mid_y <- (cord_start_utm$coords.x2[1] + cord_start_utm$coords.x2[2]) / 2
 
 # Dohvat imena svih datoteka s trajektorijama i meteorološkim izvješćima
 
@@ -70,7 +87,7 @@ filenames_for_trajs <- list.files(dir_for_trajs)
 
 # Definicija raspona veličina koraka za izračun fraktalne dimenzije trajektorija
 
-fractalSteps <- TrajLogSequence(1000, 2000, 1000)
+fractal_steps <- TrajLogSequence(1000, 2000, 1000)
 
 # Definicija varijabli za pohranu meteoroloških značajki
 
@@ -106,7 +123,8 @@ for (filename_for_traj in filenames_for_trajs) {
 
   file_for_traj <- data.frame(read.csv(filepath_for_traj))
 
-  # Izostavljanje zapisa s nedostajućim vrijednostima geografske dužine ili širine ili nadmorske visine
+  # Izostavljanje zapisa s nedostajućim vrijednostima geografske dužine
+  # ili širine ili nadmorske visine
 
   file_for_traj <- file_for_traj %>% drop_na(lat)
   file_for_traj <- file_for_traj %>% drop_na(lon)
@@ -119,27 +137,48 @@ for (filename_for_traj in filenames_for_trajs) {
   file_for_traj <- filter(file_for_traj, lon >= mini_long)
   file_for_traj <- filter(file_for_traj, lon <= maxi_long)
 
-  # Pretvorba koordinati položaja zrakoplova iz stupnjeva geografske širine i dužine u metre EPSG 3765 projekcijom koja vrijedi za Zagreb
+  # Pretvorba koordinati položaja zrakoplova iz stupnjeva geografske
+  # širine i dužine u metre EPSG 3765 projekcijom koja vrijedi za Zagreb
 
-  cord.dec <- SpatialPoints(cbind(file_for_traj$lon, file_for_traj$lat), proj4string = CRS("+proj=longlat"))
-  cord.UTM <- spTransform(cord.dec, CRS("+init=epsg:3765"))
+  cord_dec <- SpatialPoints(
+    cbind(
+      file_for_traj$lon,
+      file_for_traj$lat
+    ),
+    proj4string = CRS("+proj=longlat")
+  )
+  cord_utm <- spTransform(cord_dec, CRS("+init=epsg:3765"))
 
   # Stvaranje trodimenzionalne trajektorije
 
-  newCols <- data.frame(cord.UTM$coords.x1, cord.UTM$coords.x2, file_for_traj$geoaltitude, file_for_traj$time)
-  trj <- Traj3DFromCoords(track = newCols, xCol = 1, yCol = 2, zCol = 3, timeCol = 4)
+  new_cols <- data.frame(
+    cord_utm$coords.x1,
+    cord_utm$coords.x2,
+    file_for_traj$geoaltitude,
+    file_for_traj$time
+  )
+  trj <- Traj3DFromCoords(
+    track = new_cols,
+    xCol = 1,
+    yCol = 2,
+    zCol = 3,
+    timeCol = 4
+  )
 
-  # Ponovno uzorkovanje trajektorije s konstantnim vremenskim razmakom od deset sekundi između zapisa
+  # Ponovno uzorkovanje trajektorije s konstantnim vremenskim razmakom
+  # od deset sekundi između zapisa
 
   resampled <- Traj3DResampleTime(trj, 10)
 
-  # Izglađivanje trajektorije koristeĆi Savitzky-Golay filtar veličine prozora 11 i polinoma stupnja 3
+  # Izglađivanje trajektorije koristeĆi Savitzky-Golay filtar
+  # veličine prozora 11 i polinoma stupnja 3
 
   smoothed <- Traj3DSmoothSG(resampled, p = 3, n = 11)
 
   label_val <- 0
 
-  # Ako je treća točka izgladene trajektorije desno ili iznad središnje točke promatanog područja, dajemo oznaku 1
+  # Ako je treća točka izglađene trajektorije desno ili iznad središnje točke
+  # promatanog područja, dajemo oznaku 1
 
   if (smoothed$x[3] > mid_x | smoothed$y[3] > mid_y) {
     label_val <- 1
@@ -170,11 +209,35 @@ for (filename_for_traj in filenames_for_trajs) {
   TrajEmax_all <- c(TrajEmax_all, TrajEmax(smoothed))
   TrajDC_all <- c(TrajDC_all, mean(TrajDirectionalChange(smoothed)))
   TrajSDDC_all <- c(TrajSDDC_all, sd(TrajDirectionalChange(smoothed)))
-  TrajFractalDimension_all <- c(TrajFractalDimension_all, TrajFractalDimension(smoothed, fractalSteps))
+  TrajFractalDimension_all <- c(
+    TrajFractalDimension_all,
+    TrajFractalDimension(smoothed, fractal_steps)
+  )
 }
 
-# Pohrana oznaka trajektorija, značajki trajektorija i meteoroloških značajki u zajednički podatkovni okvir
+# Pohrana oznaka trajektorija, značajki trajektorija i meteoroloških značajki
+# u zajednički podatkovni okvir
 
-df_clus <- data.frame(filenames_for_trajs, label_col, TrajDistance_all, TrajLength_all, TrajDuration_all, TrajSpeed_all, TrajAcceleration_all, TrajStraightness_all, TrajSinuosity2_all, TrajEmax_all, TrajDC_all, TrajSDDC_all, TrajFractalDimension_all, METAR_T, METAR_P, METAR_P0, METAR_U, METAR_Ff, METAR_Td)
+df_clus <- data.frame(
+  filenames_for_trajs,
+  label_col,
+  TrajDistance_all,
+  TrajLength_all,
+  TrajDuration_all,
+  TrajSpeed_all,
+  TrajAcceleration_all,
+  TrajStraightness_all,
+  TrajSinuosity2_all,
+  TrajEmax_all,
+  TrajDC_all,
+  TrajSDDC_all,
+  TrajFractalDimension_all,
+  METAR_T,
+  METAR_P,
+  METAR_P0,
+  METAR_U,
+  METAR_Ff,
+  METAR_Td
+)
 
 write.csv(df_clus, "features_traj.csv", row.names = FALSE)

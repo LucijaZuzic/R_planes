@@ -1,9 +1,15 @@
 transform_feat <- function(feature_use) {
   # Postavljanje imena značajke i mjerne jedinice koja se koristi
 
-  original_name <- gsub("METAR_", "", gsub("Traj", "", gsub("_all", "", feature_use)))
+  original_name <- gsub(
+    "METAR_", "",
+    gsub(
+      "Traj", "",
+      gsub("_all", "", feature_use)
+    )
+  )
   new_name <- original_name
- 
+
   units_use <- ""
 
   if (new_name == "Distance") {

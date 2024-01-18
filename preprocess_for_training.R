@@ -50,5 +50,10 @@ preprocesing_function <- function(data_fr) {
 
   test_label <- factor(test_label)
 
-  return(list("train_data" = train_data, "test_data" = test_data, "train_label" = train_label, "test_label" = test_label))
+  return(list(
+    "train_data" = train_data,
+    "test_data" = test_data,
+    "train_label" = train_label,
+    "test_label" = test_label
+  ))
 }

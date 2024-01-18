@@ -2,11 +2,13 @@
 
 library(dplyr)
 
-# Uključivanje knjižnice openSkies za dohvat geografske širine i dužine Zagrebačke zračne luke
+# Uključivanje knjižnice openSkies za dohvat
+# geografske širine i dužine Zagrebačke zračne luke
 
 library(openSkies)
 
-# Uključivanje knjižnice sp za pretvorbu geografske širine i dužine u metre projekcijama
+# Uključivanje knjižnice sp za pretvorbu
+# geografske širine i dužine u metre projekcijama
 
 library(sp)
 
@@ -14,15 +16,17 @@ library(sp)
 
 library(trajr)
 
-# Uključivanje knjižnice tidyr za izostavljanje redova s nedostajućim vrijednostima
+# Uključivanje knjižnice tidyr za izostavljanje
+# redova s nedostajućim vrijednostima
 
 library(tidyr)
 
-# Uključivanje knjižnice tidyverse za funkciju koja dohvaća direktorij u kojem se nalazi skripta
+# Uključivanje knjižnice tidyverse za funkciju
+# koja dohvaća direktorij u kojem se nalazi skripta
 
 library(tidyverse)
 
-# Uključivanje knjiÅ¾nice rgl za trodimenzionalne dijagrame
+# Uključivanje knjižnice rgl za trodimenzionalne dijagrame
 
 library(rgl)
 
@@ -32,10 +36,15 @@ rm(list = ls())
 
 # Postavljanje radnog direktorija na direktorij u kojem se nalazi skripta
 
-getCurrentFileLocation <- function() {
+get_current_file_location <- function() {
   this_file <- commandArgs() %>%
     tibble::enframe(name = NULL) %>%
-    tidyr::separate(col = value, into = c("key", "value"), sep = "=", fill = "right") %>%
+    tidyr::separate(
+      col = value,
+      into = c("key", "value"),
+      sep = "=",
+      fill = "right"
+    ) %>%
     dplyr::filter(key == "--file") %>%
     dplyr::pull(value)
   if (length(this_file) == 0) {
@@ -44,9 +53,10 @@ getCurrentFileLocation <- function() {
   return(dirname(this_file))
 }
 
-setwd(getCurrentFileLocation())
+setwd(get_current_file_location())
 
-# Postavljanje granica promatranog područja na 0.4 stupnja oko Zagrebačke zračne luke
+# Postavljanje granica promatranog područja
+# na 0.4 stupnja oko Zagrebačke zračne luke
 
 start_airport <- "LDZA"
 meta_airport <- getAirportMetadata(start_airport)
@@ -77,7 +87,8 @@ for (filename_for_traj in filenames_for_trajs) {
 
   file_for_traj <- data.frame(read.csv(filepath_for_traj))
 
-  # Izostavljanje zapisa s nedostajućim vrijednostima geografske dužine ili širine ili nadmorske visine
+  # Izostavljanje zapisa s nedostajućim vrijednostima geografske dužine
+  # ili širine ili nadmorske visine
 
   file_for_traj <- file_for_traj %>% drop_na(lat)
   file_for_traj <- file_for_traj %>% drop_na(lon)
@@ -90,41 +101,143 @@ for (filename_for_traj in filenames_for_trajs) {
   file_for_traj <- filter(file_for_traj, lon >= mini_long)
   file_for_traj <- filter(file_for_traj, lon <= maxi_long)
 
-  # Pretvorba koordinati položaja zrakoplova iz stupnjeva geografske širine i dužine u metre EPSG 3765 projekcijom koja vrijedi za Zagreb
+  # Pretvorba koordinati položaja zrakoplova iz stupnjeva geografske
+  # širine i dužine u metre EPSG 3765 projekcijom koja vrijedi za Zagreb
 
-  cord.dec <- SpatialPoints(cbind(file_for_traj$lon, file_for_traj$lat), proj4string = CRS("+proj=longlat"))
-  cord.UTM <- spTransform(cord.dec, CRS("+init=epsg:3765"))
+  cord_dec <- SpatialPoints(
+    cbind(
+      file_for_traj$lon,
+      file_for_traj$lat
+    ),
+    proj4string = CRS("+proj=longlat")
+  )
+  cord_utm <- spTransform(cord_dec, CRS("+init=epsg:3765"))
 
   # Stvaranje trodimenzionalne trajektorije
 
-  newCols <- data.frame(cord.UTM$coords.x1, cord.UTM$coords.x2, file_for_traj$geoaltitude, file_for_traj$time)
-  trj <- Traj3DFromCoords(track = newCols, xCol = 1, yCol = 2, zCol = 3, timeCol = 4)
+  new_cols <- data.frame(
+    cord_utm$coords.x1,
+    cord_utm$coords.x2,
+    file_for_traj$geoaltitude,
+    file_for_traj$time
+  )
+  trj <- Traj3DFromCoords(
+    track = new_cols,
+    xCol = 1,
+    yCol = 2,
+    zCol = 3,
+    timeCol = 4
+  )
 
-  # Ponovno uzorkovanje trajektorije s konstantnim vremenskim razmakom od deset sekundi između zapisa
+  # Ponovno uzorkovanje trajektorije s konstantnim vremenskim razmakom
+  # od deset sekundi između zapisa
 
   resampled <- Traj3DResampleTime(trj, 10)
 
-  # Izglađivanje trajektorije koristeci Savitzky-Golay filtar veličine prozora 11 i polinoma stupnja 3
+  # Izglađivanje trajektorije koristeći Savitzky-Golay filtar
+  # veličine prozora 11 i polinoma stupnja 33
 
   smoothed <- Traj3DSmoothSG(resampled, p = 3, n = 11)
 
-  # Razdvajanje imena trajektorije na pozivni znak, ICAO24 te datum i vrijeme za naslov dijagrama
+  # Razdvajanje imena trajektorije na pozivni znak,
+  # ICAO24 te datum i vrijeme za naslov dijagrama
 
-  split_name <- unlist(strsplit(gsub("weather_", "", gsub(".csv", "", filename_for_traj)), "_"))
+  split_name <- unlist(
+    strsplit(
+      gsub(
+        "weather_", "",
+        gsub(".csv", "", filename_for_traj)
+      ), "_"
+    )
+  )
   callsign <- split_name[1]
   icao24 <- split_name[2]
-  date_first <- format(as.POSIXct(as.numeric(split_name[3]), origin = "1970-01-01", tz = "Europe/Zagreb"), format = "%d.%m.%Y %H:%M:%S")
-  date_last <- format(as.POSIXct(as.numeric(split_name[4]), origin = "1970-01-01", tz = "Europe/Zagreb"), format = "%d.%m.%Y %H:%M:%S")
+  date_first <- format(
+    as.POSIXct(
+      as.numeric(split_name[3]),
+      origin = "1970-01-01",
+      tz = "Europe/Zagreb"
+    ),
+    format = "%d.%m.%Y %H:%M:%S"
+  )
+  date_last <- format(
+    as.POSIXct(
+      as.numeric(split_name[4]),
+      origin = "1970-01-01",
+      tz = "Europe/Zagreb"
+    ),
+    format = "%d.%m.%Y %H:%M:%S"
+  )
 
-  new_name <- paste("Pozivni znak:", callsign, "ICAO24:", icao24, "\n:", date_first, "-", date_last)
+  new_name <- paste(
+    "Pozivni znak:",
+    callsign,
+    "ICAO24:",
+    icao24,
+    "\n",
+    date_first,
+    "-",
+    date_last
+  )
 
-  # Crtanje dijagrama odabranih dimenzija s originalnom i izglađenom trajektorijom
+  # Crtanje dijagrama odabranih dimenzija
+  # s originalnom i izglađenom trajektorijom
 
-  par3d(windowRect = c(30, 45, 900, 900))
-  plot3d(x = smoothed$x, y = smoothed$y, z = smoothed$z, asp = 1, lwd = 2, type = "l", xlab = "x (m)", ylab = "y (m)", zlab = "z (m)", col = "red")
-  lines3d(x = trj$x, y = trj$y, z = trj$z, col = "blue")
+  par3d(windowRect = c(0, 0, 960, 960))
+  plot3d(
+    x = trj$x,
+    y = trj$y,
+    z = trj$z, xlab = "",
+    ylab = "",
+    zlab = "",
+    axes = FALSE,
+    type = "l",
+    col = "blue"
+  )
+  aspect3d(1, 1, 1)
+  highlevel()
+  lines3d(x = smoothed$x, y = smoothed$y, z = smoothed$z, lwd = 2, col = "red")
+  aspect3d(1, 1, 1)
+  highlevel()
+
+  # Dodavanje osi
+
+  axes3d("x--", nticks = 5)
+  axes3d("y-+", nticks = 3)
+  axes3d("z--", nticks = 5)
+
+  # Dodavanje oznaka osi
+
+  mtext3d("x (m)", "x++", line = 2)
+  mtext3d("y (m)", "y++", line = 2)
+  mtext3d("z (m)", "z+-", line = 2)
+
+  # Dodavanje okvira
+
+  box3d()
+
+  # Dodavanje naslova  i legende
+
+  bgplot3d({
+    plot.new()
+    title(main = new_name)
+    legend("topright",
+      legend = c("Original", "Glatko"),
+      col = c("blue", "red"),
+      lwd = c(1, 2)
+    )
+  })
 
   # Spremanje dijagrama
 
-  rgl.snapshot(file = paste(dir_for_plot, gsub("csv", "png", gsub("weather", dir_for_plot, filename_for_traj)), sep = "//"), fmt = "png")
+  rgl.snapshot(
+    file = paste(dir_for_plot,
+      gsub(
+        "csv", "png",
+        gsub("weather", dir_for_plot, filename_for_traj)
+      ),
+      sep = "//"
+    ),
+    fmt = "png"
+  )
 }

@@ -2,7 +2,8 @@
 
 library(dplyr)
 
-# Uključivanje knjižnice tidyverse za funkciju koja dohvaća direktorij u kojem se nalazi skripta
+# Uključivanje knjižnice tidyverse za funkciju
+# koja dohvaća direktorij u kojem se nalazi skripta
 
 library(tidyverse)
 
@@ -12,10 +13,15 @@ rm(list = ls())
 
 # Postavljanje radnog direktorija na direktorij u kojem se nalazi skripta
 
-getCurrentFileLocation <- function() {
+get_current_file_location <- function() {
   this_file <- commandArgs() %>%
     tibble::enframe(name = NULL) %>%
-    tidyr::separate(col = value, into = c("key", "value"), sep = "=", fill = "right") %>%
+    tidyr::separate(
+      col = value,
+      into = c("key", "value"),
+      sep = "=",
+      fill = "right"
+    ) %>%
     dplyr::filter(key == "--file") %>%
     dplyr::pull(value)
   if (length(this_file) == 0) {
@@ -24,16 +30,20 @@ getCurrentFileLocation <- function() {
   return(dirname(this_file))
 }
 
-setwd(getCurrentFileLocation())
+setwd(get_current_file_location())
 
 path_to_state_vectors <- "..//GitHub//PlaneTraj//states"
 
-# Dohvat svih letova iz .csv datoteke s definiranom odredišnom i polazišnom zračnom lukom
+# Dohvat svih letova iz .csv datoteke s definiranom odredišnom
+# i polazišnom zračnom lukom
 
 start_airport <- "LDZA"
 end_airport <- "EGLL"
 
-result_name <- paste("usable_flights/usable_flights_", start_airport, ".csv", sep = "")
+result_name <- paste("usable_flights/usable_flights_",
+  start_airport, ".csv",
+  sep = ""
+)
 
 usable_flights <- data.frame(read.csv(result_name))
 usable_flights_dest <- filter(usable_flights, arrivalAirport == end_airport)
@@ -41,11 +51,25 @@ usable_flights_dest <- filter(usable_flights, arrivalAirport == end_airport)
 for (i in 1:nrow(usable_flights_dest)) {
   # Definiranje raspona sati u kojima je trajao let
 
-  date_first <- as.POSIXct(usable_flights_dest[i, 5], origin = "1970-01-01", tz = "Europe/Zagreb") - 2 * 3600
-  date_last <- as.POSIXct(usable_flights_dest[i, 6], origin = "1970-01-01", tz = "Europe/Zagreb") - 2 * 3600
+  date_first <- as.POSIXct(usable_flights_dest[i, 5],
+    origin = "1970-01-01", tz = "Europe/Zagreb"
+  ) - 2 * 3600
+  date_last <- as.POSIXct(usable_flights_dest[i, 6],
+    origin = "1970-01-01", tz = "Europe/Zagreb"
+  ) - 2 * 3600
 
-  date_first_round <- as.POSIXct(format(date_first, format = "%Y-%m-%d %H:00:00"), tz = "Europe/Zagreb")
-  date_last_round <- as.POSIXct(format(date_last, format = "%Y-%m-%d %H:00:00"), tz = "Europe/Zagreb")
+  date_first_round <- as.POSIXct(
+    format(date_first,
+      format = "%Y-%m-%d %H:00:00"
+    ),
+    tz = "Europe/Zagreb"
+  )
+  date_last_round <- as.POSIXct(
+    format(date_last,
+      format = "%Y-%m-%d %H:00:00"
+    ),
+    tz = "Europe/Zagreb"
+  )
 
   date_current <- date_first_round
 
@@ -64,7 +88,11 @@ for (i in 1:nrow(usable_flights_dest)) {
   }
 
   result_name <- paste("usable_trajs", my_callsign, sep = "//")
-  result_name <- paste(result_name, usable_flights_dest[i, 1], as.character(usable_flights_dest[i, 5]), as.character(usable_flights_dest[i, 6]), sep = "_")
+  result_name <- paste(result_name,
+    usable_flights_dest[i, 1], as.character(usable_flights_dest[i, 5]),
+    as.character(usable_flights_dest[i, 6]),
+    sep = "_"
+  )
   result_name <- paste(result_name, ".csv", sep = "")
 
   if (!file.exists(result_name)) {
@@ -76,7 +104,10 @@ for (i in 1:nrow(usable_flights_dest)) {
       date_string <- strftime(date_current, format = "%Y-%m-%d")
       hour_string <- strftime(date_current, format = "%H")
 
-      directory_path <- paste(path_to_state_vectors, date_string, hour_string, sep = "//")
+      directory_path <- paste(path_to_state_vectors,
+        date_string, hour_string,
+        sep = "//"
+      )
 
       date_hour_string <- strftime(date_current, format = "%Y-%m-%d-%H")
 
@@ -84,7 +115,8 @@ for (i in 1:nrow(usable_flights_dest)) {
 
       states_filepath <- paste(directory_path, states_filename, sep = "//")
 
-      # Filtriranje vektora stanja prema ICAO24 identifikatoru, vremenu i pozivnom znaku
+      # Filtriranje vektora stanja prema ICAO24
+      # identifikatoru, vremenu i pozivnom znaku
 
       if (file.exists(states_filepath)) {
         states_file <- data.frame(read.csv(states_filepath))
@@ -102,7 +134,8 @@ for (i in 1:nrow(usable_flights_dest)) {
       date_current <- date_current + 3600
     }
 
-    # Spremanje podatkovnog okvira s vektorima stanja ako je najmanje jedan vektor stanja pronađen za let
+    # Spremanje podatkovnog okvira s vektorima stanja ako
+    # je najmanje jedan vektor stanja pronađen za let
 
     if (nrow(data_frame_states) > 0) {
       write.csv(data_frame_states, result_name, row.names = FALSE)
