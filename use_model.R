@@ -48,7 +48,7 @@ library(JOUSBoost)
 
 model_use <- function(
     model_name, train_data, test_data,
-    train_label, test_label, grid_data = list()) {
+    train_label, test_label, grid_data = list(), tree_name = "") {
   set.seed(42)
 
   k_val <- -1
@@ -145,6 +145,18 @@ model_use <- function(
     )
     test_data_with_label <- data.frame(x = test_data, y = as.factor(test_label))
     tree <- rpart(y ~ ., data = train_data_with_label, method = "class")
+    
+    png(filename = tree_name, width = 480, height = 480, units = "px")
+    rpart.plot(tree)
+
+    # Zatvaranje dijagrama
+
+    if (length(dev.list()) > 0) {
+      for (dev_sth_open in dev.list()[1]:dev.list()[length(dev.list())]) {
+        dev.off()
+      }
+    }
+
     train_predicted <- predict(tree, train_data_with_label, type = "class")
     test_predicted <- predict(tree, test_data_with_label, type = "class")
     if (length(grid_data) != 0) {
@@ -212,6 +224,7 @@ model_use <- function(
   return(list(
     "train_predicted" = train_predicted,
     "test_predicted" = test_predicted,
-    "grid_predicted" = grid_predicted, "k_val" = k_val
+    "grid_predicted" = grid_predicted, 
+    "k_val" = k_val
   ))
 }

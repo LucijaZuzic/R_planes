@@ -62,15 +62,21 @@ names(df_predictions_train) <- c("train_label")
 df_predictions_test <- data.frame(c(data_fr_list$test_label))
 names(df_predictions_test) <- c("test_label")
 
+if (!dir.exists("trees")) {
+  dir.create("trees")
+}
+
 for (model_name in model_list) {
   model_used_list <- model_use(
     model_name, data_fr_list$train_data,
-    data_fr_list$test_data, data_fr_list$train_label, data_fr_list$test_label
+    data_fr_list$test_data, data_fr_list$train_label, data_fr_list$test_label,
+    tree_name = "trees/all_tree.png"
   )
   model_no_metar_used_list <- model_use(
     model_name, data_fr_no_metar_list$train_data,
     data_fr_no_metar_list$test_data, data_fr_no_metar_list$train_label,
-    data_fr_no_metar_list$test_label
+    data_fr_no_metar_list$test_label,
+    tree_name = "trees/all_no_METAR_tree.png"
   )
 
   print(model_name)

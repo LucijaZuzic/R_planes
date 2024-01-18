@@ -116,30 +116,36 @@ for (i in 2:ncol(data_fr)) {
 
 df_new <- data.frame(f1, f2, mdl, ovrl)
 
+df_to_print <- data.frame(matrix(ncol = 4, nrow = 0))
+colnames(df_to_print) <- c("f1", "f2", "mdl", "ovrl")
 for (i in 2:ncol(data_fr)) {
-  print(names(data_fr)[i])
   df_new_feat_first <- filter(df_new, df_new[, 1] == names(data_fr)[i])
   df_new_feat_second <- filter(df_new, df_new[, 2] == names(data_fr)[i])
   df_new_feat <- rbind(df_new_feat_first, df_new_feat_second)
   best_score <- max(df_new_feat[, 4])
   for (k in 1:length(df_new_feat[, 1])) {
     if (df_new_feat[k, 4] == best_score) {
-      print(df_new_feat[k, ])
+      df_to_print <- rbind(df_to_print, df_new_feat[k, ])
     }
   }
 }
+print(df_to_print[1:10, ])
 
+df_to_print <- data.frame(matrix(ncol = 4, nrow = 0))
+colnames(df_to_print) <- c("f1", "f2", "mdl", "ovrl")
 for (model_name in model_list) {
-  print(model_name)
   df_new_model <- filter(df_new, df_new[, 3] == model_name)
   best_score <- max(df_new_model[, 4])
   for (k in 1:length(df_new_model[, 1])) {
     if (df_new_model[k, 4] == best_score) {
-      print(df_new_model[k, ])
+      df_to_print <- rbind(df_to_print, df_new_model[k, ])
     }
   }
 }
+print(df_to_print[1:10, ])
 
+df_to_print <- data.frame(matrix(ncol = 4, nrow = 0))
+colnames(df_to_print) <- c("f1", "f2", "mdl", "ovrl")
 df_new <- data.frame(f1, f2, mdl, ovrl)
 for (i in 2:(ncol(data_fr) - 1)) {
   for (j in (i + 1):ncol(data_fr)) {
@@ -151,12 +157,13 @@ for (i in 2:(ncol(data_fr) - 1)) {
     )
     best_score <- max(df_new_feat_pair[, 4])
     for (k in 1:length(df_new_feat_pair[, 1])) {
-      if (df_new_feat_pair[k, 4] == best_score) {
-        print(df_new_feat_pair[k, ])
+      if (df_new_feat_pair[k, 4] == best_score) { 
+        df_to_print <- rbind(df_to_print, df_new_feat_pair[k, ])
       }
     }
   }
 }
+print(df_to_print[1:10, ])
 
 df_predictions_train <- data.frame(read.csv("predictions_train.csv"))
 df_predictions_test <- data.frame(read.csv("predictions_test.csv"))
@@ -168,4 +175,17 @@ for (i in 2:length(names(df_predictions_train))) {
     as.factor(df_predictions_train$train_label),
     as.factor(df_predictions_train[, i])
   )$overall[1][["Accuracy"]])
+
+  #print(table(df_predictions_train$train_label, df_predictions_train[, i]))
+}
+
+for (i in 2:length(names(df_predictions_test))) {
+  print(names(df_predictions_test)[i])
+
+  print(confusionMatrix(
+    as.factor(df_predictions_test$test_label),
+    as.factor(df_predictions_test[, i])
+  )$overall[1][["Accuracy"]])
+
+  #print(table(df_predictions_test$test_label, df_predictions_test[, i]))
 }

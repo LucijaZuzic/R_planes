@@ -57,7 +57,7 @@ model_list <- c(
   "Quadratic Discriminant Analysis"
 )
 
-model_list <- c("Gaussian Process")
+model_list <- c("Decision Tree")
 
 data_fr <- data.frame(read.csv("features_traj.csv"))
 data_fr <- subset(data_fr, select = -c(filenames_for_trajs))
@@ -114,6 +114,11 @@ for (i in 2:ncol(data_fr)) {
           names(data_fr)[j], "classifier_visual_test.png",
           sep = "_"
         )
+        new_file_tree <- paste("trees//",
+          model_name, names(data_fr)[i],
+          names(data_fr)[j], "_tree.png",
+          sep = "_"
+        )
 
         df_predictions_train <- data.frame(c(data_fr_list$train_label))
         names(df_predictions_train) <- c("train_label")
@@ -125,7 +130,8 @@ for (i in 2:ncol(data_fr)) {
         model_used_list <- model_use(
           model_name, data_fr_list$train_data,
           data_fr_list$test_data, data_fr_list$train_label,
-          data_fr_list$test_label, grid_new_data_expanded
+          data_fr_list$test_label, grid_data =grid_new_data_expanded,
+          tree_name = new_file_tree
         )
 
         if (model_name == "k-NN") {
