@@ -30,11 +30,11 @@ library(fdm2id)
 
 library(nnet)
 
-# Uključivanje knjižnice caret za funkciju confusionMatrix
+# Uključivanje knjižnice caret za funkcije confusionMatrix, knn3 i train
 
 library(caret)
 
-# Uključivanje knjižnice class za rad s klasama
+# Uključivanje knjižnice class za rad s klasama i za confusionMatrix, knn3 i train
 
 library(class)
 
