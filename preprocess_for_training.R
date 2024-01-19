@@ -13,7 +13,7 @@ preprocesing_function <- function(data_fr) {
   data_fr_yes <- filter(data_fr, label_col == 1)
   data_fr_yes <- subset(data_fr_yes, select = -c(label_col))
 
-  data_fr_no <- filter(data_fr, label_col == 0)
+  data_fr_no <- filter(data_fr, label_col == -1)
   data_fr_no <- subset(data_fr_no, select = -c(label_col))
 
   ind_yes <- sample(2, nrow(data_fr_yes), replace = TRUE, prob = c(0.7, 0.3))

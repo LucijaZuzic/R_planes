@@ -38,12 +38,28 @@ dir_for_trajs <- "weather_trajs"
 
 filenames_for_trajs <- list.files(dir_for_trajs)
 
-# Postavljanje direktorija za dijagrame
+# Postavljanje direktorija za histograme
 
-dir_for_plot <- paste("hist", sep = "_")
+dir_for_hist <- paste("hist", sep = "_")
 
-if (!dir.exists(dir_for_plot)) {
-  dir.create(dir_for_plot)
+if (!dir.exists(dir_for_hist)) {
+  dir.create(dir_for_hist)
+}
+
+# Postavljanje direktorija za kutijaste dijagrame
+
+dir_for_boxplot <- paste("boxplot", sep = "_")
+
+if (!dir.exists(dir_for_boxplot)) {
+  dir.create(dir_for_boxplot)
+}
+
+# Postavljanje direktorija za dijagrame gustoće vjerojatnosti
+
+dir_for_density <- paste("density", sep = "_")
+
+if (!dir.exists(dir_for_density)) {
+  dir.create(dir_for_density)
 }
 
 # Otvaranje datoteke sa oznaka trajektorija,
@@ -55,15 +71,12 @@ df_clus <- subset(df_clus, select = -c(filenames_for_trajs))
 # Filtriranje trajektorija prema oznaci
 
 df_clus_yes <- filter(df_clus, label_col == 1)
-df_clus_no <- filter(df_clus, label_col == 0)
+df_clus_no <- filter(df_clus, label_col == -1)
 
 # Brisanje oznaka
 
 df_clus_yes <- subset(df_clus_yes, select = -c(label_col))
 df_clus_no <- subset(df_clus_no, select = -c(label_col))
-
-print(names(df_clus_yes))
-print(names(df_clus_no))
 
 for (i in 1:length(names(df_clus_yes))) {
   # Postavljanje imena značajke i mjerne jedinice koja se koristi
@@ -90,23 +103,33 @@ for (i in 1:length(names(df_clus_yes))) {
   hv_yes <- hist(df_clus_yes[, i], breaks = xrange_use, plot = FALSE)$counts
   hv_no <- hist(df_clus_no[, i], breaks = xrange_use, plot = FALSE)$counts
 
+  # Izdvajanje naslova dijagrama bez mjerne jedinice
+
+  new_name <- unlist(strsplit(as.character(new_lab), " "))
+  new_new_name <- ""
+  for (nn in new_name) { 
+    if (substr(nn, 1, 1) != "(") {
+      new_new_name <- paste(new_new_name, nn, sep = " ")
+    }
+  }
+  new_name <- substr(new_new_name, 2, nchar(new_new_name))
+
   # Crtanje histograma sa vjerojatnošću
 
   total <- sum(hv_yes, hv_no)
 
-  new_name <- unlist(strsplit(as.character(new_lab), " "))
-  new_name <- new_name[1]
-
-  # Spremanje dijagrama
+  # Spremanje histograma
 
   png(
     filename =
-      paste(paste(dir_for_plot, original_name, sep = "//"), "png", sep = "."),
+      paste(paste(dir_for_hist, original_name, sep = "//"), "png", sep = "."),
     width = 480, height = 480, units = "px"
   )
 
+  # Crtanje histograma
+
   barplot(rbind(hv_yes / total, hv_no / total),
-    col = c("green", "red"), main = new_name, space = 0,
+    col = c("green", "red"), main = paste("Histogram\n", new_name), space = 0,
     xlab = new_lab, ylab = "Vjerojatnost"
   )
 
@@ -120,11 +143,117 @@ for (i in 1:length(names(df_clus_yes))) {
 
   axis(1, at = 0:19, labels = new_data_x)
 
-  # Zatvaranje dijagrama
+  # Dodavanje legende
+
+  poslegend <- "topright"
+
+  if (original_name == "TrajDistance_all" || original_name == "TrajAcceleration_all" || original_name == "METAR_Td") {
+    poslegend <- "topleft"
+  }
+
+  legend(poslegend,
+    legend = c("1", "-1"),
+    col = c("green", "red"), lty = c(1, 1), lwd = c(2, 2)
+  )
+
+  # Zatvaranje histograma
 
   if (length(dev.list()) > 0) {
     for (dev_sth_open in dev.list()[1]:dev.list()[length(dev.list())]) {
       dev.off()
     }
   }
+
+  # Spremanje kutijastog dijagrama
+
+  png(
+    filename =
+      paste(paste(dir_for_boxplot, original_name, sep = "//"), "png", sep = "."),
+    width = 480, height = 480, units = "px"
+  )
+
+  # Crtanje kutijastog dijagrama
+
+  boxdata <- data.frame(df_clus[, 1], df_clus[, i + 1])
+  names(boxdata) <- c("lab", "feat")
+
+  boxplot(feat ~ lab,
+    data = boxdata,
+    col = c("red", "green"), main = paste("Kutijasti dijagram\n", new_name),
+    xlab = new_lab, ylab = "Kvantili"
+  )
+
+  # Dodavanje legende
+
+  legend("topright",
+    legend = c("1", "-1"),
+    col = c("green", "red"), lty = c(1, 1), lwd = c(2, 2)
+  )
+
+  # Zatvaranje kutijastog dijagrama
+
+  if (length(dev.list()) > 0) {
+    for (dev_sth_open in dev.list()[1]:dev.list()[length(dev.list())]) {
+      dev.off()
+    }
+  }
+
+  # Spremanje dijagrama gustoće vjerojatnosti
+
+  png(
+    filename =
+      paste(paste(dir_for_density, original_name, sep = "//"), "png", sep = "."),
+    width = 480, height = 480, units = "px"
+  )
+
+  # Crtanje gustoće vjerojatnosti
+
+  density_y <- density(df_clus_yes[, i],
+    from = min(df_clus_yes[, i]),
+    to = max(df_clus_yes[, i])
+  )
+
+  density_n <- density(df_clus_no[, i],
+    from = min(df_clus_no[, i]),
+    to = max(df_clus_no[, i])
+  )
+
+  density_a <- density(df_clus[, i + 1],
+    from = min(df_clus[, i + 1]),
+    to = max(df_clus[, i + 1])
+  )
+
+  plot(density_n,
+    col = "red", lwd = 2,
+    ylim = c(min(min(density_n$y), min(density_y$y)), max(max(density_n$y), max(density_y$y))),
+    xlim = c(min(min(density_n$x), min(density_y$x)), max(max(density_n$x), max(density_y$x))),
+    main = paste("Gustoća vjerojatnosti\n", new_name),
+    xlab = new_lab, ylab = "Gustoća vjerojatnosti"
+  )
+  lines(density_y, col = "green", lwd = 2)
+
+  # Dodavanje legende
+
+  legend("topright",
+    legend = c("1", "-1"),
+    col = c("green", "red"), lty = c(1, 1), lwd = c(2, 2)
+  )
+
+  # Zatvaranje dijagrama gustoće vjerojatnosti
+
+  if (length(dev.list()) > 0) {
+    for (dev_sth_open in dev.list()[1]:dev.list()[length(dev.list())]) {
+      dev.off()
+    }
+  }
+
+  # Ispis kvantila varijable
+
+  print(new_name)
+  print("All")
+  print(quantile(df_clus[, i + 1]))
+  print(-1)
+  print(quantile(df_clus_no[, i]))
+  print(1)
+  print(quantile(df_clus_yes[, i]))
 }

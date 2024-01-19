@@ -175,12 +175,12 @@ for (filename_for_traj in filenames_for_trajs) {
 
   smoothed <- Traj3DSmoothSG(resampled, p = 3, n = 11)
 
-  label_val <- 0
+  label_val <- -1
 
   # Ako je treća točka izglađene trajektorije desno ili iznad središnje točke
   # promatanog područja, dajemo oznaku 1
 
-  if (smoothed$x[3] > mid_x | smoothed$y[3] > mid_y) {
+  if (smoothed$x[3] > mid_x || smoothed$y[3] > mid_y) {
     label_val <- 1
   }
 
