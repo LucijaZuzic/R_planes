@@ -66,6 +66,10 @@ if (!dir.exists("feature_combination")) {
   dir.create("feature_combination")
 }
 
+if (!dir.exists("trees")) {
+  dir.create("trees")
+}
+
 for (i in 2:ncol(data_fr)) {
   if (i != ncol(data_fr)) {
     for (j in (i + 1):ncol(data_fr)) {
@@ -114,9 +118,9 @@ for (i in 2:ncol(data_fr)) {
           names(data_fr)[j], "classifier_visual_test.png",
           sep = "_"
         )
-        new_file_tree <- paste("trees//",
-          model_name, names(data_fr)[i],
-          names(data_fr)[j], "_tree.png",
+        new_file_tree <- paste(paste("trees",
+          model_name, sep = "//"), names(data_fr)[i],
+          names(data_fr)[j], "tree.png",
           sep = "_"
         )
 
