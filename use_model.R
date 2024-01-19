@@ -46,7 +46,9 @@ library(MASS)
 
 library(JOUSBoost)
 
-model_use <- function(model_name, train_data, test_data, train_label, test_label, grid_data = list()) {
+model_use <- function(
+    model_name, train_data, test_data,
+    train_label, test_label, grid_data = list(), tree_name = "") {
   set.seed(42)
 
   k_val <- -1
@@ -61,8 +63,16 @@ model_use <- function(model_name, train_data, test_data, train_label, test_label
       k_val <- k_val + 1
     }
 
-    knnModel <- train(x = train_data, y = train_label, method = "knn", trControl = trainControl(method = "repeatedcv", number = 10, repeats = 3), tuneGrid = data.frame(k = list_k))
-    k_val <- knnModel$bestTune$k
+    knn_model <- train(
+      x = train_data, y = train_label,
+      method = "knn",
+      trControl = trainControl(
+        method = "repeatedcv",
+        number = 10, repeats = 3
+      ),
+      tuneGrid = data.frame(k = list_k)
+    )
+    k_val <- knn_model$bestTune$k
 
     classifier_knn <- knn3(x = train_data, y = train_label, k = k_val)
     train_predicted <- predict(classifier_knn, train_data, type = "class")
@@ -74,7 +84,11 @@ model_use <- function(model_name, train_data, test_data, train_label, test_label
   }
 
   if (model_name == "Linear SVM") {
-    lsvm <- svm(x = train_data, y = train_label, type = "C-classification", kernel = "linear")
+    lsvm <- svm(
+      x = train_data, y = train_label,
+      type = "C-classification",
+      kernel = "linear"
+    )
     train_predicted <- fitted(lsvm)
     test_predicted <- predict(lsvm, test_data)
 
@@ -84,7 +98,10 @@ model_use <- function(model_name, train_data, test_data, train_label, test_label
   }
 
   if (model_name == "RBF SVM") {
-    rbf_svm <- svm(x = train_data, y = train_label, type = "C-classification", kernel = "radial")
+    rbf_svm <- svm(
+      x = train_data, y = train_label,
+      type = "C-classification", kernel = "radial"
+    )
     train_predicted <- fitted(rbf_svm)
     test_predicted <- predict(rbf_svm, test_data)
 
@@ -102,8 +119,18 @@ model_use <- function(model_name, train_data, test_data, train_label, test_label
       start_frame <- 1
       grid_predicted <- c()
       while (start_frame < length(grid_data[, 1])) {
-        grid_predicted_1 <- predict(gaussian_process, grid_data[start_frame:min(start_frame + len_of_frame, length(grid_data[, 1])), ])
-        start_frame <- min(start_frame + len_of_frame, length(grid_data[, 1])) + 1
+        grid_predicted_1 <- predict(
+          gaussian_process,
+          grid_data[start_frame:min(
+            start_frame +
+              len_of_frame,
+            length(grid_data[, 1])
+          ), ]
+        )
+        start_frame <- min(
+          start_frame + len_of_frame,
+          length(grid_data[, 1])
+        ) + 1
         for (sv in grid_predicted_1) {
           grid_predicted <- c(grid_predicted, sv)
         }
@@ -112,9 +139,24 @@ model_use <- function(model_name, train_data, test_data, train_label, test_label
   }
 
   if (model_name == "Decision Tree") {
-    train_data_with_label <- data.frame(x = train_data, y = as.factor(train_label))
+    train_data_with_label <- data.frame(
+      x = train_data,
+      y = as.factor(train_label)
+    )
     test_data_with_label <- data.frame(x = test_data, y = as.factor(test_label))
     tree <- rpart(y ~ ., data = train_data_with_label, method = "class")
+    
+    png(filename = tree_name, width = 480, height = 480, units = "px")
+    rpart.plot(tree)
+
+    # Zatvaranje dijagrama
+
+    if (length(dev.list()) > 0) {
+      for (dev_sth_open in dev.list()[1]:dev.list()[length(dev.list())]) {
+        dev.off()
+      }
+    }
+
     train_predicted <- predict(tree, train_data_with_label, type = "class")
     test_predicted <- predict(tree, test_data_with_label, type = "class")
     if (length(grid_data) != 0) {
@@ -122,7 +164,10 @@ model_use <- function(model_name, train_data, test_data, train_label, test_label
       for (i in grid_data) {
         grid_class <- c(grid_class, 1)
       }
-      grid_data_with_label <- data.frame(x = grid_data, y = as.factor(grid_class))
+      grid_data_with_label <- data.frame(
+        x = grid_data,
+        y = as.factor(grid_class)
+      )
       grid_predicted <- predict(tree, grid_data_with_label, type = "class")
     }
   }
@@ -137,7 +182,10 @@ model_use <- function(model_name, train_data, test_data, train_label, test_label
   }
 
   if (model_name == "Naive Bayes") {
-    naive_bayes_model <- gaussian_naive_bayes(x = data.matrix(train_data), y = train_label)
+    naive_bayes_model <- gaussian_naive_bayes(
+      x = data.matrix(train_data),
+      y = train_label
+    )
     train_predicted <- predict(naive_bayes_model, data.matrix(train_data))
     test_predicted <- predict(naive_bayes_model, data.matrix(test_data))
     if (length(grid_data) != 0) {
@@ -173,5 +221,10 @@ model_use <- function(model_name, train_data, test_data, train_label, test_label
     }
   }
 
-  return(list("train_predicted" = train_predicted, "test_predicted" = test_predicted, "grid_predicted" = grid_predicted, "k_val" = k_val))
+  return(list(
+    "train_predicted" = train_predicted,
+    "test_predicted" = test_predicted,
+    "grid_predicted" = grid_predicted, 
+    "k_val" = k_val
+  ))
 }

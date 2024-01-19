@@ -2,7 +2,8 @@
 
 library(openSkies)
 
-# Uključivanje knjižnice tidyverse za funkciju koja dohvaća direktorij u kojem se nalazi skripta
+# Uključivanje knjižnice tidyverse za funkciju
+# koja dohvaća direktorij u kojem se nalazi skripta
 
 library(tidyverse)
 
@@ -12,10 +13,15 @@ rm(list = ls())
 
 # Postavljanje radnog direktorija na direktorij u kojem se nalazi skripta
 
-getCurrentFileLocation <- function() {
+get_current_file_location <- function() {
   this_file <- commandArgs() %>%
     tibble::enframe(name = NULL) %>%
-    tidyr::separate(col = value, into = c("key", "value"), sep = "=", fill = "right") %>%
+    tidyr::separate(
+      col = value,
+      into = c("key", "value"),
+      sep = "=",
+      fill = "right"
+    ) %>%
     dplyr::filter(key == "--file") %>%
     dplyr::pull(value)
   if (length(this_file) == 0) {
@@ -24,9 +30,10 @@ getCurrentFileLocation <- function() {
   return(dirname(this_file))
 }
 
-setwd(getCurrentFileLocation())
+setwd(get_current_file_location())
 
-# Funkcija za dohvat svih letova iz polazišne zračne luke i spremanje u .csv datoteku
+# Funkcija za dohvat svih letova iz polazišne
+# zračne luke i spremanje u .csv datoteku
 
 get_data <- function(start_airport) {
   # Definicija varijabli za pohranu podataka o letu
@@ -51,15 +58,21 @@ get_data <- function(start_airport) {
 
     # Ponavljanje zahtjeva ako poslužitelj ne odgovara
 
-    while (repeating & n_retries <= 10) {
-      # Prijava i zahtjev prema bazi podataka za letove u određenom danu iz određene zračne luke
+    while (repeating && n_retries <= 10) {
+      # Prijava i zahtjev prema bazi podataka za letove u
+      # određenom danu iz određene zračne luke
 
-      data_res <- getAirportDepartures(start_airport, as.character(dt), as.character(dt + 24 * 3600), timeZone = "Europe/Zagreb", maxQueryAttempts = 1000000, username = "lzuzic", password = "uGJp64kA")
+      data_res <- getAirportDepartures(start_airport, as.character(dt),
+        as.character(dt + 24 * 3600),
+        timeZone = "Europe/Zagreb", maxQueryAttempts = 1000000,
+        username = "lzuzic", password = "uGJp64kA"
+      )
 
       repeating <- length(data_res) == 0
 
       for (flight in data_res) {
-        # Pohrana podataka o letu u podatkovni okvir ako je definirana odredišnja zracna luka
+        # Pohrana podataka o letu u podatkovni okvir
+        # ako je definirana odredišnja zračna luka
 
         if (!is.null(flight$destination_airport)) {
           icao24 <- c(icao24, flight$ICAO24)
@@ -85,9 +98,15 @@ get_data <- function(start_airport) {
     dir.create("usable_flights")
   }
 
-  result_name <- paste("usable_flights/usable_flights_", start_airport, ".csv", sep = "")
+  result_name <- paste("usable_flights/usable_flights_",
+    start_airport, ".csv",
+    sep = ""
+  )
 
-  data_frame_flights <- data.frame(icao24, callsign, departureAirport, arrivalAirport, firstSeen, lastSeen)
+  data_frame_flights <- data.frame(
+    icao24, callsign,
+    departureAirport, arrivalAirport, firstSeen, lastSeen
+  )
   write.csv(data_frame_flights, result_name, row.names = FALSE)
 }
 

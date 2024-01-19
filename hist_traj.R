@@ -1,4 +1,5 @@
-# Uključivanje knjižnice tidyverse za funkciju koja dohvaća direktorij u kojem se nalazi skripta
+# Uključivanje knjižnice tidyverse za funkciju
+# koja dohvaća direktorij u kojem se nalazi skripta
 
 library(tidyverse)
 
@@ -8,10 +9,15 @@ rm(list = ls())
 
 # Postavljanje radnog direktorija na direktorij u kojem se nalazi skripta
 
-getCurrentFileLocation <- function() {
+get_current_file_location <- function() {
   this_file <- commandArgs() %>%
     tibble::enframe(name = NULL) %>%
-    tidyr::separate(col = value, into = c("key", "value"), sep = "=", fill = "right") %>%
+    tidyr::separate(
+      col = value,
+      into = c("key", "value"),
+      sep = "=",
+      fill = "right"
+    ) %>%
     dplyr::filter(key == "--file") %>%
     dplyr::pull(value)
   if (length(this_file) == 0) {
@@ -20,7 +26,7 @@ getCurrentFileLocation <- function() {
   return(dirname(this_file))
 }
 
-setwd(getCurrentFileLocation())
+setwd(get_current_file_location())
 
 # Uključivanje funkcije za pretvorbu naziva stupca u naziv osi na dijagramu
 
@@ -40,10 +46,11 @@ if (!dir.exists(dir_for_plot)) {
   dir.create(dir_for_plot)
 }
 
-# Otvaranje datoteke sa oznaka trajektorija, značajkama trajektorija i meteorološkim značajkama
+# Otvaranje datoteke sa oznaka trajektorija,
+# značajkama trajektorija i meteorološkim značajkama
 
 df_clus <- data.frame(read.csv("features_traj.csv"))
-df_clus <- subset(df_clus, select = -c(METAR_VV, METAR_ff10, filenames_for_trajs))
+df_clus <- subset(df_clus, select = -c(filenames_for_trajs))
 
 # Filtriranje trajektorija prema oznaci
 
@@ -80,8 +87,8 @@ for (i in 1:length(names(df_clus_yes))) {
 
   # Broj elemenata u svakom segmentu histograma
 
-  hv_yes <- hist(df_clus_yes[, i], breaks = xrange_use, plot = F)$counts
-  hv_no <- hist(df_clus_no[, i], breaks = xrange_use, plot = F)$counts
+  hv_yes <- hist(df_clus_yes[, i], breaks = xrange_use, plot = FALSE)$counts
+  hv_no <- hist(df_clus_no[, i], breaks = xrange_use, plot = FALSE)$counts
 
   # Crtanje histograma sa vjerojatnošću
 
@@ -92,9 +99,16 @@ for (i in 1:length(names(df_clus_yes))) {
 
   # Spremanje dijagrama
 
-  png(filename = paste(paste(dir_for_plot, original_name, sep = "//"), "png", sep = "."), width = 480, height = 480, units = "px")
+  png(
+    filename =
+      paste(paste(dir_for_plot, original_name, sep = "//"), "png", sep = "."),
+    width = 480, height = 480, units = "px"
+  )
 
-  barplot(rbind(hv_yes / total, hv_no / total), col = c("green", "red"), main = new_name, space = 0, xlab = new_lab, ylab = "Vjerojatnost")
+  barplot(rbind(hv_yes / total, hv_no / total),
+    col = c("green", "red"), main = new_name, space = 0,
+    xlab = new_lab, ylab = "Vjerojatnost"
+  )
 
   # Oznake na osi x
 

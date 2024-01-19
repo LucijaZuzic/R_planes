@@ -2,7 +2,8 @@
 
 library(dplyr)
 
-# Uključivanje knjižnice tidyverse za funkciju koja dohvaća direktorij u kojem se nalazi skripta
+# Uključivanje knjižnice tidyverse za funkciju
+# koja dohvaća direktorij u kojem se nalazi skripta
 
 library(tidyverse)
 
@@ -12,10 +13,15 @@ rm(list = ls())
 
 # Postavljanje radnog direktorija na direktorij u kojem se nalazi skripta
 
-getCurrentFileLocation <- function() {
+get_current_file_location <- function() {
   this_file <- commandArgs() %>%
     tibble::enframe(name = NULL) %>%
-    tidyr::separate(col = value, into = c("key", "value"), sep = "=", fill = "right") %>%
+    tidyr::separate(
+      col = value,
+      into = c("key", "value"),
+      sep = "=",
+      fill = "right"
+    ) %>%
     dplyr::filter(key == "--file") %>%
     dplyr::pull(value)
   if (length(this_file) == 0) {
@@ -24,9 +30,10 @@ getCurrentFileLocation <- function() {
   return(dirname(this_file))
 }
 
-setwd(getCurrentFileLocation())
+setwd(get_current_file_location())
 
-# Postavljanje direktorija za meteorološka izvješća, trajektorije i trajektorije zajedno s meteorološkim izvješćem
+# Postavljanje direktorija za meteorološka izvješća,
+# trajektorije i trajektorije zajedno s meteorološkim izvješćem
 
 dir_for_weather <- "rp5"
 dir_for_trajs <- "usable_trajs"
@@ -57,9 +64,13 @@ for (filename_for_traj in filenames_for_trajs) {
 
   weather_add_data <- data.frame()
 
-  # Definiranje imena datoteke za pohranu podataka o trajektoriji zajedno s meteorološkim izvješćem
+  # Definiranje imena datoteke za pohranu podataka o
+  # trajektoriji zajedno s meteorološkim izvješćem
 
-  filepath_for_weather_traj <- paste(dir_for_weather_trajs, paste("weather", filename_for_traj, sep = "_"), sep = "//")
+  filepath_for_weather_traj <- paste(dir_for_weather_trajs,
+    paste("weather", filename_for_traj, sep = "_"),
+    sep = "//"
+  )
 
   if (!file.exists(filepath_for_weather_traj)) {
     # Prolazak po svim vektorima stanja za određeni let
@@ -67,7 +78,9 @@ for (filename_for_traj in filenames_for_trajs) {
     for (i in 1:nrow(file_for_traj)) {
       # Izdvajanje vremena iz vektora stanja
 
-      date_time_value <- as.POSIXct(file_for_traj[i, 1], origin = "1970-01-01", tz = "Europe/Zagreb")
+      date_time_value <- as.POSIXct(file_for_traj[i, 1],
+        origin = "1970-01-01", tz = "Europe/Zagreb"
+      )
 
       date_string_value <- format(date_time_value, format = "%d.%m.%Y")
 
@@ -80,26 +93,41 @@ for (filename_for_traj in filenames_for_trajs) {
       filepath_weather <- paste(dir_for_weather, start_airport, sep = "//")
       filepath_weather <- paste(filepath_weather, filename_weather, sep = "//")
 
-      # Otvaranje datoteke s meteorološkim izvješćem za određeni datum, ukoliko ona postoji
+      # Otvaranje datoteke s meteorološkim izvješćem za određeni datum,
+      # ukoliko ona postoji
 
       if (file.exists(filepath_weather)) {
-        # Preimenovanje stupca koji sadrzi datum i vrijeme meteorološkog izvješća radi preglednosti
+        # Preimenovanje stupca koji sadrzi datum i vrijeme meteorološkog
+        # izvješća radi preglednosti
 
-        weather_file <- data.frame(read.csv(filepath_weather, skip = 6, sep = ";"))
+        weather_file <- data.frame(read.csv(filepath_weather,
+          skip = 6, sep = ";"
+        ))
 
         colnames(weather_file)[1] <- "time_METER"
 
-        # Pronalazak zapisa u meteorološkom izvješću koji ima najmanju razliku vremena u odnosu na vrijeme u vektoru stanja
+        # Pronalazak zapisa u meteorološkom izvješću koji ima
+        # najmanju razliku vremena u odnosu na vrijeme u vektoru stanja
 
-        min_time_diff <- as.POSIXct("2022-06-28 00:00:00", tz = "Europe/Zagreb") - as.POSIXct("2022-06-27 00:00:00", tz = "Europe/Zagreb")
+        min_time_diff <- as.POSIXct(
+          "2022-06-28 00:00:00",
+          tz = "Europe/Zagreb"
+        ) -
+          as.POSIXct(
+            "2022-06-27 00:00:00",
+            tz = "Europe/Zagreb"
+          )
         min_row_index <- 0
 
         for (j in 1:nrow(weather_file)) {
-          row_time <- as.POSIXct(weather_file[j, 1], format = "%d.%m.%Y %H:%M", tz = "Europe/Zagreb")
+          row_time <- as.POSIXct(weather_file[j, 1],
+            format = "%d.%m.%Y %H:%M", tz = "Europe/Zagreb"
+          )
 
           offset_time <- abs(row_time - date_time_value)
 
-          # Ukoliko smo pronašli meteorološki zapis s najmanjom razlikom vremena, možemo zaustaviti pretragu oni silazno sortirani
+          # Ukoliko smo pronašli meteorološki zapis s najmanjom razlikom
+          # vremena, možemo zaustaviti pretragu oni silazno sortirani
 
           if (offset_time < min_time_diff) {
             min_time_diff <- offset_time
@@ -111,7 +139,10 @@ for (filename_for_traj in filenames_for_trajs) {
 
         # Dodavanje zapisa iz meteorološkog izvješća u podatkovni okvir
 
-        weather_add_data <- rbind(weather_add_data, weather_file[min_row_index, ])
+        weather_add_data <- rbind(
+          weather_add_data,
+          weather_file[min_row_index, ]
+        )
       }
     }
 
