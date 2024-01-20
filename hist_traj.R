@@ -107,7 +107,7 @@ for (i in 1:length(names(df_clus_yes))) {
 
   new_name <- unlist(strsplit(as.character(new_lab), " "))
   new_new_name <- ""
-  for (nn in new_name) { 
+  for (nn in new_name) {
     if (substr(nn, 1, 1) != "(") {
       new_new_name <- paste(new_new_name, nn, sep = " ")
     }
@@ -147,7 +147,11 @@ for (i in 1:length(names(df_clus_yes))) {
 
   poslegend <- "topright"
 
-  if (original_name == "TrajDistance_all" || original_name == "TrajAcceleration_all" || original_name == "METAR_Td") {
+  ifcond <- original_name == "traj_distance" ||
+    original_name == "traj_acceleration" ||
+    original_name == "metar_td"
+
+  if (ifcond) {
     poslegend <- "topleft"
   }
 
@@ -168,7 +172,10 @@ for (i in 1:length(names(df_clus_yes))) {
 
   png(
     filename =
-      paste(paste(dir_for_boxplot, original_name, sep = "//"), "png", sep = "."),
+      paste(paste(dir_for_boxplot, original_name, sep = "//"),
+        "png",
+        sep = "."
+      ),
     width = 480, height = 480, units = "px"
   )
 
@@ -202,7 +209,10 @@ for (i in 1:length(names(df_clus_yes))) {
 
   png(
     filename =
-      paste(paste(dir_for_density, original_name, sep = "//"), "png", sep = "."),
+      paste(paste(dir_for_density, original_name, sep = "//"),
+        "png",
+        sep = "."
+      ),
     width = 480, height = 480, units = "px"
   )
 
@@ -225,8 +235,14 @@ for (i in 1:length(names(df_clus_yes))) {
 
   plot(density_n,
     col = "red", lwd = 2,
-    ylim = c(min(min(density_n$y), min(density_y$y)), max(max(density_n$y), max(density_y$y))),
-    xlim = c(min(min(density_n$x), min(density_y$x)), max(max(density_n$x), max(density_y$x))),
+    ylim = c(
+      min(min(density_n$y), min(density_y$y)),
+      max(max(density_n$y), max(density_y$y))
+    ),
+    xlim = c(
+      min(min(density_n$x), min(density_y$x)),
+      max(max(density_n$x), max(density_y$x))
+    ),
     main = paste("Gustoća vjerojatnosti\n", new_name),
     xlab = new_lab, ylab = "Gustoća vjerojatnosti"
   )

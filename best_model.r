@@ -129,7 +129,7 @@ for (i in 2:ncol(data_fr)) {
     }
   }
 }
-print(df_to_print[1:10, ])
+#print(df_to_print[1:10, ])
 
 df_to_print <- data.frame(matrix(ncol = 4, nrow = 0))
 colnames(df_to_print) <- c("f1", "f2", "mdl", "ovrl")
@@ -142,7 +142,7 @@ for (model_name in model_list) {
     }
   }
 }
-print(df_to_print[1:10, ])
+#print(df_to_print[1:10, ])
 
 df_to_print <- data.frame(matrix(ncol = 4, nrow = 0))
 colnames(df_to_print) <- c("f1", "f2", "mdl", "ovrl")
@@ -163,7 +163,7 @@ for (i in 2:(ncol(data_fr) - 1)) {
     }
   }
 }
-print(df_to_print[1:10, ])
+#print(df_to_print[1:10, ])
 
 df_predictions_train <- data.frame(read.csv("predictions_train.csv"))
 df_predictions_test <- data.frame(read.csv("predictions_test.csv"))

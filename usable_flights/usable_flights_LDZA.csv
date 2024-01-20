@@ -1,4 +1,4 @@
-"icao24","callsign","departureAirport","arrivalAirport","firstSeen","lastSeen"
+"icao24","callsign","departure_airport","arrival_airport","first_seen","last_seen"
 "34268d","SWT1275","LDZA","EDDK",1590435164,1590442979
 "470d4a","BCS9615","LDZA","EDDP",1590431783,1590437151
 "501da9","CTN656","LDZA","LDSR",1590430569,1590432918

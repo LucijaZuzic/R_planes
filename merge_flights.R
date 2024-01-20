@@ -46,7 +46,7 @@ result_name <- paste("usable_flights/usable_flights_",
 )
 
 usable_flights <- data.frame(read.csv(result_name))
-usable_flights_dest <- filter(usable_flights, arrivalAirport == end_airport)
+usable_flights_dest <- filter(usable_flights, arrival_airport == end_airport)
 
 for (i in 1:nrow(usable_flights_dest)) {
   # Definiranje raspona sati u kojima je trajao let

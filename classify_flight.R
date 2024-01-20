@@ -37,7 +37,7 @@ source("use_model.R")
 data_fr <- data.frame(read.csv("features_traj.csv"))
 data_fr <- subset(data_fr, select = -c(filenames_for_trajs))
 data_fr_no_metar <- subset(data_fr,
-  select = -c(METAR_T, METAR_P, METAR_P0, METAR_U, METAR_Ff, METAR_Td)
+  select = -c(metar_t, metar_p, metar_p0, metar_u, metar_ff, metar_td)
 )
 
 data_fr_list <- preprocesing_function(data_fr)
@@ -76,7 +76,7 @@ for (model_name in model_list) {
     model_name, data_fr_no_metar_list$train_data,
     data_fr_no_metar_list$test_data, data_fr_no_metar_list$train_label,
     data_fr_no_metar_list$test_label,
-    tree_name = "trees/all_no_METAR_tree.png"
+    tree_name = "trees/all_no_metar_tree.png"
   )
 
   print(model_name)

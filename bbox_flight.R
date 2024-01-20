@@ -91,26 +91,26 @@ fractal_steps <- TrajLogSequence(1000, 2000, 1000)
 
 # Definicija varijabli za pohranu meteoroloških značajki
 
-METAR_T <- c()
-METAR_P0 <- c()
-METAR_P <- c()
-METAR_U <- c()
-METAR_Ff <- c()
-METAR_Td <- c()
+metar_t <- c()
+metar_p0 <- c()
+metar_p <- c()
+metar_u <- c()
+metar_ff <- c()
+metar_td <- c()
 
 # Definicija varijabli za pohranu značajki trajektorije
 
-TrajDistance_all <- c()
-TrajLength_all <- c()
-TrajDuration_all <- c()
-TrajSpeed_all <- c()
-TrajAcceleration_all <- c()
-TrajStraightness_all <- c()
-TrajSinuosity2_all <- c()
-TrajEmax_all <- c()
-TrajDC_all <- c()
-TrajSDDC_all <- c()
-TrajFractalDimension_all <- c()
+traj_distance <- c()
+traj_length <- c()
+traj_duration <- c()
+traj_speed <- c()
+traj_acceleration <- c()
+traj_straightness <- c()
+traj_sinuosity2 <- c()
+traj_emax <- c()
+traj_dc <- c()
+traj_sddc <- c()
+traj_fractal_dimension <- c()
 
 # Definicija varijable za pohranu oznaka trajektorija
 
@@ -190,27 +190,27 @@ for (filename_for_traj in filenames_for_trajs) {
 
   # Pohrana meteoroloških značajki
 
-  METAR_T <- c(METAR_T, mean(file_for_traj$T))
-  METAR_P0 <- c(METAR_P0, mean(file_for_traj$P0))
-  METAR_P <- c(METAR_P, mean(file_for_traj$P))
-  METAR_U <- c(METAR_U, mean(file_for_traj$U))
-  METAR_Ff <- c(METAR_Ff, mean(file_for_traj$Ff))
-  METAR_Td <- c(METAR_Td, mean(file_for_traj$Td))
+  metar_t <- c(metar_t, mean(file_for_traj$T))
+  metar_p0 <- c(metar_p0, mean(file_for_traj$P0))
+  metar_p <- c(metar_p, mean(file_for_traj$P))
+  metar_u <- c(metar_u, mean(file_for_traj$U))
+  metar_ff <- c(metar_ff, mean(file_for_traj$Ff))
+  metar_td <- c(metar_td, mean(file_for_traj$Td))
 
   # Pohrana značajki trajektorije
 
-  TrajDistance_all <- c(TrajDistance_all, Traj3DDistance(smoothed))
-  TrajLength_all <- c(TrajLength_all, Traj3DLength(smoothed))
-  TrajDuration_all <- c(TrajDuration_all, TrajDuration(smoothed))
-  TrajSpeed_all <- c(TrajSpeed_all, mean(derivs$speed))
-  TrajAcceleration_all <- c(TrajAcceleration_all, mean(derivs$acceleration))
-  TrajStraightness_all <- c(TrajStraightness_all, Traj3DStraightness(smoothed))
-  TrajSinuosity2_all <- c(TrajSinuosity2_all, TrajSinuosity2(smoothed))
-  TrajEmax_all <- c(TrajEmax_all, TrajEmax(smoothed))
-  TrajDC_all <- c(TrajDC_all, mean(TrajDirectionalChange(smoothed)))
-  TrajSDDC_all <- c(TrajSDDC_all, sd(TrajDirectionalChange(smoothed)))
-  TrajFractalDimension_all <- c(
-    TrajFractalDimension_all,
+  traj_distance <- c(traj_distance, Traj3DDistance(smoothed))
+  traj_length <- c(traj_length, Traj3DLength(smoothed))
+  traj_duration <- c(traj_duration, TrajDuration(smoothed))
+  traj_speed <- c(traj_speed, mean(derivs$speed))
+  traj_acceleration <- c(traj_acceleration, mean(derivs$acceleration))
+  traj_straightness <- c(traj_straightness, Traj3DStraightness(smoothed))
+  traj_sinuosity2 <- c(traj_sinuosity2, TrajSinuosity2(smoothed))
+  traj_emax <- c(traj_emax, TrajEmax(smoothed))
+  traj_dc <- c(traj_dc, mean(TrajDirectionalChange(smoothed)))
+  traj_sddc <- c(traj_sddc, sd(TrajDirectionalChange(smoothed)))
+  traj_fractal_dimension <- c(
+    traj_fractal_dimension,
     TrajFractalDimension(smoothed, fractal_steps)
   )
 }
@@ -221,23 +221,23 @@ for (filename_for_traj in filenames_for_trajs) {
 df_clus <- data.frame(
   filenames_for_trajs,
   label_col,
-  TrajDistance_all,
-  TrajLength_all,
-  TrajDuration_all,
-  TrajSpeed_all,
-  TrajAcceleration_all,
-  TrajStraightness_all,
-  TrajSinuosity2_all,
-  TrajEmax_all,
-  TrajDC_all,
-  TrajSDDC_all,
-  TrajFractalDimension_all,
-  METAR_T,
-  METAR_P,
-  METAR_P0,
-  METAR_U,
-  METAR_Ff,
-  METAR_Td
+  traj_distance,
+  traj_length,
+  traj_duration,
+  traj_speed,
+  traj_acceleration,
+  traj_straightness,
+  traj_sinuosity2,
+  traj_emax,
+  traj_dc,
+  traj_sddc,
+  traj_fractal_dimension,
+  metar_t,
+  metar_p,
+  metar_p0,
+  metar_u,
+  metar_ff,
+  metar_td
 )
 
 write.csv(df_clus, "features_traj.csv", row.names = FALSE)

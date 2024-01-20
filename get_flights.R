@@ -40,10 +40,10 @@ get_data <- function(start_airport) {
 
   icao24 <- c()
   callsign <- c()
-  departureAirport <- c()
-  arrivalAirport <- c()
-  firstSeen <- c()
-  lastSeen <- c()
+  departure_airport <- c()
+  arrival_airport <- c()
+  first_seen <- c()
+  last_seen <- c()
 
   # Početni datum za razmatranje je 25.5.2020., a zadnji 27.6.2022.
 
@@ -77,10 +77,10 @@ get_data <- function(start_airport) {
         if (!is.null(flight$destination_airport)) {
           icao24 <- c(icao24, flight$ICAO24)
           callsign <- c(callsign, flight$call_sign)
-          departureAirport <- c(departureAirport, flight$origin_airport)
-          arrivalAirport <- c(arrivalAirport, flight$destination_airport)
-          firstSeen <- c(firstSeen, flight$departure_time)
-          lastSeen <- c(lastSeen, flight$arrival_time)
+          departure_airport <- c(departure_airport, flight$origin_airport)
+          arrival_airport <- c(arrival_airport, flight$destination_airport)
+          first_seen <- c(first_seen, flight$departure_time)
+          last_seen <- c(last_seen, flight$arrival_time)
         }
       }
 
@@ -105,7 +105,7 @@ get_data <- function(start_airport) {
 
   data_frame_flights <- data.frame(
     icao24, callsign,
-    departureAirport, arrivalAirport, firstSeen, lastSeen
+    departure_airport, arrival_airport, first_seen, last_seen
   )
   write.csv(data_frame_flights, result_name, row.names = FALSE)
 }

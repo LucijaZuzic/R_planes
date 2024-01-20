@@ -2,97 +2,96 @@ transform_feat <- function(feature_use) {
   # Postavljanje imena značajke i mjerne jedinice koja se koristi
 
   original_name <- gsub(
-    "METAR_", "",
+    "metar_", "",
     gsub(
-      "Traj", "",
-      gsub("_all", "", feature_use)
+      "traj_", "", feature_use
     )
   )
   new_name <- original_name
 
   units_use <- ""
 
-  if (new_name == "Distance") {
+  if (new_name == "distance") {
     new_name <- "Difuzijska udaljenost trajektorije"
     units_use <- "m"
   }
 
-  if (new_name == "Length") {
+  if (new_name == "length") {
     new_name <- "Duljina trajektorije"
     units_use <- "m"
   }
 
-  if (new_name == "Straightness") {
+  if (new_name == "straightness") {
     new_name <- "Indeks pravocrtnosti"
   }
 
-  if (new_name == "Sinuosity2") {
+  if (new_name == "sinuosity2") {
     new_name <- "Indeks zakrivljenosti"
   }
 
-  if (new_name == "FractalDimension") {
+  if (new_name == "fractal_dimension") {
     new_name <- "Fraktalna dimenzija"
   }
 
-  if (new_name == "Emax") {
+  if (new_name == "emax") {
     new_name <- "Maksimalni očekivani pomak trajektorije"
   }
 
-  if (new_name == "Duration") {
+  if (new_name == "duration") {
     new_name <- "Trajanje"
     units_use <- "s"
   }
 
-  if (new_name == "Speed") {
+  if (new_name == "speed") {
     new_name <- "Brzina"
     units_use <- "m/s"
   }
 
-  if (new_name == "Ff") {
+  if (new_name == "ff") {
     new_name <- "Brzina vjetra"
     units_use <- "m/s"
   }
 
-  if (new_name == "Acceleration") {
+  if (new_name == "acceleration") {
     new_name <- "Akceleracija"
   }
 
-  if (new_name == "DC") {
+  if (new_name == "dc") {
     new_name <- "Promjena smjera (prosjek)"
     units_use <- "°/s"
   }
 
-  if (new_name == "Sinuosity2") {
+  if (new_name == "sinuosity2") {
     new_name <- "Promjena smjera (standardna devijacija)"
     units_use <- "°/s"
   }
 
-  if (new_name == "SDDC") {
+  if (new_name == "sddc") {
     new_name <- "Promjena smjera (standardna devijacija)"
     units_use <- "°/s"
   }
 
-  if (new_name == "U") {
+  if (new_name == "u") {
     new_name <- "Relativni udio vlage u zraku"
     units_use <- "%"
   }
 
-  if (new_name == "T") {
+  if (new_name == "t") {
     new_name <- "Temperatura"
     units_use <- "°"
   }
 
-  if (new_name == "Td") {
+  if (new_name == "td") {
     new_name <- "Temperatura kondenzacije"
     units_use <- "°"
   }
 
-  if (new_name == "P0") {
+  if (new_name == "p0") {
     new_name <- "Tlak zraka na razini mora"
     units_use <- "mmHg"
   }
 
-  if (new_name == "P") {
+  if (new_name == "p") {
     new_name <- "Tlak zraka na nadmorskoj visini mjerne stanice"
     units_use <- "mmHg"
   }

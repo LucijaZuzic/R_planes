@@ -145,7 +145,7 @@ model_use <- function(
     )
     test_data_with_label <- data.frame(x = test_data, y = as.factor(test_label))
     tree <- rpart(y ~ ., data = train_data_with_label, method = "class")
-    
+
     png(filename = tree_name, width = 480, height = 480, units = "px")
     rpart.plot(tree)
 
@@ -224,7 +224,7 @@ model_use <- function(
   return(list(
     "train_predicted" = train_predicted,
     "test_predicted" = test_predicted,
-    "grid_predicted" = grid_predicted, 
+    "grid_predicted" = grid_predicted,
     "k_val" = k_val
   ))
 }

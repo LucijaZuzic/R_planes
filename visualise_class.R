@@ -57,8 +57,6 @@ model_list <- c(
   "Quadratic Discriminant Analysis"
 )
 
-model_list <- c("Decision Tree")
-
 data_fr <- data.frame(read.csv("features_traj.csv"))
 data_fr <- subset(data_fr, select = -c(filenames_for_trajs))
 
@@ -103,23 +101,35 @@ for (i in 2:ncol(data_fr)) {
       grid_new_data_expanded <- expand.grid(grid_new_data)
 
       for (model_name in model_list) {
-        new_file_all <- paste("feature_combination//",
-          model_name, names(data_fr)[i],
+        new_file_all <- paste(
+          paste("feature_combination",
+            model_name,
+            sep = "//"
+          ), names(data_fr)[i],
           names(data_fr)[j], "classifier_visual_all.png",
           sep = "_"
         )
-        new_file_train <- paste("feature_combination//",
-          model_name, names(data_fr)[i],
+        new_file_train <- paste(
+          paste("feature_combination",
+            model_name,
+            sep = "//"
+          ), names(data_fr)[i],
           names(data_fr)[j], "classifier_visual_train.png",
           sep = "_"
         )
-        new_file_test <- paste("feature_combination//",
-          model_name, names(data_fr)[i],
+        new_file_test <- paste(
+          paste("feature_combination",
+            model_name,
+            sep = "//"
+          ), names(data_fr)[i],
           names(data_fr)[j], "classifier_visual_test.png",
           sep = "_"
         )
-        new_file_tree <- paste(paste("trees",
-          model_name, sep = "//"), names(data_fr)[i],
+        new_file_tree <- paste(
+          paste("trees",
+            model_name,
+            sep = "//"
+          ), names(data_fr)[i],
           names(data_fr)[j], "tree.png",
           sep = "_"
         )
@@ -134,7 +144,8 @@ for (i in 2:ncol(data_fr)) {
         model_used_list <- model_use(
           model_name, data_fr_list$train_data,
           data_fr_list$test_data, data_fr_list$train_label,
-          data_fr_list$test_label, grid_data =grid_new_data_expanded,
+          data_fr_list$test_label,
+          grid_data = grid_new_data_expanded,
           tree_name = new_file_tree
         )
 
