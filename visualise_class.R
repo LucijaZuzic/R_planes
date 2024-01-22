@@ -56,6 +56,9 @@ model_list <- c(
   "AdaBoost",
   "Quadratic Discriminant Analysis"
 )
+model_list <- c(
+  "Quadratic Discriminant Analysis"
+)
 
 data_fr <- data.frame(read.csv("features_traj.csv"))
 data_fr <- subset(data_fr, select = -c(filenames_for_trajs))
@@ -172,12 +175,22 @@ for (i in 2:ncol(data_fr)) {
 
         png(filename = new_file_all, width = 480, height = 480, units = "px")
 
+        name_all <- paste(
+          model_name,
+          "(treniranje i testiranje)"
+        )
+
+        if (model_name == "Quadratic Discriminant Analysis") {
+          name_all <- paste(
+            model_name,
+            "(treniranje i testiranje)",
+            sep = "\n"
+          )
+        }
+
         plot(grid_new_data[[1]], grid_new_data[[2]],
           cex.lab = 1.2, cex.main = 1.7, cex.axis = 1.2,
-          main = paste(
-            model_name,
-            "(treniranje i testiranje)"
-          ), pch = 22, col = "white",
+          main = name_all, pch = 22, col = "white",
           xlab = transform_feat(
             names(data_fr_list$train_data)[1]
           ),
