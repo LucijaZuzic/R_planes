@@ -156,7 +156,7 @@ for (filename_for_traj in filenames_for_trajs) {
   color_use <- "red"
 
   # Ako je treća točka izglađene trajektorije desno ili iznad središnje
-  # točke promatanog područja, boja je zelena
+  # točke promatranog područja, boja je zelena
 
   condition_use <- cord_dec_new$coords.x1[3] > meta_airport$longitude ||
     cord_dec_new$coords.x2[3] > meta_airport$latitude
@@ -164,41 +164,6 @@ for (filename_for_traj in filenames_for_trajs) {
   if (condition_use) {
     color_use <- "green"
   }
-
-  # Razdvajanje imena trajektorije na pozivni znak,
-  # ICAO24 te datum i vrijeme za naslov dijagrama
-
-  split_name <- unlist(strsplit(gsub(
-    "weather_", "",
-    gsub(".csv", "", filename_for_traj)
-  ), "_"))
-  callsign <- split_name[1]
-  icao24 <- split_name[2]
-  date_first <- format(
-    as.POSIXct(as.numeric(split_name[3]),
-      origin = "1970-01-01", tz = "Europe/Zagreb"
-    ),
-    format = "%d.%m.%Y %H:%M:%S"
-  )
-  date_last <- format(
-    as.POSIXct(
-      as.numeric(split_name[4]),
-      origin = "1970-01-01",
-      tz = "Europe/Zagreb"
-    ),
-    format = "%d.%m.%Y %H:%M:%S"
-  )
-
-  new_name <- paste(
-    "Pozivni znak:",
-    callsign,
-    "ICAO24:",
-    icao24,
-    "\n",
-    date_first,
-    "-",
-    date_last
-  )
 
   # Prikaz podataka na podlozi OpenStreetMap (OSM)
 

@@ -153,23 +153,21 @@ df_new <- data.frame(f1, f2, mdl, ovrl_train, ovrl_test)
 df_to_print <- data.frame(matrix(ncol = 5, nrow = 0))
 colnames(df_to_print) <- c("f1", "f2", "mdl", "ovrl_train", "ovrl_test")
 for (i in 2:ncol(data_fr)) {
-  df_new_feat_first <- filter(df_new, df_new[, 1] == names(data_fr)[i] | df_new[, 2] == names(data_fr)[i])
+  df_new_feat_first <- filter(df_new, df_new[, 1] == names(data_fr)[i])
   best_score_train <- max(df_new_feat_first[, 4])
   df_new_feat_first <- filter(df_new_feat_first, df_new_feat_first[, 4] == best_score_train)
   best_score_test <- max(df_new_feat_first[, 5])
   df_new_feat_first <- filter(df_new_feat_first, df_new_feat_first[, 5] == best_score_test)
   df_to_print <- rbind(df_to_print, df_new_feat_first)
 
-  df_new_feat_first <- filter(df_new, df_new[, 1] == names(data_fr)[i] | df_new[, 2] == names(data_fr)[i])
+  df_new_feat_first <- filter(df_new, df_new[, 1] == names(data_fr)[i])
   best_score_test <- max(df_new_feat_first[, 5])
   df_new_feat_first <- filter(df_new_feat_first, df_new_feat_first[, 5] == best_score_test)
   best_score_train <- max(df_new_feat_first[, 4])
   df_new_feat_first <- filter(df_new_feat_first, df_new_feat_first[, 4] == best_score_train)
   df_to_print <- rbind(df_to_print, df_new_feat_first)
 }
-print(df_to_print)
-pairs3 <- df_to_print[, 1]
-pairs4 <- df_to_print[, 2]
+# print(df_to_print)
 
 df_to_print <- data.frame(matrix(ncol = 5, nrow = 0))
 colnames(df_to_print) <- c("f1", "f2", "mdl", "ovrl_train", "ovrl_test")
@@ -197,7 +195,6 @@ colnames(df_to_print) <- c("f1", "f2", "mdl", "ovrl_train", "ovrl_test")
 for (i in 2:(ncol(data_fr) - 1)) {
   for (j in (i + 1):ncol(data_fr)) {
     df_new_feat_first <- filter(df_new, df_new[, 1] == names(data_fr)[i])
-    df_new_feat_first <- filter(df_new, df_new[, 2] == names(data_fr)[j])
     df_new_feat_first <- filter(df_new_feat_first, df_new_feat_first[, 2] == names(data_fr)[j])
     best_score_train <- max(df_new_feat_first[, 4])
     df_new_feat_first <- filter(df_new_feat_first, df_new_feat_first[, 4] == best_score_train)
@@ -206,7 +203,6 @@ for (i in 2:(ncol(data_fr) - 1)) {
     df_to_print <- rbind(df_to_print, df_new_feat_first)
 
     df_new_feat_first <- filter(df_new, df_new[, 1] == names(data_fr)[i])
-    df_new_feat_first <- filter(df_new, df_new[, 2] == names(data_fr)[j])
     df_new_feat_first <- filter(df_new_feat_first, df_new_feat_first[, 2] == names(data_fr)[j])
     best_score_test <- max(df_new_feat_first[, 5])
     df_new_feat_first <- filter(df_new_feat_first, df_new_feat_first[, 5] == best_score_test)
@@ -287,8 +283,6 @@ print("Test no METAR")
 print(rn_test)
 print(ry_test)
 
-
-seen <- c()
 for (i in 1:length(pairs1)) {
   rn_test <- c()
   ry_test <- c()
@@ -319,88 +313,14 @@ for (i in 1:length(pairs1)) {
     rn_train <- train_yn$n
     ry_train <- train_yn$y
   }
-  found_in_seen <- FALSE
-  for (sv in seen) {
-    if (sv == paste(
-      pairs1[i],
-      pairs2[i]
-    )) {
-      found_in_seen <- TRUE
-    }
-  }
-  if (!found_in_seen) {
-    print(paste(
-      pairs1[i],
-      pairs2[i]
-    ))
-    print("Train")
-    print(rn_train)
-    print(ry_train)
-    print("Test")
-    print(rn_test)
-    print(ry_test)
-    seen <- c(seen, paste(
-      pairs1[i],
-      pairs2[i]
-    ))
-  }
-  
-}
-print("BREAK")
-for (i in 1:length(pairs3)) {
-  rn_test <- c()
-  ry_test <- c()
-  rn_train <- c()
-  ry_train <- c()
-  for (model_name in model_list) {
-    train_pred_name <- paste(
-      paste("feature_combination",
-        model_name,
-        sep = "//"
-      ), pairs3[i],
-      pairs4[i],
-      "predictions_train.csv",
-      sep = "_"
-    )
-    train_pred <- read.csv(train_pred_name)
-    test_pred <- read.csv(
-      gsub(
-        "predictions_train.csv",
-        "predictions_test.csv",
-        train_pred_name
-      )
-    )
-    test_yn <- print_a_row(test_pred[, 1], test_pred[, 2], ry_test, rn_test)
-    rn_test <- test_yn$n
-    ry_test <- test_yn$y
-    train_yn <- print_a_row(train_pred[, 1], train_pred[, 2], ry_train, rn_train)
-    rn_train <- train_yn$n
-    ry_train <- train_yn$y
-  }
-  found_in_seen <- FALSE
-  for (sv in seen) {
-    if (sv == paste(
-      pairs3[i],
-      pairs4[i]
-    )) {
-      found_in_seen <- TRUE
-    }
-  }
-  if (!found_in_seen) {
-    print(paste(
-      pairs3[i],
-      pairs4[i]
-    ))
-    print("Train")
-    print(rn_train)
-    print(ry_train)
-    print("Test")
-    print(rn_test)
-    print(ry_test)
-    seen <- c(seen, paste(
-      pairs3[i],
-      pairs4[i]
-    ))
-  }
-  
+  print(paste(
+    pairs1[i],
+    pairs2[i]
+  ))
+  print("Train")
+  print(rn_train)
+  print(ry_train)
+  print("Test")
+  print(rn_test)
+  print(ry_test)
 }

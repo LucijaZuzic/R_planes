@@ -74,7 +74,7 @@ cord_start_dec <- SpatialPoints(
 )
 cord_start_utm <- spTransform(cord_start_dec, CRS("+init=epsg:3765"))
 
-# Izračun središnje točke promatanog područja
+# Izračun središnje točke promatranog područja
 
 mid_x <- (cord_start_utm$coords.x1[1] + cord_start_utm$coords.x1[2]) / 2
 mid_y <- (cord_start_utm$coords.x2[1] + cord_start_utm$coords.x2[2]) / 2
@@ -178,7 +178,7 @@ for (filename_for_traj in filenames_for_trajs) {
   label_val <- -1
 
   # Ako je treća točka izglađene trajektorije desno ili iznad središnje točke
-  # promatanog područja, dajemo oznaku 1
+  # promatranog područja, dajemo oznaku 1
 
   if (smoothed$x[3] > mid_x || smoothed$y[3] > mid_y) {
     label_val <- 1

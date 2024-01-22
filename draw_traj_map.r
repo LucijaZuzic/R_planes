@@ -178,7 +178,8 @@ plot(newmap,
   main = "Klasifikacija trajektorija od 3. koraka",
   asp = 1,
   xlab = "long. (°)",
-  ylab = "lat. (°)"
+  ylab = "lat. (°)",
+  cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
 )
 
 for (filename_for_traj in filenames_for_trajs) {
@@ -244,7 +245,7 @@ for (filename_for_traj in filenames_for_trajs) {
   color_use <- "red"
 
   # Ako je treća točka izglađene trajektorije desno ili iznad središnje
-  # točke promatanog područja, boja je zelena
+  # točke promatranog područja, boja je zelena
 
   condition_use <- cord_dec_new$coords.x1[3] > meta_airport$longitude ||
     cord_dec_new$coords.x2[3] > meta_airport$latitude
@@ -273,7 +274,7 @@ axis(side = 2)
 
 # Dodavanje legende
 
-legend("bottomright",
+legend("bottomright", cex = 1.1,
   legend = c("1", "-1", "Linija podjele"),
   col = c("green", "red", "blue"), lty = c(1, 1, 2), lwd = c(2, 2, 1)
 )

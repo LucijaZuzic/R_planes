@@ -246,10 +246,12 @@ for (filename_for_traj in filenames_for_trajs) {
   color_use <- "red"
 
   # Ako je treća točka izglađene trajektorije desno ili iznad središnje točke
-  # promatanog područja, boja je zelena
+  # promatranog područja, boja je zelena
 
-  if (cord_dec_new$coords.x1[3] > meta_airport$longitude ||
-    cord_dec_new$coords.x2[3] > meta_airport$latitude) {
+  condit <- cord_dec_new$coords.x1[3] > meta_airport$longitude ||
+    cord_dec_new$coords.x2[3] > meta_airport$latitude
+
+  if (condit) {
     color_use <- "green"
   }
 
@@ -315,10 +317,11 @@ for (filename_for_traj in filenames_for_trajs) {
   plot(newmap,
     xlim = c(mini_traj_long, maxi_traj_long),
     ylim = c(mini_traj_lat, maxi_traj_lat),
-    main = "Klasifikacija trajektorija od 3. koraka",
+    main = new_name,
     asp = 1,
     xlab = "long. (°)",
-    ylab = "lat. (°)"
+    ylab = "lat. (°)",
+    cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
   )
 
   # Dodavanje x i y osi

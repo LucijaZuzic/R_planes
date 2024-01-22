@@ -74,7 +74,7 @@ cord_start_dec <- SpatialPoints(
 )
 cord_start_utm <- spTransform(cord_start_dec, CRS("+init=epsg:3765"))
 
-# Izračun središnje točke promatanog područja
+# Izračun središnje točke promatranog područja
 
 mid_x <- (cord_start_utm$coords.x1[1] + cord_start_utm$coords.x1[2]) / 2
 mid_y <- (cord_start_utm$coords.x2[1] + cord_start_utm$coords.x2[2]) / 2
@@ -225,7 +225,7 @@ for (filename_for_traj in filenames_for_trajs) {
   color_use <- "red"
 
   # Ako je treća točka izglađene trajektorije desno ili iznad središnje
-  # točke promatanog područja, boja je zelena
+  # točke promatranog područja, boja je zelena
 
   if (smoothed$x[3] > mid_x | smoothed$y[3] > mid_y) {
     color_use <- "green"
@@ -243,7 +243,8 @@ for (filename_for_traj in filenames_for_trajs) {
     plot(smoothed$x[3:length(smoothed$x)], smoothed$y[3:length(smoothed$y)],
       main = "Klasifikacija trajektorija od 3. koraka", lwd = 2,
       asp = 1, col = color_use, type = "l", xlim = c(mini_traj_x, maxi_traj_x),
-      ylim = c(mini_traj_y, maxi_traj_y), xlab = "x (m)", ylab = "y (m)"
+      ylim = c(mini_traj_y, maxi_traj_y), xlab = "x (m)", ylab = "y (m)",
+      cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
     )
 
     # Dodavanje linija podjele izmedu klasa
@@ -253,7 +254,7 @@ for (filename_for_traj in filenames_for_trajs) {
 
     # Dodavanje legende
 
-    legend("bottomright",
+    legend("bottomright", cex = 1.2,
       legend = c("1", "-1", "Linija podjele"),
       col = c("green", "red", "blue"),
       lty = c(1, 1, 2), lwd = c(2, 2, 1)

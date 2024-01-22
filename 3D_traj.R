@@ -168,12 +168,12 @@ for (filename_for_traj in filenames_for_trajs) {
     ),
     format = "%d.%m.%Y %H:%M:%S"
   )
-
+ 
   new_name <- paste(
     "Pozivni znak:",
     callsign,
     "ICAO24:",
-    icao24,
+    icao24, 
     "\n",
     date_first,
     "-",
@@ -208,9 +208,9 @@ for (filename_for_traj in filenames_for_trajs) {
 
   # Dodavanje oznaka osi
 
-  mtext3d("x (m)", "x++", line = 2)
-  mtext3d("y (m)", "y++", line = 2)
-  mtext3d("z (m)", "z+-", line = 2)
+  mtext3d("x (m)", "x++", line = 2, cex = 1.7)
+  mtext3d("y (m)", "y++", line = 2, cex = 1.7)
+  mtext3d("z (m)", "z+-", line = 2, cex = 1.7)
 
   # Dodavanje okvira
 
@@ -220,11 +220,11 @@ for (filename_for_traj in filenames_for_trajs) {
 
   bgplot3d({
     plot.new()
-    title(main = new_name)
+    title(main = new_name, cex.main = 1.7)
     legend("topright",
       legend = c("Original", "Glatko"),
       col = c("blue", "red"),
-      lwd = c(1, 2)
+      lwd = c(1, 2), cex = 1.7
     )
   })
 

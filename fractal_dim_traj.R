@@ -71,7 +71,7 @@ cord_start_dec <- SpatialPoints(cbind(
 ), proj4string = CRS("+proj=longlat"))
 cord_start_utm <- spTransform(cord_start_dec, CRS("+init=epsg:3765"))
 
-# Izračun središnje točke promatanog područja
+# Izračun središnje točke promatranog područja
 
 mid_x <- (cord_start_utm$coords.x1[1] + cord_start_utm$coords.x1[2]) / 2
 mid_y <- (cord_start_utm$coords.x2[1] + cord_start_utm$coords.x2[2]) / 2
@@ -195,7 +195,8 @@ for (filename_for_traj in filenames_for_trajs) {
 
   plot(fractal_dimensions$stepsize, fractal_dimensions$pathlength,
     main = new_name, type = "l", xlab = "Duljina koraka (m)",
-    ylab = "Duljna puta (m)", lwd = 2, col = "blue"
+    ylab = "Duljna puta (m)", lwd = 2, col = "blue",
+    cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
   )
 
   abline(relation, lty = 2)

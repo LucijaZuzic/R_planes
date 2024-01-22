@@ -78,7 +78,7 @@ cord_start_dec <- SpatialPoints(
 )
 cord_start_utm <- spTransform(cord_start_dec, CRS("+init=epsg:3765"))
 
-# Izračun središnje točke promatanog područja
+# Izračun središnje točke promatranog područja
 
 mid_x <- (cord_start_utm$coords.x1[1] + cord_start_utm$coords.x1[2]) / 2
 mid_y <- (cord_start_utm$coords.x2[1] + cord_start_utm$coords.x2[2]) / 2
@@ -317,51 +317,12 @@ for (filename_for_traj in filenames_for_trajs) {
   color_use <- "red"
 
   # Ako je treća točka izglađene trajektorije desno ili iznad
-  # središnje točke promatanog područja, boja je zelena
+  # središnje točke promatranog područja, boja je zelena
 
   if (smoothed$x[3] > mid_x || smoothed$y[3] > mid_y) {
     color_use <- "green"
   }
-
-  # Razdvajanje imena trajektorije na pozivni znak,
-  # ICAO24 te datum i vrijeme za naslov dijagrama
-
-  split_name <- unlist(strsplit(
-    gsub(
-      "weather_", "",
-      gsub(".csv", "", filename_for_traj)
-    ), "_"
-  ))
-  callsign <- split_name[1]
-  icao24 <- split_name[2]
-  date_first <- format(
-    as.POSIXct(
-      as.numeric(split_name[3]),
-      origin = "1970-01-01",
-      tz = "Europe/Zagreb"
-    ),
-    format = "%d.%m.%Y %H:%M:%S"
-  )
-  date_last <- format(
-    as.POSIXct(
-      as.numeric(split_name[4]),
-      origin = "1970-01-01",
-      tz = "Europe/Zagreb"
-    ),
-    format = "%d.%m.%Y %H:%M:%S"
-  )
-
-  new_name <- paste(
-    "Pozivni znak:",
-    callsign,
-    "ICAO24:",
-    icao24,
-    "\n:",
-    date_first,
-    "-",
-    date_last
-  )
-
+  
   # Crtanje dijagrama s originalnom i izglađenom trajektorijom
 
   lines3d(
@@ -383,9 +344,9 @@ axes3d("z--", nticks = 5)
 
 # Dodavanje oznaka osi
 
-mtext3d("x (m)", "x++", line = 2)
-mtext3d("y (m)", "y++", line = 2)
-mtext3d("z (m)", "z+-", line = 2)
+mtext3d("x (m)", "x++", line = 2, cex = 1.7)
+mtext3d("y (m)", "y++", line = 2, cex = 1.7)
+mtext3d("z (m)", "z+-", line = 2, cex = 1.7)
 
 # Dodavanje okvira
 
@@ -395,11 +356,11 @@ box3d()
 
 bgplot3d({
   plot.new()
-  title(main = "Klasifikacija trajektorija od 3. koraka")
+  title(main = "Klasifikacija trajektorija od 3. koraka", cex.main = 1.7)
   legend("topright",
     legend = c("1", "-1", "Linija podjele"),
     col = c("green", "red", "blue"),
-    lwd = c(2, 2, 1)
+    lwd = c(2, 2, 1), cex = 1.7
   )
 })
 

@@ -247,7 +247,7 @@ for (filename_for_traj in filenames_for_trajs) {
   names(data_frame_new) <- c("lon", "lat")
 
   # Ako je treća točka izglađene trajektorije desno ili iznad središnje
-  # točke promatanog područja, boja je zelena
+  # točke promatranog područja, boja je zelena
 
   condition_use <- cord_dec_new$coords.x1[3] > meta_airport$longitude ||
     cord_dec_new$coords.x2[3] > meta_airport$latitude

@@ -230,7 +230,8 @@ plot_2d <- function(first_dim, second_dim) {
       type = "l",
       xlab = paste(first_dim, "(m)"),
       ylab = paste(second_dim, "(m)"),
-      col = "blue"
+      col = "blue",
+      cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
     )
     lines(first_coord_vals, second_coord_vals, lwd = 2, col = "red")
 
@@ -252,6 +253,7 @@ plot_2d <- function(first_dim, second_dim) {
 
     legend(
       poslegend,
+      cex = 1.7,
       legend = c("Original", "Glatko"),
       col = c("blue", "red"),
       lty = c(2, 1),

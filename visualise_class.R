@@ -173,6 +173,7 @@ for (i in 2:ncol(data_fr)) {
         png(filename = new_file_all, width = 480, height = 480, units = "px")
 
         plot(grid_new_data[[1]], grid_new_data[[2]],
+          cex.lab = 1.2, cex.main = 1.7, cex.axis = 1.2,
           main = paste(
             model_name,
             "(treniranje i testiranje)"
@@ -212,6 +213,7 @@ for (i in 2:ncol(data_fr)) {
         png(filename = new_file_train, width = 480, height = 480, units = "px")
 
         plot(grid_new_data[[1]], grid_new_data[[2]],
+          cex.lab = 1.2, cex.main = 1.7, cex.axis = 1.2,
           main = paste(model_name, "(treniranje)"), pch = 22,
           col = "white",
           xlab = transform_feat(names(data_fr_list$train_data)[1]),
@@ -242,6 +244,7 @@ for (i in 2:ncol(data_fr)) {
         png(filename = new_file_test, width = 480, height = 480, units = "px")
 
         plot(grid_new_data[[1]], grid_new_data[[2]],
+          cex.lab = 1.2, cex.main = 1.7, cex.axis = 1.2,
           main = paste(model_name, "(testiranje)"),
           pch = 22, col = "white",
           xlab = transform_feat(names(data_fr_list$train_data)[1]),

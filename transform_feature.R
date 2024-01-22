@@ -86,12 +86,12 @@ transform_feat <- function(feature_use) {
     units_use <- "°"
   }
 
-  if (new_name == "p0") {
+  if (new_name == "p") {
     new_name <- "Tlak zraka na razini mora"
     units_use <- "mmHg"
   }
 
-  if (new_name == "p") {
+  if (new_name == "p0") {
     new_name <- "Tlak zraka na nadmorskoj visini mjerne stanice"
     units_use <- "mmHg"
   }

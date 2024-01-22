@@ -108,7 +108,10 @@ for (i in 1:length(names(df_clus_yes))) {
   new_name <- unlist(strsplit(as.character(new_lab), " "))
   new_new_name <- ""
   for (nn in new_name) {
-    if (substr(nn, 1, 1) != "(") {
+    condi <- substr(nn, 1, 1) == "(" &&
+      substr(nn, str_length(nn), str_length(nn)) == ")" &&
+      nn != "(prosjek)"
+    if (!condi && substr(nn, 1, 1) != "~") {
       new_new_name <- paste(new_new_name, nn, sep = " ")
     }
   }
@@ -130,7 +133,8 @@ for (i in 1:length(names(df_clus_yes))) {
 
   barplot(rbind(hv_yes / total, hv_no / total),
     col = c("green", "red"), main = paste("Histogram\n", new_name), space = 0,
-    xlab = new_lab, ylab = "Vjerojatnost"
+    xlab = new_lab, ylab = "Vjerojatnost",
+    cex.lab = 1.5, cex.main = 1.7
   )
 
   # Oznake na osi x
@@ -141,7 +145,7 @@ for (i in 1:length(names(df_clus_yes))) {
     new_data_x <- c(new_data_x, round(val, 2))
   }
 
-  axis(1, at = 0:19, labels = new_data_x)
+  axis(1, at = 0:19, labels = new_data_x, cex = 1.4)
 
   # Dodavanje legende
 
@@ -156,7 +160,7 @@ for (i in 1:length(names(df_clus_yes))) {
   }
 
   legend(poslegend,
-    legend = c("1", "-1"),
+    legend = c("1", "-1"), cex = 1.4,
     col = c("green", "red"), lty = c(1, 1), lwd = c(2, 2)
   )
 
@@ -187,14 +191,8 @@ for (i in 1:length(names(df_clus_yes))) {
   boxplot(feat ~ lab,
     data = boxdata,
     col = c("red", "green"), main = paste("Kutijasti dijagram\n", new_name),
-    xlab = new_lab, ylab = "Kvantili"
-  )
-
-  # Dodavanje legende
-
-  legend("topright",
-    legend = c("1", "-1"),
-    col = c("green", "red"), lty = c(1, 1), lwd = c(2, 2)
+    xlab = new_lab, ylab = "Kvantili",
+    cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
   )
 
   # Zatvaranje kutijastog dijagrama
@@ -228,11 +226,6 @@ for (i in 1:length(names(df_clus_yes))) {
     to = max(df_clus_no[, i])
   )
 
-  density_a <- density(df_clus[, i + 1],
-    from = min(df_clus[, i + 1]),
-    to = max(df_clus[, i + 1])
-  )
-
   plot(density_n,
     col = "red", lwd = 2,
     ylim = c(
@@ -244,14 +237,21 @@ for (i in 1:length(names(df_clus_yes))) {
       max(max(density_n$x), max(density_y$x))
     ),
     main = paste("Gustoća vjerojatnosti\n", new_name),
-    xlab = new_lab, ylab = "Gustoća vjerojatnosti"
+    xlab = new_lab, ylab = "Gustoća vjerojatnosti",
+    cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
   )
   lines(density_y, col = "green", lwd = 2)
 
   # Dodavanje legende
 
-  legend("topright",
-    legend = c("1", "-1"),
+  poslegend <- "topright"
+
+  if (original_name == "traj_acceleration") {
+    poslegend <- "topleft"
+  }
+
+  legend(poslegend,
+    legend = c("1", "-1"), cex = 1.4,
     col = c("green", "red"), lty = c(1, 1), lwd = c(2, 2)
   )
 
