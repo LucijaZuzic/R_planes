@@ -216,6 +216,11 @@ for (i in 1:length(names(df_clus_yes))) {
 
   # Crtanje gustoće vjerojatnosti
 
+  density_a <- density(df_clus[, i + 1],
+    from = min(df_clus[, i + 1]),
+    to = max(df_clus[, i + 1])
+  )
+
   density_y <- density(df_clus_yes[, i],
     from = min(df_clus_yes[, i]),
     to = max(df_clus_yes[, i])
@@ -226,11 +231,11 @@ for (i in 1:length(names(df_clus_yes))) {
     to = max(df_clus_no[, i])
   )
 
-  plot(density_n,
-    col = "red", lwd = 2,
+  plot(density_a,
+    col = "blue", lwd = 2,
     ylim = c(
-      min(min(density_n$y), min(density_y$y)),
-      max(max(density_n$y), max(density_y$y))
+      min(min(density_a$y), min(min(density_n$y), min(density_y$y))),
+      max(max(density_a$y), max(max(density_n$y), max(density_y$y)))
     ),
     xlim = c(
       min(min(density_n$x), min(density_y$x)),
@@ -240,6 +245,7 @@ for (i in 1:length(names(df_clus_yes))) {
     xlab = new_lab, ylab = "Gustoća vjerojatnosti",
     cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
   )
+  lines(density_n, col = "red", lwd = 2)
   lines(density_y, col = "green", lwd = 2)
 
   # Dodavanje legende
@@ -251,8 +257,8 @@ for (i in 1:length(names(df_clus_yes))) {
   }
 
   legend(poslegend,
-    legend = c("1", "-1"), cex = 1.4,
-    col = c("green", "red"), lty = c(1, 1), lwd = c(2, 2)
+    legend = c("Sve", "-1", "1"), cex = 1.3,
+    col = c("blue", "red", "green"), lty = c(1, 1, 1), lwd = c(2, 2, 2)
   )
 
   # Zatvaranje dijagrama gustoće vjerojatnosti
