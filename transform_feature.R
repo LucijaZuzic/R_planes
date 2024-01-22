@@ -78,12 +78,12 @@ transform_feat <- function(feature_use) {
 
   if (new_name == "t") {
     new_name <- "Temperatura"
-    units_use <- "°"
+    units_use <- "°C"
   }
 
   if (new_name == "td") {
     new_name <- "Temperatura kondenzacije"
-    units_use <- "°"
+    units_use <- "°C"
   }
 
   if (new_name == "p") {
