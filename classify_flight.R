@@ -39,9 +39,13 @@ data_fr <- subset(data_fr, select = -c(filenames_for_trajs))
 data_fr_no_metar <- subset(data_fr,
   select = -c(metar_t, metar_p, metar_p0, metar_u, metar_ff, metar_td)
 )
+data_fr_metar <- subset(data_fr,
+  select = c(label_col, metar_t, metar_p, metar_p0, metar_u, metar_ff, metar_td)
+)
 
 data_fr_list <- preprocesing_function(data_fr)
 data_fr_no_metar_list <- preprocesing_function(data_fr_no_metar)
+data_fr_metar_list <- preprocesing_function(data_fr_metar)
 
 model_list <- c(
   "k-NN",
@@ -78,11 +82,18 @@ for (model_name in model_list) {
     data_fr_no_metar_list$test_label,
     tree_name = "trees/all_no_metar_tree.png"
   )
+  model_metar_used_list <- model_use(
+    model_name, data_fr_metar_list$train_data,
+    data_fr_metar_list$test_data, data_fr_metar_list$train_label,
+    data_fr_metar_list$test_label,
+    tree_name = "trees/all_metar_tree.png"
+  )
 
   print(model_name)
 
   colname_model <- paste(model_name, "all", sep = "_")
   colname_no_metar_model <- paste(model_name, "no", "METAR", sep = "_")
+  colname_metar_model <- paste(model_name, "METAR", sep = "_")
 
   if (model_name == "k-NN") {
     print(paste("k =", model_used_list$k_val))
@@ -122,6 +133,31 @@ for (model_name in model_list) {
   ))
   df_predictions_test[[colname_no_metar_model]] <-
     model_no_metar_used_list$test_predicted
+
+  print("METAR")
+
+  if (model_name == "k-NN") {
+    print(paste("k =", model_metar_used_list$k_val))
+    colname_metar_model <- paste(colname_metar_model,
+      model_metar_used_list$k_val,
+      sep = "_"
+    )
+  }
+
+  print("Train")
+  print(table(
+    model_metar_used_list$train_predicted,
+    data_fr_metar_list$train_label
+  ))
+  df_predictions_train[[colname_metar_model]] <-
+    model_metar_used_list$train_predicted
+  print("Test")
+  print(table(
+    model_metar_used_list$test_predicted,
+    data_fr_metar_list$test_label
+  ))
+  df_predictions_test[[colname_metar_model]] <-
+    model_metar_used_list$test_predicted
 }
 
 write.csv(df_predictions_train, "predictions_train.csv", row.names = FALSE)
