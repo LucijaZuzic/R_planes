@@ -56,9 +56,6 @@ model_list <- c(
   "AdaBoost",
   "Quadratic Discriminant Analysis"
 )
-model_list <- c(
-  "Quadratic Discriminant Analysis"
-)
 
 data_fr <- data.frame(read.csv("features_traj.csv"))
 data_fr <- subset(data_fr, select = -c(filenames_for_trajs))
