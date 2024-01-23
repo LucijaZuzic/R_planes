@@ -142,7 +142,7 @@ for (i in 1:length(names(df_clus_yes))) {
   new_data_x <- c()
 
   for (val in xrange_use) {
-    new_data_x <- c(new_data_x, round(val, 2))
+    new_data_x <- c(new_data_x, round(val, 3))
   }
 
   axis(1, at = 0:19, labels = new_data_x, cex = 1.4)
