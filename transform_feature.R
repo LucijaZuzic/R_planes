@@ -58,17 +58,12 @@ transform_feat <- function(feature_use) {
 
   if (new_name == "dc") {
     new_name <- "Promjena smjera (prosjek)"
-    units_use <- "°/s"
+    units_use <- ""
   }
-
-  if (new_name == "sinuosity2") {
-    new_name <- "Promjena smjera (standardna devijacija)"
-    units_use <- "°/s"
-  }
-
+  
   if (new_name == "sddc") {
     new_name <- "Promjena smjera (standardna devijacija)"
-    units_use <- "°/s"
+    units_use <- ""
   }
 
   if (new_name == "u") {
