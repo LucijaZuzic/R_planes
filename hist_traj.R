@@ -191,7 +191,7 @@ for (i in 1:length(names(df_clus_yes))) {
   boxplot(feat ~ lab,
     data = boxdata,
     col = c("red", "green"), main = paste("Kutijasti dijagram\n", new_name),
-    xlab = new_lab, ylab = "Kvantili",
+    xlab = "Klasa", ylab = new_lab,
     cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
   )
 
