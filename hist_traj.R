@@ -272,16 +272,45 @@ for (i in 1:length(names(df_clus_yes))) {
   # Ispis kvantila varijable
 
   print(new_name)
-  print("All")
-  print(quantile(df_clus[, i + 1]))
-  print(mean(df_clus[, i + 1]))
-  print(sd(df_clus[, i + 1]))
-  print(-1)
-  print(quantile(df_clus_no[, i]))
-  print(mean(df_clus_no[, i]))
-  print(sd(df_clus_no[, i]))
-  print(1)
-  print(quantile(df_clus_yes[, i]))
-  print(mean(df_clus_yes[, i]))
-  print(sd(df_clus_yes[, i]))
+  # print("All")
+  # print(quantile(df_clus[, i + 1]))
+  # print(mean(df_clus[, i + 1]))
+  # print(sd(df_clus[, i + 1]))
+  # print(-1)
+  # print(quantile(df_clus_no[, i]))
+  # print(mean(df_clus_no[, i]))
+  # print(sd(df_clus_no[, i]))
+  # print(1)
+  # print(quantile(df_clus_yes[, i]))
+  # print(mean(df_clus_yes[, i]))
+  # print(sd(df_clus_yes[, i]))
+
+  # Ispis rezultata za Mann–Whitney U test između značajke i klase
+
+  df_wilcox <- data.frame(df_clus[, 1], df_clus[, i + 1])
+  names(df_wilcox) <- c("lab", "val")
+
+  # print(wilcox.test(val ~ lab,
+  #  data = df_wilcox,
+  #  exact = FALSE
+  # ))
+
+  # Ispis rezultata za Welchov test između značajke i klase
+
+  #print(t.test(val ~ lab,
+    #data = df_wilcox,
+    #exact = FALSE
+  #))
+
+  # Shapiro-Wilk test za provjeru sukladnosti varijable i normalne razdiobe
+   
+  print(shapiro.test(df_clus[, i + 1]))
+  print(shapiro.test(df_clus_no[, i]))
+  print(shapiro.test(df_clus_yes[, i]))
+  
+  # Kolmogorov-Smirnov test za provjeru sukladnosti varijable i zadane razdiobe
+
+  print(ks.test(df_clus[, i + 1], "pnorm", mean = mean(df_clus[, i + 1]), sd = sd(df_clus[, i + 1])))
+  print(ks.test(df_clus_no[, i], "pnorm", mean = mean(df_clus_no[, i]), sd = sd(df_clus_no[, i])))
+  print(ks.test(df_clus_yes[, i], "pnorm", mean = mean(df_clus_yes[, i]), sd = sd(df_clus_yes[, i])))
 }

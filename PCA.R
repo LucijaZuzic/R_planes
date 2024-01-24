@@ -46,5 +46,8 @@ data.pca <- princomp(data_all)
 print(summary(data.pca))
 print(data.pca$loadings[, 1:6])
 
-corr_matrix <- cor(data_all)
+corr_matrix <- cor(data_all, method = "pearson")
+plot(ggcorrplot(corr_matrix))
+
+corr_matrix <- cor(data_all, method = "spearman")
 plot(ggcorrplot(corr_matrix))
