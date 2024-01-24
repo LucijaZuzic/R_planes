@@ -62,6 +62,31 @@ if (!dir.exists(dir_for_density)) {
   dir.create(dir_for_density)
 }
 
+# Postavljanje direktorija za Q-Q dijagrame za sve trajektorije
+
+dir_for_qq <- paste("qq", sep = "_")
+
+if (!dir.exists(dir_for_qq)) {
+  dir.create(dir_for_qq)
+}
+
+# Postavljanje direktorija za Q-Q dijagrame za klasu -1
+
+dir_for_qq_neg <- paste("qq_neg", sep = "_")
+
+if (!dir.exists(dir_for_qq_neg)) {
+  dir.create(dir_for_qq_neg)
+}
+
+# Postavljanje direktorija za Q-Q dijagrame za klasu 1
+
+dir_for_qq_pos <- paste("qq_pos", sep = "_")
+
+if (!dir.exists(dir_for_qq_pos)) {
+  dir.create(dir_for_qq_pos)
+}
+
+
 # Otvaranje datoteke sa oznaka trajektorija,
 # značajkama trajektorija i meteorološkim značajkama
 
@@ -132,7 +157,9 @@ for (i in 1:length(names(df_clus_yes))) {
   # Crtanje histograma
 
   barplot(rbind(hv_yes / total, hv_no / total),
-    col = c("green", "red"), main = paste("Histogram\n", new_name), space = 0,
+    col = c("green", "red"),
+    main = paste("Histogram", new_name, sep = "\n"),
+    space = 0,
     xlab = new_lab, ylab = "Vjerojatnost",
     cex.lab = 1.5, cex.main = 1.7
   )
@@ -190,7 +217,8 @@ for (i in 1:length(names(df_clus_yes))) {
 
   boxplot(feat ~ lab,
     data = boxdata,
-    col = c("red", "green"), main = paste("Kutijasti dijagram\n", new_name),
+    col = c("red", "green"),
+    main = paste("Kutijasti dijagram", new_name, sep = "\n"),
     ylab = "Klasa", xlab = new_lab, horizontal = TRUE,
     cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
   )
@@ -241,7 +269,7 @@ for (i in 1:length(names(df_clus_yes))) {
       min(min(density_n$x), min(density_y$x)),
       max(max(density_n$x), max(density_y$x))
     ),
-    main = paste("Gustoća vjerojatnosti\n", new_name),
+    main = paste("Gustoća vjerojatnosti", new_name, sep = "\n"),
     xlab = new_lab, ylab = "Gustoća vjerojatnosti",
     cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
   )
@@ -272,45 +300,129 @@ for (i in 1:length(names(df_clus_yes))) {
   # Ispis kvantila varijable
 
   print(new_name)
-  # print("All")
-  # print(quantile(df_clus[, i + 1]))
-  # print(mean(df_clus[, i + 1]))
-  # print(sd(df_clus[, i + 1]))
-  # print(-1)
-  # print(quantile(df_clus_no[, i]))
-  # print(mean(df_clus_no[, i]))
-  # print(sd(df_clus_no[, i]))
-  # print(1)
-  # print(quantile(df_clus_yes[, i]))
-  # print(mean(df_clus_yes[, i]))
-  # print(sd(df_clus_yes[, i]))
+  print("All")
+  print(quantile(df_clus[, i + 1]))
+  print(mean(df_clus[, i + 1]))
+  print(sd(df_clus[, i + 1]))
+  print(-1)
+  print(quantile(df_clus_no[, i]))
+  print(mean(df_clus_no[, i]))
+  print(sd(df_clus_no[, i]))
+  print(1)
+  print(quantile(df_clus_yes[, i]))
+  print(mean(df_clus_yes[, i]))
+  print(sd(df_clus_yes[, i]))
 
-  # Ispis rezultata za Mann–Whitney U test između značajke i klase
+  # Ispis rezultata za Mann–Whitney U test
 
   df_wilcox <- data.frame(df_clus[, 1], df_clus[, i + 1])
   names(df_wilcox) <- c("lab", "val")
 
-  # print(wilcox.test(val ~ lab,
-  #  data = df_wilcox,
-  #  exact = FALSE
-  # ))
+  print(wilcox.test(val ~ lab,
+    data = df_wilcox,
+    exact = FALSE
+  ))
 
-  # Ispis rezultata za Welchov test između značajke i klase
+  # Ispis rezultata za Welchov t-test
 
-  #print(t.test(val ~ lab,
-    #data = df_wilcox,
-    #exact = FALSE
-  #))
+  print(t.test(val ~ lab,
+    data = df_wilcox,
+    exact = FALSE
+  ))
 
   # Shapiro-Wilk test za provjeru sukladnosti varijable i normalne razdiobe
-   
+
   print(shapiro.test(df_clus[, i + 1]))
   print(shapiro.test(df_clus_no[, i]))
   print(shapiro.test(df_clus_yes[, i]))
-  
+
   # Kolmogorov-Smirnov test za provjeru sukladnosti varijable i zadane razdiobe
 
   print(ks.test(df_clus[, i + 1], "pnorm", mean = mean(df_clus[, i + 1]), sd = sd(df_clus[, i + 1])))
   print(ks.test(df_clus_no[, i], "pnorm", mean = mean(df_clus_no[, i]), sd = sd(df_clus_no[, i])))
   print(ks.test(df_clus_yes[, i], "pnorm", mean = mean(df_clus_yes[, i]), sd = sd(df_clus_yes[, i])))
+
+  # Spremanje Q-Q dijagrama za sve trajektorije
+
+  png(
+    filename =
+      paste(paste(dir_for_qq, original_name, sep = "//"), "png", sep = "."),
+    width = 480, height = 480, units = "px"
+  )
+
+  # Crtanje Q-Q dijagrama za sve trajektorije
+
+  qqnorm(df_clus[, i + 1],
+    main = paste("Q-Q dijagram za sve trajektorije", new_name, sep = "\n"),
+    xlab = "Teoretski kvantili",
+    ylab = "Kvantili uzorka",
+    col = "blue",
+    cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
+  )
+
+  qqline(df_clus[, i + 1], col = "red")
+
+  # Zatvaranje Q-Q dijagrama za sve trajektorije
+
+  if (length(dev.list()) > 0) {
+    for (dev_sth_open in dev.list()[1]:dev.list()[length(dev.list())]) {
+      dev.off()
+    }
+  }
+
+  # Spremanje Q-Q dijagrama za klasu -1
+
+  png(
+    filename =
+      paste(paste(dir_for_qq_neg, original_name, sep = "//"), "png", sep = "."),
+    width = 480, height = 480, units = "px"
+  )
+
+  # Crtanje Q-Q dijagrama za klasu -1
+
+  qqnorm(df_clus_no[, i],
+    main = paste("Q-Q dijagram za klasu -1", new_name, sep = "\n"),
+    xlab = "Teoretski kvantili",
+    ylab = "Kvantili uzorka",
+    col = "blue",
+    cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
+  )
+
+  qqline(df_clus_no[, i], col = "red")
+
+  # Zatvaranje Q-Q dijagrama za klasu -1
+
+  if (length(dev.list()) > 0) {
+    for (dev_sth_open in dev.list()[1]:dev.list()[length(dev.list())]) {
+      dev.off()
+    }
+  }
+
+  # Spremanje Q-Q dijagrama za klasu 1
+
+  png(
+    filename =
+      paste(paste(dir_for_qq_pos, original_name, sep = "//"), "png", sep = "."),
+    width = 480, height = 480, units = "px"
+  )
+
+  # Crtanje Q-Q dijagrama za klasu 1
+
+  qqnorm(df_clus_yes[, i],
+    main = paste("Q-Q dijagram za klasu 1", new_name, sep = "\n"),
+    xlab = "Teoretski kvantili",
+    ylab = "Kvantili uzorka",
+    col = "blue",
+    cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
+  )
+
+  qqline(df_clus_yes[, i], col = "red")
+
+  # Zatvaranje Q-Q dijagrama za klasu 1
+
+  if (length(dev.list()) > 0) {
+    for (dev_sth_open in dev.list()[1]:dev.list()[length(dev.list())]) {
+      dev.off()
+    }
+  }
 }
