@@ -322,7 +322,7 @@ for (filename_for_traj in filenames_for_trajs) {
   if (smoothed$x[3] > mid_x || smoothed$y[3] > mid_y) {
     color_use <- "green"
   }
-  
+
   # Crtanje dijagrama s originalnom i izglađenom trajektorijom
 
   lines3d(

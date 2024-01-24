@@ -60,7 +60,7 @@ transform_feat <- function(feature_use) {
     new_name <- "Promjena smjera (prosjek)"
     units_use <- ""
   }
-  
+
   if (new_name == "sddc") {
     new_name <- "Promjena smjera (standardna devijacija)"
     units_use <- ""

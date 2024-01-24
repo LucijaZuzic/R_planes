@@ -34,7 +34,8 @@ library(nnet)
 
 library(caret)
 
-# Uključivanje knjižnice class za rad s klasama i za confusionMatrix, knn3 i train
+# Uključivanje knjižnice class za rad s klasama
+# i za confusionMatrix, knn3 i train
 
 library(class)
 

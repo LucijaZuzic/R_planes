@@ -69,6 +69,47 @@ print_a_row <- function(orig, new_row, add_y, add_n) {
   return(list("y" = add_y, "n" = add_n))
 }
 
+process_list <- function(yl, nl) {
+  tpr <- c()
+  tnr <- c()
+  ppv <- c()
+  npv <- c()
+  acc <- c()
+  bacc <- c()
+  fsc <- c()
+  gmean <- c()
+  for (i in seq(1, length(yl), 2)) {
+    tn <- nl[i]
+    fp <- nl[i + 1]
+    fn <- yl[i]
+    tp <- yl[i + 1]
+    tpr <- c(tpr, round(tp / (tp + fn) * 100, 2))
+    tnr <- c(tnr, round(tn / (tn + fp) * 100, 2))
+    ppv <- c(ppv, round(tp / (tp + fp) * 100, 2))
+    npv <- c(npv, round(tn / (tn + fn) * 100, 2))
+    acc <- c(acc, round((tp + tn) / (tp + tn + fp + fn) * 100, 2))
+    bacc <- c(bacc, round((tp / (tp + fn) + tn / (tn + fp)) / 2 * 100, 2))
+    fsc <- c(fsc, round(2 * tp / (2 * tp + fp + fn) * 100, 2))
+    gmean <- c(gmean, round(sqrt(tp / (tp + fn) * tn / (tn + fp)) * 100, 2))
+  }
+  print("TPR")
+  print(tpr)
+  print("TNR")
+  print(tnr)
+  print("PPV")
+  print(ppv)
+  print("NPV")
+  print(npv)
+  print("Acc")
+  print(acc)
+  print("BA")
+  print(bacc)
+  print("F1")
+  print(fsc)
+  print("gmean")
+  print(gmean)
+}
+
 setwd(get_current_file_location())
 
 source("preprocess_for_training.R")
@@ -167,7 +208,7 @@ for (i in 2:ncol(data_fr)) {
   df_new_feat_first <- filter(df_new_feat_first, df_new_feat_first[, 4] == best_score_train)
   df_to_print <- rbind(df_to_print, df_new_feat_first)
 }
-print(df_to_print)
+# print(df_to_print)
 pairs3 <- df_to_print[, 1]
 pairs4 <- df_to_print[, 2]
 
@@ -175,7 +216,7 @@ df_to_print <- data.frame(matrix(ncol = 5, nrow = 0))
 colnames(df_to_print) <- c("f1", "f2", "mdl", "ovrl_train", "ovrl_test")
 for (model_name in model_list) {
   df_new_feat_first <- filter(df_new, df_new[, 3] == model_name)
-  best_score_train <- max(df_new_feat_first[, 4]) 
+  best_score_train <- max(df_new_feat_first[, 4])
   df_new_feat_first <- filter(df_new_feat_first, df_new_feat_first[, 4] == best_score_train)
   best_score_test <- max(df_new_feat_first[, 5])
   df_new_feat_first <- filter(df_new_feat_first, df_new_feat_first[, 5] == best_score_test)
@@ -184,11 +225,11 @@ for (model_name in model_list) {
   df_new_feat_first <- filter(df_new, df_new[, 3] == model_name)
   best_score_test <- max(df_new_feat_first[, 5])
   df_new_feat_first <- filter(df_new_feat_first, df_new_feat_first[, 5] == best_score_test)
-  best_score_train <- max(df_new_feat_first[, 4]) 
+  best_score_train <- max(df_new_feat_first[, 4])
   df_new_feat_first <- filter(df_new_feat_first, df_new_feat_first[, 4] == best_score_train)
   df_to_print <- rbind(df_to_print, df_new_feat_first)
 }
-print(df_to_print)
+# print(df_to_print)
 pairs1 <- df_to_print[, 1]
 pairs2 <- df_to_print[, 2]
 
@@ -247,6 +288,7 @@ print(lab_row)
 print("Train")
 print(rn_train)
 print(ry_train)
+process_list(ry_train, rn_train)
 
 nms_train <- c()
 rn_train <- c()
@@ -260,6 +302,7 @@ for (i in seq(3, length(names(df_predictions_train)), 3)) {
 print("Train no METAR")
 print(rn_train)
 print(ry_train)
+process_list(ry_train, rn_train)
 nms_train <- c()
 
 rn_train <- c()
@@ -273,6 +316,7 @@ for (i in seq(4, length(names(df_predictions_train)), 3)) {
 print("Train METAR")
 print(rn_train)
 print(ry_train)
+process_list(ry_train, rn_train)
 
 nms_test <- c()
 rn_test <- c()
@@ -286,6 +330,7 @@ for (i in seq(2, length(names(df_predictions_test)), 3)) {
 print("Test")
 print(rn_test)
 print(ry_test)
+process_list(ry_test, rn_test)
 
 nms_test <- c()
 rn_test <- c()
@@ -299,6 +344,7 @@ for (i in seq(3, length(names(df_predictions_test)), 3)) {
 print("Test no METAR")
 print(rn_test)
 print(ry_test)
+process_list(ry_test, rn_test)
 
 nms_test <- c()
 rn_test <- c()
@@ -312,6 +358,7 @@ for (i in seq(4, length(names(df_predictions_test)), 3)) {
 print("Test METAR")
 print(rn_test)
 print(ry_test)
+process_list(ry_test, rn_test)
 
 seen <- c()
 for (i in 1:length(pairs1)) {
@@ -353,7 +400,9 @@ for (i in 1:length(pairs1)) {
       found_in_seen <- TRUE
     }
   }
-  if (!found_in_seen) {
+  if (!found_in_seen &&
+    pairs1[i] == "traj_distance" &&
+    pairs2[i] == "traj_dc") {
     print(paste(
       pairs1[i],
       pairs2[i]
@@ -361,15 +410,16 @@ for (i in 1:length(pairs1)) {
     print("Train")
     print(rn_train)
     print(ry_train)
+    process_list(ry_train, rn_train)
     print("Test")
     print(rn_test)
     print(ry_test)
+    process_list(ry_test, rn_test)
     seen <- c(seen, paste(
       pairs1[i],
       pairs2[i]
     ))
   }
-  
 }
 print("BREAK")
 for (i in 1:length(pairs3)) {
@@ -411,7 +461,9 @@ for (i in 1:length(pairs3)) {
       found_in_seen <- TRUE
     }
   }
-  if (!found_in_seen) {
+  if (!found_in_seen &&
+    pairs3[i] == "traj_distance" &&
+    pairs4[i] == "traj_dc") {
     print(paste(
       pairs3[i],
       pairs4[i]
@@ -419,13 +471,14 @@ for (i in 1:length(pairs3)) {
     print("Train")
     print(rn_train)
     print(ry_train)
+    process_list(ry_train, rn_train)
     print("Test")
     print(rn_test)
     print(ry_test)
+    process_list(ry_test, rn_test)
     seen <- c(seen, paste(
       pairs3[i],
       pairs4[i]
     ))
   }
-  
 }

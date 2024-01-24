@@ -168,12 +168,12 @@ for (filename_for_traj in filenames_for_trajs) {
     ),
     format = "%d.%m.%Y %H:%M:%S"
   )
- 
+
   new_name <- paste(
     "Pozivni znak:",
     callsign,
     "ICAO24:",
-    icao24, 
+    icao24,
     "\n",
     date_first,
     "-",

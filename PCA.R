@@ -44,7 +44,7 @@ data_all <- rbind(data_fr_list$train_data, data_fr_list$test_data)
 data.pca <- princomp(data_all)
 
 print(summary(data.pca))
-print(data.pca$loadings[,1:6])
+print(data.pca$loadings[, 1:6])
 
 corr_matrix <- cor(data_all)
 plot(ggcorrplot(corr_matrix))
