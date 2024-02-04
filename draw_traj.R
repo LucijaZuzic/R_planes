@@ -241,7 +241,7 @@ for (filename_for_traj in filenames_for_trajs) {
     )
   } else {
     plot(smoothed$x[3:length(smoothed$x)], smoothed$y[3:length(smoothed$y)],
-      main = "Klasifikacija trajektorija od 3. koraka", lwd = 2,
+      main = "Klasifikacija putanja od 3. koraka", lwd = 2,
       asp = 1, col = color_use, type = "l", xlim = c(mini_traj_x, maxi_traj_x),
       ylim = c(mini_traj_y, maxi_traj_y), xlab = "x (m)", ylab = "y (m)",
       cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5

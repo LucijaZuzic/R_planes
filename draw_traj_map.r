@@ -175,7 +175,7 @@ newmap <- getMap(resolution = "low")
 plot(newmap,
   xlim = c(mini_traj_long, maxi_traj_long),
   ylim = c(mini_traj_lat, maxi_traj_lat),
-  main = "Klasifikacija trajektorija od 3. koraka",
+  main = "Klasifikacija putanja od 3. koraka",
   asp = 1,
   xlab = "long. (°)",
   ylab = "lat. (°)",
