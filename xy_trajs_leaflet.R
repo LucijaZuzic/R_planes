@@ -12,7 +12,7 @@ library(openSkies)
 
 library(sp)
 
-# Uključivanje knjižnice trajr za rad s trajektorijama
+# Uključivanje knjižnice trajr za rad s putanjama
 
 library(trajr)
 
@@ -70,7 +70,7 @@ maxi_long <- meta_airport$longitude + 0.4
 mini_lat <- meta_airport$latitude - 0.4
 maxi_lat <- meta_airport$latitude + 0.4
 
-# Dohvat imena svih datoteka s trajektorijama i meteorološkim izvješćima
+# Dohvat imena svih datoteka s putanjama i meteorološkim izvješćima
 
 dir_for_trajs <- "weather_trajs"
 
@@ -85,7 +85,7 @@ if (!dir.exists(dir_for_plot)) {
 }
 
 for (filename_for_traj in filenames_for_trajs) {
-  # Otvaranje datoteke s vektorima stanja za trajektoriju
+  # Otvaranje datoteke s vektorima stanja za putanju
 
   filepath_for_traj <- paste(dir_for_trajs, filename_for_traj, sep = "//")
 
@@ -114,7 +114,7 @@ for (filename_for_traj in filenames_for_trajs) {
   ), proj4string = CRS("+proj=longlat"))
   cord_utm <- spTransform(cord_dec, CRS("+init=epsg:3765"))
 
-  # Stvaranje trodimenzionalne trajektorije
+  # Stvaranje trodimenzionalne putanje
 
   new_cols <- data.frame(
     cord_utm$coords.x1, cord_utm$coords.x2,
@@ -125,17 +125,17 @@ for (filename_for_traj in filenames_for_trajs) {
     yCol = 2, zCol = 3, timeCol = 4
   )
 
-  # Ponovno uzorkovanje trajektorije s konstantnim vremenskim razmakom
+  # Ponovno uzorkovanje putanje s konstantnim vremenskim razmakom
   # od deset sekundi između zapisa
 
   resampled <- Traj3DResampleTime(trj, 10)
 
-  # Izglađivanje trajektorije koristeći Savitzky-Golay filtar
+  # Izglađivanje putanje koristeći Savitzky-Golay filtar
   # veličine prozora 11 i polinoma stupnja 33
 
   smoothed <- Traj3DSmoothSG(resampled, p = 3, n = 11)
 
-  # Zapis geografske širine i dužine za izglađenu trajektoriju
+  # Zapis geografske širine i dužine za izglađenu putanju
 
   cord_utm_new <- SpatialPoints(
     cbind(
@@ -155,7 +155,7 @@ for (filename_for_traj in filenames_for_trajs) {
 
   color_use <- "red"
 
-  # Ako je treća točka izglađene trajektorije desno ili iznad središnje
+  # Ako je treća točka izglađene putanje desno ili iznad središnje
   # točke promatranog područja, boja je zelena
 
   condition_use <- cord_dec_new$coords.x1[3] > meta_airport$longitude ||

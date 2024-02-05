@@ -12,7 +12,7 @@ library(openSkies)
 
 library(sp)
 
-# Uključivanje knjižnice trajr za rad s trajektorijama
+# Uključivanje knjižnice trajr za rad s putanjama
 
 library(trajr)
 
@@ -74,14 +74,14 @@ if (!dir.exists(dir_for_plot)) {
   dir.create(dir_for_plot)
 }
 
-# Dohvat imena svih datoteka s trajektorijama i meteorološkim izvješćima
+# Dohvat imena svih datoteka s putanjama i meteorološkim izvješćima
 
 dir_for_trajs <- "weather_trajs"
 
 filenames_for_trajs <- list.files(dir_for_trajs)
 
 for (filename_for_traj in filenames_for_trajs) {
-  # Otvaranje datoteke s vektorima stanja za trajektoriju
+  # Otvaranje datoteke s vektorima stanja za putanju
 
   filepath_for_traj <- paste(dir_for_trajs, filename_for_traj, sep = "//")
 
@@ -113,7 +113,7 @@ for (filename_for_traj in filenames_for_trajs) {
   )
   cord_utm <- spTransform(cord_dec, CRS("+init=epsg:3765"))
 
-  # Stvaranje trodimenzionalne trajektorije
+  # Stvaranje trodimenzionalne putanje
 
   new_cols <- data.frame(
     cord_utm$coords.x1,
@@ -129,17 +129,17 @@ for (filename_for_traj in filenames_for_trajs) {
     timeCol = 4
   )
 
-  # Ponovno uzorkovanje trajektorije s konstantnim vremenskim razmakom
+  # Ponovno uzorkovanje putanje s konstantnim vremenskim razmakom
   # od deset sekundi između zapisa
 
   resampled <- Traj3DResampleTime(trj, 10)
 
-  # Izglađivanje trajektorije koristeći Savitzky-Golay filtar
+  # Izglađivanje putanje koristeći Savitzky-Golay filtar
   # veličine prozora 11 i polinoma stupnja 33
 
   smoothed <- Traj3DSmoothSG(resampled, p = 3, n = 11)
 
-  # Razdvajanje imena trajektorije na pozivni znak,
+  # Razdvajanje imena putanje na pozivni znak,
   # ICAO24 te datum i vrijeme za naslov dijagrama
 
   split_name <- unlist(
@@ -181,7 +181,7 @@ for (filename_for_traj in filenames_for_trajs) {
   )
 
   # Crtanje dijagrama odabranih dimenzija
-  # s originalnom i izglađenom trajektorijom
+  # s originalnom i izglađenom putanjom
 
   par3d(windowRect = c(0, 0, 960, 960))
   plot3d(

@@ -12,7 +12,7 @@ library(openSkies)
 
 library(sp)
 
-# Uključivanje knjižnice trajr za rad s trajektorijama
+# Uključivanje knjižnice trajr za rad s putanjama
 
 library(trajr)
 
@@ -66,14 +66,14 @@ maxi_long <- meta_airport$longitude + 0.4
 mini_lat <- meta_airport$latitude - 0.4
 maxi_lat <- meta_airport$latitude + 0.4
 
-# Dohvat imena svih datoteka s trajektorijama i meteorološkim izvješćima
+# Dohvat imena svih datoteka s putanjama i meteorološkim izvješćima
 
 dir_for_trajs <- "weather_trajs"
 
 filenames_for_trajs <- list.files(dir_for_trajs)
 
 # Pohrana minimalne i maksimalne vrijednosti geografske
-# širine i dužine trajektorija
+# širine i dužine putanja
 
 mini_traj_long <- 10000000
 maxi_traj_long <- -10000000
@@ -81,7 +81,7 @@ mini_traj_lat <- 10000000
 maxi_traj_lat <- -10000000
 
 for (filename_for_traj in filenames_for_trajs) {
-  # Otvaranje datoteke s vektorima stanja za trajektoriju
+  # Otvaranje datoteke s vektorima stanja za putanju
 
   filepath_for_traj <- paste(dir_for_trajs, filename_for_traj, sep = "//")
 
@@ -113,7 +113,7 @@ for (filename_for_traj in filenames_for_trajs) {
   )
   cord_utm <- spTransform(cord_dec, CRS("+init=epsg:3765"))
 
-  # Stvaranje trodimenzionalne trajektorije
+  # Stvaranje trodimenzionalne putanje
 
   new_cols <- data.frame(
     cord_utm$coords.x1,
@@ -129,17 +129,17 @@ for (filename_for_traj in filenames_for_trajs) {
     timeCol = 4
   )
 
-  # Ponovno uzorkovanje trajektorije s konstantnim vremenskim razmakom
+  # Ponovno uzorkovanje putanje s konstantnim vremenskim razmakom
   # od deset sekundi između zapisa
 
   resampled <- Traj3DResampleTime(trj, 10)
 
-  # Izglađivanje trajektorije koristeći Savitzky-Golay filtar
+  # Izglađivanje putanje koristeći Savitzky-Golay filtar
   # veličine prozora 11 i polinoma stupnja 33
 
   smoothed <- Traj3DSmoothSG(resampled, p = 3, n = 11)
 
-  # Zapis geografske širine i dužine za izglađenu trajektoriju
+  # Zapis geografske širine i dužine za izglađenu putanju
 
   cord_utm_new <- SpatialPoints(
     cbind(
@@ -174,7 +174,7 @@ if (!dir.exists(dir_for_plot)) {
 }
 
 for (filename_for_traj in filenames_for_trajs) {
-  # Otvaranje datoteke s vektorima stanja za trajektoriju
+  # Otvaranje datoteke s vektorima stanja za putanju
 
   filepath_for_traj <- paste(dir_for_trajs, filename_for_traj, sep = "//")
 
@@ -206,7 +206,7 @@ for (filename_for_traj in filenames_for_trajs) {
   )
   cord_utm <- spTransform(cord_dec, CRS("+init=epsg:3765"))
 
-  # Stvaranje trodimenzionalne trajektorije
+  # Stvaranje trodimenzionalne putanje
 
   new_cols <- data.frame(
     cord_utm$coords.x1,
@@ -221,17 +221,17 @@ for (filename_for_traj in filenames_for_trajs) {
     timeCol = 4
   )
 
-  # Ponovno uzorkovanje trajektorije s konstantnim vremenskim razmakom
+  # Ponovno uzorkovanje putanje s konstantnim vremenskim razmakom
   # od deset sekundi između zapisa
 
   resampled <- Traj3DResampleTime(trj, 10)
 
-  # Izglađivanje trajektorije koristeći Savitzky-Golay filtar
+  # Izglađivanje putanje koristeći Savitzky-Golay filtar
   # veličine prozora 11 i polinoma stupnja 33
 
   smoothed <- Traj3DSmoothSG(resampled, p = 3, n = 11)
 
-  # Zapis geografske širine i dužine za izglađenu trajektoriju
+  # Zapis geografske širine i dužine za izglađenu putanju
 
   cord_utm_new <- SpatialPoints(
     cbind(smoothed$x, smoothed$y),
@@ -245,7 +245,7 @@ for (filename_for_traj in filenames_for_trajs) {
 
   color_use <- "red"
 
-  # Ako je treća točka izglađene trajektorije desno ili iznad središnje točke
+  # Ako je treća točka izglađene putanje desno ili iznad središnje točke
   # promatranog područja, boja je zelena
 
   condit <- cord_dec_new$coords.x1[3] > meta_airport$longitude ||
@@ -255,7 +255,7 @@ for (filename_for_traj in filenames_for_trajs) {
     color_use <- "green"
   }
 
-  # Razdvajanje imena trajektorije na pozivni znak,
+  # Razdvajanje imena putanje na pozivni znak,
   # ICAO24 te datum i vrijeme za naslov dijagrama
 
   split_name <- unlist(strsplit(gsub(
@@ -329,7 +329,7 @@ for (filename_for_traj in filenames_for_trajs) {
   axis(side = 1)
   axis(side = 2)
 
-  # Crtanje izglađene trajektorije
+  # Crtanje izglađene putanje
 
   lines(
     cord_dec_new$coords.x1[3:length(cord_dec_new$coords.x1)],

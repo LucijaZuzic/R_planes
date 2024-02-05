@@ -33,7 +33,7 @@ get_current_file_location <- function() {
 setwd(get_current_file_location())
 
 # Postavljanje direktorija za meteorološka izvješća,
-# trajektorije i trajektorije zajedno s meteorološkim izvješćem
+# putanje i putanje zajedno s meteorološkim izvješćem
 
 dir_for_weather <- "rp5"
 dir_for_trajs <- "usable_trajs"
@@ -65,7 +65,7 @@ for (filename_for_traj in filenames_for_trajs) {
   weather_add_data <- data.frame()
 
   # Definiranje imena datoteke za pohranu podataka o
-  # trajektoriji zajedno s meteorološkim izvješćem
+  # putanji zajedno s meteorološkim izvješćem
 
   filepath_for_weather_traj <- paste(dir_for_weather_trajs,
     paste("weather", filename_for_traj, sep = "_"),
@@ -146,7 +146,7 @@ for (filename_for_traj in filenames_for_trajs) {
       }
     }
 
-    # Spremanje podataka o trajektoriji zajedno s meteorološkim izvješćem
+    # Spremanje podataka o putanji zajedno s meteorološkim izvješćem
 
     file_for_traj <- cbind(file_for_traj, weather_add_data)
 

@@ -12,7 +12,7 @@ library(openSkies)
 
 library(sp)
 
-# Uključivanje knjižnice trajr za rad s trajektorijama
+# Uključivanje knjižnice trajr za rad s putanjama
 
 library(trajr)
 
@@ -62,7 +62,7 @@ maxi_long <- meta_airport$longitude + 0.4
 mini_lat <- meta_airport$latitude - 0.4
 maxi_lat <- meta_airport$latitude + 0.4
 
-# Funkcija za crtanje dijagrama odabranih dimenzija za sve trajektorije
+# Funkcija za crtanje dijagrama odabranih dimenzija za sve putanje
 
 plot_2d <- function(first_dim, second_dim) {
   # Postavljanje direktorija za dijagrame
@@ -73,14 +73,14 @@ plot_2d <- function(first_dim, second_dim) {
     dir.create(dir_for_plot)
   }
 
-  # Dohvat imena svih datoteka s trajektorijama i meteorološkim izvješćima
+  # Dohvat imena svih datoteka s putanjama i meteorološkim izvješćima
 
   dir_for_trajs <- "weather_trajs"
 
   filenames_for_trajs <- list.files(dir_for_trajs)
 
   for (filename_for_traj in filenames_for_trajs) {
-    # Otvaranje datoteke s vektorima stanja za trajektoriju
+    # Otvaranje datoteke s vektorima stanja za putanju
 
     filepath_for_traj <- paste(dir_for_trajs, filename_for_traj, sep = "//")
 
@@ -111,7 +111,7 @@ plot_2d <- function(first_dim, second_dim) {
     )
     cord_utm <- spTransform(cord_dec, CRS("+init=epsg:3765"))
 
-    # Stvaranje trodimenzionalne trajektorije
+    # Stvaranje trodimenzionalne putanje
 
     new_cols <- data.frame(
       cord_utm$coords.x1,
@@ -127,17 +127,17 @@ plot_2d <- function(first_dim, second_dim) {
       timeCol = 4
     )
 
-    # Ponovno uzorkovanje trajektorije s konstantnim vremenskim razmakom
+    # Ponovno uzorkovanje putanje s konstantnim vremenskim razmakom
     # od deset sekundi između zapisa
 
     resampled <- Traj3DResampleTime(trj, 10)
 
-    # Izglađivanje trajektorije koristeći Savitzky-Golay filtar
+    # Izglađivanje putanje koristeći Savitzky-Golay filtar
     # veličine prozora 11 i polinoma stupnja 33
 
     smoothed <- Traj3DSmoothSG(resampled, p = 3, n = 11)
 
-    # Izdvajanje traženih dimenzija iz originalne i izglađene trajektorije
+    # Izdvajanje traženih dimenzija iz originalne i izglađene putanje
 
     if (first_dim == "x") {
       first_coord_vals <- smoothed$x
@@ -159,7 +159,7 @@ plot_2d <- function(first_dim, second_dim) {
       second_coord_vals_original <- trj$z
     }
 
-    # Razdvajanje imena trajektorije na pozivni znak,
+    # Razdvajanje imena putanje na pozivni znak,
     # ICAO24 te datum i vrijeme za naslov dijagrama
 
     split_name <- unlist(
@@ -219,7 +219,7 @@ plot_2d <- function(first_dim, second_dim) {
       units = "px"
     )
 
-    # Crtanje originalne i izglađene trajektorije
+    # Crtanje originalne i izglađene putanje
 
     plot(
       first_coord_vals_original,
@@ -235,7 +235,7 @@ plot_2d <- function(first_dim, second_dim) {
     )
     lines(first_coord_vals, second_coord_vals, lwd = 2, col = "red")
 
-    # Položaj legende je dolje desno ako trajektorija
+    # Položaj legende je dolje desno ako putanja
     # započinje dolje lijevo i obratno
 
     dist_from_min <- first_coord_vals_original[1] -

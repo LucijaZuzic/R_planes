@@ -32,7 +32,7 @@ setwd(get_current_file_location())
 
 source("transform_feature.R")
 
-# Dohvat imena svih datoteka s trajektorijama i meteorološkim izvješćima
+# Dohvat imena svih datoteka s putanjama i meteorološkim izvješćima
 
 dir_for_trajs <- "weather_trajs"
 
@@ -62,7 +62,7 @@ if (!dir.exists(dir_for_density)) {
   dir.create(dir_for_density)
 }
 
-# Postavljanje direktorija za Q-Q dijagrame za sve trajektorije
+# Postavljanje direktorija za Q-Q dijagrame za sve putanje
 
 dir_for_qq <- paste("qq", sep = "_")
 
@@ -87,13 +87,13 @@ if (!dir.exists(dir_for_qq_pos)) {
 }
 
 
-# Otvaranje datoteke sa oznaka trajektorija,
-# značajkama trajektorija i meteorološkim značajkama
+# Otvaranje datoteke sa oznaka putanja,
+# značajkama putanja i meteorološkim značajkama
 
 df_clus <- data.frame(read.csv("features_traj.csv"))
 df_clus <- subset(df_clus, select = -c(filenames_for_trajs))
 
-# Filtriranje trajektorija prema oznaci
+# Filtriranje putanja prema oznaci
 
 df_clus_yes <- filter(df_clus, label_col == 1)
 df_clus_no <- filter(df_clus, label_col == -1)
@@ -342,7 +342,7 @@ for (i in 1:length(names(df_clus_yes))) {
   print(ks.test(df_clus_no[, i], "pnorm", mean = mean(df_clus_no[, i]), sd = sd(df_clus_no[, i])))
   print(ks.test(df_clus_yes[, i], "pnorm", mean = mean(df_clus_yes[, i]), sd = sd(df_clus_yes[, i])))
 
-  # Spremanje Q-Q dijagrama za sve trajektorije
+  # Spremanje Q-Q dijagrama za sve putanje
 
   png(
     filename =
@@ -350,10 +350,10 @@ for (i in 1:length(names(df_clus_yes))) {
     width = 480, height = 480, units = "px"
   )
 
-  # Crtanje Q-Q dijagrama za sve trajektorije
+  # Crtanje Q-Q dijagrama za sve putanje
 
   qqnorm(df_clus[, i + 1],
-    main = paste("Q-Q dijagram za sve trajektorije", new_name, sep = "\n"),
+    main = paste("Q-Q dijagram za sve putanje", new_name, sep = "\n"),
     xlab = "Teoretski kvantili",
     ylab = "Kvantili uzorka",
     col = "blue",
@@ -362,7 +362,7 @@ for (i in 1:length(names(df_clus_yes))) {
 
   qqline(df_clus[, i + 1], col = "red")
 
-  # Zatvaranje Q-Q dijagrama za sve trajektorije
+  # Zatvaranje Q-Q dijagrama za sve putanje
 
   if (length(dev.list()) > 0) {
     for (dev_sth_open in dev.list()[1]:dev.list()[length(dev.list())]) {

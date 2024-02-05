@@ -12,12 +12,12 @@ transform_feat <- function(feature_use) {
   units_use <- ""
 
   if (new_name == "distance") {
-    new_name <- "Difuzijska udaljenost trajektorije"
+    new_name <- "Difuzijska udaljenost"
     units_use <- "m"
   }
 
   if (new_name == "length") {
-    new_name <- "Duljina trajektorije"
+    new_name <- "Duljina"
     units_use <- "m"
   }
 
@@ -34,7 +34,7 @@ transform_feat <- function(feature_use) {
   }
 
   if (new_name == "emax") {
-    new_name <- "Maksimalni očekivani pomak trajektorije"
+    new_name <- "Maksimalni očekivani pomak"
   }
 
   if (new_name == "duration") {

@@ -12,7 +12,7 @@ library(openSkies)
 
 library(sp)
 
-# Uključivanje knjižnice trajr za rad s trajektorijama
+# Uključivanje knjižnice trajr za rad s putanjama
 
 library(trajr)
 
@@ -76,13 +76,13 @@ cord_start_utm <- spTransform(cord_start_dec, CRS("+init=epsg:3765"))
 mid_x <- (cord_start_utm$coords.x1[1] + cord_start_utm$coords.x1[2]) / 2
 mid_y <- (cord_start_utm$coords.x2[1] + cord_start_utm$coords.x2[2]) / 2
 
-# Dohvat imena svih datoteka s trajektorijama i meteorološkim izvješćima
+# Dohvat imena svih datoteka s putanjama i meteorološkim izvješćima
 
 dir_for_trajs <- "weather_trajs"
 
 filenames_for_trajs <- list.files(dir_for_trajs)
 
-# Definicija raspona veličina koraka za izračun fraktalne dimenzije trajektorija
+# Definicija raspona veličina koraka za izračun fraktalne dimenzije putanja
 
 fractal_steps <- TrajLogSequence(1000, 2000, 1000)
 
@@ -95,7 +95,7 @@ if (!dir.exists(dir_for_fractal)) {
 }
 
 for (filename_for_traj in filenames_for_trajs) {
-  # Otvaranje datoteke s vektorima stanja za trajektoriju
+  # Otvaranje datoteke s vektorima stanja za putanju
 
   filepath_for_traj <- paste(dir_for_trajs, filename_for_traj, sep = "//")
 
@@ -124,7 +124,7 @@ for (filename_for_traj in filenames_for_trajs) {
   ), proj4string = CRS("+proj=longlat"))
   cord_utm <- spTransform(cord_dec, CRS("+init=epsg:3765"))
 
-  # Stvaranje trodimenzionalne trajektorije
+  # Stvaranje trodimenzionalne putanje
 
   new_cols <- data.frame(
     cord_utm$coords.x1,
@@ -135,17 +135,17 @@ for (filename_for_traj in filenames_for_trajs) {
     xCol = 1, yCol = 2, zCol = 3, timeCol = 4
   )
 
-  # Ponovno uzorkovanje trajektorije s konstantnim vremenskim razmakom
+  # Ponovno uzorkovanje putanje s konstantnim vremenskim razmakom
   # od deset sekundi između zapisa
 
   resampled <- Traj3DResampleTime(trj, 10)
 
-  # Izglađivanje trajektorije koristeći Savitzky-Golay filtar
+  # Izglađivanje putanje koristeći Savitzky-Golay filtar
   # veličine prozora 11 i polinoma stupnja 33
 
   smoothed <- Traj3DSmoothSG(resampled, p = 3, n = 11)
 
-  # Razdvajanje imena trajektorije na pozivni znak,
+  # Razdvajanje imena putanje na pozivni znak,
   # ICAO24 te datum i vrijeme za naslov dijagrama
 
   split_name <- unlist(strsplit(gsub(

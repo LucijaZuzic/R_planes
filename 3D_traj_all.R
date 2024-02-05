@@ -12,7 +12,7 @@ library(openSkies)
 
 library(sp)
 
-# Uključivanje knjižnice trajr za rad s trajektorijama
+# Uključivanje knjižnice trajr za rad s putanjama
 
 library(trajr)
 
@@ -83,14 +83,14 @@ cord_start_utm <- spTransform(cord_start_dec, CRS("+init=epsg:3765"))
 mid_x <- (cord_start_utm$coords.x1[1] + cord_start_utm$coords.x1[2]) / 2
 mid_y <- (cord_start_utm$coords.x2[1] + cord_start_utm$coords.x2[2]) / 2
 
-# Dohvat imena svih datoteka s trajektorijama i meteorološkim izvješćima
+# Dohvat imena svih datoteka s putanjama i meteorološkim izvješćima
 
 dir_for_trajs <- "weather_trajs"
 
 filenames_for_trajs <- list.files(dir_for_trajs)
 
 # Pohrana minimalne i maksimalne vrijednosti za x, y i z
-# koordinate trajektorija u metrima
+# koordinate putanja u metrima
 
 mini_traj_x <- 10000000
 maxi_traj_x <- -10000000
@@ -100,7 +100,7 @@ mini_traj_z <- 10000000
 maxi_traj_z <- -10000000
 
 for (filename_for_traj in filenames_for_trajs) {
-  # Otvaranje datoteke s vektorima stanja za trajektoriju
+  # Otvaranje datoteke s vektorima stanja za putanju
 
   filepath_for_traj <- paste(dir_for_trajs, filename_for_traj, sep = "//")
 
@@ -132,7 +132,7 @@ for (filename_for_traj in filenames_for_trajs) {
   )
   cord_utm <- spTransform(cord_dec, CRS("+init=epsg:3765"))
 
-  # Stvaranje trodimenzionalne trajektorije
+  # Stvaranje trodimenzionalne putanje
 
   new_cols <- data.frame(
     cord_utm$coords.x1,
@@ -148,12 +148,12 @@ for (filename_for_traj in filenames_for_trajs) {
     timeCol = 4
   )
 
-  # Ponovno uzorkovanje trajektorije s konstantnim vremenskim
+  # Ponovno uzorkovanje putanje s konstantnim vremenskim
   # razmakom od deset sekundi između zapisa
 
   resampled <- Traj3DResampleTime(trj, 10)
 
-  # Izglađivanje trajektorije koristeći Savitzky-Golay filtar
+  # Izglađivanje putanje koristeći Savitzky-Golay filtar
   # veličine prozora 11 i polinoma stupnja 3
 
   smoothed <- Traj3DSmoothSG(resampled, p = 3, n = 11)
@@ -256,7 +256,7 @@ for (y_val in seq(mini_traj_y, maxi_traj_y, length.out = seq_val)) {
 }
 
 for (filename_for_traj in filenames_for_trajs) {
-  # Otvaranje datoteke s vektorima stanja za trajektoriju
+  # Otvaranje datoteke s vektorima stanja za putanju
 
   filepath_for_traj <- paste(dir_for_trajs, filename_for_traj, sep = "//")
 
@@ -288,7 +288,7 @@ for (filename_for_traj in filenames_for_trajs) {
   )
   cord_utm <- spTransform(cord_dec, CRS("+init=epsg:3765"))
 
-  # Stvaranje trodimenzionalne trajektorije
+  # Stvaranje trodimenzionalne putanje
 
   new_cols <- data.frame(
     cord_utm$coords.x1,
@@ -304,26 +304,26 @@ for (filename_for_traj in filenames_for_trajs) {
     timeCol = 4
   )
 
-  # Ponovno uzorkovanje trajektorije s konstantnim vremenskim razmakom
+  # Ponovno uzorkovanje putanje s konstantnim vremenskim razmakom
   # od deset sekundi između zapisa
 
   resampled <- Traj3DResampleTime(trj, 10)
 
-  # Izglađivanje trajektorije koristeći Savitzky-Golay filtar
+  # Izglađivanje putanje koristeći Savitzky-Golay filtar
   # veličine prozora 11 i polinoma stupnja 3
 
   smoothed <- Traj3DSmoothSG(resampled, p = 3, n = 11)
 
   color_use <- "red"
 
-  # Ako je treća točka izglađene trajektorije desno ili iznad
+  # Ako je treća točka izglađene putanje desno ili iznad
   # središnje točke promatranog područja, boja je zelena
 
   if (smoothed$x[3] > mid_x || smoothed$y[3] > mid_y) {
     color_use <- "green"
   }
 
-  # Crtanje dijagrama s originalnom i izglađenom trajektorijom
+  # Crtanje dijagrama s originalnom i izglađenom putanjom
 
   lines3d(
     x = smoothed$x[3:length(smoothed$x)],
