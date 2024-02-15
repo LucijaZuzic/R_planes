@@ -170,7 +170,7 @@ for (filename_for_traj in filenames_for_trajs) {
   )
 
   new_name <- paste(
-    "Pozivni znak:",
+    "Callsign:",
     callsign,
     "ICAO24:",
     icao24,
@@ -222,7 +222,7 @@ for (filename_for_traj in filenames_for_trajs) {
     plot.new()
     title(main = new_name, cex.main = 1.7)
     legend("topright",
-      legend = c("Original", "Glatko"),
+      legend = c("Original", "Smooth"),
       col = c("blue", "red"),
       lwd = c(1, 2), cex = 1.7
     )

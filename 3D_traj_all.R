@@ -356,9 +356,9 @@ box3d()
 
 bgplot3d({
   plot.new()
-  title(main = "Klasifikacija putanja od 3. koraka", cex.main = 1.7)
+  title(main = "Classifying trajectories based on the 3rd step", cex.main = 1.7)
   legend("topright",
-    legend = c("1", "-1", "Linija podjele"),
+    legend = c("1", "-1", "Division line"),
     col = c("green", "red", "blue"),
     lwd = c(2, 2, 1), cex = 1.7
   )

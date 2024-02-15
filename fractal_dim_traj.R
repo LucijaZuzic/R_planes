@@ -170,7 +170,7 @@ for (filename_for_traj in filenames_for_trajs) {
   )
 
   new_name <- paste(
-    "Pozivni znak:",
+    "Callsign:",
     callsign,
     "ICAO24:",
     icao24,
@@ -194,8 +194,8 @@ for (filename_for_traj in filenames_for_trajs) {
   relation <- lm(fractal_dimensions$pathlength ~ fractal_dimensions$stepsize)
 
   plot(fractal_dimensions$stepsize, fractal_dimensions$pathlength,
-    main = new_name, type = "l", xlab = "Duljina koraka (m)",
-    ylab = "Duljna puta (m)", lwd = 2, col = "blue",
+    main = new_name, type = "l", xlab = "Step size (m)",
+    ylab = "Path length (m)", lwd = 2, col = "blue",
     cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
   )
 

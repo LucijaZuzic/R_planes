@@ -191,7 +191,7 @@ plot_2d <- function(first_dim, second_dim) {
     )
 
     new_name <- paste(
-      "Pozivni znak:",
+      "Callsign:",
       callsign,
       "ICAO24:",
       icao24,
@@ -254,7 +254,7 @@ plot_2d <- function(first_dim, second_dim) {
     legend(
       poslegend,
       cex = 1.7,
-      legend = c("Original", "Glatko"),
+      legend = c("Original", "Smooth"),
       col = c("blue", "red"),
       lty = c(2, 1),
       lwd = c(1, 2)

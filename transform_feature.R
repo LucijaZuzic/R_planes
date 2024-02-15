@@ -12,82 +12,82 @@ transform_feat <- function(feature_use) {
   units_use <- ""
 
   if (new_name == "distance") {
-    new_name <- "Difuzijska udaljenost"
+    new_name <- "Diffusion distance"
     units_use <- "m"
   }
 
   if (new_name == "length") {
-    new_name <- "Duljina"
+    new_name <- "Length"
     units_use <- "m"
   }
 
   if (new_name == "straightness") {
-    new_name <- "Indeks pravocrtnosti"
+    new_name <- "Straightness"
   }
 
   if (new_name == "sinuosity2") {
-    new_name <- "Indeks zakrivljenosti"
+    new_name <- "Sinuosity"
   }
 
   if (new_name == "fractal_dimension") {
-    new_name <- "Fraktalna dimenzija"
+    new_name <- "Fractal dimension"
   }
 
   if (new_name == "emax") {
-    new_name <- "Maksimalni očekivani pomak"
+    new_name <- "Maximum expected displacement"
   }
 
   if (new_name == "duration") {
-    new_name <- "Trajanje"
+    new_name <- "Duration"
     units_use <- "s"
   }
 
   if (new_name == "speed") {
-    new_name <- "Brzina"
+    new_name <- "Speed"
     units_use <- "m/s"
   }
 
   if (new_name == "ff") {
-    new_name <- "Brzina vjetra"
+    new_name <- "Wind speed"
     units_use <- "m/s"
   }
 
   if (new_name == "acceleration") {
-    new_name <- "Akceleracija"
+    new_name <- "Acceleration"
   }
 
   if (new_name == "dc") {
-    new_name <- "Promjena smjera (prosjek)"
+    new_name <- "Direction change (arithemtic average)"
     units_use <- ""
   }
 
   if (new_name == "sddc") {
-    new_name <- "Promjena smjera (standardna devijacija)"
+    new_name <- "Direction change (standard deviation)"
     units_use <- ""
   }
 
   if (new_name == "u") {
-    new_name <- "Relativni udio vlage u zraku"
+    new_name <- "Relative humidity"
     units_use <- "%"
   }
 
   if (new_name == "t") {
-    new_name <- "Temperatura"
+    new_name <- "Temperature"
     units_use <- "°C"
   }
 
   if (new_name == "td") {
-    new_name <- "Temperatura kondenzacije"
+    new_name <- "Dew point"
     units_use <- "°C"
   }
 
   if (new_name == "p") {
-    new_name <- "Tlak zraka na razini mora"
+    new_name <- "Air pressure at sea level"
     units_use <- "mmHg"
   }
 
   if (new_name == "p0") {
-    new_name <- "Tlak zraka na nadmorskoj visini mjerne stanice"
+    new_name <- "Air pressure at the measuring station"
     units_use <- "mmHg"
   }
 
@@ -97,7 +97,7 @@ transform_feat <- function(feature_use) {
 
   new_lab <- paste(new_name, units_use)
 
-  if (new_name == "Akceleracija") {
+  if (new_name == "Acceleration") {
     new_lab <- expression(Akceleracija ~ (m / s^2))
   }
 

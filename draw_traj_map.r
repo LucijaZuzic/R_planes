@@ -175,7 +175,7 @@ newmap <- getMap(resolution = "low")
 plot(newmap,
   xlim = c(mini_traj_long, maxi_traj_long),
   ylim = c(mini_traj_lat, maxi_traj_lat),
-  main = "Klasifikacija putanja od 3. koraka",
+  main = "Classifying trajectories based on the 3rd step",
   asp = 1,
   xlab = "long. (°)",
   ylab = "lat. (°)",
@@ -275,7 +275,7 @@ axis(side = 2)
 # Dodavanje legende
 
 legend("bottomright", cex = 1.1,
-  legend = c("1", "-1", "Linija podjele"),
+  legend = c("1", "-1", "Division line"),
   col = c("green", "red", "blue"), lty = c(1, 1, 2), lwd = c(2, 2, 1)
 )
 

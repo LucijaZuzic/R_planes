@@ -283,7 +283,7 @@ for (filename_for_traj in filenames_for_trajs) {
   )
 
   new_name <- paste(
-    "Pozivni znak:",
+    "Callsign:",
     callsign,
     "ICAO24:",
     icao24,

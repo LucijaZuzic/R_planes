@@ -241,7 +241,7 @@ for (filename_for_traj in filenames_for_trajs) {
     )
   } else {
     plot(smoothed$x[3:length(smoothed$x)], smoothed$y[3:length(smoothed$y)],
-      main = "Klasifikacija putanja od 3. koraka", lwd = 2,
+      main = "Classifying trajectories based on the 3rd step", lwd = 2,
       asp = 1, col = color_use, type = "l", xlim = c(mini_traj_x, maxi_traj_x),
       ylim = c(mini_traj_y, maxi_traj_y), xlab = "x (m)", ylab = "y (m)",
       cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
@@ -255,7 +255,7 @@ for (filename_for_traj in filenames_for_trajs) {
     # Dodavanje legende
 
     legend("bottomright", cex = 1.2,
-      legend = c("1", "-1", "Linija podjele"),
+      legend = c("1", "-1", "Division line"),
       col = c("green", "red", "blue"),
       lty = c(1, 1, 2), lwd = c(2, 2, 1)
     )

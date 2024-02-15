@@ -59,6 +59,7 @@ model_list <- c(
 
 data_fr <- data.frame(read.csv("features_traj.csv"))
 data_fr <- subset(data_fr, select = -c(filenames_for_trajs))
+data_fr <- subset(data_fr, select = c(label_col, traj_distance, traj_dc))
 
 if (!dir.exists("feature_combination")) {
   dir.create("feature_combination")
@@ -174,13 +175,13 @@ for (i in 2:ncol(data_fr)) {
 
         name_all <- paste(
           model_name,
-          "(treniranje i testiranje)"
+          "(training and testing)"
         )
 
         if (model_name == "Quadratic Discriminant Analysis") {
           name_all <- paste(
             model_name,
-            "(treniranje i testiranje)",
+            "(training and testing)",
             sep = "\n"
           )
         }
@@ -224,7 +225,7 @@ for (i in 2:ncol(data_fr)) {
 
         plot(grid_new_data[[1]], grid_new_data[[2]],
           cex.lab = 1.2, cex.main = 1.7, cex.axis = 1.2,
-          main = paste(model_name, "(treniranje)"), pch = 22,
+          main = paste(model_name, "(training)"), pch = 22,
           col = "white",
           xlab = transform_feat(names(data_fr_list$train_data)[1]),
           ylab = transform_feat(names(data_fr_list$train_data)[2]),
@@ -255,7 +256,7 @@ for (i in 2:ncol(data_fr)) {
 
         plot(grid_new_data[[1]], grid_new_data[[2]],
           cex.lab = 1.2, cex.main = 1.7, cex.axis = 1.2,
-          main = paste(model_name, "(testiranje)"),
+          main = paste(model_name, "(testing)"),
           pch = 22, col = "white",
           xlab = transform_feat(names(data_fr_list$train_data)[1]),
           ylab = transform_feat(names(data_fr_list$train_data)[2]), xlim = c(

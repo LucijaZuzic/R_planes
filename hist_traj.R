@@ -160,7 +160,7 @@ for (i in 1:length(names(df_clus_yes))) {
     col = c("green", "red"),
     main = paste("Histogram", new_name, sep = "\n"),
     space = 0,
-    xlab = new_lab, ylab = "Vjerojatnost",
+    xlab = new_lab, ylab = "Probability",
     cex.lab = 1.5, cex.main = 1.7
   )
 
@@ -218,8 +218,8 @@ for (i in 1:length(names(df_clus_yes))) {
   boxplot(feat ~ lab,
     data = boxdata,
     col = c("red", "green"),
-    main = paste("Kutijasti dijagram", new_name, sep = "\n"),
-    ylab = "Klasa", xlab = new_lab, horizontal = TRUE,
+    main = paste("Box plot", new_name, sep = "\n"),
+    ylab = "Class", xlab = new_lab, horizontal = TRUE,
     cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
   )
 
@@ -269,8 +269,8 @@ for (i in 1:length(names(df_clus_yes))) {
       min(min(density_n$x), min(density_y$x)),
       max(max(density_n$x), max(density_y$x))
     ),
-    main = paste("Gustoća vjerojatnosti", new_name, sep = "\n"),
-    xlab = new_lab, ylab = "Gustoća vjerojatnosti",
+    main = paste("Probability density", new_name, sep = "\n"),
+    xlab = new_lab, ylab = "Probability density",
     cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
   )
   lines(density_n, col = "red", lwd = 2)
@@ -353,9 +353,9 @@ for (i in 1:length(names(df_clus_yes))) {
   # Crtanje Q-Q dijagrama za sve putanje
 
   qqnorm(df_clus[, i + 1],
-    main = paste("Q-Q dijagram za sve putanje", new_name, sep = "\n"),
-    xlab = "Teoretski kvantili",
-    ylab = "Kvantili uzorka",
+    main = paste("Q-Q plot for all trajectories", new_name, sep = "\n"),
+    xlab = "Theoretical quantiles",
+    ylab = "Sample quantiles",
     col = "blue",
     cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
   )
@@ -381,9 +381,9 @@ for (i in 1:length(names(df_clus_yes))) {
   # Crtanje Q-Q dijagrama za klasu -1
 
   qqnorm(df_clus_no[, i],
-    main = paste("Q-Q dijagram za klasu -1", new_name, sep = "\n"),
-    xlab = "Teoretski kvantili",
-    ylab = "Kvantili uzorka",
+    main = paste("Q-Q plot (class -1)", new_name, sep = "\n"),
+    xlab = "Theoretical quantiles",
+    ylab = "Sample quantiles",
     col = "blue",
     cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
   )
@@ -409,9 +409,9 @@ for (i in 1:length(names(df_clus_yes))) {
   # Crtanje Q-Q dijagrama za klasu 1
 
   qqnorm(df_clus_yes[, i],
-    main = paste("Q-Q dijagram za klasu 1", new_name, sep = "\n"),
-    xlab = "Teoretski kvantili",
-    ylab = "Kvantili uzorka",
+    main = paste("Q-Q plot (class 1)", new_name, sep = "\n"),
+    xlab = "Theoretical quantiles",
+    ylab = "Sample quantiles",
     col = "blue",
     cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
   )
