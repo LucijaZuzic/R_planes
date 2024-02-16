@@ -285,7 +285,7 @@ for (i in 1:length(names(df_clus_yes))) {
   }
 
   legend(poslegend,
-    legend = c("Sve", "-1", "1"), cex = 1.3,
+    legend = c("All", "-1", "1"), cex = 1.3,
     col = c("blue", "red", "green"), lty = c(1, 1, 1), lwd = c(2, 2, 2)
   )
 
