@@ -146,14 +146,6 @@ for (i in 1:length(names(df_clus_yes))) {
 
   total <- sum(hv_yes, hv_no)
 
-  # Spremanje histograma
-
-  png(
-    filename =
-      paste(paste(dir_for_hist, original_name, sep = "//"), "png", sep = "."),
-    width = 480, height = 480, units = "px"
-  )
-
   # Crtanje histograma
 
   barplot(rbind(hv_yes / total, hv_no / total),
@@ -187,10 +179,15 @@ for (i in 1:length(names(df_clus_yes))) {
   }
 
   legend(poslegend,
-    legend = c("1", "-1"), cex = 1.4,
+    legend = c("1", "-1"), cex = 1.4, text.width = strwidth("-1") * 2,
     col = c("green", "red"), lty = c(1, 1), lwd = c(2, 2)
   )
 
+  # Spremanje histograma
+
+  dev.copy(pdf, paste(paste(dir_for_hist, original_name, sep = "//"), "pdf", sep = "."))
+
+  
   # Zatvaranje histograma
 
   if (length(dev.list()) > 0) {
@@ -198,17 +195,6 @@ for (i in 1:length(names(df_clus_yes))) {
       dev.off()
     }
   }
-
-  # Spremanje kutijastog dijagrama
-
-  png(
-    filename =
-      paste(paste(dir_for_boxplot, original_name, sep = "//"),
-        "png",
-        sep = "."
-      ),
-    width = 480, height = 480, units = "px"
-  )
 
   # Crtanje kutijastog dijagrama
 
@@ -222,6 +208,10 @@ for (i in 1:length(names(df_clus_yes))) {
     ylab = "Class", xlab = new_lab, horizontal = TRUE,
     cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
   )
+  
+  # Spremanje kutijastog dijagrama
+
+  dev.copy(pdf, paste(paste(dir_for_boxplot, original_name, sep = "//"), "pdf", sep = "."))
 
   # Zatvaranje kutijastog dijagrama
 
@@ -230,17 +220,6 @@ for (i in 1:length(names(df_clus_yes))) {
       dev.off()
     }
   }
-
-  # Spremanje dijagrama gustoće vjerojatnosti
-
-  png(
-    filename =
-      paste(paste(dir_for_density, original_name, sep = "//"),
-        "png",
-        sep = "."
-      ),
-    width = 480, height = 480, units = "px"
-  )
 
   # Crtanje gustoće vjerojatnosti
 
@@ -285,9 +264,13 @@ for (i in 1:length(names(df_clus_yes))) {
   }
 
   legend(poslegend,
-    legend = c("All", "-1", "1"), cex = 1.3,
+    legend = c("All", "-1", "1"), cex = 1.3, text.width = strwidth("All") * 2,
     col = c("blue", "red", "green"), lty = c(1, 1, 1), lwd = c(2, 2, 2)
   )
+
+  # Spremanje dijagrama gustoće vjerojatnosti
+
+  dev.copy(pdf, paste(paste(dir_for_density, original_name, sep = "//"), "pdf", sep = "."))
 
   # Zatvaranje dijagrama gustoće vjerojatnosti
 
@@ -342,14 +325,6 @@ for (i in 1:length(names(df_clus_yes))) {
   print(ks.test(df_clus_no[, i], "pnorm", mean = mean(df_clus_no[, i]), sd = sd(df_clus_no[, i])))
   print(ks.test(df_clus_yes[, i], "pnorm", mean = mean(df_clus_yes[, i]), sd = sd(df_clus_yes[, i])))
 
-  # Spremanje Q-Q dijagrama za sve putanje
-
-  png(
-    filename =
-      paste(paste(dir_for_qq, original_name, sep = "//"), "png", sep = "."),
-    width = 480, height = 480, units = "px"
-  )
-
   # Crtanje Q-Q dijagrama za sve putanje
 
   qqnorm(df_clus[, i + 1],
@@ -362,6 +337,10 @@ for (i in 1:length(names(df_clus_yes))) {
 
   qqline(df_clus[, i + 1], col = "red")
 
+  # Spremanje Q-Q dijagrama za sve putanje
+
+  dev.copy(pdf, paste(paste(dir_for_qq, original_name, sep = "//"), "pdf", sep = "."))
+
   # Zatvaranje Q-Q dijagrama za sve putanje
 
   if (length(dev.list()) > 0) {
@@ -369,14 +348,6 @@ for (i in 1:length(names(df_clus_yes))) {
       dev.off()
     }
   }
-
-  # Spremanje Q-Q dijagrama za klasu -1
-
-  png(
-    filename =
-      paste(paste(dir_for_qq_neg, original_name, sep = "//"), "png", sep = "."),
-    width = 480, height = 480, units = "px"
-  )
 
   # Crtanje Q-Q dijagrama za klasu -1
 
@@ -390,6 +361,10 @@ for (i in 1:length(names(df_clus_yes))) {
 
   qqline(df_clus_no[, i], col = "red")
 
+  # Spremanje Q-Q dijagrama za klasu -1
+
+  dev.copy(pdf, paste(paste(dir_for_qq_neg, original_name, sep = "//"), "pdf", sep = "."))
+
   # Zatvaranje Q-Q dijagrama za klasu -1
 
   if (length(dev.list()) > 0) {
@@ -397,14 +372,6 @@ for (i in 1:length(names(df_clus_yes))) {
       dev.off()
     }
   }
-
-  # Spremanje Q-Q dijagrama za klasu 1
-
-  png(
-    filename =
-      paste(paste(dir_for_qq_pos, original_name, sep = "//"), "png", sep = "."),
-    width = 480, height = 480, units = "px"
-  )
 
   # Crtanje Q-Q dijagrama za klasu 1
 
@@ -417,6 +384,10 @@ for (i in 1:length(names(df_clus_yes))) {
   )
 
   qqline(df_clus_yes[, i], col = "red")
+
+  # Spremanje Q-Q dijagrama za klasu 1
+
+  dev.copy(pdf, paste(paste(dir_for_qq_pos, original_name, sep = "//"), "pdf", sep = "."))
 
   # Zatvaranje Q-Q dijagrama za klasu 1
 

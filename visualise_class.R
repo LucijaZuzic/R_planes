@@ -107,7 +107,7 @@ for (i in 2:ncol(data_fr)) {
             model_name,
             sep = "//"
           ), names(data_fr)[i],
-          names(data_fr)[j], "classifier_visual_all.png",
+          names(data_fr)[j], "classifier_visual_all.pdf",
           sep = "_"
         )
         new_file_train <- paste(
@@ -115,7 +115,7 @@ for (i in 2:ncol(data_fr)) {
             model_name,
             sep = "//"
           ), names(data_fr)[i],
-          names(data_fr)[j], "classifier_visual_train.png",
+          names(data_fr)[j], "classifier_visual_train.pdf",
           sep = "_"
         )
         new_file_test <- paste(
@@ -123,7 +123,7 @@ for (i in 2:ncol(data_fr)) {
             model_name,
             sep = "//"
           ), names(data_fr)[i],
-          names(data_fr)[j], "classifier_visual_test.png",
+          names(data_fr)[j], "classifier_visual_test.pdf",
           sep = "_"
         )
         new_file_tree <- paste(
@@ -131,7 +131,7 @@ for (i in 2:ncol(data_fr)) {
             model_name,
             sep = "//"
           ), names(data_fr)[i],
-          names(data_fr)[j], "tree.png",
+          names(data_fr)[j], "tree.pdf",
           sep = "_"
         )
 
@@ -168,10 +168,6 @@ for (i in 2:ncol(data_fr)) {
         mtr <- matrix(model_used_list$grid_predicted,
           ncol = length(grid_new_data[[1]])
         )
-
-        # Spremanje dijagrama sa svim točkama
-
-        png(filename = new_file_all, width = 480, height = 480, units = "px")
 
         name_all <- paste(
           model_name,
@@ -211,6 +207,10 @@ for (i in 2:ncol(data_fr)) {
           pch = 24, bg = ifelse(data_fr_list$test_label == 1, "green4", "red4")
         )
 
+        # Spremanje dijagrama sa svim točkama
+
+        dev.copy(pdf, new_file_all)
+
         # Zatvaranje dijagrama
 
         if (length(dev.list()) > 0) {
@@ -218,10 +218,6 @@ for (i in 2:ncol(data_fr)) {
             dev.off()
           }
         }
-
-        # Spremanje dijagrama sa točkama iz skupa za treniranje
-
-        png(filename = new_file_train, width = 480, height = 480, units = "px")
 
         plot(grid_new_data[[1]], grid_new_data[[2]],
           cex.lab = 1.2, cex.main = 1.7, cex.axis = 1.2,
@@ -242,6 +238,10 @@ for (i in 2:ncol(data_fr)) {
           bg = ifelse(data_fr_list$train_label == 1, "green3", "red3")
         )
 
+        # Spremanje dijagrama sa točkama iz skupa za treniranje
+
+        dev.copy(pdf, new_file_train)
+
         # Zatvaranje dijagrama
 
         if (length(dev.list()) > 0) {
@@ -249,10 +249,6 @@ for (i in 2:ncol(data_fr)) {
             dev.off()
           }
         }
-
-        # Spremanje dijagrama sa točkama iz skupa za testiranje
-
-        png(filename = new_file_test, width = 480, height = 480, units = "px")
 
         plot(grid_new_data[[1]], grid_new_data[[2]],
           cex.lab = 1.2, cex.main = 1.7, cex.axis = 1.2,
@@ -274,6 +270,10 @@ for (i in 2:ncol(data_fr)) {
           pch = 24, bg = ifelse(data_fr_list$test_label == 1, "green4", "red4")
         )
 
+        # Spremanje dijagrama sa točkama iz skupa za testiranje
+
+        dev.copy(pdf, new_file_test)
+
         # Zatvaranje dijagrama
 
         if (length(dev.list()) > 0) {
@@ -283,11 +283,11 @@ for (i in 2:ncol(data_fr)) {
         }
 
         write.csv(df_predictions_train, gsub(
-          "classifier_visual_all.png",
+          "classifier_visual_all.pdf",
           "predictions_train.csv", new_file_all
         ), row.names = FALSE)
         write.csv(df_predictions_test, gsub(
-          "classifier_visual_all.png",
+          "classifier_visual_all.pdf",
           "predictions_test.csv", new_file_all
         ), row.names = FALSE)
       }

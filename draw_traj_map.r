@@ -162,10 +162,6 @@ for (filename_for_traj in filenames_for_trajs) {
   )
 }
 
-# Spremanje dijagrama
-
-png(filename = "all_2D_map.png", width = 480, height = 480, units = "px")
-
 # Učitavanje karte
 
 newmap <- getMap(resolution = "low")
@@ -175,7 +171,7 @@ newmap <- getMap(resolution = "low")
 plot(newmap,
   xlim = c(mini_traj_long, maxi_traj_long),
   ylim = c(mini_traj_lat, maxi_traj_lat),
-  main = "Classifying trajectories based on the 3rd step",
+  main = "Classifying trajectories based on the third step",
   asp = 1,
   xlab = "long. (°)",
   ylab = "lat. (°)",
@@ -274,10 +270,14 @@ axis(side = 2)
 
 # Dodavanje legende
 
-legend("bottomright", cex = 1.1,
+legend(x = 16.1, y = 45.7, cex = 1.1, text.width = strwidth("Division line") * 2,
   legend = c("1", "-1", "Division line"),
   col = c("green", "red", "blue"), lty = c(1, 1, 2), lwd = c(2, 2, 1)
 )
+
+# Spremanje dijagrama
+
+dev.copy(pdf, "all_2D_map.pdf")
 
 # Zatvaranje dijagrama
 

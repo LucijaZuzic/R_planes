@@ -98,7 +98,7 @@ transform_feat <- function(feature_use) {
   new_lab <- paste(new_name, units_use)
 
   if (new_name == "Acceleration") {
-    new_lab <- expression(Akceleracija ~ (m / s^2))
+    new_lab <- expression(Acceleration ~ (m / s^2))
   }
 
   return(new_lab)

@@ -180,13 +180,6 @@ for (filename_for_traj in filenames_for_trajs) {
     date_last
   )
 
-  # Spremanje dijagrama
-
-  png(filename = paste(dir_for_fractal, gsub(
-    "csv", "png",
-    gsub("weather_", "", filename_for_traj)
-  ), sep = "//"), width = 480, height = 480, units = "px")
-
   # Računanje i crtanje dijagrama ovisnosti duljine puta o duljini koraka
 
   fractal_dimensions <- TrajFractalDimensionValues(smoothed, fractal_steps)
@@ -200,6 +193,13 @@ for (filename_for_traj in filenames_for_trajs) {
   )
 
   abline(relation, lty = 2)
+
+  # Spremanje dijagrama
+
+  dev.copy(pdf, paste(dir_for_fractal, gsub(
+    "csv", "pdf",
+    gsub("weather_", "", filename_for_traj)
+  ), sep = "//"))
 
   # Zatvaranje dijagrama
 

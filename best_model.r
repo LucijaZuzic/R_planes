@@ -194,7 +194,7 @@ for (i in seq(2, length(names(df_predictions_test)), 3)) {
   lst_yn <- print_a_row(
     df_predictions_test$test_label,
     df_predictions_test[, i],
-    ry_train, rn_train
+    ry_test, rn_test
   )
   rn_test <- lst_yn$n
   ry_test <- lst_yn$y
@@ -210,7 +210,7 @@ for (i in seq(3, length(names(df_predictions_test)), 3)) {
   lst_yn <- print_a_row(
     df_predictions_test$test_label,
     df_predictions_test[, i],
-    ry_train, rn_train
+    ry_test, rn_test
   )
   rn_test <- lst_yn$n
   ry_test <- lst_yn$y
@@ -226,7 +226,7 @@ for (i in seq(4, length(names(df_predictions_test)), 3)) {
   lst_yn <- print_a_row(
     df_predictions_test$test_label,
     df_predictions_test[, i],
-    ry_train, rn_train
+    ry_test, rn_test
   )
   rn_test <- lst_yn$n
   ry_test <- lst_yn$y

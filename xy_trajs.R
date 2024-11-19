@@ -201,24 +201,6 @@ plot_2d <- function(first_dim, second_dim) {
       date_last
     )
 
-    # Spremanje dijagrama
-
-    png(
-      filename = paste(dir_for_plot, gsub(
-        "csv", "png",
-        gsub(
-          "weather",
-          paste(first_dim, second_dim, sep = "_"),
-          filename_for_traj
-        )
-      ),
-      sep = "//"
-      ),
-      width = 480,
-      height = 480,
-      units = "px"
-    )
-
     # Crtanje originalne i izglađene putanje
 
     plot(
@@ -253,11 +235,26 @@ plot_2d <- function(first_dim, second_dim) {
 
     legend(
       poslegend,
-      cex = 1.7,
+      cex = 1.7, text.width = strwidth("Original") * 2,
       legend = c("Original", "Smooth"),
       col = c("blue", "red"),
       lty = c(2, 1),
       lwd = c(1, 2)
+    )
+
+    # Spremanje dijagrama
+
+    dev.copy(pdf,
+      paste(dir_for_plot, gsub(
+        "csv", "pdf",
+        gsub(
+          "weather",
+          paste(first_dim, second_dim, sep = "_"),
+          filename_for_traj
+        )
+        ),
+        sep = "//"
+      )
     )
 
     # Zatvaranje dijagrama

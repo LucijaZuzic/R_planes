@@ -74,19 +74,19 @@ for (model_name in model_list) {
   model_used_list <- model_use(
     model_name, data_fr_list$train_data,
     data_fr_list$test_data, data_fr_list$train_label, data_fr_list$test_label,
-    tree_name = "trees/all_tree.png"
+    tree_name = "trees/all_tree.pdf"
   )
   model_no_metar_used_list <- model_use(
     model_name, data_fr_no_metar_list$train_data,
     data_fr_no_metar_list$test_data, data_fr_no_metar_list$train_label,
     data_fr_no_metar_list$test_label,
-    tree_name = "trees/all_no_metar_tree.png"
+    tree_name = "trees/all_no_metar_tree.pdf"
   )
   model_metar_used_list <- model_use(
     model_name, data_fr_metar_list$train_data,
     data_fr_metar_list$test_data, data_fr_metar_list$train_label,
     data_fr_metar_list$test_label,
-    tree_name = "trees/all_metar_tree.png"
+    tree_name = "trees/all_metar_tree.pdf"
   )
 
   print(model_name)

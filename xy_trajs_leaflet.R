@@ -30,7 +30,7 @@ library(tidyverse)
 
 library(leaflet)
 
-# Uključivanje knjižnice mapview za spremanje slike karte u .png datoteku
+# Uključivanje knjižnice mapview za spremanje slike karte u datoteku
 
 library(mapview)
 
@@ -178,13 +178,13 @@ for (filename_for_traj in filenames_for_trajs) {
     print(m)
   m
 
-  # Spremanje slike karte u .png datoteku funkcijom mapshot
+  # Spremanje slike karte u datoteku funkcijom mapshot
 
   mapshot(m,
     file = paste(dir_for_plot,
       gsub(
         "csv",
-        "png",
+        "pdf",
         gsub(
           "weather",
           "x_y",

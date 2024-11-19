@@ -28,7 +28,7 @@ library(tidyverse)
 
 library(leaflet)
 
-# Uključivanje knjižnice mapview za spremanje slike karte u .png datoteku
+# Uključivanje knjižnice mapview za spremanje slike karte
 
 library(mapview)
 
@@ -311,6 +311,6 @@ m <- leaflet() %>%
   print(m)
 m
 
-# Spremanje slike karte u .png datoteku funkcijom mapshot
+# Spremanje slike karte u datoteku funkcijom mapshot
 
-mapshot(m, file = "all_2D_leaflet.png")
+mapshot(m, file = "all_2D_leaflet.pdf")

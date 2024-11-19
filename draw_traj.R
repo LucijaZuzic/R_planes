@@ -161,10 +161,6 @@ for (filename_for_traj in filenames_for_trajs) {
 
 first <- TRUE
 
-# Spremanje dijagrama
-
-png(filename = "all_2D.png", width = 480, height = 480, units = "px")
-
 for (filename_for_traj in filenames_for_trajs) {
   # Otvaranje datoteke s vektorima stanja za putanju
 
@@ -241,7 +237,7 @@ for (filename_for_traj in filenames_for_trajs) {
     )
   } else {
     plot(smoothed$x[3:length(smoothed$x)], smoothed$y[3:length(smoothed$y)],
-      main = "Classifying trajectories based on the 3rd step", lwd = 2,
+      main = "Classifying trajectories based on the third step", lwd = 2,
       asp = 1, col = color_use, type = "l", xlim = c(mini_traj_x, maxi_traj_x),
       ylim = c(mini_traj_y, maxi_traj_y), xlab = "x (m)", ylab = "y (m)",
       cex.lab = 1.5, cex.main = 1.7, cex.axis = 1.5
@@ -254,7 +250,7 @@ for (filename_for_traj in filenames_for_trajs) {
 
     # Dodavanje legende
 
-    legend("bottomright", cex = 1.2,
+    legend("bottomright", cex = 1.2, text.width = strwidth("Division line") * 2,
       legend = c("1", "-1", "Division line"),
       col = c("green", "red", "blue"),
       lty = c(1, 1, 2), lwd = c(2, 2, 1)
@@ -263,6 +259,10 @@ for (filename_for_traj in filenames_for_trajs) {
 
   first <- FALSE
 }
+
+# Spremanje dijagrama
+
+dev.copy(pdf, "all_2D.pdf")
 
 # Zatvaranje dijagrama
 

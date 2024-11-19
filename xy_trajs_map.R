@@ -293,21 +293,6 @@ for (filename_for_traj in filenames_for_trajs) {
     date_last
   )
 
-  # Spremanje dijagrama
-
-  png(
-    filename = paste(dir_for_plot,
-      gsub(
-        "csv", "png",
-        gsub("weather", "x_y", filename_for_traj)
-      ),
-      sep = "//"
-    ),
-    width = 480,
-    height = 480,
-    units = "px"
-  )
-
   # Učitavanje karte
 
   newmap <- getMap(resolution = "low")
@@ -335,6 +320,18 @@ for (filename_for_traj in filenames_for_trajs) {
     cord_dec_new$coords.x1[3:length(cord_dec_new$coords.x1)],
     cord_dec_new$coords.x2[3:length(cord_dec_new$coords.x2)],
     lwd = 2, col = color_use
+  )
+
+  # Spremanje dijagrama
+
+  dev.copy(pdf,
+    paste(dir_for_plot,
+      gsub(
+        "csv", "pdf",
+        gsub("weather", "x_y", filename_for_traj)
+      ),
+      sep = "//"
+    )
   )
 
   # Zatvaranje dijagrama

@@ -147,8 +147,8 @@ model_use <- function(
     test_data_with_label <- data.frame(x = test_data, y = as.factor(test_label))
     tree <- rpart(y ~ ., data = train_data_with_label, method = "class")
 
-    png(filename = tree_name, width = 480, height = 480, units = "px")
     rpart.plot(tree)
+    dev.copy(pdf, tree_name)
 
     # Zatvaranje dijagrama
 
