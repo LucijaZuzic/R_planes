@@ -106,6 +106,8 @@ df_clus_no <- subset(df_clus_no, select = -c(label_col))
 
 sink("only_quantile.txt")
 
+save_pdf <- FALSE
+
 for (i in 1:length(names(df_clus_yes))) {
   # Postavljanje imena značajke i mjerne jedinice koja se koristi
 
@@ -188,7 +190,9 @@ for (i in 1:length(names(df_clus_yes))) {
 
   # Spremanje histograma
 
-  dev.copy(pdf, paste(paste(dir_for_hist, original_name, sep = "//"), "pdf", sep = "."))
+  if (save_pdf) {
+    dev.copy(pdf, paste(paste(dir_for_hist, original_name, sep = "//"), "pdf", sep = "."))
+  }
 
   # Zatvaranje histograma
 
@@ -213,7 +217,9 @@ for (i in 1:length(names(df_clus_yes))) {
   
   # Spremanje kutijastog dijagrama
 
-  dev.copy(pdf, paste(paste(dir_for_boxplot, original_name, sep = "//"), "pdf", sep = "."))
+  if (save_pdf) {
+    dev.copy(pdf, paste(paste(dir_for_boxplot, original_name, sep = "//"), "pdf", sep = "."))
+  }
 
   # Zatvaranje kutijastog dijagrama
 
@@ -272,7 +278,9 @@ for (i in 1:length(names(df_clus_yes))) {
 
   # Spremanje dijagrama gustoće vjerojatnosti
 
-  dev.copy(pdf, paste(paste(dir_for_density, original_name, sep = "//"), "pdf", sep = "."))
+  if (save_pdf) {
+    dev.copy(pdf, paste(paste(dir_for_density, original_name, sep = "//"), "pdf", sep = "."))
+  }
 
   # Zatvaranje dijagrama gustoće vjerojatnosti
 
@@ -341,7 +349,9 @@ for (i in 1:length(names(df_clus_yes))) {
 
   # Spremanje Q-Q dijagrama za sve putanje
 
-  dev.copy(pdf, paste(paste(dir_for_qq, original_name, sep = "//"), "pdf", sep = "."))
+  if (save_pdf) {
+    dev.copy(pdf, paste(paste(dir_for_qq, original_name, sep = "//"), "pdf", sep = "."))
+  }
 
   # Zatvaranje Q-Q dijagrama za sve putanje
 
@@ -365,7 +375,9 @@ for (i in 1:length(names(df_clus_yes))) {
 
   # Spremanje Q-Q dijagrama za klasu -1
 
-  dev.copy(pdf, paste(paste(dir_for_qq_neg, original_name, sep = "//"), "pdf", sep = "."))
+  if (save_pdf) {
+    dev.copy(pdf, paste(paste(dir_for_qq_neg, original_name, sep = "//"), "pdf", sep = "."))
+  }
 
   # Zatvaranje Q-Q dijagrama za klasu -1
 
@@ -389,7 +401,9 @@ for (i in 1:length(names(df_clus_yes))) {
 
   # Spremanje Q-Q dijagrama za klasu 1
 
-  dev.copy(pdf, paste(paste(dir_for_qq_pos, original_name, sep = "//"), "pdf", sep = "."))
+  if (save_pdf) {
+    dev.copy(pdf, paste(paste(dir_for_qq_pos, original_name, sep = "//"), "pdf", sep = "."))
+  }
 
   # Zatvaranje Q-Q dijagrama za klasu 1
 
