@@ -86,7 +86,6 @@ if (!dir.exists(dir_for_qq_pos)) {
   dir.create(dir_for_qq_pos)
 }
 
-
 # Otvaranje datoteke sa oznaka putanja,
 # značajkama putanja i meteorološkim značajkama
 
@@ -102,6 +101,10 @@ df_clus_no <- filter(df_clus, label_col == -1)
 
 df_clus_yes <- subset(df_clus_yes, select = -c(label_col))
 df_clus_no <- subset(df_clus_no, select = -c(label_col))
+
+# Spremanje ispisa
+
+sink("only_quantile.txt")
 
 for (i in 1:length(names(df_clus_yes))) {
   # Postavljanje imena značajke i mjerne jedinice koja se koristi
@@ -187,7 +190,6 @@ for (i in 1:length(names(df_clus_yes))) {
 
   dev.copy(pdf, paste(paste(dir_for_hist, original_name, sep = "//"), "pdf", sep = "."))
 
-  
   # Zatvaranje histograma
 
   if (length(dev.list()) > 0) {
@@ -397,3 +399,5 @@ for (i in 1:length(names(df_clus_yes))) {
     }
   }
 }
+
+sink()

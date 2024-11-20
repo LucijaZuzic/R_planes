@@ -1,0 +1,1258 @@
+[1] "Diffusion distance"
+[1] "All"
+      0%      25%      50%      75%     100% 
+22785.48 35242.90 45362.16 50576.00 54206.12 
+[1] 42913.75
+[1] 8388.065
+[1] -1
+      0%      25%      50%      75%     100% 
+26851.71 30478.30 31956.54 35745.85 44250.45 
+[1] 33331.19
+[1] 4324.177
+[1] 1
+      0%      25%      50%      75%     100% 
+22785.48 42644.94 48173.24 51133.63 54206.12 
+[1] 46557.82
+[1] 6454.904
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  val by lab
+W = 111, p-value = 1.638e-11
+alternative hypothesis: true location shift is not equal to 0
+
+
+	Welch Two Sample t-test
+
+data:  val by lab
+t = -11.694, df = 70.05, p-value < 2.2e-16
+alternative hypothesis: true difference in means between group -1 and group 1 is not equal to 0
+95 percent confidence interval:
+ -15482.51 -10970.77
+sample estimates:
+mean in group -1  mean in group 1 
+        33331.19         46557.82 
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus[, i + 1]
+W = 0.91048, p-value = 5.533e-06
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_no[, i]
+W = 0.86177, p-value = 0.001987
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_yes[, i]
+W = 0.87255, p-value = 3.27e-06
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus[, i + 1]
+D = 0.15774, p-value = 0.01349
+alternative hypothesis: two-sided
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_no[, i]
+D = 0.24979, p-value = 0.05699
+alternative hypothesis: two-sided
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_yes[, i]
+D = 0.17729, p-value = 0.02011
+alternative hypothesis: two-sided
+
+[1] "Length"
+[1] "All"
+      0%      25%      50%      75%     100% 
+22785.89 42245.40 54952.51 61849.29 73041.90 
+[1] 52185.58
+[1] 11099.71
+[1] -1
+      0%      25%      50%      75%     100% 
+27722.12 36122.56 37499.78 40648.70 56631.64 
+[1] 39811.25
+[1] 7312.416
+[1] 1
+      0%      25%      50%      75%     100% 
+22785.89 53725.71 58280.28 62768.14 73041.90 
+[1] 56891.31
+[1] 8327.164
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  val by lab
+W = 141, p-value = 8.217e-11
+alternative hypothesis: true location shift is not equal to 0
+
+
+	Welch Two Sample t-test
+
+data:  val by lab
+t = -9.9325, df = 53.164, p-value = 1.03e-13
+alternative hypothesis: true difference in means between group -1 and group 1 is not equal to 0
+95 percent confidence interval:
+ -20528.92 -13631.21
+sample estimates:
+mean in group -1  mean in group 1 
+        39811.25         56891.31 
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus[, i + 1]
+W = 0.93466, p-value = 0.000109
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_no[, i]
+W = 0.85881, p-value = 0.00173
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_yes[, i]
+W = 0.90918, p-value = 8.143e-05
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus[, i + 1]
+D = 0.13126, p-value = 0.06223
+alternative hypothesis: two-sided
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_no[, i]
+D = 0.25116, p-value = 0.05482
+alternative hypothesis: two-sided
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_yes[, i]
+D = 0.11835, p-value = 0.2524
+alternative hypothesis: two-sided
+
+[1] "Duration"
+[1] "All"
+  0%  25%  50%  75% 100% 
+ 120  310  400  430  540 
+[1] 377.1429
+[1] 74.55711
+[1] -1
+  0%  25%  50%  75% 100% 
+ 190  295  310  340  400 
+[1] 317.7778
+[1] 45.76977
+[1] 1
+  0%  25%  50%  75% 100% 
+ 120  380  420  440  540 
+[1] 399.7183
+[1] 71.05273
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  val by lab
+W = 291.5, p-value = 1.1e-07
+alternative hypothesis: true location shift is not equal to 0
+
+
+	Welch Two Sample t-test
+
+data:  val by lab
+t = -6.7197, df = 72.786, p-value = 3.47e-09
+alternative hypothesis: true difference in means between group -1 and group 1 is not equal to 0
+95 percent confidence interval:
+ -106.24432  -57.63675
+sample estimates:
+mean in group -1  mean in group 1 
+        317.7778         399.7183 
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus[, i + 1]
+W = 0.94685, p-value = 0.0005983
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_no[, i]
+W = 0.94151, p-value = 0.1328
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_yes[, i]
+W = 0.87494, p-value = 3.967e-06
+
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  df_clus[, i + 1]
+D = 0.15103, p-value = 0.02288
+alternative hypothesis: two-sided
+
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_no[, i]
+D = 0.1473, p-value = 0.6013
+alternative hypothesis: two-sided
+
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_yes[, i]
+D = 0.21989, p-value = 0.002085
+alternative hypothesis: two-sided
+
+[1] "Speed"
+[1] "All"
+      0%      25%      50%      75%     100% 
+110.9697 126.6166 136.9972 144.7273 212.0946 
+[1] 138.1461
+[1] 17.03905
+[1] -1
+      0%      25%      50%      75%     100% 
+110.9697 116.9181 120.0775 130.1754 161.5422 
+[1] 124.5297
+[1] 12.1282
+[1] 1
+      0%      25%      50%      75%     100% 
+117.6109 134.5424 140.1751 146.0669 212.0946 
+[1] 143.3242
+[1] 15.77874
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  val by lab
+W = 272, p-value = 4.9e-08
+alternative hypothesis: true location shift is not equal to 0
+
+
+	Welch Two Sample t-test
+
+data:  val by lab
+t = -6.2807, df = 60.875, p-value = 3.952e-08
+alternative hypothesis: true difference in means between group -1 and group 1 is not equal to 0
+95 percent confidence interval:
+ -24.77846 -12.81058
+sample estimates:
+mean in group -1  mean in group 1 
+        124.5297         143.3242 
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus[, i + 1]
+W = 0.90598, p-value = 3.336e-06
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_no[, i]
+W = 0.85702, p-value = 0.001591
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_yes[, i]
+W = 0.83508, p-value = 1.999e-07
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus[, i + 1]
+D = 0.13657, p-value = 0.04684
+alternative hypothesis: two-sided
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_no[, i]
+D = 0.23434, p-value = 0.08692
+alternative hypothesis: two-sided
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_yes[, i]
+D = 0.19065, p-value = 0.009826
+alternative hypothesis: two-sided
+
+[1] "Acceleration"
+[1] "All"
+        0%        25%        50%        75%       100% 
+-0.6113840  0.2451783  0.2819668  0.3060154  0.4361490 
+[1] 0.2642294
+[1] 0.1096558
+[1] -1
+       0%       25%       50%       75%      100% 
+0.1901304 0.2716638 0.3016452 0.3505905 0.4361490 
+[1] 0.3099074
+[1] 0.06019586
+[1] 1
+        0%        25%        50%        75%       100% 
+-0.6113840  0.2382157  0.2754435  0.2935432  0.3529076 
+[1] 0.246859
+[1] 0.1191875
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  val by lab
+W = 1365, p-value = 0.001245
+alternative hypothesis: true location shift is not equal to 0
+
+
+	Welch Two Sample t-test
+
+data:  val by lab
+t = 3.4484, df = 88.364, p-value = 0.000866
+alternative hypothesis: true difference in means between group -1 and group 1 is not equal to 0
+95 percent confidence interval:
+ 0.02671597 0.09938089
+sample estimates:
+mean in group -1  mean in group 1 
+       0.3099074        0.2468590 
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus[, i + 1]
+W = 0.58197, p-value = 2.858e-15
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_no[, i]
+W = 0.98916, p-value = 0.9906
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_yes[, i]
+W = 0.50125, p-value = 3.787e-14
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus[, i + 1]
+D = 0.20766, p-value = 0.0003484
+alternative hypothesis: two-sided
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_no[, i]
+D = 0.073104, p-value = 0.9965
+alternative hypothesis: two-sided
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_yes[, i]
+D = 0.2413, p-value = 0.0004008
+alternative hypothesis: two-sided
+
+[1] "Straightness"
+[1] "All"
+       0%       25%       50%       75%      100% 
+0.5920455 0.7920977 0.8197856 0.8839896 0.9999819 
+[1] 0.8310508
+[1] 0.08796232
+[1] -1
+       0%       25%       50%       75%      100% 
+0.6780739 0.8027177 0.8516600 0.8944671 0.9727786 
+[1] 0.8463031
+[1] 0.06949057
+[1] 1
+       0%       25%       50%       75%      100% 
+0.5920455 0.7845758 0.8162343 0.8796253 0.9999819 
+[1] 0.8252506
+[1] 0.09383137
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  val by lab
+W = 1125, p-value = 0.1868
+alternative hypothesis: true location shift is not equal to 0
+
+
+	Welch Two Sample t-test
+
+data:  val by lab
+t = 1.2097, df = 63.258, p-value = 0.2309
+alternative hypothesis: true difference in means between group -1 and group 1 is not equal to 0
+95 percent confidence interval:
+ -0.01372125  0.05582627
+sample estimates:
+mean in group -1  mean in group 1 
+       0.8463031        0.8252506 
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus[, i + 1]
+W = 0.968, p-value = 0.01718
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_no[, i]
+W = 0.97391, p-value = 0.7072
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_yes[, i]
+W = 0.95428, p-value = 0.0114
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus[, i + 1]
+D = 0.1027, p-value = 0.2359
+alternative hypothesis: two-sided
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_no[, i]
+D = 0.099659, p-value = 0.927
+alternative hypothesis: two-sided
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_yes[, i]
+D = 0.13221, p-value = 0.1526
+alternative hypothesis: two-sided
+
+[1] "Sinuosity"
+[1] "All"
+          0%          25%          50%          75%         100% 
+4.145006e-06 2.512355e-03 2.773999e-03 3.113790e-03 1.285741e-02 
+[1] 0.00281751
+[1] 0.001314403
+[1] -1
+         0%         25%         50%         75%        100% 
+0.002076145 0.002833331 0.003071021 0.003357555 0.005452901 
+[1] 0.003190339
+[1] 0.0006678921
+[1] 1
+          0%          25%          50%          75%         100% 
+4.145006e-06 2.473721e-03 2.679500e-03 2.907450e-03 1.285741e-02 
+[1] 0.00267573
+[1] 0.001467769
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  val by lab
+W = 1425, p-value = 0.000211
+alternative hypothesis: true location shift is not equal to 0
+
+
+	Welch Two Sample t-test
+
+data:  val by lab
+t = 2.3771, df = 92.861, p-value = 0.0195
+alternative hypothesis: true difference in means between group -1 and group 1 is not equal to 0
+95 percent confidence interval:
+ 8.471006e-05 9.445071e-04
+sample estimates:
+mean in group -1  mean in group 1 
+     0.003190339      0.002675730 
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus[, i + 1]
+W = 0.59709, p-value = 5.445e-15
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_no[, i]
+W = 0.87742, p-value = 0.004228
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_yes[, i]
+W = 0.54368, p-value = 1.621e-13
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus[, i + 1]
+D = 0.24233, p-value = 1.497e-05
+alternative hypothesis: two-sided
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_no[, i]
+D = 0.1852, p-value = 0.2768
+alternative hypothesis: two-sided
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_yes[, i]
+D = 0.26074, p-value = 9.534e-05
+alternative hypothesis: two-sided
+
+[1] "Maximum expected displacement"
+[1] "All"
+          0%          25%          50%          75%         100% 
+5.057408e+00 1.569305e+02 1.941592e+02 2.288428e+02 6.145008e+07 
+[1] 627591.6
+[1] 6207340
+[1] -1
+       0%       25%       50%       75%      100% 
+ 55.30374 130.07033 181.07360 204.22603 399.11350 
+[1] 176.7002
+[1] 69.06141
+[1] 1
+          0%          25%          50%          75%         100% 
+5.057408e+00 1.756975e+02 1.981821e+02 2.334908e+02 6.145008e+07 
+[1] 866186
+[1] 7292700
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  val by lab
+W = 690, p-value = 0.03308
+alternative hypothesis: true location shift is not equal to 0
+
+
+	Welch Two Sample t-test
+
+data:  val by lab
+t = -1.0006, df = 70, p-value = 0.3205
+alternative hypothesis: true difference in means between group -1 and group 1 is not equal to 0
+95 percent confidence interval:
+ -2592163.3   860144.7
+sample estimates:
+mean in group -1  mean in group 1 
+        176.7002      866186.0026 
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus[, i + 1]
+W = 0.076417, p-value < 2.2e-16
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_no[, i]
+W = 0.92502, p-value = 0.05222
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_yes[, i]
+W = 0.097216, p-value < 2.2e-16
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus[, i + 1]
+D = 0.52912, p-value = 4.441e-16
+alternative hypothesis: two-sided
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_no[, i]
+D = 0.15026, p-value = 0.527
+alternative hypothesis: two-sided
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_yes[, i]
+D = 0.53239, p-value < 2.2e-16
+alternative hypothesis: two-sided
+
+[1] "Direction change (arithemtic average)"
+[1] "All"
+          0%          25%          50%          75%         100% 
+0.0003390841 0.1360596304 0.1524245384 0.1808435567 0.8763398633 
+[1] 0.1622655
+[1] 0.0892493
+[1] -1
+       0%       25%       50%       75%      100% 
+0.1196207 0.1518173 0.1624346 0.2102899 0.3549168 
+[1] 0.1849853
+[1] 0.05241709
+[1] 1
+          0%          25%          50%          75%         100% 
+0.0003390841 0.1315866381 0.1458441570 0.1718427421 0.8763398633 
+[1] 0.1536255
+[1] 0.09870403
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  val by lab
+W = 1360, p-value = 0.001429
+alternative hypothesis: true location shift is not equal to 0
+
+
+	Welch Two Sample t-test
+
+data:  val by lab
+t = 2.0286, df = 85.59, p-value = 0.04561
+alternative hypothesis: true difference in means between group -1 and group 1 is not equal to 0
+95 percent confidence interval:
+ 0.0006262945 0.0620932636
+sample estimates:
+mean in group -1  mean in group 1 
+       0.1849853        0.1536255 
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus[, i + 1]
+W = 0.56357, p-value = 1.335e-15
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_no[, i]
+W = 0.83937, p-value = 0.0007146
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_yes[, i]
+W = 0.49221, p-value = 2.811e-14
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus[, i + 1]
+D = 0.23436, p-value = 3.23e-05
+alternative hypothesis: two-sided
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_no[, i]
+D = 0.1897, p-value = 0.2519
+alternative hypothesis: two-sided
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_yes[, i]
+D = 0.26778, p-value = 5.505e-05
+alternative hypothesis: two-sided
+
+[1] "Direction change (standard deviation)"
+[1] "All"
+          0%          25%          50%          75%         100% 
+0.0004090806 0.2309899371 0.2487659908 0.2713269086 2.2155730882 
+[1] 0.262508
+[1] 0.2111065
+[1] -1
+       0%       25%       50%       75%      100% 
+0.1668054 0.2427493 0.2573419 0.2922038 0.4176651 
+[1] 0.2685858
+[1] 0.05145563
+[1] 1
+          0%          25%          50%          75%         100% 
+0.0004090806 0.2296650963 0.2463119260 0.2621067315 2.2155730882 
+[1] 0.2601968
+[1] 0.2464804
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  val by lab
+W = 1188, p-value = 0.06861
+alternative hypothesis: true location shift is not equal to 0
+
+
+	Welch Two Sample t-test
+
+data:  val by lab
+t = 0.27164, df = 83.994, p-value = 0.7866
+alternative hypothesis: true difference in means between group -1 and group 1 is not equal to 0
+95 percent confidence interval:
+ -0.05302443  0.06980242
+sample estimates:
+mean in group -1  mean in group 1 
+       0.2685858        0.2601968 
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus[, i + 1]
+W = 0.30404, p-value < 2.2e-16
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_no[, i]
+W = 0.94065, p-value = 0.1265
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_yes[, i]
+W = 0.3053, p-value < 2.2e-16
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus[, i + 1]
+D = 0.33548, p-value = 2.445e-10
+alternative hypothesis: two-sided
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_no[, i]
+D = 0.13191, p-value = 0.6868
+alternative hypothesis: two-sided
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_yes[, i]
+D = 0.35911, p-value = 1.052e-08
+alternative hypothesis: two-sided
+
+[1] "Fractal dimension"
+[1] "All"
+      0%      25%      50%      75%     100% 
+1.000000 1.000878 1.001252 1.001697 1.041423 
+[1] 1.001821
+[1] 0.004152746
+[1] -1
+      0%      25%      50%      75%     100% 
+1.000775 1.001363 1.001701 1.002298 1.006221 
+[1] 1.002041
+[1] 0.001205007
+[1] 1
+      0%      25%      50%      75%     100% 
+1.000000 1.000858 1.001129 1.001513 1.041423 
+[1] 1.001737
+[1] 0.004830308
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  val by lab
+W = 1459, p-value = 7.012e-05
+alternative hypothesis: true location shift is not equal to 0
+
+
+	Welch Two Sample t-test
+
+data:  val by lab
+t = 0.49181, df = 88.411, p-value = 0.6241
+alternative hypothesis: true difference in means between group -1 and group 1 is not equal to 0
+95 percent confidence interval:
+ -0.0009247022  0.0015329505
+sample estimates:
+mean in group -1  mean in group 1 
+        1.002041         1.001737 
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus[, i + 1]
+W = 0.217, p-value < 2.2e-16
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_no[, i]
+W = 0.78279, p-value = 6.991e-05
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_yes[, i]
+W = 0.1926, p-value < 2.2e-16
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus[, i + 1]
+D = 0.35382, p-value = 1.763e-11
+alternative hypothesis: two-sided
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_no[, i]
+D = 0.20853, p-value = 0.1654
+alternative hypothesis: two-sided
+
+
+	Exact one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_yes[, i]
+D = 0.40601, p-value = 4.339e-11
+alternative hypothesis: two-sided
+
+[1] "Temperature"
+[1] "All"
+  0%  25%  50%  75% 100% 
+-1.0  9.0 15.5 24.0 35.0 
+[1] 16.44068
+[1] 8.758676
+[1] -1
+    0%    25%    50%    75%   100% 
+ 3.000 11.675 17.000 25.000 35.000 
+[1] 18.0338
+[1] 8.961205
+[1] 1
+  0%  25%  50%  75% 100% 
+  -1    8   15   24   32 
+[1] 15.83484
+[1] 8.667532
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  val by lab
+W = 1085.5, p-value = 0.3142
+alternative hypothesis: true location shift is not equal to 0
+
+
+	Welch Two Sample t-test
+
+data:  val by lab
+t = 1.0951, df = 45.645, p-value = 0.2792
+alternative hypothesis: true difference in means between group -1 and group 1 is not equal to 0
+95 percent confidence interval:
+ -1.843912  6.241818
+sample estimates:
+mean in group -1  mean in group 1 
+        18.03380         15.83484 
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus[, i + 1]
+W = 0.96791, p-value = 0.01692
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_no[, i]
+W = 0.96636, p-value = 0.5092
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_yes[, i]
+W = 0.95871, p-value = 0.01993
+
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  df_clus[, i + 1]
+D = 0.091664, p-value = 0.3826
+alternative hypothesis: two-sided
+
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_no[, i]
+D = 0.11401, p-value = 0.8742
+alternative hypothesis: two-sided
+
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_yes[, i]
+D = 0.099577, p-value = 0.4821
+alternative hypothesis: two-sided
+
+[1] "Air pressure at sea level"
+[1] "All"
+   0%   25%   50%   75%  100% 
+746.3 759.7 762.6 765.8 777.0 
+[1] 762.8511
+[1] 5.737014
+[1] -1
+   0%   25%   50%   75%  100% 
+746.3 756.9 759.7 763.9 776.2 
+[1] 760.7148
+[1] 6.366783
+[1] 1
+      0%      25%      50%      75%     100% 
+751.6000 760.6328 762.8000 766.9500 777.0000 
+[1] 763.6634
+[1] 5.303079
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  val by lab
+W = 641, p-value = 0.01162
+alternative hypothesis: true location shift is not equal to 0
+
+
+	Welch Two Sample t-test
+
+data:  val by lab
+t = -2.1406, df = 40.482, p-value = 0.03838
+alternative hypothesis: true difference in means between group -1 and group 1 is not equal to 0
+95 percent confidence interval:
+ -5.7315695 -0.1656924
+sample estimates:
+mean in group -1  mean in group 1 
+        760.7148         763.6634 
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus[, i + 1]
+W = 0.98816, p-value = 0.5347
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_no[, i]
+W = 0.96644, p-value = 0.5111
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_yes[, i]
+W = 0.98083, p-value = 0.3499
+
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  df_clus[, i + 1]
+D = 0.077419, p-value = 0.5996
+alternative hypothesis: two-sided
+
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_no[, i]
+D = 0.10605, p-value = 0.9218
+alternative hypothesis: two-sided
+
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_yes[, i]
+D = 0.089759, p-value = 0.6165
+alternative hypothesis: two-sided
+
+[1] "Air pressure at the measuring station"
+[1] "All"
+      0%      25%      50%      75%     100% 
+736.8000 750.4000 752.9932 756.5000 767.2000 
+[1] 753.3621
+[1] 5.599478
+[1] -1
+      0%      25%      50%      75%     100% 
+736.8000 747.7500 750.7000 754.4675 766.2000 
+[1] 751.305
+[1] 6.197275
+[1] 1
+    0%    25%    50%    75%   100% 
+741.80 751.30 753.40 757.15 767.20 
+[1] 754.1444
+[1] 5.189385
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  val by lab
+W = 650, p-value = 0.01431
+alternative hypothesis: true location shift is not equal to 0
+
+
+	Welch Two Sample t-test
+
+data:  val by lab
+t = -2.1154, df = 40.641, p-value = 0.04057
+alternative hypothesis: true difference in means between group -1 and group 1 is not equal to 0
+95 percent confidence interval:
+ -5.5509810 -0.1279041
+sample estimates:
+mean in group -1  mean in group 1 
+        751.3050         754.1444 
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus[, i + 1]
+W = 0.98866, p-value = 0.5729
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_no[, i]
+W = 0.96887, p-value = 0.5723
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_yes[, i]
+W = 0.9805, p-value = 0.3365
+
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  df_clus[, i + 1]
+D = 0.055941, p-value = 0.919
+alternative hypothesis: two-sided
+
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_no[, i]
+D = 0.10108, p-value = 0.9455
+alternative hypothesis: two-sided
+
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_yes[, i]
+D = 0.073194, p-value = 0.8414
+alternative hypothesis: two-sided
+
+[1] "Relative humidity"
+[1] "All"
+    0%    25%    50%    75%   100% 
+19.000 44.000 59.500 75.875 94.000 
+[1] 59.80145
+[1] 18.35749
+[1] -1
+  0%  25%  50%  75% 100% 
+28.0 42.5 53.0 67.5 93.0 
+[1] 55.79329
+[1] 16.55869
+[1] 1
+      0%      25%      50%      75%     100% 
+19.00000 46.35556 61.00000 77.50000 94.00000 
+[1] 61.32568
+[1] 18.88351
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  val by lab
+W = 783, p-value = 0.1639
+alternative hypothesis: true location shift is not equal to 0
+
+
+	Welch Two Sample t-test
+
+data:  val by lab
+t = -1.4201, df = 53.24, p-value = 0.1614
+alternative hypothesis: true difference in means between group -1 and group 1 is not equal to 0
+95 percent confidence interval:
+ -13.345630   2.280846
+sample estimates:
+mean in group -1  mean in group 1 
+        55.79329         61.32568 
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus[, i + 1]
+W = 0.97079, p-value = 0.02783
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_no[, i]
+W = 0.97088, p-value = 0.6252
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_yes[, i]
+W = 0.96641, p-value = 0.05415
+
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  df_clus[, i + 1]
+D = 0.083549, p-value = 0.5007
+alternative hypothesis: two-sided
+
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_no[, i]
+D = 0.095406, p-value = 0.9666
+alternative hypothesis: two-sided
+
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_yes[, i]
+D = 0.094413, p-value = 0.5514
+alternative hypothesis: two-sided
+
+[1] "Wind speed"
+[1] "All"
+      0%      25%      50%      75%     100% 
+0.000000 1.156853 2.000000 3.000000 7.758621 
+[1] 2.594177
+[1] 1.597587
+[1] -1
+  0%  25%  50%  75% 100% 
+1.00 2.00 2.35 4.00 7.00 
+[1] 3.05
+[1] 1.735988
+[1] 1
+      0%      25%      50%      75%     100% 
+0.000000 1.000000 2.000000 3.000000 7.758621 
+[1] 2.420835
+[1] 1.518803
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  val by lab
+W = 1141, p-value = 0.1419
+alternative hypothesis: true location shift is not equal to 0
+
+
+	Welch Two Sample t-test
+
+data:  val by lab
+t = 1.6574, df = 42.017, p-value = 0.1049
+alternative hypothesis: true difference in means between group -1 and group 1 is not equal to 0
+95 percent confidence interval:
+ -0.1369172  1.3952468
+sample estimates:
+mean in group -1  mean in group 1 
+        3.050000         2.420835 
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus[, i + 1]
+W = 0.93, p-value = 5.9e-05
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_no[, i]
+W = 0.873, p-value = 0.003404
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_yes[, i]
+W = 0.93785, p-value = 0.001615
+
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  df_clus[, i + 1]
+D = 0.16543, p-value = 0.009363
+alternative hypothesis: two-sided
+
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_no[, i]
+D = 0.21519, p-value = 0.164
+alternative hypothesis: two-sided
+
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_yes[, i]
+D = 0.14435, p-value = 0.1037
+alternative hypothesis: two-sided
+
+[1] "Dew point"
+[1] "All"
+        0%        25%        50%        75%       100% 
+-12.000000   2.000000   8.820513  14.000000  21.000000 
+[1] 7.745484
+[1] 7.242595
+[1] -1
+  0%  25%  50%  75% 100% 
+ -12    5   10   13   21 
+[1] 8.348148
+[1] 7.455219
+[1] 1
+  0%  25%  50%  75% 100% 
+ -11    1    8   14   20 
+[1] 7.516301
+[1] 7.200723
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  val by lab
+W = 1039.5, p-value = 0.5216
+alternative hypothesis: true location shift is not equal to 0
+
+
+	Welch Two Sample t-test
+
+data:  val by lab
+t = 0.49812, df = 45.589, p-value = 0.6208
+alternative hypothesis: true difference in means between group -1 and group 1 is not equal to 0
+95 percent confidence interval:
+ -2.530457  4.194151
+sample estimates:
+mean in group -1  mean in group 1 
+        8.348148         7.516301 
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus[, i + 1]
+W = 0.9635, p-value = 0.008045
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_no[, i]
+W = 0.95137, p-value = 0.2315
+
+
+	Shapiro-Wilk normality test
+
+data:  df_clus_yes[, i]
+W = 0.95787, p-value = 0.01792
+
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  df_clus[, i + 1]
+D = 0.092459, p-value = 0.372
+alternative hypothesis: two-sided
+
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_no[, i]
+D = 0.16447, p-value = 0.4584
+alternative hypothesis: two-sided
+
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  df_clus_yes[, i]
+D = 0.11486, p-value = 0.3061
+alternative hypothesis: two-sided
+
