@@ -12,7 +12,7 @@ def stringify(value_round, rounding, skip_mul):
             value_round *= 10
         return str(np.round(value_round, rounding)) + " \\times 10^{-" + str(pot) + "}", pot
 
-file_quantile = open("only_quantile.txt")
+file_quantile = open("only_quantile_new.txt")
 lines_quantile = file_quantile.readlines()
 file_quantile.close()
 

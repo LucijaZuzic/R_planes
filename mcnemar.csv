@@ -1,0 +1,1861 @@
+model1,model2,test_type,pvalue,statistic
+test_label,k-NN_all_4,correction,0.2888443663464818,1.125
+test_label,k-NN_all_4,no,0.15729920705028105,2.0
+test_label,k-NN_all_4,exactcorrection,0.2890625,2.0
+test_label,k-NN_all_4,exact,0.2890625,2.0
+test_label,k-NN_no_METAR_3,correction,0.1305700181157369,2.2857142857142856
+test_label,k-NN_no_METAR_3,no,0.05878172135535891,3.5714285714285716
+test_label,k-NN_no_METAR_3,exactcorrection,0.125,1.0
+test_label,k-NN_no_METAR_3,exact,0.125,1.0
+test_label,k-NN_METAR_7,correction,0.7194375444233914,0.12903225806451613
+test_label,k-NN_METAR_7,no,0.590013887163346,0.2903225806451613
+test_label,k-NN_METAR_7,exactcorrection,0.720100131817162,14.0
+test_label,k-NN_METAR_7,exact,0.720100131817162,14.0
+test_label,Linear SVM_all,correction,0.00766076113517946,7.111111111111111
+test_label,Linear SVM_all,no,0.0026997960632601883,9.0
+test_label,Linear SVM_all,exactcorrection,0.00390625,0.0
+test_label,Linear SVM_all,exact,0.00390625,0.0
+test_label,Linear SVM_no_METAR,correction,0.07363827012030257,3.2
+test_label,Linear SVM_no_METAR,no,0.025347318677468325,5.0
+test_label,Linear SVM_no_METAR,exactcorrection,0.0625,0.0
+test_label,Linear SVM_no_METAR,exact,0.0625,0.0
+test_label,Linear SVM_METAR,correction,0.01639507184919225,5.76
+test_label,Linear SVM_METAR,no,0.009322376047437497,6.76
+test_label,Linear SVM_METAR,exactcorrection,0.01463329792022705,6.0
+test_label,Linear SVM_METAR,exact,0.01463329792022705,6.0
+test_label,RBF SVM_all,correction,0.041226833337163815,4.166666666666667
+test_label,RBF SVM_all,no,0.014305878435429641,6.0
+test_label,RBF SVM_all,exactcorrection,0.03125,0.0
+test_label,RBF SVM_all,exact,0.03125,0.0
+test_label,RBF SVM_no_METAR,correction,0.07363827012030257,3.2
+test_label,RBF SVM_no_METAR,no,0.025347318677468325,5.0
+test_label,RBF SVM_no_METAR,exactcorrection,0.0625,0.0
+test_label,RBF SVM_no_METAR,exact,0.0625,0.0
+test_label,RBF SVM_METAR,correction,0.012343360353455044,6.260869565217392
+test_label,RBF SVM_METAR,no,0.006714389785549478,7.3478260869565215
+test_label,RBF SVM_METAR,exactcorrection,0.010622024536132812,5.0
+test_label,RBF SVM_METAR,exact,0.010622024536132812,5.0
+test_label,Gaussian Process_all,correction,0.02334220201289086,5.142857142857143
+test_label,Gaussian Process_all,no,0.008150971593502705,7.0
+test_label,Gaussian Process_all,exactcorrection,0.015625,0.0
+test_label,Gaussian Process_all,exact,0.015625,0.0
+test_label,Gaussian Process_no_METAR,correction,0.07363827012030257,3.2
+test_label,Gaussian Process_no_METAR,no,0.025347318677468325,5.0
+test_label,Gaussian Process_no_METAR,exactcorrection,0.0625,0.0
+test_label,Gaussian Process_no_METAR,exact,0.0625,0.0
+test_label,Gaussian Process_METAR,correction,0.06619257972219346,3.375
+test_label,Gaussian Process_METAR,no,0.041226833337163815,4.166666666666667
+test_label,Gaussian Process_METAR,exactcorrection,0.06391465663909912,7.0
+test_label,Gaussian Process_METAR,exact,0.06391465663909912,7.0
+test_label,Decision Tree_all,correction,0.02685669550752441,4.9
+test_label,Decision Tree_all,no,0.011412036386001662,6.4
+test_label,Decision Tree_all,exactcorrection,0.021484375,1.0
+test_label,Decision Tree_all,exact,0.021484375,1.0
+test_label,Decision Tree_no_METAR,correction,0.0093747684594349,6.75
+test_label,Decision Tree_no_METAR,no,0.003892417122778637,8.333333333333334
+test_label,Decision Tree_no_METAR,exactcorrection,0.00634765625,1.0
+test_label,Decision Tree_no_METAR,exact,0.00634765625,1.0
+test_label,Decision Tree_METAR,correction,0.2962698714842834,1.0909090909090908
+test_label,Decision Tree_METAR,no,0.22301746994661142,1.4848484848484849
+test_label,Decision Tree_METAR,exactcorrection,0.296206368599087,13.0
+test_label,Decision Tree_METAR,exact,0.296206368599087,13.0
+test_label,Random Forest_all,correction,0.02334220201289086,5.142857142857143
+test_label,Random Forest_all,no,0.008150971593502705,7.0
+test_label,Random Forest_all,exactcorrection,0.015625,0.0
+test_label,Random Forest_all,exact,0.015625,0.0
+test_label,Random Forest_no_METAR,correction,0.041226833337163815,4.166666666666667
+test_label,Random Forest_no_METAR,no,0.014305878435429641,6.0
+test_label,Random Forest_no_METAR,exactcorrection,0.03125,0.0
+test_label,Random Forest_no_METAR,exact,0.03125,0.0
+test_label,Random Forest_METAR,correction,0.5958830905651775,0.28125
+test_label,Random Forest_METAR,no,0.47950012218695337,0.5
+test_label,Random Forest_METAR,exactcorrection,0.5966148958541453,14.0
+test_label,Random Forest_METAR,exact,0.5966148958541453,14.0
+test_label,Naive Bayes_all,correction,0.1305700181157369,2.2857142857142856
+test_label,Naive Bayes_all,no,0.05878172135535891,3.5714285714285716
+test_label,Naive Bayes_all,exactcorrection,0.125,1.0
+test_label,Naive Bayes_all,exact,0.125,1.0
+test_label,Naive Bayes_no_METAR,correction,0.1305700181157369,2.2857142857142856
+test_label,Naive Bayes_no_METAR,no,0.05878172135535891,3.5714285714285716
+test_label,Naive Bayes_no_METAR,exactcorrection,0.125,1.0
+test_label,Naive Bayes_no_METAR,exact,0.125,1.0
+test_label,Naive Bayes_METAR,correction,0.22994905679421007,1.4411764705882353
+test_label,Naive Bayes_METAR,no,0.17006696145390077,1.8823529411764706
+test_label,Naive Bayes_METAR,exactcorrection,0.22948101302608848,13.0
+test_label,Naive Bayes_METAR,exact,0.22948101302608848,13.0
+test_label,Multilayer Perceptron_all,correction,0.00766076113517946,7.111111111111111
+test_label,Multilayer Perceptron_all,no,0.0026997960632601883,9.0
+test_label,Multilayer Perceptron_all,exactcorrection,0.00390625,0.0
+test_label,Multilayer Perceptron_all,exact,0.00390625,0.0
+test_label,Multilayer Perceptron_no_METAR,correction,0.04550026389635857,4.0
+test_label,Multilayer Perceptron_no_METAR,no,0.019630657257290702,5.444444444444445
+test_label,Multilayer Perceptron_no_METAR,exactcorrection,0.0390625,1.0
+test_label,Multilayer Perceptron_no_METAR,exact,0.0390625,1.0
+test_label,Multilayer Perceptron_METAR,correction,0.8551321405847059,0.03333333333333333
+test_label,Multilayer Perceptron_METAR,no,0.7150006546880892,0.13333333333333333
+test_label,Multilayer Perceptron_METAR,exactcorrection,0.8555355519056321,14.0
+test_label,Multilayer Perceptron_METAR,exact,0.8555355519056321,14.0
+test_label,AdaBoost_all,correction,0.01332832878081758,6.125
+test_label,AdaBoost_all,no,0.004677734981047276,8.0
+test_label,AdaBoost_all,exactcorrection,0.0078125,0.0
+test_label,AdaBoost_all,exact,0.0078125,0.0
+test_label,AdaBoost_no_METAR,correction,0.47950012218695337,0.5
+test_label,AdaBoost_no_METAR,no,1.0,0.0
+test_label,AdaBoost_no_METAR,exactcorrection,1.0,1.0
+test_label,AdaBoost_no_METAR,exact,1.0,1.0
+test_label,AdaBoost_METAR,correction,0.6069054272179508,0.2647058823529412
+test_label,AdaBoost_METAR,no,0.4927166772270877,0.47058823529411764
+test_label,AdaBoost_METAR,exactcorrection,0.6075913612730801,15.0
+test_label,AdaBoost_METAR,exact,0.6075913612730801,15.0
+test_label,Quadratic Discriminant Analysis_all,correction,0.02334220201289086,5.142857142857143
+test_label,Quadratic Discriminant Analysis_all,no,0.008150971593502705,7.0
+test_label,Quadratic Discriminant Analysis_all,exactcorrection,0.015625,0.0
+test_label,Quadratic Discriminant Analysis_all,exact,0.015625,0.0
+test_label,Quadratic Discriminant Analysis_no_METAR,correction,0.02334220201289086,5.142857142857143
+test_label,Quadratic Discriminant Analysis_no_METAR,no,0.008150971593502705,7.0
+test_label,Quadratic Discriminant Analysis_no_METAR,exactcorrection,0.015625,0.0
+test_label,Quadratic Discriminant Analysis_no_METAR,exact,0.015625,0.0
+test_label,Quadratic Discriminant Analysis_METAR,correction,0.2652053925915044,1.2413793103448276
+test_label,Quadratic Discriminant Analysis_METAR,no,0.19364643126921688,1.6896551724137931
+test_label,Quadratic Discriminant Analysis_METAR,exactcorrection,0.26493089646101,11.0
+test_label,Quadratic Discriminant Analysis_METAR,exact,0.26493089646101,11.0
+k-NN_all_4,k-NN_no_METAR_3,correction,1.0,0.0
+k-NN_all_4,k-NN_no_METAR_3,no,0.7054569861112734,0.14285714285714285
+k-NN_all_4,k-NN_no_METAR_3,exactcorrection,1.0,3.0
+k-NN_all_4,k-NN_no_METAR_3,exact,1.0,3.0
+k-NN_all_4,k-NN_METAR_7,correction,0.2962698714842834,1.0909090909090908
+k-NN_all_4,k-NN_METAR_7,no,0.22301746994661142,1.4848484848484849
+k-NN_all_4,k-NN_METAR_7,exactcorrection,0.296206368599087,13.0
+k-NN_all_4,k-NN_METAR_7,exact,0.296206368599087,13.0
+k-NN_all_4,Linear SVM_all,correction,0.1305700181157369,2.2857142857142856
+k-NN_all_4,Linear SVM_all,no,0.05878172135535891,3.5714285714285716
+k-NN_all_4,Linear SVM_all,exactcorrection,0.125,1.0
+k-NN_all_4,Linear SVM_all,exact,0.125,1.0
+k-NN_all_4,Linear SVM_no_METAR,correction,1.0,0.0
+k-NN_all_4,Linear SVM_no_METAR,no,0.6547208460185768,0.2
+k-NN_all_4,Linear SVM_no_METAR,exactcorrection,1.0,2.0
+k-NN_all_4,Linear SVM_no_METAR,exact,1.0,2.0
+k-NN_all_4,Linear SVM_METAR,correction,0.0029671058986476154,8.827586206896552
+k-NN_all_4,Linear SVM_METAR,no,0.0015949936169505198,9.96551724137931
+k-NN_all_4,Linear SVM_METAR,exactcorrection,0.002315700054168701,6.0
+k-NN_all_4,Linear SVM_METAR,exact,0.002315700054168701,6.0
+k-NN_all_4,RBF SVM_all,correction,0.6170750774519739,0.25
+k-NN_all_4,RBF SVM_all,no,0.31731050786291115,1.0
+k-NN_all_4,RBF SVM_all,exactcorrection,0.625,1.0
+k-NN_all_4,RBF SVM_all,exact,0.625,1.0
+k-NN_all_4,RBF SVM_no_METAR,correction,1.0,0.0
+k-NN_all_4,RBF SVM_no_METAR,no,0.6547208460185768,0.2
+k-NN_all_4,RBF SVM_no_METAR,exactcorrection,1.0,2.0
+k-NN_all_4,RBF SVM_no_METAR,exact,1.0,2.0
+k-NN_all_4,RBF SVM_METAR,correction,0.0020755629257427034,9.481481481481481
+k-NN_all_4,RBF SVM_METAR,no,0.0010692127549193704,10.703703703703704
+k-NN_all_4,RBF SVM_METAR,exactcorrection,0.0015137195587158203,5.0
+k-NN_all_4,RBF SVM_METAR,exact,0.0015137195587158203,5.0
+k-NN_all_4,Gaussian Process_all,correction,0.37109336952269756,0.8
+k-NN_all_4,Gaussian Process_all,no,0.17971249487899593,1.8
+k-NN_all_4,Gaussian Process_all,exactcorrection,0.375,1.0
+k-NN_all_4,Gaussian Process_all,exact,0.375,1.0
+k-NN_all_4,Gaussian Process_no_METAR,correction,1.0,0.0
+k-NN_all_4,Gaussian Process_no_METAR,no,0.6547208460185768,0.2
+k-NN_all_4,Gaussian Process_no_METAR,exactcorrection,1.0,2.0
+k-NN_all_4,Gaussian Process_no_METAR,exact,1.0,2.0
+k-NN_all_4,Gaussian Process_METAR,correction,0.017622090962324415,5.633333333333334
+k-NN_all_4,Gaussian Process_METAR,no,0.010587137334056926,6.533333333333333
+k-NN_all_4,Gaussian Process_METAR,exactcorrection,0.016124801710247997,8.0
+k-NN_all_4,Gaussian Process_METAR,exact,0.016124801710247997,8.0
+k-NN_all_4,Decision Tree_all,correction,0.22067136191984324,1.5
+k-NN_all_4,Decision Tree_all,no,0.10247043485974942,2.6666666666666665
+k-NN_all_4,Decision Tree_all,exactcorrection,0.21875,1.0
+k-NN_all_4,Decision Tree_all,exact,0.21875,1.0
+k-NN_all_4,Decision Tree_no_METAR,correction,0.041226833337163815,4.166666666666667
+k-NN_all_4,Decision Tree_no_METAR,no,0.014305878435429641,6.0
+k-NN_all_4,Decision Tree_no_METAR,exactcorrection,0.03125,0.0
+k-NN_all_4,Decision Tree_no_METAR,exact,0.03125,0.0
+k-NN_all_4,Decision Tree_METAR,correction,0.7487740417065472,0.10256410256410256
+k-NN_all_4,Decision Tree_METAR,no,0.6309540411841706,0.23076923076923078
+k-NN_all_4,Decision Tree_METAR,exactcorrection,0.7492586247608418,18.0
+k-NN_all_4,Decision Tree_METAR,exact,0.7492586247608418,18.0
+k-NN_all_4,Random Forest_all,correction,0.4496917979688908,0.5714285714285714
+k-NN_all_4,Random Forest_all,no,0.25683925795785334,1.2857142857142858
+k-NN_all_4,Random Forest_all,exactcorrection,0.453125,2.0
+k-NN_all_4,Random Forest_all,exact,0.453125,2.0
+k-NN_all_4,Random Forest_no_METAR,correction,0.6830913983096086,0.16666666666666666
+k-NN_all_4,Random Forest_no_METAR,no,0.4142161782425251,0.6666666666666666
+k-NN_all_4,Random Forest_no_METAR,exactcorrection,0.6875,2.0
+k-NN_all_4,Random Forest_no_METAR,exact,0.6875,2.0
+k-NN_all_4,Random Forest_METAR,correction,0.8711314915971582,0.02631578947368421
+k-NN_all_4,Random Forest_METAR,no,1.0,0.0
+k-NN_all_4,Random Forest_METAR,exactcorrection,1.0,19.0
+k-NN_all_4,Random Forest_METAR,exact,1.0,19.0
+k-NN_all_4,Naive Bayes_all,correction,1.0,0.0
+k-NN_all_4,Naive Bayes_all,no,0.6547208460185768,0.2
+k-NN_all_4,Naive Bayes_all,exactcorrection,1.0,2.0
+k-NN_all_4,Naive Bayes_all,exact,1.0,2.0
+k-NN_all_4,Naive Bayes_no_METAR,correction,1.0,0.0
+k-NN_all_4,Naive Bayes_no_METAR,no,0.6547208460185768,0.2
+k-NN_all_4,Naive Bayes_no_METAR,exactcorrection,1.0,2.0
+k-NN_all_4,Naive Bayes_no_METAR,exact,1.0,2.0
+k-NN_all_4,Naive Bayes_METAR,correction,0.6170750774519739,0.25
+k-NN_all_4,Naive Bayes_METAR,no,0.5049850750938457,0.4444444444444444
+k-NN_all_4,Naive Bayes_METAR,exactcorrection,0.617719317029696,16.0
+k-NN_all_4,Naive Bayes_METAR,exact,0.617719317029696,16.0
+k-NN_all_4,Multilayer Perceptron_all,correction,0.1305700181157369,2.2857142857142856
+k-NN_all_4,Multilayer Perceptron_all,no,0.05878172135535891,3.5714285714285716
+k-NN_all_4,Multilayer Perceptron_all,exactcorrection,0.125,1.0
+k-NN_all_4,Multilayer Perceptron_all,exact,0.125,1.0
+k-NN_all_4,Multilayer Perceptron_no_METAR,correction,0.4496917979688908,0.5714285714285714
+k-NN_all_4,Multilayer Perceptron_no_METAR,no,0.25683925795785334,1.2857142857142858
+k-NN_all_4,Multilayer Perceptron_no_METAR,exactcorrection,0.453125,2.0
+k-NN_all_4,Multilayer Perceptron_no_METAR,exact,0.453125,2.0
+k-NN_all_4,Multilayer Perceptron_METAR,correction,0.3447042220069577,0.8928571428571429
+k-NN_all_4,Multilayer Perceptron_METAR,no,0.25683925795785334,1.2857142857142858
+k-NN_all_4,Multilayer Perceptron_METAR,exactcorrection,0.34492845088243484,11.0
+k-NN_all_4,Multilayer Perceptron_METAR,exact,0.34492845088243484,11.0
+k-NN_all_4,AdaBoost_all,correction,0.2888443663464818,1.125
+k-NN_all_4,AdaBoost_all,no,0.15729920705028105,2.0
+k-NN_all_4,AdaBoost_all,exactcorrection,0.2890625,2.0
+k-NN_all_4,AdaBoost_all,exact,0.2890625,2.0
+k-NN_all_4,AdaBoost_no_METAR,correction,0.2888443663464818,1.125
+k-NN_all_4,AdaBoost_no_METAR,no,0.15729920705028105,2.0
+k-NN_all_4,AdaBoost_no_METAR,exactcorrection,0.2890625,2.0
+k-NN_all_4,AdaBoost_no_METAR,exact,0.2890625,2.0
+k-NN_all_4,AdaBoost_METAR,correction,0.8711314915971582,0.02631578947368421
+k-NN_all_4,AdaBoost_METAR,no,1.0,0.0
+k-NN_all_4,AdaBoost_METAR,exactcorrection,1.0,19.0
+k-NN_all_4,AdaBoost_METAR,exact,1.0,19.0
+k-NN_all_4,Quadratic Discriminant Analysis_all,correction,0.37109336952269756,0.8
+k-NN_all_4,Quadratic Discriminant Analysis_all,no,0.17971249487899593,1.8
+k-NN_all_4,Quadratic Discriminant Analysis_all,exactcorrection,0.375,1.0
+k-NN_all_4,Quadratic Discriminant Analysis_all,exact,0.375,1.0
+k-NN_all_4,Quadratic Discriminant Analysis_no_METAR,correction,0.37109336952269756,0.8
+k-NN_all_4,Quadratic Discriminant Analysis_no_METAR,no,0.17971249487899593,1.8
+k-NN_all_4,Quadratic Discriminant Analysis_no_METAR,exactcorrection,0.375,1.0
+k-NN_all_4,Quadratic Discriminant Analysis_no_METAR,exact,0.375,1.0
+k-NN_all_4,Quadratic Discriminant Analysis_METAR,correction,0.054291828366854686,3.7037037037037037
+k-NN_all_4,Quadratic Discriminant Analysis_METAR,no,0.034264007734869095,4.481481481481482
+k-NN_all_4,Quadratic Discriminant Analysis_METAR,exactcorrection,0.052238985896110535,8.0
+k-NN_all_4,Quadratic Discriminant Analysis_METAR,exact,0.052238985896110535,8.0
+k-NN_no_METAR_3,k-NN_METAR_7,correction,0.24334500914875914,1.3611111111111112
+k-NN_no_METAR_3,k-NN_METAR_7,no,0.18242243945173198,1.7777777777777777
+k-NN_no_METAR_3,k-NN_METAR_7,exactcorrection,0.24298495403490966,14.0
+k-NN_no_METAR_3,k-NN_METAR_7,exact,0.24298495403490966,14.0
+k-NN_no_METAR_3,Linear SVM_all,correction,0.34278171114790873,0.9
+k-NN_no_METAR_3,Linear SVM_all,no,0.20590321073206466,1.6
+k-NN_no_METAR_3,Linear SVM_all,exactcorrection,0.34375,3.0
+k-NN_no_METAR_3,Linear SVM_all,exact,0.34375,3.0
+k-NN_no_METAR_3,Linear SVM_no_METAR,correction,0.7236736098317629,0.125
+k-NN_no_METAR_3,Linear SVM_no_METAR,no,1.0,0.0
+k-NN_no_METAR_3,Linear SVM_no_METAR,exactcorrection,1.0,4.0
+k-NN_no_METAR_3,Linear SVM_no_METAR,exact,1.0,4.0
+k-NN_no_METAR_3,Linear SVM_METAR,correction,0.0019107751373644388,9.633333333333333
+k-NN_no_METAR_3,Linear SVM_METAR,no,0.0010150009471130682,10.8
+k-NN_no_METAR_3,Linear SVM_METAR,exactcorrection,0.0014309063553810122,6.0
+k-NN_no_METAR_3,Linear SVM_METAR,exact,0.0014309063553810122,6.0
+k-NN_no_METAR_3,RBF SVM_all,correction,1.0,0.0
+k-NN_no_METAR_3,RBF SVM_all,no,0.7388826803635273,0.1111111111111111
+k-NN_no_METAR_3,RBF SVM_all,exactcorrection,1.0,4.0
+k-NN_no_METAR_3,RBF SVM_all,exact,1.0,4.0
+k-NN_no_METAR_3,RBF SVM_no_METAR,correction,0.7236736098317629,0.125
+k-NN_no_METAR_3,RBF SVM_no_METAR,no,1.0,0.0
+k-NN_no_METAR_3,RBF SVM_no_METAR,exactcorrection,1.0,4.0
+k-NN_no_METAR_3,RBF SVM_no_METAR,exact,1.0,4.0
+k-NN_no_METAR_3,RBF SVM_METAR,correction,0.0013149446697132139,10.321428571428571
+k-NN_no_METAR_3,RBF SVM_METAR,no,0.0006697294490218293,11.571428571428571
+k-NN_no_METAR_3,RBF SVM_METAR,exactcorrection,0.0009122341871261597,5.0
+k-NN_no_METAR_3,RBF SVM_METAR,exact,0.0009122341871261597,5.0
+k-NN_no_METAR_3,Gaussian Process_all,correction,0.7518296340458492,0.1
+k-NN_no_METAR_3,Gaussian Process_all,no,0.5270892568655381,0.4
+k-NN_no_METAR_3,Gaussian Process_all,exactcorrection,0.75390625,4.0
+k-NN_no_METAR_3,Gaussian Process_all,exact,0.75390625,4.0
+k-NN_no_METAR_3,Gaussian Process_no_METAR,correction,0.7236736098317629,0.125
+k-NN_no_METAR_3,Gaussian Process_no_METAR,no,1.0,0.0
+k-NN_no_METAR_3,Gaussian Process_no_METAR,exactcorrection,1.0,4.0
+k-NN_no_METAR_3,Gaussian Process_no_METAR,exact,1.0,4.0
+k-NN_no_METAR_3,Gaussian Process_METAR,correction,0.011921001496914012,6.32258064516129
+k-NN_no_METAR_3,Gaussian Process_METAR,no,0.007058332048528108,7.258064516129032
+k-NN_no_METAR_3,Gaussian Process_METAR,exactcorrection,0.010673840530216694,8.0
+k-NN_no_METAR_3,Gaussian Process_METAR,exact,0.010673840530216694,8.0
+k-NN_no_METAR_3,Decision Tree_all,correction,0.5049850750938457,0.4444444444444444
+k-NN_no_METAR_3,Decision Tree_all,no,0.31731050786291115,1.0
+k-NN_no_METAR_3,Decision Tree_all,exactcorrection,0.5078125,3.0
+k-NN_no_METAR_3,Decision Tree_all,exact,0.5078125,3.0
+k-NN_no_METAR_3,Decision Tree_no_METAR,correction,0.18242243945173198,1.7777777777777777
+k-NN_no_METAR_3,Decision Tree_no_METAR,no,0.09558070454562936,2.7777777777777777
+k-NN_no_METAR_3,Decision Tree_no_METAR,exactcorrection,0.1796875,2.0
+k-NN_no_METAR_3,Decision Tree_no_METAR,exact,0.1796875,2.0
+k-NN_no_METAR_3,Decision Tree_METAR,correction,0.8711314915971582,0.02631578947368421
+k-NN_no_METAR_3,Decision Tree_METAR,no,0.7456027889274615,0.10526315789473684
+k-NN_no_METAR_3,Decision Tree_METAR,exactcorrection,0.8714146793645341,18.0
+k-NN_no_METAR_3,Decision Tree_METAR,exact,0.8714146793645341,18.0
+k-NN_no_METAR_3,Random Forest_all,correction,0.7236736098317629,0.125
+k-NN_no_METAR_3,Random Forest_all,no,0.47950012218695337,0.5
+k-NN_no_METAR_3,Random Forest_all,exactcorrection,0.7265625,3.0
+k-NN_no_METAR_3,Random Forest_all,exact,0.7265625,3.0
+k-NN_no_METAR_3,Random Forest_no_METAR,correction,1.0,0.0
+k-NN_no_METAR_3,Random Forest_no_METAR,no,0.7054569861112734,0.14285714285714285
+k-NN_no_METAR_3,Random Forest_no_METAR,exactcorrection,1.0,3.0
+k-NN_no_METAR_3,Random Forest_no_METAR,exact,1.0,3.0
+k-NN_no_METAR_3,Random Forest_METAR,correction,1.0,0.0
+k-NN_no_METAR_3,Random Forest_METAR,no,0.8727801237939118,0.02564102564102564
+k-NN_no_METAR_3,Random Forest_METAR,exactcorrection,0.9999999999999996,19.0
+k-NN_no_METAR_3,Random Forest_METAR,exact,0.9999999999999996,19.0
+k-NN_no_METAR_3,Naive Bayes_all,correction,0.7236736098317629,0.125
+k-NN_no_METAR_3,Naive Bayes_all,no,1.0,0.0
+k-NN_no_METAR_3,Naive Bayes_all,exactcorrection,1.0,4.0
+k-NN_no_METAR_3,Naive Bayes_all,exact,1.0,4.0
+k-NN_no_METAR_3,Naive Bayes_no_METAR,correction,0.7236736098317629,0.125
+k-NN_no_METAR_3,Naive Bayes_no_METAR,no,1.0,0.0
+k-NN_no_METAR_3,Naive Bayes_no_METAR,exactcorrection,1.0,4.0
+k-NN_no_METAR_3,Naive Bayes_no_METAR,exact,1.0,4.0
+k-NN_no_METAR_3,Naive Bayes_METAR,correction,0.7487740417065472,0.10256410256410256
+k-NN_no_METAR_3,Naive Bayes_METAR,no,0.6309540411841706,0.23076923076923078
+k-NN_no_METAR_3,Naive Bayes_METAR,exactcorrection,0.7492586247608418,18.0
+k-NN_no_METAR_3,Naive Bayes_METAR,exact,0.7492586247608418,18.0
+k-NN_no_METAR_3,Multilayer Perceptron_all,correction,0.2888443663464818,1.125
+k-NN_no_METAR_3,Multilayer Perceptron_all,no,0.15729920705028105,2.0
+k-NN_no_METAR_3,Multilayer Perceptron_all,exactcorrection,0.2890625,2.0
+k-NN_no_METAR_3,Multilayer Perceptron_all,exact,0.2890625,2.0
+k-NN_no_METAR_3,Multilayer Perceptron_no_METAR,correction,0.7236736098317629,0.125
+k-NN_no_METAR_3,Multilayer Perceptron_no_METAR,no,0.47950012218695337,0.5
+k-NN_no_METAR_3,Multilayer Perceptron_no_METAR,exactcorrection,0.7265625,3.0
+k-NN_no_METAR_3,Multilayer Perceptron_no_METAR,exact,0.7265625,3.0
+k-NN_no_METAR_3,Multilayer Perceptron_METAR,correction,0.2652053925915044,1.2413793103448276
+k-NN_no_METAR_3,Multilayer Perceptron_METAR,no,0.19364643126921688,1.6896551724137931
+k-NN_no_METAR_3,Multilayer Perceptron_METAR,exactcorrection,0.26493089646101,11.0
+k-NN_no_METAR_3,Multilayer Perceptron_METAR,exact,0.26493089646101,11.0
+k-NN_no_METAR_3,AdaBoost_all,correction,0.5464935954065822,0.36363636363636365
+k-NN_no_METAR_3,AdaBoost_all,no,0.36571229628151314,0.8181818181818182
+k-NN_no_METAR_3,AdaBoost_all,exactcorrection,0.548828125,4.0
+k-NN_no_METAR_3,AdaBoost_all,exact,0.548828125,4.0
+k-NN_no_METAR_3,AdaBoost_no_METAR,correction,0.18242243945173198,1.7777777777777777
+k-NN_no_METAR_3,AdaBoost_no_METAR,no,0.09558070454562936,2.7777777777777777
+k-NN_no_METAR_3,AdaBoost_no_METAR,exactcorrection,0.1796875,2.0
+k-NN_no_METAR_3,AdaBoost_no_METAR,exact,0.1796875,2.0
+k-NN_no_METAR_3,AdaBoost_METAR,correction,1.0,0.0
+k-NN_no_METAR_3,AdaBoost_METAR,no,0.8727801237939118,0.02564102564102564
+k-NN_no_METAR_3,AdaBoost_METAR,exactcorrection,0.9999999999999996,19.0
+k-NN_no_METAR_3,AdaBoost_METAR,exact,0.9999999999999996,19.0
+k-NN_no_METAR_3,Quadratic Discriminant Analysis_all,correction,0.6830913983096086,0.16666666666666666
+k-NN_no_METAR_3,Quadratic Discriminant Analysis_all,no,0.4142161782425251,0.6666666666666666
+k-NN_no_METAR_3,Quadratic Discriminant Analysis_all,exactcorrection,0.6875,2.0
+k-NN_no_METAR_3,Quadratic Discriminant Analysis_all,exact,0.6875,2.0
+k-NN_no_METAR_3,Quadratic Discriminant Analysis_no_METAR,correction,0.6830913983096086,0.16666666666666666
+k-NN_no_METAR_3,Quadratic Discriminant Analysis_no_METAR,no,0.4142161782425251,0.6666666666666666
+k-NN_no_METAR_3,Quadratic Discriminant Analysis_no_METAR,exactcorrection,0.6875,2.0
+k-NN_no_METAR_3,Quadratic Discriminant Analysis_no_METAR,exact,0.6875,2.0
+k-NN_no_METAR_3,Quadratic Discriminant Analysis_METAR,correction,0.05182992721790985,3.78125
+k-NN_no_METAR_3,Quadratic Discriminant Analysis_METAR,no,0.033894853524689295,4.5
+k-NN_no_METAR_3,Quadratic Discriminant Analysis_METAR,exactcorrection,0.050102459732443094,10.0
+k-NN_no_METAR_3,Quadratic Discriminant Analysis_METAR,exact,0.050102459732443094,10.0
+k-NN_METAR_7,Linear SVM_all,correction,0.06675301516963421,3.361111111111111
+k-NN_METAR_7,Linear SVM_all,no,0.04550026389635857,4.0
+k-NN_METAR_7,Linear SVM_all,exactcorrection,0.06524533522315325,12.0
+k-NN_METAR_7,Linear SVM_all,exact,0.06524533522315325,12.0
+k-NN_METAR_7,Linear SVM_no_METAR,correction,0.24334500914875914,1.3611111111111112
+k-NN_METAR_7,Linear SVM_no_METAR,no,0.18242243945173198,1.7777777777777777
+k-NN_METAR_7,Linear SVM_no_METAR,exactcorrection,0.24298495403490966,14.0
+k-NN_METAR_7,Linear SVM_no_METAR,exact,0.24298495403490966,14.0
+k-NN_METAR_7,Linear SVM_METAR,correction,0.04417134490844271,4.05
+k-NN_METAR_7,Linear SVM_METAR,no,0.025347318677468325,5.0
+k-NN_METAR_7,Linear SVM_METAR,exactcorrection,0.04138946533203125,5.0
+k-NN_METAR_7,Linear SVM_METAR,exact,0.04138946533203125,5.0
+k-NN_METAR_7,RBF SVM_all,correction,0.17629637444050728,1.8285714285714285
+k-NN_METAR_7,RBF SVM_all,no,0.12819017434510696,2.3142857142857145
+k-NN_METAR_7,RBF SVM_all,exactcorrection,0.175465248990804,13.0
+k-NN_METAR_7,RBF SVM_all,exact,0.175465248990804,13.0
+k-NN_METAR_7,RBF SVM_no_METAR,correction,0.24334500914875914,1.3611111111111112
+k-NN_METAR_7,RBF SVM_no_METAR,no,0.18242243945173198,1.7777777777777777
+k-NN_METAR_7,RBF SVM_no_METAR,exactcorrection,0.24298495403490966,14.0
+k-NN_METAR_7,RBF SVM_no_METAR,exact,0.24298495403490966,14.0
+k-NN_METAR_7,RBF SVM_METAR,correction,0.016156931261181322,5.785714285714286
+k-NN_METAR_7,RBF SVM_METAR,no,0.007526315166457883,7.142857142857143
+k-NN_METAR_7,RBF SVM_METAR,exactcorrection,0.012939453125,2.0
+k-NN_METAR_7,RBF SVM_METAR,exact,0.012939453125,2.0
+k-NN_METAR_7,Gaussian Process_all,correction,0.13361440253771584,2.25
+k-NN_METAR_7,Gaussian Process_all,no,0.09558070454562936,2.7777777777777777
+k-NN_METAR_7,Gaussian Process_all,exactcorrection,0.13249816396273675,13.0
+k-NN_METAR_7,Gaussian Process_all,exact,0.13249816396273675,13.0
+k-NN_METAR_7,Gaussian Process_no_METAR,correction,0.24334500914875914,1.3611111111111112
+k-NN_METAR_7,Gaussian Process_no_METAR,no,0.18242243945173198,1.7777777777777777
+k-NN_METAR_7,Gaussian Process_no_METAR,exactcorrection,0.24298495403490966,14.0
+k-NN_METAR_7,Gaussian Process_no_METAR,exact,0.24298495403490966,14.0
+k-NN_METAR_7,Gaussian Process_METAR,correction,0.1456100953968629,2.1176470588235294
+k-NN_METAR_7,Gaussian Process_METAR,no,0.08955507441364248,2.8823529411764706
+k-NN_METAR_7,Gaussian Process_METAR,exactcorrection,0.143463134765625,5.0
+k-NN_METAR_7,Gaussian Process_METAR,exact,0.143463134765625,5.0
+k-NN_METAR_7,Decision Tree_all,correction,0.09096894797535765,2.857142857142857
+k-NN_METAR_7,Decision Tree_all,no,0.0629790512144555,3.4571428571428573
+k-NN_METAR_7,Decision Tree_all,exactcorrection,0.08953107893466952,12.0
+k-NN_METAR_7,Decision Tree_all,exact,0.08953107893466952,12.0
+k-NN_METAR_7,Decision Tree_no_METAR,correction,0.04851973828025081,3.891891891891892
+k-NN_METAR_7,Decision Tree_no_METAR,no,0.03258279838561265,4.5675675675675675
+k-NN_METAR_7,Decision Tree_no_METAR,exactcorrection,0.04703102743951604,12.0
+k-NN_METAR_7,Decision Tree_no_METAR,exact,0.04703102743951604,12.0
+k-NN_METAR_7,Decision Tree_METAR,correction,0.06619257972219346,3.375
+k-NN_METAR_7,Decision Tree_METAR,no,0.041226833337163815,4.166666666666667
+k-NN_METAR_7,Decision Tree_METAR,exactcorrection,0.06391465663909912,7.0
+k-NN_METAR_7,Decision Tree_METAR,exact,0.06391465663909912,7.0
+k-NN_METAR_7,Random Forest_all,correction,0.13361440253771584,2.25
+k-NN_METAR_7,Random Forest_all,no,0.09558070454562936,2.7777777777777777
+k-NN_METAR_7,Random Forest_all,exactcorrection,0.13249816396273675,13.0
+k-NN_METAR_7,Random Forest_all,exact,0.13249816396273675,13.0
+k-NN_METAR_7,Random Forest_no_METAR,correction,0.17629637444050728,1.8285714285714285
+k-NN_METAR_7,Random Forest_no_METAR,no,0.12819017434510696,2.3142857142857145
+k-NN_METAR_7,Random Forest_no_METAR,exactcorrection,0.175465248990804,13.0
+k-NN_METAR_7,Random Forest_no_METAR,exact,0.175465248990804,13.0
+k-NN_METAR_7,Random Forest_METAR,correction,0.19043026382552036,1.7142857142857142
+k-NN_METAR_7,Random Forest_METAR,no,0.12663045794761726,2.3333333333333335
+k-NN_METAR_7,Random Forest_METAR,exactcorrection,0.18924713134765625,7.0
+k-NN_METAR_7,Random Forest_METAR,exact,0.18924713134765625,7.0
+k-NN_METAR_7,Naive Bayes_all,correction,0.22994905679421007,1.4411764705882353
+k-NN_METAR_7,Naive Bayes_all,no,0.17006696145390077,1.8823529411764706
+k-NN_METAR_7,Naive Bayes_all,exactcorrection,0.22948101302608848,13.0
+k-NN_METAR_7,Naive Bayes_all,exact,0.22948101302608848,13.0
+k-NN_METAR_7,Naive Bayes_no_METAR,correction,0.22994905679421007,1.4411764705882353
+k-NN_METAR_7,Naive Bayes_no_METAR,no,0.17006696145390077,1.8823529411764706
+k-NN_METAR_7,Naive Bayes_no_METAR,exactcorrection,0.22948101302608848,13.0
+k-NN_METAR_7,Naive Bayes_no_METAR,exact,0.22948101302608848,13.0
+k-NN_METAR_7,Naive Bayes_METAR,correction,0.04550026389635857,4.0
+k-NN_METAR_7,Naive Bayes_METAR,no,0.027806895026997264,4.84
+k-NN_METAR_7,Naive Bayes_METAR,exactcorrection,0.043285250663757324,7.0
+k-NN_METAR_7,Naive Bayes_METAR,exact,0.043285250663757324,7.0
+k-NN_METAR_7,Multilayer Perceptron_all,correction,0.0743529053685636,3.1842105263157894
+k-NN_METAR_7,Multilayer Perceptron_all,no,0.051575863620877,3.789473684210526
+k-NN_METAR_7,Multilayer Perceptron_all,exactcorrection,0.07295138851623051,13.0
+k-NN_METAR_7,Multilayer Perceptron_all,exact,0.07295138851623051,13.0
+k-NN_METAR_7,Multilayer Perceptron_no_METAR,correction,0.13361440253771584,2.25
+k-NN_METAR_7,Multilayer Perceptron_no_METAR,no,0.09558070454562936,2.7777777777777777
+k-NN_METAR_7,Multilayer Perceptron_no_METAR,exactcorrection,0.13249816396273675,13.0
+k-NN_METAR_7,Multilayer Perceptron_no_METAR,exact,0.13249816396273675,13.0
+k-NN_METAR_7,Multilayer Perceptron_METAR,correction,1.0,0.0
+k-NN_METAR_7,Multilayer Perceptron_METAR,no,0.8348273291852392,0.043478260869565216
+k-NN_METAR_7,Multilayer Perceptron_METAR,exactcorrection,1.0,11.0
+k-NN_METAR_7,Multilayer Perceptron_METAR,exact,1.0,11.0
+k-NN_METAR_7,AdaBoost_all,correction,0.10017829422626792,2.7027027027027026
+k-NN_METAR_7,AdaBoost_all,no,0.0705460004568659,3.27027027027027
+k-NN_METAR_7,AdaBoost_all,exactcorrection,0.09887174959294498,13.0
+k-NN_METAR_7,AdaBoost_all,exact,0.09887174959294498,13.0
+k-NN_METAR_7,AdaBoost_no_METAR,correction,0.7103465689955667,0.13793103448275862
+k-NN_METAR_7,AdaBoost_no_METAR,no,0.5774686624272996,0.3103448275862069
+k-NN_METAR_7,AdaBoost_no_METAR,exactcorrection,0.711071103811264,13.0
+k-NN_METAR_7,AdaBoost_no_METAR,exact,0.711071103811264,13.0
+k-NN_METAR_7,AdaBoost_METAR,correction,0.16866861888781112,1.894736842105263
+k-NN_METAR_7,AdaBoost_METAR,no,0.10829365589900916,2.5789473684210527
+k-NN_METAR_7,AdaBoost_METAR,exactcorrection,0.1670684814453125,6.0
+k-NN_METAR_7,AdaBoost_METAR,exact,0.1670684814453125,6.0
+k-NN_METAR_7,Quadratic Discriminant Analysis_all,correction,0.13361440253771584,2.25
+k-NN_METAR_7,Quadratic Discriminant Analysis_all,no,0.09558070454562936,2.7777777777777777
+k-NN_METAR_7,Quadratic Discriminant Analysis_all,exactcorrection,0.13249816396273675,13.0
+k-NN_METAR_7,Quadratic Discriminant Analysis_all,exact,0.13249816396273675,13.0
+k-NN_METAR_7,Quadratic Discriminant Analysis_no_METAR,correction,0.13361440253771584,2.25
+k-NN_METAR_7,Quadratic Discriminant Analysis_no_METAR,no,0.09558070454562936,2.7777777777777777
+k-NN_METAR_7,Quadratic Discriminant Analysis_no_METAR,exactcorrection,0.13249816396273675,13.0
+k-NN_METAR_7,Quadratic Discriminant Analysis_no_METAR,exact,0.13249816396273675,13.0
+k-NN_METAR_7,Quadratic Discriminant Analysis_METAR,correction,0.47950012218695337,0.5
+k-NN_METAR_7,Quadratic Discriminant Analysis_METAR,no,0.3457785861511601,0.8888888888888888
+k-NN_METAR_7,Quadratic Discriminant Analysis_METAR,exactcorrection,0.480682373046875,7.0
+k-NN_METAR_7,Quadratic Discriminant Analysis_METAR,exact,0.480682373046875,7.0
+Linear SVM_all,Linear SVM_no_METAR,correction,0.13361440253771584,2.25
+Linear SVM_all,Linear SVM_no_METAR,no,0.04550026389635857,4.0
+Linear SVM_all,Linear SVM_no_METAR,exactcorrection,0.125,0.0
+Linear SVM_all,Linear SVM_no_METAR,exact,0.125,0.0
+Linear SVM_all,Linear SVM_METAR,correction,0.0002053757361412177,13.78125
+Linear SVM_all,Linear SVM_METAR,no,0.00010062192211963679,15.125
+Linear SVM_all,Linear SVM_METAR,exactcorrection,0.00011307420209050179,5.0
+Linear SVM_all,Linear SVM_METAR,exact,0.00011307420209050179,5.0
+Linear SVM_all,RBF SVM_all,correction,0.24821307898992026,1.3333333333333333
+Linear SVM_all,RBF SVM_all,no,0.08326451666355043,3.0
+Linear SVM_all,RBF SVM_all,exactcorrection,0.25,0.0
+Linear SVM_all,RBF SVM_all,exact,0.25,0.0
+Linear SVM_all,RBF SVM_no_METAR,correction,0.13361440253771584,2.25
+Linear SVM_all,RBF SVM_no_METAR,no,0.04550026389635857,4.0
+Linear SVM_all,RBF SVM_no_METAR,exactcorrection,0.125,0.0
+Linear SVM_all,RBF SVM_no_METAR,exact,0.125,0.0
+Linear SVM_all,RBF SVM_METAR,correction,0.00012604645012081412,14.7
+Linear SVM_all,RBF SVM_METAR,no,5.903578049588006e-05,16.133333333333333
+Linear SVM_all,RBF SVM_METAR,exactcorrection,5.9476122260093696e-05,4.0
+Linear SVM_all,RBF SVM_METAR,exact,5.9476122260093696e-05,4.0
+Linear SVM_all,Gaussian Process_all,correction,0.47950012218695337,0.5
+Linear SVM_all,Gaussian Process_all,no,0.15729920705028105,2.0
+Linear SVM_all,Gaussian Process_all,exactcorrection,0.5,0.0
+Linear SVM_all,Gaussian Process_all,exact,0.5,0.0
+Linear SVM_all,Gaussian Process_no_METAR,correction,0.13361440253771584,2.25
+Linear SVM_all,Gaussian Process_no_METAR,no,0.04550026389635857,4.0
+Linear SVM_all,Gaussian Process_no_METAR,exactcorrection,0.125,0.0
+Linear SVM_all,Gaussian Process_no_METAR,exact,0.125,0.0
+Linear SVM_all,Gaussian Process_METAR,correction,0.001225424070670712,10.451612903225806
+Linear SVM_all,Gaussian Process_METAR,no,0.0006436975254696885,11.64516129032258
+Linear SVM_all,Gaussian Process_METAR,exactcorrection,0.0008779102936387062,6.0
+Linear SVM_all,Gaussian Process_METAR,exact,0.0008779102936387062,6.0
+Linear SVM_all,Decision Tree_all,correction,1.0,0.0
+Linear SVM_all,Decision Tree_all,no,0.7054569861112734,0.14285714285714285
+Linear SVM_all,Decision Tree_all,exactcorrection,1.0,3.0
+Linear SVM_all,Decision Tree_all,exact,1.0,3.0
+Linear SVM_all,Decision Tree_no_METAR,correction,1.0,0.0
+Linear SVM_all,Decision Tree_no_METAR,no,0.7054569861112734,0.14285714285714285
+Linear SVM_all,Decision Tree_no_METAR,exactcorrection,1.0,3.0
+Linear SVM_all,Decision Tree_no_METAR,exact,1.0,3.0
+Linear SVM_all,Decision Tree_METAR,correction,0.8676323347781927,0.027777777777777776
+Linear SVM_all,Decision Tree_METAR,no,0.7388826803635273,0.1111111111111111
+Linear SVM_all,Decision Tree_METAR,exactcorrection,0.8679394004284404,17.0
+Linear SVM_all,Decision Tree_METAR,exact,0.8679394004284404,17.0
+Linear SVM_all,Random Forest_all,correction,0.6830913983096086,0.16666666666666666
+Linear SVM_all,Random Forest_all,no,0.4142161782425251,0.6666666666666666
+Linear SVM_all,Random Forest_all,exactcorrection,0.6875,2.0
+Linear SVM_all,Random Forest_all,exact,0.6875,2.0
+Linear SVM_all,Random Forest_no_METAR,correction,0.37109336952269756,0.8
+Linear SVM_all,Random Forest_no_METAR,no,0.17971249487899593,1.8
+Linear SVM_all,Random Forest_no_METAR,exactcorrection,0.375,1.0
+Linear SVM_all,Random Forest_no_METAR,exact,0.375,1.0
+Linear SVM_all,Random Forest_METAR,correction,0.5107977981738965,0.43243243243243246
+Linear SVM_all,Random Forest_METAR,no,0.41107977872331536,0.6756756756756757
+Linear SVM_all,Random Forest_METAR,exactcorrection,0.5113757815852296,16.0
+Linear SVM_all,Random Forest_METAR,exact,0.5113757815852296,16.0
+Linear SVM_all,Naive Bayes_all,correction,0.22067136191984324,1.5
+Linear SVM_all,Naive Bayes_all,no,0.10247043485974942,2.6666666666666665
+Linear SVM_all,Naive Bayes_all,exactcorrection,0.21875,1.0
+Linear SVM_all,Naive Bayes_all,exact,0.21875,1.0
+Linear SVM_all,Naive Bayes_no_METAR,correction,0.22067136191984324,1.5
+Linear SVM_all,Naive Bayes_no_METAR,no,0.10247043485974942,2.6666666666666665
+Linear SVM_all,Naive Bayes_no_METAR,exactcorrection,0.21875,1.0
+Linear SVM_all,Naive Bayes_no_METAR,exact,0.21875,1.0
+Linear SVM_all,Naive Bayes_METAR,correction,1.0,0.0
+Linear SVM_all,Naive Bayes_METAR,no,0.8727801237939118,0.02564102564102564
+Linear SVM_all,Naive Bayes_METAR,exactcorrection,0.9999999999999996,19.0
+Linear SVM_all,Naive Bayes_METAR,exact,0.9999999999999996,19.0
+Linear SVM_all,Multilayer Perceptron_all,correction,0.6830913983096086,0.16666666666666666
+Linear SVM_all,Multilayer Perceptron_all,no,1.0,0.0
+Linear SVM_all,Multilayer Perceptron_all,exactcorrection,1.0,3.0
+Linear SVM_all,Multilayer Perceptron_all,exact,1.0,3.0
+Linear SVM_all,Multilayer Perceptron_no_METAR,correction,0.7518296340458492,0.1
+Linear SVM_all,Multilayer Perceptron_no_METAR,no,0.5270892568655381,0.4
+Linear SVM_all,Multilayer Perceptron_no_METAR,exactcorrection,0.75390625,4.0
+Linear SVM_all,Multilayer Perceptron_no_METAR,exact,0.75390625,4.0
+Linear SVM_all,Multilayer Perceptron_METAR,correction,0.07248608508684644,3.225806451612903
+Linear SVM_all,Multilayer Perceptron_METAR,no,0.048193488293190825,3.903225806451613
+Linear SVM_all,Multilayer Perceptron_METAR,exactcorrection,0.07075554598122835,10.0
+Linear SVM_all,Multilayer Perceptron_METAR,exact,0.07075554598122835,10.0
+Linear SVM_all,AdaBoost_all,correction,1.0,0.0
+Linear SVM_all,AdaBoost_all,no,0.6547208460185768,0.2
+Linear SVM_all,AdaBoost_all,exactcorrection,1.0,2.0
+Linear SVM_all,AdaBoost_all,exact,1.0,2.0
+Linear SVM_all,AdaBoost_no_METAR,correction,0.00766076113517946,7.111111111111111
+Linear SVM_all,AdaBoost_no_METAR,no,0.0026997960632601883,9.0
+Linear SVM_all,AdaBoost_no_METAR,exactcorrection,0.00390625,0.0
+Linear SVM_all,AdaBoost_no_METAR,exact,0.00390625,0.0
+Linear SVM_all,AdaBoost_METAR,correction,0.5218393903336151,0.41025641025641024
+Linear SVM_all,AdaBoost_METAR,no,0.4233396415824435,0.6410256410256411
+Linear SVM_all,AdaBoost_METAR,exactcorrection,0.5223973804968411,17.0
+Linear SVM_all,AdaBoost_METAR,exact,0.5223973804968411,17.0
+Linear SVM_all,Quadratic Discriminant Analysis_all,correction,0.6830913983096086,0.16666666666666666
+Linear SVM_all,Quadratic Discriminant Analysis_all,no,0.4142161782425251,0.6666666666666666
+Linear SVM_all,Quadratic Discriminant Analysis_all,exactcorrection,0.6875,2.0
+Linear SVM_all,Quadratic Discriminant Analysis_all,exact,0.6875,2.0
+Linear SVM_all,Quadratic Discriminant Analysis_no_METAR,correction,0.6830913983096086,0.16666666666666666
+Linear SVM_all,Quadratic Discriminant Analysis_no_METAR,no,0.4142161782425251,0.6666666666666666
+Linear SVM_all,Quadratic Discriminant Analysis_no_METAR,exactcorrection,0.6875,2.0
+Linear SVM_all,Quadratic Discriminant Analysis_no_METAR,exact,0.6875,2.0
+Linear SVM_all,Quadratic Discriminant Analysis_METAR,correction,0.008009942329880016,7.03125
+Linear SVM_all,Quadratic Discriminant Analysis_METAR,no,0.004677734981047276,8.0
+Linear SVM_all,Quadratic Discriminant Analysis_METAR,exactcorrection,0.0070003666914999485,8.0
+Linear SVM_all,Quadratic Discriminant Analysis_METAR,exact,0.0070003666914999485,8.0
+Linear SVM_no_METAR,Linear SVM_METAR,correction,0.0019107751373644388,9.633333333333333
+Linear SVM_no_METAR,Linear SVM_METAR,no,0.0010150009471130682,10.8
+Linear SVM_no_METAR,Linear SVM_METAR,exactcorrection,0.0014309063553810122,6.0
+Linear SVM_no_METAR,Linear SVM_METAR,exact,0.0014309063553810122,6.0
+Linear SVM_no_METAR,RBF SVM_all,correction,1.0,0.0
+Linear SVM_no_METAR,RBF SVM_all,no,0.31731050786291115,1.0
+Linear SVM_no_METAR,RBF SVM_all,exactcorrection,1.0,0.0
+Linear SVM_no_METAR,RBF SVM_all,exact,1.0,0.0
+Linear SVM_no_METAR,RBF SVM_no_METAR,correction,0.0,inf
+Linear SVM_no_METAR,RBF SVM_no_METAR,no,,
+Linear SVM_no_METAR,RBF SVM_no_METAR,exactcorrection,1.0,0.0
+Linear SVM_no_METAR,RBF SVM_no_METAR,exact,1.0,0.0
+Linear SVM_no_METAR,RBF SVM_METAR,correction,0.0013149446697132139,10.321428571428571
+Linear SVM_no_METAR,RBF SVM_METAR,no,0.0006697294490218293,11.571428571428571
+Linear SVM_no_METAR,RBF SVM_METAR,exactcorrection,0.0009122341871261597,5.0
+Linear SVM_no_METAR,RBF SVM_METAR,exact,0.0009122341871261597,5.0
+Linear SVM_no_METAR,Gaussian Process_all,correction,0.47950012218695337,0.5
+Linear SVM_no_METAR,Gaussian Process_all,no,0.15729920705028105,2.0
+Linear SVM_no_METAR,Gaussian Process_all,exactcorrection,0.5,0.0
+Linear SVM_no_METAR,Gaussian Process_all,exact,0.5,0.0
+Linear SVM_no_METAR,Gaussian Process_no_METAR,correction,0.0,inf
+Linear SVM_no_METAR,Gaussian Process_no_METAR,no,,
+Linear SVM_no_METAR,Gaussian Process_no_METAR,exactcorrection,1.0,0.0
+Linear SVM_no_METAR,Gaussian Process_no_METAR,exact,1.0,0.0
+Linear SVM_no_METAR,Gaussian Process_METAR,correction,0.009329584719771558,6.758620689655173
+Linear SVM_no_METAR,Gaussian Process_METAR,no,0.005345676872654249,7.758620689655173
+Linear SVM_no_METAR,Gaussian Process_METAR,exactcorrection,0.008130058646202087,7.0
+Linear SVM_no_METAR,Gaussian Process_METAR,exact,0.008130058646202087,7.0
+Linear SVM_no_METAR,Decision Tree_all,correction,0.4496917979688908,0.5714285714285714
+Linear SVM_no_METAR,Decision Tree_all,no,0.25683925795785334,1.2857142857142858
+Linear SVM_no_METAR,Decision Tree_all,exactcorrection,0.453125,2.0
+Linear SVM_no_METAR,Decision Tree_all,exact,0.453125,2.0
+Linear SVM_no_METAR,Decision Tree_no_METAR,correction,0.1305700181157369,2.2857142857142856
+Linear SVM_no_METAR,Decision Tree_no_METAR,no,0.05878172135535891,3.5714285714285716
+Linear SVM_no_METAR,Decision Tree_no_METAR,exactcorrection,0.125,1.0
+Linear SVM_no_METAR,Decision Tree_no_METAR,exact,0.125,1.0
+Linear SVM_no_METAR,Decision Tree_METAR,correction,0.8711314915971582,0.02631578947368421
+Linear SVM_no_METAR,Decision Tree_METAR,no,0.7456027889274615,0.10526315789473684
+Linear SVM_no_METAR,Decision Tree_METAR,exactcorrection,0.8714146793645341,18.0
+Linear SVM_no_METAR,Decision Tree_METAR,exact,0.8714146793645341,18.0
+Linear SVM_no_METAR,Random Forest_all,correction,0.6170750774519739,0.25
+Linear SVM_no_METAR,Random Forest_all,no,0.31731050786291115,1.0
+Linear SVM_no_METAR,Random Forest_all,exactcorrection,0.625,1.0
+Linear SVM_no_METAR,Random Forest_all,exact,0.625,1.0
+Linear SVM_no_METAR,Random Forest_no_METAR,correction,1.0,0.0
+Linear SVM_no_METAR,Random Forest_no_METAR,no,0.5637028616507731,0.3333333333333333
+Linear SVM_no_METAR,Random Forest_no_METAR,exactcorrection,1.0,1.0
+Linear SVM_no_METAR,Random Forest_no_METAR,exact,1.0,1.0
+Linear SVM_no_METAR,Random Forest_METAR,correction,1.0,0.0
+Linear SVM_no_METAR,Random Forest_METAR,no,0.8694170607412391,0.02702702702702703
+Linear SVM_no_METAR,Random Forest_METAR,exactcorrection,1.0,18.0
+Linear SVM_no_METAR,Random Forest_METAR,exact,1.0,18.0
+Linear SVM_no_METAR,Naive Bayes_all,correction,0.6170750774519739,0.25
+Linear SVM_no_METAR,Naive Bayes_all,no,1.0,0.0
+Linear SVM_no_METAR,Naive Bayes_all,exactcorrection,1.0,2.0
+Linear SVM_no_METAR,Naive Bayes_all,exact,1.0,2.0
+Linear SVM_no_METAR,Naive Bayes_no_METAR,correction,0.6170750774519739,0.25
+Linear SVM_no_METAR,Naive Bayes_no_METAR,no,1.0,0.0
+Linear SVM_no_METAR,Naive Bayes_no_METAR,exactcorrection,1.0,2.0
+Linear SVM_no_METAR,Naive Bayes_no_METAR,exact,1.0,2.0
+Linear SVM_no_METAR,Naive Bayes_METAR,correction,0.7487740417065472,0.10256410256410256
+Linear SVM_no_METAR,Naive Bayes_METAR,no,0.6309540411841706,0.23076923076923078
+Linear SVM_no_METAR,Naive Bayes_METAR,exactcorrection,0.7492586247608418,18.0
+Linear SVM_no_METAR,Naive Bayes_METAR,exact,0.7492586247608418,18.0
+Linear SVM_no_METAR,Multilayer Perceptron_all,correction,0.22067136191984324,1.5
+Linear SVM_no_METAR,Multilayer Perceptron_all,no,0.10247043485974942,2.6666666666666665
+Linear SVM_no_METAR,Multilayer Perceptron_all,exactcorrection,0.21875,1.0
+Linear SVM_no_METAR,Multilayer Perceptron_all,exact,0.21875,1.0
+Linear SVM_no_METAR,Multilayer Perceptron_no_METAR,correction,0.7236736098317629,0.125
+Linear SVM_no_METAR,Multilayer Perceptron_no_METAR,no,0.47950012218695337,0.5
+Linear SVM_no_METAR,Multilayer Perceptron_no_METAR,exactcorrection,0.7265625,3.0
+Linear SVM_no_METAR,Multilayer Perceptron_no_METAR,exact,0.7265625,3.0
+Linear SVM_no_METAR,Multilayer Perceptron_METAR,correction,0.2962698714842834,1.0909090909090908
+Linear SVM_no_METAR,Multilayer Perceptron_METAR,no,0.22301746994661142,1.4848484848484849
+Linear SVM_no_METAR,Multilayer Perceptron_METAR,exactcorrection,0.296206368599087,13.0
+Linear SVM_no_METAR,Multilayer Perceptron_METAR,exact,0.296206368599087,13.0
+Linear SVM_no_METAR,AdaBoost_all,correction,0.37109336952269756,0.8
+Linear SVM_no_METAR,AdaBoost_all,no,0.17971249487899593,1.8
+Linear SVM_no_METAR,AdaBoost_all,exactcorrection,0.375,1.0
+Linear SVM_no_METAR,AdaBoost_all,exact,0.375,1.0
+Linear SVM_no_METAR,AdaBoost_no_METAR,correction,0.1305700181157369,2.2857142857142856
+Linear SVM_no_METAR,AdaBoost_no_METAR,no,0.05878172135535891,3.5714285714285716
+Linear SVM_no_METAR,AdaBoost_no_METAR,exactcorrection,0.125,1.0
+Linear SVM_no_METAR,AdaBoost_no_METAR,exact,0.125,1.0
+Linear SVM_no_METAR,AdaBoost_METAR,correction,1.0,0.0
+Linear SVM_no_METAR,AdaBoost_METAR,no,0.8727801237939118,0.02564102564102564
+Linear SVM_no_METAR,AdaBoost_METAR,exactcorrection,0.9999999999999996,19.0
+Linear SVM_no_METAR,AdaBoost_METAR,exact,0.9999999999999996,19.0
+Linear SVM_no_METAR,Quadratic Discriminant Analysis_all,correction,0.6170750774519739,0.25
+Linear SVM_no_METAR,Quadratic Discriminant Analysis_all,no,0.31731050786291115,1.0
+Linear SVM_no_METAR,Quadratic Discriminant Analysis_all,exactcorrection,0.625,1.0
+Linear SVM_no_METAR,Quadratic Discriminant Analysis_all,exact,0.625,1.0
+Linear SVM_no_METAR,Quadratic Discriminant Analysis_no_METAR,correction,0.6170750774519739,0.25
+Linear SVM_no_METAR,Quadratic Discriminant Analysis_no_METAR,no,0.31731050786291115,1.0
+Linear SVM_no_METAR,Quadratic Discriminant Analysis_no_METAR,exactcorrection,0.625,1.0
+Linear SVM_no_METAR,Quadratic Discriminant Analysis_no_METAR,exact,0.625,1.0
+Linear SVM_no_METAR,Quadratic Discriminant Analysis_METAR,correction,0.05182992721790985,3.78125
+Linear SVM_no_METAR,Quadratic Discriminant Analysis_METAR,no,0.033894853524689295,4.5
+Linear SVM_no_METAR,Quadratic Discriminant Analysis_METAR,exactcorrection,0.050102459732443094,10.0
+Linear SVM_no_METAR,Quadratic Discriminant Analysis_METAR,exact,0.050102459732443094,10.0
+Linear SVM_METAR,RBF SVM_all,correction,0.001225424070670712,10.451612903225806
+Linear SVM_METAR,RBF SVM_all,no,0.0006436975254696885,11.64516129032258
+Linear SVM_METAR,RBF SVM_all,exactcorrection,0.0008779102936387062,6.0
+Linear SVM_METAR,RBF SVM_all,exact,0.0008779102936387062,6.0
+Linear SVM_METAR,RBF SVM_no_METAR,correction,0.0019107751373644388,9.633333333333333
+Linear SVM_METAR,RBF SVM_no_METAR,no,0.0010150009471130682,10.8
+Linear SVM_METAR,RBF SVM_no_METAR,exactcorrection,0.0014309063553810122,6.0
+Linear SVM_METAR,RBF SVM_no_METAR,exact,0.0014309063553810122,6.0
+Linear SVM_METAR,RBF SVM_METAR,correction,0.7236736098317629,0.125
+Linear SVM_METAR,RBF SVM_METAR,no,1.0,0.0
+Linear SVM_METAR,RBF SVM_METAR,exactcorrection,1.0,4.0
+Linear SVM_METAR,RBF SVM_METAR,exact,1.0,4.0
+Linear SVM_METAR,Gaussian Process_all,correction,0.0007829382178911184,11.28125
+Linear SVM_METAR,Gaussian Process_all,no,0.00040695201744495946,12.5
+Linear SVM_METAR,Gaussian Process_all,exactcorrection,0.0005350527353584766,6.0
+Linear SVM_METAR,Gaussian Process_all,exact,0.0005350527353584766,6.0
+Linear SVM_METAR,Gaussian Process_no_METAR,correction,0.0019107751373644388,9.633333333333333
+Linear SVM_METAR,Gaussian Process_no_METAR,no,0.0010150009471130682,10.8
+Linear SVM_METAR,Gaussian Process_no_METAR,exactcorrection,0.0014309063553810122,6.0
+Linear SVM_METAR,Gaussian Process_no_METAR,exact,0.0014309063553810122,6.0
+Linear SVM_METAR,Gaussian Process_METAR,correction,0.5049850750938457,0.4444444444444444
+Linear SVM_METAR,Gaussian Process_METAR,no,0.31731050786291115,1.0
+Linear SVM_METAR,Gaussian Process_METAR,exactcorrection,0.5078125,3.0
+Linear SVM_METAR,Gaussian Process_METAR,exact,0.5078125,3.0
+Linear SVM_METAR,Decision Tree_all,correction,0.00032801631501352865,12.903225806451612
+Linear SVM_METAR,Decision Tree_all,no,0.00016213175204392638,14.225806451612904
+Linear SVM_METAR,Decision Tree_all,exactcorrection,0.00019219517707824707,5.0
+Linear SVM_METAR,Decision Tree_all,exact,0.00019219517707824707,5.0
+Linear SVM_METAR,Decision Tree_no_METAR,correction,0.00012829517819532143,14.666666666666666
+Linear SVM_METAR,Decision Tree_no_METAR,no,6.233673525160706e-05,16.03030303030303
+Linear SVM_METAR,Decision Tree_no_METAR,exactcorrection,6.618769839406013e-05,5.0
+Linear SVM_METAR,Decision Tree_no_METAR,exact,6.618769839406013e-05,5.0
+Linear SVM_METAR,Decision Tree_METAR,correction,0.00032983852077799353,12.892857142857142
+Linear SVM_METAR,Decision Tree_METAR,no,0.00015705228423075143,14.285714285714286
+Linear SVM_METAR,Decision Tree_METAR,exactcorrection,0.00017999112606048584,4.0
+Linear SVM_METAR,Decision Tree_METAR,exact,0.00017999112606048584,4.0
+Linear SVM_METAR,Random Forest_all,correction,0.0007829382178911184,11.28125
+Linear SVM_METAR,Random Forest_all,no,0.00040695201744495946,12.5
+Linear SVM_METAR,Random Forest_all,exactcorrection,0.0005350527353584766,6.0
+Linear SVM_METAR,Random Forest_all,exact,0.0005350527353584766,6.0
+Linear SVM_METAR,Random Forest_no_METAR,correction,0.001225424070670712,10.451612903225806
+Linear SVM_METAR,Random Forest_no_METAR,no,0.0006436975254696885,11.64516129032258
+Linear SVM_METAR,Random Forest_no_METAR,exactcorrection,0.0008779102936387062,6.0
+Linear SVM_METAR,Random Forest_no_METAR,exact,0.0008779102936387062,6.0
+Linear SVM_METAR,Random Forest_METAR,correction,0.0013742758758316976,10.24
+Linear SVM_METAR,Random Forest_METAR,no,0.0006738585313537617,11.56
+Linear SVM_METAR,Random Forest_METAR,exactcorrection,0.0009105205535888672,4.0
+Linear SVM_METAR,Random Forest_METAR,exact,0.0009105205535888672,4.0
+Linear SVM_METAR,Naive Bayes_all,correction,0.0013149446697132139,10.321428571428571
+Linear SVM_METAR,Naive Bayes_all,no,0.0006697294490218293,11.571428571428571
+Linear SVM_METAR,Naive Bayes_all,exactcorrection,0.0009122341871261597,5.0
+Linear SVM_METAR,Naive Bayes_all,exact,0.0009122341871261597,5.0
+Linear SVM_METAR,Naive Bayes_no_METAR,correction,0.0013149446697132139,10.321428571428571
+Linear SVM_METAR,Naive Bayes_no_METAR,no,0.0006697294490218293,11.571428571428571
+Linear SVM_METAR,Naive Bayes_no_METAR,exactcorrection,0.0009122341871261597,5.0
+Linear SVM_METAR,Naive Bayes_no_METAR,exact,0.0009122341871261597,5.0
+Linear SVM_METAR,Naive Bayes_METAR,correction,0.00011860013866224722,14.814814814814815
+Linear SVM_METAR,Naive Bayes_METAR,no,5.312128159411727e-05,16.333333333333332
+Linear SVM_METAR,Naive Bayes_METAR,exactcorrection,4.9233436584472656e-05,3.0
+Linear SVM_METAR,Naive Bayes_METAR,exact,4.9233436584472656e-05,3.0
+Linear SVM_METAR,Multilayer Perceptron_all,correction,0.0003164225904462903,12.970588235294118
+Linear SVM_METAR,Multilayer Perceptron_all,no,0.0001613164203086201,14.235294117647058
+Linear SVM_METAR,Multilayer Perceptron_all,exactcorrection,0.00019512558355927467,6.0
+Linear SVM_METAR,Multilayer Perceptron_all,exact,0.00019512558355927467,6.0
+Linear SVM_METAR,Multilayer Perceptron_no_METAR,correction,0.0007829382178911184,11.28125
+Linear SVM_METAR,Multilayer Perceptron_no_METAR,no,0.00040695201744495946,12.5
+Linear SVM_METAR,Multilayer Perceptron_no_METAR,exactcorrection,0.0005350527353584766,6.0
+Linear SVM_METAR,Multilayer Perceptron_no_METAR,exact,0.0005350527353584766,6.0
+Linear SVM_METAR,Multilayer Perceptron_METAR,correction,0.009823274507519235,6.666666666666667
+Linear SVM_METAR,Multilayer Perceptron_METAR,no,0.004508698364904238,8.066666666666666
+Linear SVM_METAR,Multilayer Perceptron_METAR,exactcorrection,0.00738525390625,2.0
+Linear SVM_METAR,Multilayer Perceptron_METAR,exact,0.00738525390625,2.0
+Linear SVM_METAR,AdaBoost_all,correction,0.0004985148935752056,12.121212121212121
+Linear SVM_METAR,AdaBoost_all,no,0.0002565503830557298,13.363636363636363
+Linear SVM_METAR,AdaBoost_all,exactcorrection,0.0003240634687244892,6.0
+Linear SVM_METAR,AdaBoost_all,exact,0.0003240634687244892,6.0
+Linear SVM_METAR,AdaBoost_no_METAR,correction,0.01639507184919225,5.76
+Linear SVM_METAR,AdaBoost_no_METAR,no,0.009322376047437497,6.76
+Linear SVM_METAR,AdaBoost_no_METAR,exactcorrection,0.01463329792022705,6.0
+Linear SVM_METAR,AdaBoost_no_METAR,exact,0.01463329792022705,6.0
+Linear SVM_METAR,AdaBoost_METAR,correction,0.0013742758758316976,10.24
+Linear SVM_METAR,AdaBoost_METAR,no,0.0006738585313537617,11.56
+Linear SVM_METAR,AdaBoost_METAR,exactcorrection,0.0009105205535888672,4.0
+Linear SVM_METAR,AdaBoost_METAR,exact,0.0009105205535888672,4.0
+Linear SVM_METAR,Quadratic Discriminant Analysis_all,correction,0.0005225753951242464,12.033333333333333
+Linear SVM_METAR,Quadratic Discriminant Analysis_all,no,0.0002607296328553165,13.333333333333334
+Linear SVM_METAR,Quadratic Discriminant Analysis_all,exactcorrection,0.0003249142318964005,5.0
+Linear SVM_METAR,Quadratic Discriminant Analysis_all,exact,0.0003249142318964005,5.0
+Linear SVM_METAR,Quadratic Discriminant Analysis_no_METAR,correction,0.0005225753951242464,12.033333333333333
+Linear SVM_METAR,Quadratic Discriminant Analysis_no_METAR,no,0.0002607296328553165,13.333333333333334
+Linear SVM_METAR,Quadratic Discriminant Analysis_no_METAR,exactcorrection,0.0003249142318964005,5.0
+Linear SVM_METAR,Quadratic Discriminant Analysis_no_METAR,exact,0.0003249142318964005,5.0
+Linear SVM_METAR,Quadratic Discriminant Analysis_METAR,correction,0.18144920772141646,1.7857142857142858
+Linear SVM_METAR,Quadratic Discriminant Analysis_METAR,no,0.10880943004054605,2.5714285714285716
+Linear SVM_METAR,Quadratic Discriminant Analysis_METAR,exactcorrection,0.1795654296875,4.0
+Linear SVM_METAR,Quadratic Discriminant Analysis_METAR,exact,0.1795654296875,4.0
+RBF SVM_all,RBF SVM_no_METAR,correction,1.0,0.0
+RBF SVM_all,RBF SVM_no_METAR,no,0.31731050786291115,1.0
+RBF SVM_all,RBF SVM_no_METAR,exactcorrection,1.0,0.0
+RBF SVM_all,RBF SVM_no_METAR,exact,1.0,0.0
+RBF SVM_all,RBF SVM_METAR,correction,0.0008302254277448881,11.172413793103448
+RBF SVM_all,RBF SVM_METAR,no,0.0004183778458646427,12.448275862068966
+RBF SVM_all,RBF SVM_METAR,exactcorrection,0.0005461126565933228,5.0
+RBF SVM_all,RBF SVM_METAR,exact,0.0005461126565933228,5.0
+RBF SVM_all,Gaussian Process_all,correction,1.0,0.0
+RBF SVM_all,Gaussian Process_all,no,0.31731050786291115,1.0
+RBF SVM_all,Gaussian Process_all,exactcorrection,1.0,0.0
+RBF SVM_all,Gaussian Process_all,exact,1.0,0.0
+RBF SVM_all,Gaussian Process_no_METAR,correction,1.0,0.0
+RBF SVM_all,Gaussian Process_no_METAR,no,0.31731050786291115,1.0
+RBF SVM_all,Gaussian Process_no_METAR,exactcorrection,1.0,0.0
+RBF SVM_all,Gaussian Process_no_METAR,exact,1.0,0.0
+RBF SVM_all,Gaussian Process_METAR,correction,0.0061698993205441645,7.5
+RBF SVM_all,Gaussian Process_METAR,no,0.0034870048921413857,8.533333333333333
+RBF SVM_all,Gaussian Process_METAR,exactcorrection,0.005222879350185395,7.0
+RBF SVM_all,Gaussian Process_METAR,exact,0.005222879350185395,7.0
+RBF SVM_all,Decision Tree_all,correction,0.6830913983096086,0.16666666666666666
+RBF SVM_all,Decision Tree_all,no,0.4142161782425251,0.6666666666666666
+RBF SVM_all,Decision Tree_all,exactcorrection,0.6875,2.0
+RBF SVM_all,Decision Tree_all,exact,0.6875,2.0
+RBF SVM_all,Decision Tree_no_METAR,correction,0.22067136191984324,1.5
+RBF SVM_all,Decision Tree_no_METAR,no,0.10247043485974942,2.6666666666666665
+RBF SVM_all,Decision Tree_no_METAR,exactcorrection,0.21875,1.0
+RBF SVM_all,Decision Tree_no_METAR,exact,0.21875,1.0
+RBF SVM_all,Decision Tree_METAR,correction,1.0,0.0
+RBF SVM_all,Decision Tree_METAR,no,0.8694170607412391,0.02702702702702703
+RBF SVM_all,Decision Tree_METAR,exactcorrection,1.0,18.0
+RBF SVM_all,Decision Tree_METAR,exact,1.0,18.0
+RBF SVM_all,Random Forest_all,correction,1.0,0.0
+RBF SVM_all,Random Forest_all,no,0.5637028616507731,0.3333333333333333
+RBF SVM_all,Random Forest_all,exactcorrection,1.0,1.0
+RBF SVM_all,Random Forest_all,exact,1.0,1.0
+RBF SVM_all,Random Forest_no_METAR,correction,0.47950012218695337,0.5
+RBF SVM_all,Random Forest_no_METAR,no,1.0,0.0
+RBF SVM_all,Random Forest_no_METAR,exactcorrection,1.0,1.0
+RBF SVM_all,Random Forest_no_METAR,exact,1.0,1.0
+RBF SVM_all,Random Forest_METAR,correction,0.8676323347781927,0.027777777777777776
+RBF SVM_all,Random Forest_METAR,no,0.7388826803635273,0.1111111111111111
+RBF SVM_all,Random Forest_METAR,exactcorrection,0.8679394004284404,17.0
+RBF SVM_all,Random Forest_METAR,exact,0.8679394004284404,17.0
+RBF SVM_all,Naive Bayes_all,correction,1.0,0.0
+RBF SVM_all,Naive Bayes_all,no,0.6547208460185768,0.2
+RBF SVM_all,Naive Bayes_all,exactcorrection,1.0,2.0
+RBF SVM_all,Naive Bayes_all,exact,1.0,2.0
+RBF SVM_all,Naive Bayes_no_METAR,correction,1.0,0.0
+RBF SVM_all,Naive Bayes_no_METAR,no,0.6547208460185768,0.2
+RBF SVM_all,Naive Bayes_no_METAR,exactcorrection,1.0,2.0
+RBF SVM_all,Naive Bayes_no_METAR,exact,1.0,2.0
+RBF SVM_all,Naive Bayes_METAR,correction,0.8711314915971582,0.02631578947368421
+RBF SVM_all,Naive Bayes_METAR,no,0.7456027889274615,0.10526315789473684
+RBF SVM_all,Naive Bayes_METAR,exactcorrection,0.8714146793645341,18.0
+RBF SVM_all,Naive Bayes_METAR,exact,0.8714146793645341,18.0
+RBF SVM_all,Multilayer Perceptron_all,correction,0.37109336952269756,0.8
+RBF SVM_all,Multilayer Perceptron_all,no,0.17971249487899593,1.8
+RBF SVM_all,Multilayer Perceptron_all,exactcorrection,0.375,1.0
+RBF SVM_all,Multilayer Perceptron_all,exact,0.375,1.0
+RBF SVM_all,Multilayer Perceptron_no_METAR,correction,1.0,0.0
+RBF SVM_all,Multilayer Perceptron_no_METAR,no,0.7054569861112734,0.14285714285714285
+RBF SVM_all,Multilayer Perceptron_no_METAR,exactcorrection,1.0,3.0
+RBF SVM_all,Multilayer Perceptron_no_METAR,exact,1.0,3.0
+RBF SVM_all,Multilayer Perceptron_METAR,correction,0.21592493894013678,1.53125
+RBF SVM_all,Multilayer Perceptron_METAR,no,0.15729920705028105,2.0
+RBF SVM_all,Multilayer Perceptron_METAR,exactcorrection,0.21532714972272515,12.0
+RBF SVM_all,Multilayer Perceptron_METAR,exact,0.21532714972272515,12.0
+RBF SVM_all,AdaBoost_all,correction,0.6170750774519739,0.25
+RBF SVM_all,AdaBoost_all,no,0.31731050786291115,1.0
+RBF SVM_all,AdaBoost_all,exactcorrection,0.625,1.0
+RBF SVM_all,AdaBoost_all,exact,0.625,1.0
+RBF SVM_all,AdaBoost_no_METAR,correction,0.041226833337163815,4.166666666666667
+RBF SVM_all,AdaBoost_no_METAR,no,0.014305878435429641,6.0
+RBF SVM_all,AdaBoost_no_METAR,exactcorrection,0.03125,0.0
+RBF SVM_all,AdaBoost_no_METAR,exact,0.03125,0.0
+RBF SVM_all,AdaBoost_METAR,correction,0.8711314915971582,0.02631578947368421
+RBF SVM_all,AdaBoost_METAR,no,0.7456027889274615,0.10526315789473684
+RBF SVM_all,AdaBoost_METAR,exactcorrection,0.8714146793645341,18.0
+RBF SVM_all,AdaBoost_METAR,exact,0.8714146793645341,18.0
+RBF SVM_all,Quadratic Discriminant Analysis_all,correction,1.0,0.0
+RBF SVM_all,Quadratic Discriminant Analysis_all,no,0.6547208460185768,0.2
+RBF SVM_all,Quadratic Discriminant Analysis_all,exactcorrection,1.0,2.0
+RBF SVM_all,Quadratic Discriminant Analysis_all,exact,1.0,2.0
+RBF SVM_all,Quadratic Discriminant Analysis_no_METAR,correction,1.0,0.0
+RBF SVM_all,Quadratic Discriminant Analysis_no_METAR,no,0.6547208460185768,0.2
+RBF SVM_all,Quadratic Discriminant Analysis_no_METAR,exactcorrection,1.0,2.0
+RBF SVM_all,Quadratic Discriminant Analysis_no_METAR,exact,1.0,2.0
+RBF SVM_all,Quadratic Discriminant Analysis_METAR,correction,0.031141210595796717,4.645161290322581
+RBF SVM_all,Quadratic Discriminant Analysis_METAR,no,0.019550269092885555,5.451612903225806
+RBF SVM_all,Quadratic Discriminant Analysis_METAR,exactcorrection,0.029449373483657837,9.0
+RBF SVM_all,Quadratic Discriminant Analysis_METAR,exact,0.029449373483657837,9.0
+RBF SVM_no_METAR,RBF SVM_METAR,correction,0.0013149446697132139,10.321428571428571
+RBF SVM_no_METAR,RBF SVM_METAR,no,0.0006697294490218293,11.571428571428571
+RBF SVM_no_METAR,RBF SVM_METAR,exactcorrection,0.0009122341871261597,5.0
+RBF SVM_no_METAR,RBF SVM_METAR,exact,0.0009122341871261597,5.0
+RBF SVM_no_METAR,Gaussian Process_all,correction,0.47950012218695337,0.5
+RBF SVM_no_METAR,Gaussian Process_all,no,0.15729920705028105,2.0
+RBF SVM_no_METAR,Gaussian Process_all,exactcorrection,0.5,0.0
+RBF SVM_no_METAR,Gaussian Process_all,exact,0.5,0.0
+RBF SVM_no_METAR,Gaussian Process_no_METAR,correction,0.0,inf
+RBF SVM_no_METAR,Gaussian Process_no_METAR,no,,
+RBF SVM_no_METAR,Gaussian Process_no_METAR,exactcorrection,1.0,0.0
+RBF SVM_no_METAR,Gaussian Process_no_METAR,exact,1.0,0.0
+RBF SVM_no_METAR,Gaussian Process_METAR,correction,0.009329584719771558,6.758620689655173
+RBF SVM_no_METAR,Gaussian Process_METAR,no,0.005345676872654249,7.758620689655173
+RBF SVM_no_METAR,Gaussian Process_METAR,exactcorrection,0.008130058646202087,7.0
+RBF SVM_no_METAR,Gaussian Process_METAR,exact,0.008130058646202087,7.0
+RBF SVM_no_METAR,Decision Tree_all,correction,0.4496917979688908,0.5714285714285714
+RBF SVM_no_METAR,Decision Tree_all,no,0.25683925795785334,1.2857142857142858
+RBF SVM_no_METAR,Decision Tree_all,exactcorrection,0.453125,2.0
+RBF SVM_no_METAR,Decision Tree_all,exact,0.453125,2.0
+RBF SVM_no_METAR,Decision Tree_no_METAR,correction,0.1305700181157369,2.2857142857142856
+RBF SVM_no_METAR,Decision Tree_no_METAR,no,0.05878172135535891,3.5714285714285716
+RBF SVM_no_METAR,Decision Tree_no_METAR,exactcorrection,0.125,1.0
+RBF SVM_no_METAR,Decision Tree_no_METAR,exact,0.125,1.0
+RBF SVM_no_METAR,Decision Tree_METAR,correction,0.8711314915971582,0.02631578947368421
+RBF SVM_no_METAR,Decision Tree_METAR,no,0.7456027889274615,0.10526315789473684
+RBF SVM_no_METAR,Decision Tree_METAR,exactcorrection,0.8714146793645341,18.0
+RBF SVM_no_METAR,Decision Tree_METAR,exact,0.8714146793645341,18.0
+RBF SVM_no_METAR,Random Forest_all,correction,0.6170750774519739,0.25
+RBF SVM_no_METAR,Random Forest_all,no,0.31731050786291115,1.0
+RBF SVM_no_METAR,Random Forest_all,exactcorrection,0.625,1.0
+RBF SVM_no_METAR,Random Forest_all,exact,0.625,1.0
+RBF SVM_no_METAR,Random Forest_no_METAR,correction,1.0,0.0
+RBF SVM_no_METAR,Random Forest_no_METAR,no,0.5637028616507731,0.3333333333333333
+RBF SVM_no_METAR,Random Forest_no_METAR,exactcorrection,1.0,1.0
+RBF SVM_no_METAR,Random Forest_no_METAR,exact,1.0,1.0
+RBF SVM_no_METAR,Random Forest_METAR,correction,1.0,0.0
+RBF SVM_no_METAR,Random Forest_METAR,no,0.8694170607412391,0.02702702702702703
+RBF SVM_no_METAR,Random Forest_METAR,exactcorrection,1.0,18.0
+RBF SVM_no_METAR,Random Forest_METAR,exact,1.0,18.0
+RBF SVM_no_METAR,Naive Bayes_all,correction,0.6170750774519739,0.25
+RBF SVM_no_METAR,Naive Bayes_all,no,1.0,0.0
+RBF SVM_no_METAR,Naive Bayes_all,exactcorrection,1.0,2.0
+RBF SVM_no_METAR,Naive Bayes_all,exact,1.0,2.0
+RBF SVM_no_METAR,Naive Bayes_no_METAR,correction,0.6170750774519739,0.25
+RBF SVM_no_METAR,Naive Bayes_no_METAR,no,1.0,0.0
+RBF SVM_no_METAR,Naive Bayes_no_METAR,exactcorrection,1.0,2.0
+RBF SVM_no_METAR,Naive Bayes_no_METAR,exact,1.0,2.0
+RBF SVM_no_METAR,Naive Bayes_METAR,correction,0.7487740417065472,0.10256410256410256
+RBF SVM_no_METAR,Naive Bayes_METAR,no,0.6309540411841706,0.23076923076923078
+RBF SVM_no_METAR,Naive Bayes_METAR,exactcorrection,0.7492586247608418,18.0
+RBF SVM_no_METAR,Naive Bayes_METAR,exact,0.7492586247608418,18.0
+RBF SVM_no_METAR,Multilayer Perceptron_all,correction,0.22067136191984324,1.5
+RBF SVM_no_METAR,Multilayer Perceptron_all,no,0.10247043485974942,2.6666666666666665
+RBF SVM_no_METAR,Multilayer Perceptron_all,exactcorrection,0.21875,1.0
+RBF SVM_no_METAR,Multilayer Perceptron_all,exact,0.21875,1.0
+RBF SVM_no_METAR,Multilayer Perceptron_no_METAR,correction,0.7236736098317629,0.125
+RBF SVM_no_METAR,Multilayer Perceptron_no_METAR,no,0.47950012218695337,0.5
+RBF SVM_no_METAR,Multilayer Perceptron_no_METAR,exactcorrection,0.7265625,3.0
+RBF SVM_no_METAR,Multilayer Perceptron_no_METAR,exact,0.7265625,3.0
+RBF SVM_no_METAR,Multilayer Perceptron_METAR,correction,0.2962698714842834,1.0909090909090908
+RBF SVM_no_METAR,Multilayer Perceptron_METAR,no,0.22301746994661142,1.4848484848484849
+RBF SVM_no_METAR,Multilayer Perceptron_METAR,exactcorrection,0.296206368599087,13.0
+RBF SVM_no_METAR,Multilayer Perceptron_METAR,exact,0.296206368599087,13.0
+RBF SVM_no_METAR,AdaBoost_all,correction,0.37109336952269756,0.8
+RBF SVM_no_METAR,AdaBoost_all,no,0.17971249487899593,1.8
+RBF SVM_no_METAR,AdaBoost_all,exactcorrection,0.375,1.0
+RBF SVM_no_METAR,AdaBoost_all,exact,0.375,1.0
+RBF SVM_no_METAR,AdaBoost_no_METAR,correction,0.1305700181157369,2.2857142857142856
+RBF SVM_no_METAR,AdaBoost_no_METAR,no,0.05878172135535891,3.5714285714285716
+RBF SVM_no_METAR,AdaBoost_no_METAR,exactcorrection,0.125,1.0
+RBF SVM_no_METAR,AdaBoost_no_METAR,exact,0.125,1.0
+RBF SVM_no_METAR,AdaBoost_METAR,correction,1.0,0.0
+RBF SVM_no_METAR,AdaBoost_METAR,no,0.8727801237939118,0.02564102564102564
+RBF SVM_no_METAR,AdaBoost_METAR,exactcorrection,0.9999999999999996,19.0
+RBF SVM_no_METAR,AdaBoost_METAR,exact,0.9999999999999996,19.0
+RBF SVM_no_METAR,Quadratic Discriminant Analysis_all,correction,0.6170750774519739,0.25
+RBF SVM_no_METAR,Quadratic Discriminant Analysis_all,no,0.31731050786291115,1.0
+RBF SVM_no_METAR,Quadratic Discriminant Analysis_all,exactcorrection,0.625,1.0
+RBF SVM_no_METAR,Quadratic Discriminant Analysis_all,exact,0.625,1.0
+RBF SVM_no_METAR,Quadratic Discriminant Analysis_no_METAR,correction,0.6170750774519739,0.25
+RBF SVM_no_METAR,Quadratic Discriminant Analysis_no_METAR,no,0.31731050786291115,1.0
+RBF SVM_no_METAR,Quadratic Discriminant Analysis_no_METAR,exactcorrection,0.625,1.0
+RBF SVM_no_METAR,Quadratic Discriminant Analysis_no_METAR,exact,0.625,1.0
+RBF SVM_no_METAR,Quadratic Discriminant Analysis_METAR,correction,0.05182992721790985,3.78125
+RBF SVM_no_METAR,Quadratic Discriminant Analysis_METAR,no,0.033894853524689295,4.5
+RBF SVM_no_METAR,Quadratic Discriminant Analysis_METAR,exactcorrection,0.050102459732443094,10.0
+RBF SVM_no_METAR,Quadratic Discriminant Analysis_METAR,exact,0.050102459732443094,10.0
+RBF SVM_METAR,Gaussian Process_all,correction,0.0005225753951242464,12.033333333333333
+RBF SVM_METAR,Gaussian Process_all,no,0.0002607296328553165,13.333333333333334
+RBF SVM_METAR,Gaussian Process_all,exactcorrection,0.0003249142318964005,5.0
+RBF SVM_METAR,Gaussian Process_all,exact,0.0003249142318964005,5.0
+RBF SVM_METAR,Gaussian Process_no_METAR,correction,0.0013149446697132139,10.321428571428571
+RBF SVM_METAR,Gaussian Process_no_METAR,no,0.0006697294490218293,11.571428571428571
+RBF SVM_METAR,Gaussian Process_no_METAR,exactcorrection,0.0009122341871261597,5.0
+RBF SVM_METAR,Gaussian Process_no_METAR,exact,0.0009122341871261597,5.0
+RBF SVM_METAR,Gaussian Process_METAR,correction,0.24821307898992026,1.3333333333333333
+RBF SVM_METAR,Gaussian Process_METAR,no,0.08326451666355043,3.0
+RBF SVM_METAR,Gaussian Process_METAR,exactcorrection,0.25,0.0
+RBF SVM_METAR,Gaussian Process_METAR,exact,0.25,0.0
+RBF SVM_METAR,Decision Tree_all,correction,0.00020408400998040742,13.793103448275861
+RBF SVM_METAR,Decision Tree_all,no,9.635090009780229e-05,15.206896551724139
+RBF SVM_METAR,Decision Tree_all,exactcorrection,0.00010371580719947815,4.0
+RBF SVM_METAR,Decision Tree_all,exact,0.00010371580719947815,4.0
+RBF SVM_METAR,Decision Tree_no_METAR,correction,7.772240795323116e-05,15.612903225806452
+RBF SVM_METAR,Decision Tree_no_METAR,no,3.6131125499798335e-05,17.06451612903226
+RBF SVM_METAR,Decision Tree_no_METAR,exactcorrection,3.39532271027565e-05,4.0
+RBF SVM_METAR,Decision Tree_no_METAR,exact,3.39532271027565e-05,4.0
+RBF SVM_METAR,Decision Tree_METAR,correction,0.00010516355403363098,15.041666666666666
+RBF SVM_METAR,Decision Tree_METAR,no,4.455709060405612e-05,16.666666666666668
+RBF SVM_METAR,Decision Tree_METAR,exactcorrection,3.5881996154785156e-05,2.0
+RBF SVM_METAR,Decision Tree_METAR,exact,3.5881996154785156e-05,2.0
+RBF SVM_METAR,Random Forest_all,correction,0.0005225753951242464,12.033333333333333
+RBF SVM_METAR,Random Forest_all,no,0.0002607296328553165,13.333333333333334
+RBF SVM_METAR,Random Forest_all,exactcorrection,0.0003249142318964005,5.0
+RBF SVM_METAR,Random Forest_all,exact,0.0003249142318964005,5.0
+RBF SVM_METAR,Random Forest_no_METAR,correction,0.0008302254277448881,11.172413793103448
+RBF SVM_METAR,Random Forest_no_METAR,no,0.0004183778458646427,12.448275862068966
+RBF SVM_METAR,Random Forest_no_METAR,exactcorrection,0.0005461126565933228,5.0
+RBF SVM_METAR,Random Forest_no_METAR,exact,0.0005461126565933228,5.0
+RBF SVM_METAR,Random Forest_METAR,correction,0.000480341199981871,12.19047619047619
+RBF SVM_METAR,Random Forest_METAR,no,0.0002075015940618336,13.761904761904763
+RBF SVM_METAR,Random Forest_METAR,exactcorrection,0.00022125244140625,2.0
+RBF SVM_METAR,Random Forest_METAR,exact,0.00022125244140625,2.0
+RBF SVM_METAR,Naive Bayes_all,correction,0.0008561456864208794,11.115384615384615
+RBF SVM_METAR,Naive Bayes_all,no,0.0004154176483815927,12.461538461538462
+RBF SVM_METAR,Naive Bayes_all,exactcorrection,0.0005335211753845215,4.0
+RBF SVM_METAR,Naive Bayes_all,exact,0.0005335211753845215,4.0
+RBF SVM_METAR,Naive Bayes_no_METAR,correction,0.0008561456864208794,11.115384615384615
+RBF SVM_METAR,Naive Bayes_no_METAR,no,0.0004154176483815927,12.461538461538462
+RBF SVM_METAR,Naive Bayes_no_METAR,exactcorrection,0.0005335211753845215,4.0
+RBF SVM_METAR,Naive Bayes_no_METAR,exact,0.0005335211753845215,4.0
+RBF SVM_METAR,Naive Bayes_METAR,correction,1.2749674921097076e-05,19.047619047619047
+RBF SVM_METAR,Naive Bayes_METAR,no,4.592833711753971e-06,21.0
+RBF SVM_METAR,Naive Bayes_METAR,exactcorrection,9.5367431640625e-07,0.0
+RBF SVM_METAR,Naive Bayes_METAR,exact,9.5367431640625e-07,0.0
+RBF SVM_METAR,Multilayer Perceptron_all,correction,0.0002053757361412177,13.78125
+RBF SVM_METAR,Multilayer Perceptron_all,no,0.00010062192211963679,15.125
+RBF SVM_METAR,Multilayer Perceptron_all,exactcorrection,0.00011307420209050179,5.0
+RBF SVM_METAR,Multilayer Perceptron_all,exact,0.00011307420209050179,5.0
+RBF SVM_METAR,Multilayer Perceptron_no_METAR,correction,0.0005225753951242464,12.033333333333333
+RBF SVM_METAR,Multilayer Perceptron_no_METAR,no,0.0002607296328553165,13.333333333333334
+RBF SVM_METAR,Multilayer Perceptron_no_METAR,exactcorrection,0.0003249142318964005,5.0
+RBF SVM_METAR,Multilayer Perceptron_no_METAR,exact,0.0003249142318964005,5.0
+RBF SVM_METAR,Multilayer Perceptron_METAR,correction,0.005545667315244061,7.6923076923076925
+RBF SVM_METAR,Multilayer Perceptron_METAR,no,0.002281937253315446,9.307692307692308
+RBF SVM_METAR,Multilayer Perceptron_METAR,exactcorrection,0.00341796875,1.0
+RBF SVM_METAR,Multilayer Perceptron_METAR,exact,0.00341796875,1.0
+RBF SVM_METAR,AdaBoost_all,correction,0.00032801631501352865,12.903225806451612
+RBF SVM_METAR,AdaBoost_all,no,0.00016213175204392638,14.225806451612904
+RBF SVM_METAR,AdaBoost_all,exactcorrection,0.00019219517707824707,5.0
+RBF SVM_METAR,AdaBoost_all,exact,0.00019219517707824707,5.0
+RBF SVM_METAR,AdaBoost_no_METAR,correction,0.012343360353455044,6.260869565217392
+RBF SVM_METAR,AdaBoost_no_METAR,no,0.006714389785549478,7.3478260869565215
+RBF SVM_METAR,AdaBoost_no_METAR,exactcorrection,0.010622024536132812,5.0
+RBF SVM_METAR,AdaBoost_no_METAR,exact,0.010622024536132812,5.0
+RBF SVM_METAR,AdaBoost_METAR,correction,0.000480341199981871,12.19047619047619
+RBF SVM_METAR,AdaBoost_METAR,no,0.0002075015940618336,13.761904761904763
+RBF SVM_METAR,AdaBoost_METAR,exactcorrection,0.00022125244140625,2.0
+RBF SVM_METAR,AdaBoost_METAR,exact,0.00022125244140625,2.0
+RBF SVM_METAR,Quadratic Discriminant Analysis_all,correction,0.00032983852077799353,12.892857142857142
+RBF SVM_METAR,Quadratic Discriminant Analysis_all,no,0.00015705228423075143,14.285714285714286
+RBF SVM_METAR,Quadratic Discriminant Analysis_all,exactcorrection,0.00017999112606048584,4.0
+RBF SVM_METAR,Quadratic Discriminant Analysis_all,exact,0.00017999112606048584,4.0
+RBF SVM_METAR,Quadratic Discriminant Analysis_no_METAR,correction,0.00032983852077799353,12.892857142857142
+RBF SVM_METAR,Quadratic Discriminant Analysis_no_METAR,no,0.00015705228423075143,14.285714285714286
+RBF SVM_METAR,Quadratic Discriminant Analysis_no_METAR,exactcorrection,0.00017999112606048584,4.0
+RBF SVM_METAR,Quadratic Discriminant Analysis_no_METAR,exact,0.00017999112606048584,4.0
+RBF SVM_METAR,Quadratic Discriminant Analysis_METAR,correction,0.14891467317876161,2.0833333333333335
+RBF SVM_METAR,Quadratic Discriminant Analysis_METAR,no,0.08326451666355043,3.0
+RBF SVM_METAR,Quadratic Discriminant Analysis_METAR,exactcorrection,0.14599609375,3.0
+RBF SVM_METAR,Quadratic Discriminant Analysis_METAR,exact,0.14599609375,3.0
+Gaussian Process_all,Gaussian Process_no_METAR,correction,0.47950012218695337,0.5
+Gaussian Process_all,Gaussian Process_no_METAR,no,0.15729920705028105,2.0
+Gaussian Process_all,Gaussian Process_no_METAR,exactcorrection,0.5,0.0
+Gaussian Process_all,Gaussian Process_no_METAR,exact,0.5,0.0
+Gaussian Process_all,Gaussian Process_METAR,correction,0.004057136032371287,8.258064516129032
+Gaussian Process_all,Gaussian Process_METAR,no,0.0022634698120351806,9.32258064516129
+Gaussian Process_all,Gaussian Process_METAR,exactcorrection,0.003326892852783203,7.0
+Gaussian Process_all,Gaussian Process_METAR,exact,0.003326892852783203,7.0
+Gaussian Process_all,Decision Tree_all,correction,1.0,0.0
+Gaussian Process_all,Decision Tree_all,no,0.7054569861112734,0.14285714285714285
+Gaussian Process_all,Decision Tree_all,exactcorrection,1.0,3.0
+Gaussian Process_all,Decision Tree_all,exact,1.0,3.0
+Gaussian Process_all,Decision Tree_no_METAR,correction,0.4496917979688908,0.5714285714285714
+Gaussian Process_all,Decision Tree_no_METAR,no,0.25683925795785334,1.2857142857142858
+Gaussian Process_all,Decision Tree_no_METAR,exactcorrection,0.453125,2.0
+Gaussian Process_all,Decision Tree_no_METAR,exact,0.453125,2.0
+Gaussian Process_all,Decision Tree_METAR,correction,0.8711314915971582,0.02631578947368421
+Gaussian Process_all,Decision Tree_METAR,no,1.0,0.0
+Gaussian Process_all,Decision Tree_METAR,exactcorrection,1.0,19.0
+Gaussian Process_all,Decision Tree_METAR,exact,1.0,19.0
+Gaussian Process_all,Random Forest_all,correction,0.6170750774519739,0.25
+Gaussian Process_all,Random Forest_all,no,1.0,0.0
+Gaussian Process_all,Random Forest_all,exactcorrection,1.0,2.0
+Gaussian Process_all,Random Forest_all,exact,1.0,2.0
+Gaussian Process_all,Random Forest_no_METAR,correction,1.0,0.0
+Gaussian Process_all,Random Forest_no_METAR,no,0.5637028616507731,0.3333333333333333
+Gaussian Process_all,Random Forest_no_METAR,exactcorrection,1.0,1.0
+Gaussian Process_all,Random Forest_no_METAR,exact,1.0,1.0
+Gaussian Process_all,Random Forest_METAR,correction,0.7423083940717163,0.10810810810810811
+Gaussian Process_all,Random Forest_METAR,no,0.6218734243307409,0.24324324324324326
+Gaussian Process_all,Random Forest_METAR,exactcorrection,0.7428293587290682,17.0
+Gaussian Process_all,Random Forest_METAR,exact,0.7428293587290682,17.0
+Gaussian Process_all,Naive Bayes_all,correction,0.6830913983096086,0.16666666666666666
+Gaussian Process_all,Naive Bayes_all,no,0.4142161782425251,0.6666666666666666
+Gaussian Process_all,Naive Bayes_all,exactcorrection,0.6875,2.0
+Gaussian Process_all,Naive Bayes_all,exact,0.6875,2.0
+Gaussian Process_all,Naive Bayes_no_METAR,correction,0.6830913983096086,0.16666666666666666
+Gaussian Process_all,Naive Bayes_no_METAR,no,0.4142161782425251,0.6666666666666666
+Gaussian Process_all,Naive Bayes_no_METAR,exactcorrection,0.6875,2.0
+Gaussian Process_all,Naive Bayes_no_METAR,exact,0.6875,2.0
+Gaussian Process_all,Naive Bayes_METAR,correction,1.0,0.0
+Gaussian Process_all,Naive Bayes_METAR,no,0.8727801237939118,0.02564102564102564
+Gaussian Process_all,Naive Bayes_METAR,exactcorrection,0.9999999999999996,19.0
+Gaussian Process_all,Naive Bayes_METAR,exact,0.9999999999999996,19.0
+Gaussian Process_all,Multilayer Perceptron_all,correction,0.6170750774519739,0.25
+Gaussian Process_all,Multilayer Perceptron_all,no,0.31731050786291115,1.0
+Gaussian Process_all,Multilayer Perceptron_all,exactcorrection,0.625,1.0
+Gaussian Process_all,Multilayer Perceptron_all,exact,0.625,1.0
+Gaussian Process_all,Multilayer Perceptron_no_METAR,correction,0.7236736098317629,0.125
+Gaussian Process_all,Multilayer Perceptron_no_METAR,no,1.0,0.0
+Gaussian Process_all,Multilayer Perceptron_no_METAR,exactcorrection,1.0,4.0
+Gaussian Process_all,Multilayer Perceptron_no_METAR,exact,1.0,4.0
+Gaussian Process_all,Multilayer Perceptron_METAR,correction,0.1637343543245882,1.9393939393939394
+Gaussian Process_all,Multilayer Perceptron_METAR,no,0.11718508719813818,2.4545454545454546
+Gaussian Process_all,Multilayer Perceptron_METAR,exactcorrection,0.16275565745308995,12.0
+Gaussian Process_all,Multilayer Perceptron_METAR,exact,0.16275565745308995,12.0
+Gaussian Process_all,AdaBoost_all,correction,1.0,0.0
+Gaussian Process_all,AdaBoost_all,no,0.5637028616507731,0.3333333333333333
+Gaussian Process_all,AdaBoost_all,exactcorrection,1.0,1.0
+Gaussian Process_all,AdaBoost_all,exact,1.0,1.0
+Gaussian Process_all,AdaBoost_no_METAR,correction,0.02334220201289086,5.142857142857143
+Gaussian Process_all,AdaBoost_no_METAR,no,0.008150971593502705,7.0
+Gaussian Process_all,AdaBoost_no_METAR,exactcorrection,0.015625,0.0
+Gaussian Process_all,AdaBoost_no_METAR,exact,0.015625,0.0
+Gaussian Process_all,AdaBoost_METAR,correction,0.7487740417065472,0.10256410256410256
+Gaussian Process_all,AdaBoost_METAR,no,0.6309540411841706,0.23076923076923078
+Gaussian Process_all,AdaBoost_METAR,exactcorrection,0.7492586247608418,18.0
+Gaussian Process_all,AdaBoost_METAR,exact,0.7492586247608418,18.0
+Gaussian Process_all,Quadratic Discriminant Analysis_all,correction,0.6830913983096086,0.16666666666666666
+Gaussian Process_all,Quadratic Discriminant Analysis_all,no,1.0,0.0
+Gaussian Process_all,Quadratic Discriminant Analysis_all,exactcorrection,1.0,3.0
+Gaussian Process_all,Quadratic Discriminant Analysis_all,exact,1.0,3.0
+Gaussian Process_all,Quadratic Discriminant Analysis_no_METAR,correction,0.6830913983096086,0.16666666666666666
+Gaussian Process_all,Quadratic Discriminant Analysis_no_METAR,no,1.0,0.0
+Gaussian Process_all,Quadratic Discriminant Analysis_no_METAR,exactcorrection,1.0,3.0
+Gaussian Process_all,Quadratic Discriminant Analysis_no_METAR,exact,1.0,3.0
+Gaussian Process_all,Quadratic Discriminant Analysis_METAR,correction,0.021556266760016273,5.28125
+Gaussian Process_all,Quadratic Discriminant Analysis_METAR,no,0.01332832878081758,6.125
+Gaussian Process_all,Quadratic Discriminant Analysis_METAR,exactcorrection,0.020061607006937265,9.0
+Gaussian Process_all,Quadratic Discriminant Analysis_METAR,exact,0.020061607006937265,9.0
+Gaussian Process_no_METAR,Gaussian Process_METAR,correction,0.009329584719771558,6.758620689655173
+Gaussian Process_no_METAR,Gaussian Process_METAR,no,0.005345676872654249,7.758620689655173
+Gaussian Process_no_METAR,Gaussian Process_METAR,exactcorrection,0.008130058646202087,7.0
+Gaussian Process_no_METAR,Gaussian Process_METAR,exact,0.008130058646202087,7.0
+Gaussian Process_no_METAR,Decision Tree_all,correction,0.4496917979688908,0.5714285714285714
+Gaussian Process_no_METAR,Decision Tree_all,no,0.25683925795785334,1.2857142857142858
+Gaussian Process_no_METAR,Decision Tree_all,exactcorrection,0.453125,2.0
+Gaussian Process_no_METAR,Decision Tree_all,exact,0.453125,2.0
+Gaussian Process_no_METAR,Decision Tree_no_METAR,correction,0.1305700181157369,2.2857142857142856
+Gaussian Process_no_METAR,Decision Tree_no_METAR,no,0.05878172135535891,3.5714285714285716
+Gaussian Process_no_METAR,Decision Tree_no_METAR,exactcorrection,0.125,1.0
+Gaussian Process_no_METAR,Decision Tree_no_METAR,exact,0.125,1.0
+Gaussian Process_no_METAR,Decision Tree_METAR,correction,0.8711314915971582,0.02631578947368421
+Gaussian Process_no_METAR,Decision Tree_METAR,no,0.7456027889274615,0.10526315789473684
+Gaussian Process_no_METAR,Decision Tree_METAR,exactcorrection,0.8714146793645341,18.0
+Gaussian Process_no_METAR,Decision Tree_METAR,exact,0.8714146793645341,18.0
+Gaussian Process_no_METAR,Random Forest_all,correction,0.6170750774519739,0.25
+Gaussian Process_no_METAR,Random Forest_all,no,0.31731050786291115,1.0
+Gaussian Process_no_METAR,Random Forest_all,exactcorrection,0.625,1.0
+Gaussian Process_no_METAR,Random Forest_all,exact,0.625,1.0
+Gaussian Process_no_METAR,Random Forest_no_METAR,correction,1.0,0.0
+Gaussian Process_no_METAR,Random Forest_no_METAR,no,0.5637028616507731,0.3333333333333333
+Gaussian Process_no_METAR,Random Forest_no_METAR,exactcorrection,1.0,1.0
+Gaussian Process_no_METAR,Random Forest_no_METAR,exact,1.0,1.0
+Gaussian Process_no_METAR,Random Forest_METAR,correction,1.0,0.0
+Gaussian Process_no_METAR,Random Forest_METAR,no,0.8694170607412391,0.02702702702702703
+Gaussian Process_no_METAR,Random Forest_METAR,exactcorrection,1.0,18.0
+Gaussian Process_no_METAR,Random Forest_METAR,exact,1.0,18.0
+Gaussian Process_no_METAR,Naive Bayes_all,correction,0.6170750774519739,0.25
+Gaussian Process_no_METAR,Naive Bayes_all,no,1.0,0.0
+Gaussian Process_no_METAR,Naive Bayes_all,exactcorrection,1.0,2.0
+Gaussian Process_no_METAR,Naive Bayes_all,exact,1.0,2.0
+Gaussian Process_no_METAR,Naive Bayes_no_METAR,correction,0.6170750774519739,0.25
+Gaussian Process_no_METAR,Naive Bayes_no_METAR,no,1.0,0.0
+Gaussian Process_no_METAR,Naive Bayes_no_METAR,exactcorrection,1.0,2.0
+Gaussian Process_no_METAR,Naive Bayes_no_METAR,exact,1.0,2.0
+Gaussian Process_no_METAR,Naive Bayes_METAR,correction,0.7487740417065472,0.10256410256410256
+Gaussian Process_no_METAR,Naive Bayes_METAR,no,0.6309540411841706,0.23076923076923078
+Gaussian Process_no_METAR,Naive Bayes_METAR,exactcorrection,0.7492586247608418,18.0
+Gaussian Process_no_METAR,Naive Bayes_METAR,exact,0.7492586247608418,18.0
+Gaussian Process_no_METAR,Multilayer Perceptron_all,correction,0.22067136191984324,1.5
+Gaussian Process_no_METAR,Multilayer Perceptron_all,no,0.10247043485974942,2.6666666666666665
+Gaussian Process_no_METAR,Multilayer Perceptron_all,exactcorrection,0.21875,1.0
+Gaussian Process_no_METAR,Multilayer Perceptron_all,exact,0.21875,1.0
+Gaussian Process_no_METAR,Multilayer Perceptron_no_METAR,correction,0.7236736098317629,0.125
+Gaussian Process_no_METAR,Multilayer Perceptron_no_METAR,no,0.47950012218695337,0.5
+Gaussian Process_no_METAR,Multilayer Perceptron_no_METAR,exactcorrection,0.7265625,3.0
+Gaussian Process_no_METAR,Multilayer Perceptron_no_METAR,exact,0.7265625,3.0
+Gaussian Process_no_METAR,Multilayer Perceptron_METAR,correction,0.2962698714842834,1.0909090909090908
+Gaussian Process_no_METAR,Multilayer Perceptron_METAR,no,0.22301746994661142,1.4848484848484849
+Gaussian Process_no_METAR,Multilayer Perceptron_METAR,exactcorrection,0.296206368599087,13.0
+Gaussian Process_no_METAR,Multilayer Perceptron_METAR,exact,0.296206368599087,13.0
+Gaussian Process_no_METAR,AdaBoost_all,correction,0.37109336952269756,0.8
+Gaussian Process_no_METAR,AdaBoost_all,no,0.17971249487899593,1.8
+Gaussian Process_no_METAR,AdaBoost_all,exactcorrection,0.375,1.0
+Gaussian Process_no_METAR,AdaBoost_all,exact,0.375,1.0
+Gaussian Process_no_METAR,AdaBoost_no_METAR,correction,0.1305700181157369,2.2857142857142856
+Gaussian Process_no_METAR,AdaBoost_no_METAR,no,0.05878172135535891,3.5714285714285716
+Gaussian Process_no_METAR,AdaBoost_no_METAR,exactcorrection,0.125,1.0
+Gaussian Process_no_METAR,AdaBoost_no_METAR,exact,0.125,1.0
+Gaussian Process_no_METAR,AdaBoost_METAR,correction,1.0,0.0
+Gaussian Process_no_METAR,AdaBoost_METAR,no,0.8727801237939118,0.02564102564102564
+Gaussian Process_no_METAR,AdaBoost_METAR,exactcorrection,0.9999999999999996,19.0
+Gaussian Process_no_METAR,AdaBoost_METAR,exact,0.9999999999999996,19.0
+Gaussian Process_no_METAR,Quadratic Discriminant Analysis_all,correction,0.6170750774519739,0.25
+Gaussian Process_no_METAR,Quadratic Discriminant Analysis_all,no,0.31731050786291115,1.0
+Gaussian Process_no_METAR,Quadratic Discriminant Analysis_all,exactcorrection,0.625,1.0
+Gaussian Process_no_METAR,Quadratic Discriminant Analysis_all,exact,0.625,1.0
+Gaussian Process_no_METAR,Quadratic Discriminant Analysis_no_METAR,correction,0.6170750774519739,0.25
+Gaussian Process_no_METAR,Quadratic Discriminant Analysis_no_METAR,no,0.31731050786291115,1.0
+Gaussian Process_no_METAR,Quadratic Discriminant Analysis_no_METAR,exactcorrection,0.625,1.0
+Gaussian Process_no_METAR,Quadratic Discriminant Analysis_no_METAR,exact,0.625,1.0
+Gaussian Process_no_METAR,Quadratic Discriminant Analysis_METAR,correction,0.05182992721790985,3.78125
+Gaussian Process_no_METAR,Quadratic Discriminant Analysis_METAR,no,0.033894853524689295,4.5
+Gaussian Process_no_METAR,Quadratic Discriminant Analysis_METAR,exactcorrection,0.050102459732443094,10.0
+Gaussian Process_no_METAR,Quadratic Discriminant Analysis_METAR,exact,0.050102459732443094,10.0
+Gaussian Process_METAR,Decision Tree_all,correction,0.0026540293594823415,9.03125
+Gaussian Process_METAR,Decision Tree_all,no,0.0014627165866811515,10.125
+Gaussian Process_METAR,Decision Tree_all,exactcorrection,0.0021024015732109547,7.0
+Gaussian Process_METAR,Decision Tree_all,exact,0.0021024015732109547,7.0
+Gaussian Process_METAR,Decision Tree_no_METAR,correction,0.0011201348827110807,10.617647058823529
+Gaussian Process_METAR,Decision Tree_no_METAR,no,0.0006036441981334306,11.764705882352942
+Gaussian Process_METAR,Decision Tree_no_METAR,exactcorrection,0.0008213953115046024,7.0
+Gaussian Process_METAR,Decision Tree_no_METAR,exact,0.0008213953115046024,7.0
+Gaussian Process_METAR,Decision Tree_METAR,correction,0.000480341199981871,12.19047619047619
+Gaussian Process_METAR,Decision Tree_METAR,no,0.0002075015940618336,13.761904761904763
+Gaussian Process_METAR,Decision Tree_METAR,exactcorrection,0.00022125244140625,2.0
+Gaussian Process_METAR,Decision Tree_METAR,exact,0.00022125244140625,2.0
+Gaussian Process_METAR,Random Forest_all,correction,0.004057136032371287,8.258064516129032
+Gaussian Process_METAR,Random Forest_all,no,0.0022634698120351806,9.32258064516129
+Gaussian Process_METAR,Random Forest_all,exactcorrection,0.003326892852783203,7.0
+Gaussian Process_METAR,Random Forest_all,exact,0.003326892852783203,7.0
+Gaussian Process_METAR,Random Forest_no_METAR,correction,0.0061698993205441645,7.5
+Gaussian Process_METAR,Random Forest_no_METAR,no,0.0034870048921413857,8.533333333333333
+Gaussian Process_METAR,Random Forest_no_METAR,exactcorrection,0.005222879350185395,7.0
+Gaussian Process_METAR,Random Forest_no_METAR,exact,0.005222879350185395,7.0
+Gaussian Process_METAR,Random Forest_METAR,correction,0.0021830447373622493,9.38888888888889
+Gaussian Process_METAR,Random Forest_METAR,no,0.0009674284502477464,10.88888888888889
+Gaussian Process_METAR,Random Forest_METAR,exactcorrection,0.001312255859375,2.0
+Gaussian Process_METAR,Random Forest_METAR,exact,0.001312255859375,2.0
+Gaussian Process_METAR,Naive Bayes_all,correction,0.009329584719771558,6.758620689655173
+Gaussian Process_METAR,Naive Bayes_all,no,0.005345676872654249,7.758620689655173
+Gaussian Process_METAR,Naive Bayes_all,exactcorrection,0.008130058646202087,7.0
+Gaussian Process_METAR,Naive Bayes_all,exact,0.008130058646202087,7.0
+Gaussian Process_METAR,Naive Bayes_no_METAR,correction,0.009329584719771558,6.758620689655173
+Gaussian Process_METAR,Naive Bayes_no_METAR,no,0.005345676872654249,7.758620689655173
+Gaussian Process_METAR,Naive Bayes_no_METAR,exactcorrection,0.008130058646202087,7.0
+Gaussian Process_METAR,Naive Bayes_no_METAR,exact,0.008130058646202087,7.0
+Gaussian Process_METAR,Naive Bayes_METAR,correction,6.151089035272799e-05,16.055555555555557
+Gaussian Process_METAR,Naive Bayes_METAR,no,2.2090496998585475e-05,18.0
+Gaussian Process_METAR,Naive Bayes_METAR,exactcorrection,7.62939453125e-06,0.0
+Gaussian Process_METAR,Naive Bayes_METAR,exact,7.62939453125e-06,0.0
+Gaussian Process_METAR,Multilayer Perceptron_all,correction,0.001727950774169049,9.818181818181818
+Gaussian Process_METAR,Multilayer Perceptron_all,no,0.0009414095859335535,10.93939393939394
+Gaussian Process_METAR,Multilayer Perceptron_all,exactcorrection,0.0013187271542847157,7.0
+Gaussian Process_METAR,Multilayer Perceptron_all,exact,0.0013187271542847157,7.0
+Gaussian Process_METAR,Multilayer Perceptron_no_METAR,correction,0.005348770520482035,7.757575757575758
+Gaussian Process_METAR,Multilayer Perceptron_no_METAR,no,0.0030831860909079525,8.757575757575758
+Gaussian Process_METAR,Multilayer Perceptron_no_METAR,exactcorrection,0.004551384132355452,8.0
+Gaussian Process_METAR,Multilayer Perceptron_no_METAR,exact,0.004551384132355452,8.0
+Gaussian Process_METAR,Multilayer Perceptron_METAR,correction,0.04330814281079206,4.083333333333333
+Gaussian Process_METAR,Multilayer Perceptron_METAR,no,0.020921335337794035,5.333333333333333
+Gaussian Process_METAR,Multilayer Perceptron_METAR,exactcorrection,0.03857421875,2.0
+Gaussian Process_METAR,Multilayer Perceptron_METAR,exact,0.03857421875,2.0
+Gaussian Process_METAR,AdaBoost_all,correction,0.0026540293594823415,9.03125
+Gaussian Process_METAR,AdaBoost_all,no,0.0014627165866811515,10.125
+Gaussian Process_METAR,AdaBoost_all,exactcorrection,0.0021024015732109547,7.0
+Gaussian Process_METAR,AdaBoost_all,exact,0.0021024015732109547,7.0
+Gaussian Process_METAR,AdaBoost_no_METAR,correction,0.06619257972219346,3.375
+Gaussian Process_METAR,AdaBoost_no_METAR,no,0.041226833337163815,4.166666666666667
+Gaussian Process_METAR,AdaBoost_no_METAR,exactcorrection,0.06391465663909912,7.0
+Gaussian Process_METAR,AdaBoost_no_METAR,exact,0.06391465663909912,7.0
+Gaussian Process_METAR,AdaBoost_METAR,correction,0.0036504344044418794,8.45
+Gaussian Process_METAR,AdaBoost_METAR,no,0.0017451186995289028,9.8
+Gaussian Process_METAR,AdaBoost_METAR,exactcorrection,0.0025768280029296875,3.0
+Gaussian Process_METAR,AdaBoost_METAR,exact,0.0025768280029296875,3.0
+Gaussian Process_METAR,Quadratic Discriminant Analysis_all,correction,0.0029671058986476154,8.827586206896552
+Gaussian Process_METAR,Quadratic Discriminant Analysis_all,no,0.0015949936169505198,9.96551724137931
+Gaussian Process_METAR,Quadratic Discriminant Analysis_all,exactcorrection,0.002315700054168701,6.0
+Gaussian Process_METAR,Quadratic Discriminant Analysis_all,exact,0.002315700054168701,6.0
+Gaussian Process_METAR,Quadratic Discriminant Analysis_no_METAR,correction,0.0029671058986476154,8.827586206896552
+Gaussian Process_METAR,Quadratic Discriminant Analysis_no_METAR,no,0.0015949936169505198,9.96551724137931
+Gaussian Process_METAR,Quadratic Discriminant Analysis_no_METAR,exactcorrection,0.002315700054168701,6.0
+Gaussian Process_METAR,Quadratic Discriminant Analysis_no_METAR,exact,0.002315700054168701,6.0
+Gaussian Process_METAR,Quadratic Discriminant Analysis_METAR,correction,0.5790997419539188,0.3076923076923077
+Gaussian Process_METAR,Quadratic Discriminant Analysis_METAR,no,0.40538055645894244,0.6923076923076923
+Gaussian Process_METAR,Quadratic Discriminant Analysis_METAR,exactcorrection,0.5810546875,5.0
+Gaussian Process_METAR,Quadratic Discriminant Analysis_METAR,exact,0.5810546875,5.0
+Decision Tree_all,Decision Tree_no_METAR,correction,0.47950012218695337,0.5
+Decision Tree_all,Decision Tree_no_METAR,no,0.15729920705028105,2.0
+Decision Tree_all,Decision Tree_no_METAR,exactcorrection,0.5,0.0
+Decision Tree_all,Decision Tree_no_METAR,exact,0.5,0.0
+Decision Tree_all,Decision Tree_METAR,correction,1.0,0.0
+Decision Tree_all,Decision Tree_METAR,no,0.8727801237939118,0.02564102564102564
+Decision Tree_all,Decision Tree_METAR,exactcorrection,0.9999999999999996,19.0
+Decision Tree_all,Decision Tree_METAR,exact,0.9999999999999996,19.0
+Decision Tree_all,Random Forest_all,correction,1.0,0.0
+Decision Tree_all,Random Forest_all,no,0.6547208460185768,0.2
+Decision Tree_all,Random Forest_all,exactcorrection,1.0,2.0
+Decision Tree_all,Random Forest_all,exact,1.0,2.0
+Decision Tree_all,Random Forest_no_METAR,correction,0.6830913983096086,0.16666666666666666
+Decision Tree_all,Random Forest_no_METAR,no,0.4142161782425251,0.6666666666666666
+Decision Tree_all,Random Forest_no_METAR,exactcorrection,0.6875,2.0
+Decision Tree_all,Random Forest_no_METAR,exact,0.6875,2.0
+Decision Tree_all,Random Forest_METAR,correction,0.6264962743469111,0.23684210526315788
+Decision Tree_all,Random Forest_METAR,no,0.5164122683960384,0.42105263157894735
+Decision Tree_all,Random Forest_METAR,exactcorrection,0.6271025701571489,17.0
+Decision Tree_all,Random Forest_METAR,exact,0.6271025701571489,17.0
+Decision Tree_all,Naive Bayes_all,correction,0.24821307898992026,1.3333333333333333
+Decision Tree_all,Naive Bayes_all,no,0.08326451666355043,3.0
+Decision Tree_all,Naive Bayes_all,exactcorrection,0.25,0.0
+Decision Tree_all,Naive Bayes_all,exact,0.25,0.0
+Decision Tree_all,Naive Bayes_no_METAR,correction,0.24821307898992026,1.3333333333333333
+Decision Tree_all,Naive Bayes_no_METAR,no,0.08326451666355043,3.0
+Decision Tree_all,Naive Bayes_no_METAR,exactcorrection,0.25,0.0
+Decision Tree_all,Naive Bayes_no_METAR,exact,0.25,0.0
+Decision Tree_all,Naive Bayes_METAR,correction,0.8711314915971582,0.02631578947368421
+Decision Tree_all,Naive Bayes_METAR,no,1.0,0.0
+Decision Tree_all,Naive Bayes_METAR,exactcorrection,1.0,19.0
+Decision Tree_all,Naive Bayes_METAR,exact,1.0,19.0
+Decision Tree_all,Multilayer Perceptron_all,correction,1.0,0.0
+Decision Tree_all,Multilayer Perceptron_all,no,0.6547208460185768,0.2
+Decision Tree_all,Multilayer Perceptron_all,exactcorrection,1.0,2.0
+Decision Tree_all,Multilayer Perceptron_all,exact,1.0,2.0
+Decision Tree_all,Multilayer Perceptron_no_METAR,correction,1.0,0.0
+Decision Tree_all,Multilayer Perceptron_no_METAR,no,0.6547208460185768,0.2
+Decision Tree_all,Multilayer Perceptron_no_METAR,exactcorrection,1.0,2.0
+Decision Tree_all,Multilayer Perceptron_no_METAR,exact,1.0,2.0
+Decision Tree_all,Multilayer Perceptron_METAR,correction,0.10034824646229054,2.7
+Decision Tree_all,Multilayer Perceptron_METAR,no,0.06788915486182895,3.3333333333333335
+Decision Tree_all,Multilayer Perceptron_METAR,exactcorrection,0.09873714670538905,10.0
+Decision Tree_all,Multilayer Perceptron_METAR,exact,0.09873714670538905,10.0
+Decision Tree_all,AdaBoost_all,correction,0.6170750774519739,0.25
+Decision Tree_all,AdaBoost_all,no,1.0,0.0
+Decision Tree_all,AdaBoost_all,exactcorrection,1.0,2.0
+Decision Tree_all,AdaBoost_all,exact,1.0,2.0
+Decision Tree_all,AdaBoost_no_METAR,correction,0.02685669550752441,4.9
+Decision Tree_all,AdaBoost_no_METAR,no,0.011412036386001662,6.4
+Decision Tree_all,AdaBoost_no_METAR,exactcorrection,0.021484375,1.0
+Decision Tree_all,AdaBoost_no_METAR,exact,0.021484375,1.0
+Decision Tree_all,AdaBoost_METAR,correction,0.6264962743469111,0.23684210526315788
+Decision Tree_all,AdaBoost_METAR,no,0.5164122683960384,0.42105263157894735
+Decision Tree_all,AdaBoost_METAR,exactcorrection,0.6271025701571489,17.0
+Decision Tree_all,AdaBoost_METAR,exact,0.6271025701571489,17.0
+Decision Tree_all,Quadratic Discriminant Analysis_all,correction,1.0,0.0
+Decision Tree_all,Quadratic Discriminant Analysis_all,no,0.6547208460185768,0.2
+Decision Tree_all,Quadratic Discriminant Analysis_all,exactcorrection,1.0,2.0
+Decision Tree_all,Quadratic Discriminant Analysis_all,exact,1.0,2.0
+Decision Tree_all,Quadratic Discriminant Analysis_no_METAR,correction,1.0,0.0
+Decision Tree_all,Quadratic Discriminant Analysis_no_METAR,no,0.6547208460185768,0.2
+Decision Tree_all,Quadratic Discriminant Analysis_no_METAR,exactcorrection,1.0,2.0
+Decision Tree_all,Quadratic Discriminant Analysis_no_METAR,exact,1.0,2.0
+Decision Tree_all,Quadratic Discriminant Analysis_METAR,correction,0.009329584719771558,6.758620689655173
+Decision Tree_all,Quadratic Discriminant Analysis_METAR,no,0.005345676872654249,7.758620689655173
+Decision Tree_all,Quadratic Discriminant Analysis_METAR,exactcorrection,0.008130058646202087,7.0
+Decision Tree_all,Quadratic Discriminant Analysis_METAR,exact,0.008130058646202087,7.0
+Decision Tree_no_METAR,Decision Tree_METAR,correction,0.7547764265871045,0.0975609756097561
+Decision Tree_no_METAR,Decision Tree_METAR,no,0.6394118528033749,0.21951219512195122
+Decision Tree_no_METAR,Decision Tree_METAR,exactcorrection,0.755228657504631,19.0
+Decision Tree_no_METAR,Decision Tree_METAR,exact,0.755228657504631,19.0
+Decision Tree_no_METAR,Random Forest_all,correction,0.37109336952269756,0.8
+Decision Tree_no_METAR,Random Forest_all,no,0.17971249487899593,1.8
+Decision Tree_no_METAR,Random Forest_all,exactcorrection,0.375,1.0
+Decision Tree_no_METAR,Random Forest_all,exact,0.375,1.0
+Decision Tree_no_METAR,Random Forest_no_METAR,correction,0.22067136191984324,1.5
+Decision Tree_no_METAR,Random Forest_no_METAR,no,0.10247043485974942,2.6666666666666665
+Decision Tree_no_METAR,Random Forest_no_METAR,exactcorrection,0.21875,1.0
+Decision Tree_no_METAR,Random Forest_no_METAR,exact,0.21875,1.0
+Decision Tree_no_METAR,Random Forest_METAR,correction,0.42919530044034926,0.625
+Decision Tree_no_METAR,Random Forest_METAR,no,0.34278171114790873,0.9
+Decision Tree_no_METAR,Random Forest_METAR,exactcorrection,0.42959050784338615,17.0
+Decision Tree_no_METAR,Random Forest_METAR,exact,0.42959050784338615,17.0
+Decision Tree_no_METAR,Naive Bayes_all,correction,0.07363827012030257,3.2
+Decision Tree_no_METAR,Naive Bayes_all,no,0.025347318677468325,5.0
+Decision Tree_no_METAR,Naive Bayes_all,exactcorrection,0.0625,0.0
+Decision Tree_no_METAR,Naive Bayes_all,exact,0.0625,0.0
+Decision Tree_no_METAR,Naive Bayes_no_METAR,correction,0.07363827012030257,3.2
+Decision Tree_no_METAR,Naive Bayes_no_METAR,no,0.025347318677468325,5.0
+Decision Tree_no_METAR,Naive Bayes_no_METAR,exactcorrection,0.0625,0.0
+Decision Tree_no_METAR,Naive Bayes_no_METAR,exact,0.0625,0.0
+Decision Tree_no_METAR,Naive Bayes_METAR,correction,0.8743670611628918,0.025
+Decision Tree_no_METAR,Naive Bayes_METAR,no,0.7518296340458492,0.1
+Decision Tree_no_METAR,Naive Bayes_METAR,exactcorrection,0.8746293123804207,19.0
+Decision Tree_no_METAR,Naive Bayes_METAR,exact,0.8746293123804207,19.0
+Decision Tree_no_METAR,Multilayer Perceptron_all,correction,1.0,0.0
+Decision Tree_no_METAR,Multilayer Perceptron_all,no,0.6547208460185768,0.2
+Decision Tree_no_METAR,Multilayer Perceptron_all,exactcorrection,1.0,2.0
+Decision Tree_no_METAR,Multilayer Perceptron_all,exact,1.0,2.0
+Decision Tree_no_METAR,Multilayer Perceptron_no_METAR,correction,0.4496917979688908,0.5714285714285714
+Decision Tree_no_METAR,Multilayer Perceptron_no_METAR,no,0.25683925795785334,1.2857142857142858
+Decision Tree_no_METAR,Multilayer Perceptron_no_METAR,exactcorrection,0.453125,2.0
+Decision Tree_no_METAR,Multilayer Perceptron_no_METAR,exact,0.453125,2.0
+Decision Tree_no_METAR,Multilayer Perceptron_METAR,correction,0.05182992721790985,3.78125
+Decision Tree_no_METAR,Multilayer Perceptron_METAR,no,0.033894853524689295,4.5
+Decision Tree_no_METAR,Multilayer Perceptron_METAR,exactcorrection,0.050102459732443094,10.0
+Decision Tree_no_METAR,Multilayer Perceptron_METAR,exact,0.050102459732443094,10.0
+Decision Tree_no_METAR,AdaBoost_all,correction,0.6830913983096086,0.16666666666666666
+Decision Tree_no_METAR,AdaBoost_all,no,0.4142161782425251,0.6666666666666666
+Decision Tree_no_METAR,AdaBoost_all,exactcorrection,0.6875,2.0
+Decision Tree_no_METAR,AdaBoost_all,exact,0.6875,2.0
+Decision Tree_no_METAR,AdaBoost_no_METAR,correction,0.0093747684594349,6.75
+Decision Tree_no_METAR,AdaBoost_no_METAR,no,0.003892417122778637,8.333333333333334
+Decision Tree_no_METAR,AdaBoost_no_METAR,exactcorrection,0.00634765625,1.0
+Decision Tree_no_METAR,AdaBoost_no_METAR,exact,0.00634765625,1.0
+Decision Tree_no_METAR,AdaBoost_METAR,correction,0.41730416562740436,0.6578947368421053
+Decision Tree_no_METAR,AdaBoost_METAR,no,0.33039004884879153,0.9473684210526315
+Decision Tree_no_METAR,AdaBoost_METAR,exactcorrection,0.417692190836533,16.0
+Decision Tree_no_METAR,AdaBoost_METAR,exact,0.417692190836533,16.0
+Decision Tree_no_METAR,Quadratic Discriminant Analysis_all,correction,0.37109336952269756,0.8
+Decision Tree_no_METAR,Quadratic Discriminant Analysis_all,no,0.17971249487899593,1.8
+Decision Tree_no_METAR,Quadratic Discriminant Analysis_all,exactcorrection,0.375,1.0
+Decision Tree_no_METAR,Quadratic Discriminant Analysis_all,exact,0.375,1.0
+Decision Tree_no_METAR,Quadratic Discriminant Analysis_no_METAR,correction,0.37109336952269756,0.8
+Decision Tree_no_METAR,Quadratic Discriminant Analysis_no_METAR,no,0.17971249487899593,1.8
+Decision Tree_no_METAR,Quadratic Discriminant Analysis_no_METAR,exactcorrection,0.375,1.0
+Decision Tree_no_METAR,Quadratic Discriminant Analysis_no_METAR,exact,0.375,1.0
+Decision Tree_no_METAR,Quadratic Discriminant Analysis_METAR,correction,0.004057136032371287,8.258064516129032
+Decision Tree_no_METAR,Quadratic Discriminant Analysis_METAR,no,0.0022634698120351806,9.32258064516129
+Decision Tree_no_METAR,Quadratic Discriminant Analysis_METAR,exactcorrection,0.003326892852783203,7.0
+Decision Tree_no_METAR,Quadratic Discriminant Analysis_METAR,exact,0.003326892852783203,7.0
+Decision Tree_METAR,Random Forest_all,correction,0.8711314915971582,0.02631578947368421
+Decision Tree_METAR,Random Forest_all,no,1.0,0.0
+Decision Tree_METAR,Random Forest_all,exactcorrection,1.0,19.0
+Decision Tree_METAR,Random Forest_all,exact,1.0,19.0
+Decision Tree_METAR,Random Forest_no_METAR,correction,1.0,0.0
+Decision Tree_METAR,Random Forest_no_METAR,no,0.8694170607412391,0.02702702702702703
+Decision Tree_METAR,Random Forest_no_METAR,exactcorrection,1.0,18.0
+Decision Tree_METAR,Random Forest_no_METAR,exact,1.0,18.0
+Decision Tree_METAR,Random Forest_METAR,correction,0.5790997419539188,0.3076923076923077
+Decision Tree_METAR,Random Forest_METAR,no,0.40538055645894244,0.6923076923076923
+Decision Tree_METAR,Random Forest_METAR,exactcorrection,0.5810546875,5.0
+Decision Tree_METAR,Random Forest_METAR,exact,0.5810546875,5.0
+Decision Tree_METAR,Naive Bayes_all,correction,0.8711314915971582,0.02631578947368421
+Decision Tree_METAR,Naive Bayes_all,no,0.7456027889274615,0.10526315789473684
+Decision Tree_METAR,Naive Bayes_all,exactcorrection,0.8714146793645341,18.0
+Decision Tree_METAR,Naive Bayes_all,exact,0.8714146793645341,18.0
+Decision Tree_METAR,Naive Bayes_no_METAR,correction,0.8711314915971582,0.02631578947368421
+Decision Tree_METAR,Naive Bayes_no_METAR,no,0.7456027889274615,0.10526315789473684
+Decision Tree_METAR,Naive Bayes_no_METAR,exactcorrection,0.8714146793645341,18.0
+Decision Tree_METAR,Naive Bayes_no_METAR,exact,0.8714146793645341,18.0
+Decision Tree_METAR,Naive Bayes_METAR,correction,1.0,0.0
+Decision Tree_METAR,Naive Bayes_METAR,no,0.8272593465627114,0.047619047619047616
+Decision Tree_METAR,Naive Bayes_METAR,exactcorrection,1.0,10.0
+Decision Tree_METAR,Naive Bayes_METAR,exact,1.0,10.0
+Decision Tree_METAR,Multilayer Perceptron_all,correction,0.8743670611628918,0.025
+Decision Tree_METAR,Multilayer Perceptron_all,no,0.7518296340458492,0.1
+Decision Tree_METAR,Multilayer Perceptron_all,exactcorrection,0.8746293123804207,19.0
+Decision Tree_METAR,Multilayer Perceptron_all,exact,0.8746293123804207,19.0
+Decision Tree_METAR,Multilayer Perceptron_no_METAR,correction,0.8743670611628918,0.025
+Decision Tree_METAR,Multilayer Perceptron_no_METAR,no,1.0,0.0
+Decision Tree_METAR,Multilayer Perceptron_no_METAR,exactcorrection,1.0,20.0
+Decision Tree_METAR,Multilayer Perceptron_no_METAR,exact,1.0,20.0
+Decision Tree_METAR,Multilayer Perceptron_METAR,correction,0.0664574200169312,3.3684210526315788
+Decision Tree_METAR,Multilayer Perceptron_METAR,no,0.03894745574202525,4.2631578947368425
+Decision Tree_METAR,Multilayer Perceptron_METAR,exactcorrection,0.063568115234375,5.0
+Decision Tree_METAR,Multilayer Perceptron_METAR,exact,0.063568115234375,5.0
+Decision Tree_METAR,AdaBoost_all,correction,1.0,0.0
+Decision Tree_METAR,AdaBoost_all,no,0.8727801237939118,0.02564102564102564
+Decision Tree_METAR,AdaBoost_all,exactcorrection,0.9999999999999996,19.0
+Decision Tree_METAR,AdaBoost_all,exact,0.9999999999999996,19.0
+Decision Tree_METAR,AdaBoost_no_METAR,correction,0.2811980995641761,1.1612903225806452
+Decision Tree_METAR,AdaBoost_no_METAR,no,0.2086677876982606,1.5806451612903225
+Decision Tree_METAR,AdaBoost_no_METAR,exactcorrection,0.28104151505976915,12.0
+Decision Tree_METAR,AdaBoost_no_METAR,exact,0.28104151505976915,12.0
+Decision Tree_METAR,AdaBoost_METAR,correction,0.6625205835400574,0.19047619047619047
+Decision Tree_METAR,AdaBoost_METAR,no,0.5126907602619235,0.42857142857142855
+Decision Tree_METAR,AdaBoost_METAR,exactcorrection,0.6636238098144531,9.0
+Decision Tree_METAR,AdaBoost_METAR,exact,0.6636238098144531,9.0
+Decision Tree_METAR,Quadratic Discriminant Analysis_all,correction,0.8711314915971582,0.02631578947368421
+Decision Tree_METAR,Quadratic Discriminant Analysis_all,no,1.0,0.0
+Decision Tree_METAR,Quadratic Discriminant Analysis_all,exactcorrection,1.0,19.0
+Decision Tree_METAR,Quadratic Discriminant Analysis_all,exact,1.0,19.0
+Decision Tree_METAR,Quadratic Discriminant Analysis_no_METAR,correction,0.8711314915971582,0.02631578947368421
+Decision Tree_METAR,Quadratic Discriminant Analysis_no_METAR,no,1.0,0.0
+Decision Tree_METAR,Quadratic Discriminant Analysis_no_METAR,exactcorrection,1.0,19.0
+Decision Tree_METAR,Quadratic Discriminant Analysis_no_METAR,exact,1.0,19.0
+Decision Tree_METAR,Quadratic Discriminant Analysis_METAR,correction,0.014019277113959906,6.035714285714286
+Decision Tree_METAR,Quadratic Discriminant Analysis_METAR,no,0.008150971593502705,7.0
+Decision Tree_METAR,Quadratic Discriminant Analysis_METAR,exactcorrection,0.012540951371192932,7.0
+Decision Tree_METAR,Quadratic Discriminant Analysis_METAR,exact,0.012540951371192932,7.0
+Random Forest_all,Random Forest_no_METAR,correction,1.0,0.0
+Random Forest_all,Random Forest_no_METAR,no,0.31731050786291115,1.0
+Random Forest_all,Random Forest_no_METAR,exactcorrection,1.0,0.0
+Random Forest_all,Random Forest_no_METAR,exact,1.0,0.0
+Random Forest_all,Random Forest_METAR,correction,0.7423083940717163,0.10810810810810811
+Random Forest_all,Random Forest_METAR,no,0.6218734243307409,0.24324324324324326
+Random Forest_all,Random Forest_METAR,exactcorrection,0.7428293587290682,17.0
+Random Forest_all,Random Forest_METAR,exact,0.7428293587290682,17.0
+Random Forest_all,Naive Bayes_all,correction,0.7236736098317629,0.125
+Random Forest_all,Naive Bayes_all,no,0.47950012218695337,0.5
+Random Forest_all,Naive Bayes_all,exactcorrection,0.7265625,3.0
+Random Forest_all,Naive Bayes_all,exact,0.7265625,3.0
+Random Forest_all,Naive Bayes_no_METAR,correction,0.7236736098317629,0.125
+Random Forest_all,Naive Bayes_no_METAR,no,0.47950012218695337,0.5
+Random Forest_all,Naive Bayes_no_METAR,exactcorrection,0.7265625,3.0
+Random Forest_all,Naive Bayes_no_METAR,exact,0.7265625,3.0
+Random Forest_all,Naive Bayes_METAR,correction,1.0,0.0
+Random Forest_all,Naive Bayes_METAR,no,0.8727801237939118,0.02564102564102564
+Random Forest_all,Naive Bayes_METAR,exactcorrection,0.9999999999999996,19.0
+Random Forest_all,Naive Bayes_METAR,exact,0.9999999999999996,19.0
+Random Forest_all,Multilayer Perceptron_all,correction,0.47950012218695337,0.5
+Random Forest_all,Multilayer Perceptron_all,no,0.15729920705028105,2.0
+Random Forest_all,Multilayer Perceptron_all,exactcorrection,0.5,0.0
+Random Forest_all,Multilayer Perceptron_all,exact,0.5,0.0
+Random Forest_all,Multilayer Perceptron_no_METAR,correction,0.6830913983096086,0.16666666666666666
+Random Forest_all,Multilayer Perceptron_no_METAR,no,1.0,0.0
+Random Forest_all,Multilayer Perceptron_no_METAR,exactcorrection,1.0,3.0
+Random Forest_all,Multilayer Perceptron_no_METAR,exact,1.0,3.0
+Random Forest_all,Multilayer Perceptron_METAR,correction,0.1637343543245882,1.9393939393939394
+Random Forest_all,Multilayer Perceptron_METAR,no,0.11718508719813818,2.4545454545454546
+Random Forest_all,Multilayer Perceptron_METAR,exactcorrection,0.16275565745308995,12.0
+Random Forest_all,Multilayer Perceptron_METAR,exact,0.16275565745308995,12.0
+Random Forest_all,AdaBoost_all,correction,1.0,0.0
+Random Forest_all,AdaBoost_all,no,0.5637028616507731,0.3333333333333333
+Random Forest_all,AdaBoost_all,exactcorrection,1.0,1.0
+Random Forest_all,AdaBoost_all,exact,1.0,1.0
+Random Forest_all,AdaBoost_no_METAR,correction,0.02334220201289086,5.142857142857143
+Random Forest_all,AdaBoost_no_METAR,no,0.008150971593502705,7.0
+Random Forest_all,AdaBoost_no_METAR,exactcorrection,0.015625,0.0
+Random Forest_all,AdaBoost_no_METAR,exact,0.015625,0.0
+Random Forest_all,AdaBoost_METAR,correction,0.7487740417065472,0.10256410256410256
+Random Forest_all,AdaBoost_METAR,no,0.6309540411841706,0.23076923076923078
+Random Forest_all,AdaBoost_METAR,exactcorrection,0.7492586247608418,18.0
+Random Forest_all,AdaBoost_METAR,exact,0.7492586247608418,18.0
+Random Forest_all,Quadratic Discriminant Analysis_all,correction,0.6830913983096086,0.16666666666666666
+Random Forest_all,Quadratic Discriminant Analysis_all,no,1.0,0.0
+Random Forest_all,Quadratic Discriminant Analysis_all,exactcorrection,1.0,3.0
+Random Forest_all,Quadratic Discriminant Analysis_all,exact,1.0,3.0
+Random Forest_all,Quadratic Discriminant Analysis_no_METAR,correction,0.6830913983096086,0.16666666666666666
+Random Forest_all,Quadratic Discriminant Analysis_no_METAR,no,1.0,0.0
+Random Forest_all,Quadratic Discriminant Analysis_no_METAR,exactcorrection,1.0,3.0
+Random Forest_all,Quadratic Discriminant Analysis_no_METAR,exact,1.0,3.0
+Random Forest_all,Quadratic Discriminant Analysis_METAR,correction,0.021556266760016273,5.28125
+Random Forest_all,Quadratic Discriminant Analysis_METAR,no,0.01332832878081758,6.125
+Random Forest_all,Quadratic Discriminant Analysis_METAR,exactcorrection,0.020061607006937265,9.0
+Random Forest_all,Quadratic Discriminant Analysis_METAR,exact,0.020061607006937265,9.0
+Random Forest_no_METAR,Random Forest_METAR,correction,0.8676323347781927,0.027777777777777776
+Random Forest_no_METAR,Random Forest_METAR,no,0.7388826803635273,0.1111111111111111
+Random Forest_no_METAR,Random Forest_METAR,exactcorrection,0.8679394004284404,17.0
+Random Forest_no_METAR,Random Forest_METAR,exact,0.8679394004284404,17.0
+Random Forest_no_METAR,Naive Bayes_all,correction,1.0,0.0
+Random Forest_no_METAR,Naive Bayes_all,no,0.7054569861112734,0.14285714285714285
+Random Forest_no_METAR,Naive Bayes_all,exactcorrection,1.0,3.0
+Random Forest_no_METAR,Naive Bayes_all,exact,1.0,3.0
+Random Forest_no_METAR,Naive Bayes_no_METAR,correction,1.0,0.0
+Random Forest_no_METAR,Naive Bayes_no_METAR,no,0.7054569861112734,0.14285714285714285
+Random Forest_no_METAR,Naive Bayes_no_METAR,exactcorrection,1.0,3.0
+Random Forest_no_METAR,Naive Bayes_no_METAR,exact,1.0,3.0
+Random Forest_no_METAR,Naive Bayes_METAR,correction,0.8711314915971582,0.02631578947368421
+Random Forest_no_METAR,Naive Bayes_METAR,no,0.7456027889274615,0.10526315789473684
+Random Forest_no_METAR,Naive Bayes_METAR,exactcorrection,0.8714146793645341,18.0
+Random Forest_no_METAR,Naive Bayes_METAR,exact,0.8714146793645341,18.0
+Random Forest_no_METAR,Multilayer Perceptron_all,correction,0.24821307898992026,1.3333333333333333
+Random Forest_no_METAR,Multilayer Perceptron_all,no,0.08326451666355043,3.0
+Random Forest_no_METAR,Multilayer Perceptron_all,exactcorrection,0.25,0.0
+Random Forest_no_METAR,Multilayer Perceptron_all,exact,0.25,0.0
+Random Forest_no_METAR,Multilayer Perceptron_no_METAR,correction,1.0,0.0
+Random Forest_no_METAR,Multilayer Perceptron_no_METAR,no,0.7054569861112734,0.14285714285714285
+Random Forest_no_METAR,Multilayer Perceptron_no_METAR,exactcorrection,1.0,3.0
+Random Forest_no_METAR,Multilayer Perceptron_no_METAR,exact,1.0,3.0
+Random Forest_no_METAR,Multilayer Perceptron_METAR,correction,0.21592493894013678,1.53125
+Random Forest_no_METAR,Multilayer Perceptron_METAR,no,0.15729920705028105,2.0
+Random Forest_no_METAR,Multilayer Perceptron_METAR,exactcorrection,0.21532714972272515,12.0
+Random Forest_no_METAR,Multilayer Perceptron_METAR,exact,0.21532714972272515,12.0
+Random Forest_no_METAR,AdaBoost_all,correction,0.6170750774519739,0.25
+Random Forest_no_METAR,AdaBoost_all,no,0.31731050786291115,1.0
+Random Forest_no_METAR,AdaBoost_all,exactcorrection,0.625,1.0
+Random Forest_no_METAR,AdaBoost_all,exact,0.625,1.0
+Random Forest_no_METAR,AdaBoost_no_METAR,correction,0.041226833337163815,4.166666666666667
+Random Forest_no_METAR,AdaBoost_no_METAR,no,0.014305878435429641,6.0
+Random Forest_no_METAR,AdaBoost_no_METAR,exactcorrection,0.03125,0.0
+Random Forest_no_METAR,AdaBoost_no_METAR,exact,0.03125,0.0
+Random Forest_no_METAR,AdaBoost_METAR,correction,0.8711314915971582,0.02631578947368421
+Random Forest_no_METAR,AdaBoost_METAR,no,0.7456027889274615,0.10526315789473684
+Random Forest_no_METAR,AdaBoost_METAR,exactcorrection,0.8714146793645341,18.0
+Random Forest_no_METAR,AdaBoost_METAR,exact,0.8714146793645341,18.0
+Random Forest_no_METAR,Quadratic Discriminant Analysis_all,correction,1.0,0.0
+Random Forest_no_METAR,Quadratic Discriminant Analysis_all,no,0.6547208460185768,0.2
+Random Forest_no_METAR,Quadratic Discriminant Analysis_all,exactcorrection,1.0,2.0
+Random Forest_no_METAR,Quadratic Discriminant Analysis_all,exact,1.0,2.0
+Random Forest_no_METAR,Quadratic Discriminant Analysis_no_METAR,correction,1.0,0.0
+Random Forest_no_METAR,Quadratic Discriminant Analysis_no_METAR,no,0.6547208460185768,0.2
+Random Forest_no_METAR,Quadratic Discriminant Analysis_no_METAR,exactcorrection,1.0,2.0
+Random Forest_no_METAR,Quadratic Discriminant Analysis_no_METAR,exact,1.0,2.0
+Random Forest_no_METAR,Quadratic Discriminant Analysis_METAR,correction,0.031141210595796717,4.645161290322581
+Random Forest_no_METAR,Quadratic Discriminant Analysis_METAR,no,0.019550269092885555,5.451612903225806
+Random Forest_no_METAR,Quadratic Discriminant Analysis_METAR,exactcorrection,0.029449373483657837,9.0
+Random Forest_no_METAR,Quadratic Discriminant Analysis_METAR,exact,0.029449373483657837,9.0
+Random Forest_METAR,Naive Bayes_all,correction,1.0,0.0
+Random Forest_METAR,Naive Bayes_all,no,0.8694170607412391,0.02702702702702703
+Random Forest_METAR,Naive Bayes_all,exactcorrection,1.0,18.0
+Random Forest_METAR,Naive Bayes_all,exact,1.0,18.0
+Random Forest_METAR,Naive Bayes_no_METAR,correction,1.0,0.0
+Random Forest_METAR,Naive Bayes_no_METAR,no,0.8694170607412391,0.02702702702702703
+Random Forest_METAR,Naive Bayes_no_METAR,exactcorrection,1.0,18.0
+Random Forest_METAR,Naive Bayes_no_METAR,exact,1.0,18.0
+Random Forest_METAR,Naive Bayes_METAR,correction,0.5224312849615643,0.4090909090909091
+Random Forest_METAR,Naive Bayes_METAR,no,0.3937686346429926,0.7272727272727273
+Random Forest_METAR,Naive Bayes_METAR,exactcorrection,0.5234670639038086,9.0
+Random Forest_METAR,Naive Bayes_METAR,exact,0.5234670639038086,9.0
+Random Forest_METAR,Multilayer Perceptron_all,correction,0.5218393903336151,0.41025641025641024
+Random Forest_METAR,Multilayer Perceptron_all,no,0.4233396415824435,0.6410256410256411
+Random Forest_METAR,Multilayer Perceptron_all,exactcorrection,0.5223973804968411,17.0
+Random Forest_METAR,Multilayer Perceptron_all,exact,0.5223973804968411,17.0
+Random Forest_METAR,Multilayer Perceptron_no_METAR,correction,0.7487740417065472,0.10256410256410256
+Random Forest_METAR,Multilayer Perceptron_no_METAR,no,0.6309540411841706,0.23076923076923078
+Random Forest_METAR,Multilayer Perceptron_no_METAR,exactcorrection,0.7492586247608418,18.0
+Random Forest_METAR,Multilayer Perceptron_no_METAR,exact,0.7492586247608418,18.0
+Random Forest_METAR,Multilayer Perceptron_METAR,correction,0.30743416592739237,1.0416666666666667
+Random Forest_METAR,Multilayer Perceptron_METAR,no,0.22067136191984324,1.5
+Random Forest_METAR,Multilayer Perceptron_METAR,exactcorrection,0.30745625495910645,9.0
+Random Forest_METAR,Multilayer Perceptron_METAR,exact,0.30745625495910645,9.0
+Random Forest_METAR,AdaBoost_all,correction,0.6264962743469111,0.23684210526315788
+Random Forest_METAR,AdaBoost_all,no,0.5164122683960384,0.42105263157894735
+Random Forest_METAR,AdaBoost_all,exactcorrection,0.6271025701571489,17.0
+Random Forest_METAR,AdaBoost_all,exact,0.6271025701571489,17.0
+Random Forest_METAR,AdaBoost_no_METAR,correction,0.583882420770365,0.3
+Random Forest_METAR,AdaBoost_no_METAR,no,0.4652088184521417,0.5333333333333333
+Random Forest_METAR,AdaBoost_no_METAR,exactcorrection,0.5846647117286922,13.0
+Random Forest_METAR,AdaBoost_no_METAR,exact,0.5846647117286922,13.0
+Random Forest_METAR,AdaBoost_METAR,correction,0.7728299926844475,0.08333333333333333
+Random Forest_METAR,AdaBoost_METAR,no,1.0,0.0
+Random Forest_METAR,AdaBoost_METAR,exactcorrection,1.0,6.0
+Random Forest_METAR,AdaBoost_METAR,exact,1.0,6.0
+Random Forest_METAR,Quadratic Discriminant Analysis_all,correction,0.7423083940717163,0.10810810810810811
+Random Forest_METAR,Quadratic Discriminant Analysis_all,no,0.6218734243307409,0.24324324324324326
+Random Forest_METAR,Quadratic Discriminant Analysis_all,exactcorrection,0.7428293587290682,17.0
+Random Forest_METAR,Quadratic Discriminant Analysis_all,exact,0.7428293587290682,17.0
+Random Forest_METAR,Quadratic Discriminant Analysis_no_METAR,correction,0.7423083940717163,0.10810810810810811
+Random Forest_METAR,Quadratic Discriminant Analysis_no_METAR,no,0.6218734243307409,0.24324324324324326
+Random Forest_METAR,Quadratic Discriminant Analysis_no_METAR,exactcorrection,0.7428293587290682,17.0
+Random Forest_METAR,Quadratic Discriminant Analysis_no_METAR,exact,0.7428293587290682,17.0
+Random Forest_METAR,Quadratic Discriminant Analysis_METAR,correction,0.03705621856411898,4.3478260869565215
+Random Forest_METAR,Quadratic Discriminant Analysis_METAR,no,0.021810119143722443,5.260869565217392
+Random Forest_METAR,Quadratic Discriminant Analysis_METAR,exactcorrection,0.03468966484069824,6.0
+Random Forest_METAR,Quadratic Discriminant Analysis_METAR,exact,0.03468966484069824,6.0
+Naive Bayes_all,Naive Bayes_no_METAR,correction,0.0,inf
+Naive Bayes_all,Naive Bayes_no_METAR,no,,
+Naive Bayes_all,Naive Bayes_no_METAR,exactcorrection,1.0,0.0
+Naive Bayes_all,Naive Bayes_no_METAR,exact,1.0,0.0
+Naive Bayes_all,Naive Bayes_METAR,correction,0.7423083940717163,0.10810810810810811
+Naive Bayes_all,Naive Bayes_METAR,no,0.6218734243307409,0.24324324324324326
+Naive Bayes_all,Naive Bayes_METAR,exactcorrection,0.7428293587290682,17.0
+Naive Bayes_all,Naive Bayes_METAR,exact,0.7428293587290682,17.0
+Naive Bayes_all,Multilayer Perceptron_all,correction,0.2888443663464818,1.125
+Naive Bayes_all,Multilayer Perceptron_all,no,0.15729920705028105,2.0
+Naive Bayes_all,Multilayer Perceptron_all,exactcorrection,0.2890625,2.0
+Naive Bayes_all,Multilayer Perceptron_all,exact,0.2890625,2.0
+Naive Bayes_all,Multilayer Perceptron_no_METAR,correction,0.6830913983096086,0.16666666666666666
+Naive Bayes_all,Multilayer Perceptron_no_METAR,no,0.4142161782425251,0.6666666666666666
+Naive Bayes_all,Multilayer Perceptron_no_METAR,exactcorrection,0.6875,2.0
+Naive Bayes_all,Multilayer Perceptron_no_METAR,exact,0.6875,2.0
+Naive Bayes_all,Multilayer Perceptron_METAR,correction,0.2652053925915044,1.2413793103448276
+Naive Bayes_all,Multilayer Perceptron_METAR,no,0.19364643126921688,1.6896551724137931
+Naive Bayes_all,Multilayer Perceptron_METAR,exactcorrection,0.26493089646101,11.0
+Naive Bayes_all,Multilayer Perceptron_METAR,exact,0.26493089646101,11.0
+Naive Bayes_all,AdaBoost_all,correction,0.4496917979688908,0.5714285714285714
+Naive Bayes_all,AdaBoost_all,no,0.25683925795785334,1.2857142857142858
+Naive Bayes_all,AdaBoost_all,exactcorrection,0.453125,2.0
+Naive Bayes_all,AdaBoost_all,exact,0.453125,2.0
+Naive Bayes_all,AdaBoost_no_METAR,correction,0.18242243945173198,1.7777777777777777
+Naive Bayes_all,AdaBoost_no_METAR,no,0.09558070454562936,2.7777777777777777
+Naive Bayes_all,AdaBoost_no_METAR,exactcorrection,0.1796875,2.0
+Naive Bayes_all,AdaBoost_no_METAR,exact,0.1796875,2.0
+Naive Bayes_all,AdaBoost_METAR,correction,1.0,0.0
+Naive Bayes_all,AdaBoost_METAR,no,0.8694170607412391,0.02702702702702703
+Naive Bayes_all,AdaBoost_METAR,exactcorrection,1.0,18.0
+Naive Bayes_all,AdaBoost_METAR,exact,1.0,18.0
+Naive Bayes_all,Quadratic Discriminant Analysis_all,correction,0.6170750774519739,0.25
+Naive Bayes_all,Quadratic Discriminant Analysis_all,no,0.31731050786291115,1.0
+Naive Bayes_all,Quadratic Discriminant Analysis_all,exactcorrection,0.625,1.0
+Naive Bayes_all,Quadratic Discriminant Analysis_all,exact,0.625,1.0
+Naive Bayes_all,Quadratic Discriminant Analysis_no_METAR,correction,0.6170750774519739,0.25
+Naive Bayes_all,Quadratic Discriminant Analysis_no_METAR,no,0.31731050786291115,1.0
+Naive Bayes_all,Quadratic Discriminant Analysis_no_METAR,exactcorrection,0.625,1.0
+Naive Bayes_all,Quadratic Discriminant Analysis_no_METAR,exact,0.625,1.0
+Naive Bayes_all,Quadratic Discriminant Analysis_METAR,correction,0.03763531378731436,4.321428571428571
+Naive Bayes_all,Quadratic Discriminant Analysis_METAR,no,0.02334220201289086,5.142857142857143
+Naive Bayes_all,Quadratic Discriminant Analysis_METAR,exactcorrection,0.03569813817739487,8.0
+Naive Bayes_all,Quadratic Discriminant Analysis_METAR,exact,0.03569813817739487,8.0
+Naive Bayes_no_METAR,Naive Bayes_METAR,correction,0.7423083940717163,0.10810810810810811
+Naive Bayes_no_METAR,Naive Bayes_METAR,no,0.6218734243307409,0.24324324324324326
+Naive Bayes_no_METAR,Naive Bayes_METAR,exactcorrection,0.7428293587290682,17.0
+Naive Bayes_no_METAR,Naive Bayes_METAR,exact,0.7428293587290682,17.0
+Naive Bayes_no_METAR,Multilayer Perceptron_all,correction,0.2888443663464818,1.125
+Naive Bayes_no_METAR,Multilayer Perceptron_all,no,0.15729920705028105,2.0
+Naive Bayes_no_METAR,Multilayer Perceptron_all,exactcorrection,0.2890625,2.0
+Naive Bayes_no_METAR,Multilayer Perceptron_all,exact,0.2890625,2.0
+Naive Bayes_no_METAR,Multilayer Perceptron_no_METAR,correction,0.6830913983096086,0.16666666666666666
+Naive Bayes_no_METAR,Multilayer Perceptron_no_METAR,no,0.4142161782425251,0.6666666666666666
+Naive Bayes_no_METAR,Multilayer Perceptron_no_METAR,exactcorrection,0.6875,2.0
+Naive Bayes_no_METAR,Multilayer Perceptron_no_METAR,exact,0.6875,2.0
+Naive Bayes_no_METAR,Multilayer Perceptron_METAR,correction,0.2652053925915044,1.2413793103448276
+Naive Bayes_no_METAR,Multilayer Perceptron_METAR,no,0.19364643126921688,1.6896551724137931
+Naive Bayes_no_METAR,Multilayer Perceptron_METAR,exactcorrection,0.26493089646101,11.0
+Naive Bayes_no_METAR,Multilayer Perceptron_METAR,exact,0.26493089646101,11.0
+Naive Bayes_no_METAR,AdaBoost_all,correction,0.4496917979688908,0.5714285714285714
+Naive Bayes_no_METAR,AdaBoost_all,no,0.25683925795785334,1.2857142857142858
+Naive Bayes_no_METAR,AdaBoost_all,exactcorrection,0.453125,2.0
+Naive Bayes_no_METAR,AdaBoost_all,exact,0.453125,2.0
+Naive Bayes_no_METAR,AdaBoost_no_METAR,correction,0.18242243945173198,1.7777777777777777
+Naive Bayes_no_METAR,AdaBoost_no_METAR,no,0.09558070454562936,2.7777777777777777
+Naive Bayes_no_METAR,AdaBoost_no_METAR,exactcorrection,0.1796875,2.0
+Naive Bayes_no_METAR,AdaBoost_no_METAR,exact,0.1796875,2.0
+Naive Bayes_no_METAR,AdaBoost_METAR,correction,1.0,0.0
+Naive Bayes_no_METAR,AdaBoost_METAR,no,0.8694170607412391,0.02702702702702703
+Naive Bayes_no_METAR,AdaBoost_METAR,exactcorrection,1.0,18.0
+Naive Bayes_no_METAR,AdaBoost_METAR,exact,1.0,18.0
+Naive Bayes_no_METAR,Quadratic Discriminant Analysis_all,correction,0.6170750774519739,0.25
+Naive Bayes_no_METAR,Quadratic Discriminant Analysis_all,no,0.31731050786291115,1.0
+Naive Bayes_no_METAR,Quadratic Discriminant Analysis_all,exactcorrection,0.625,1.0
+Naive Bayes_no_METAR,Quadratic Discriminant Analysis_all,exact,0.625,1.0
+Naive Bayes_no_METAR,Quadratic Discriminant Analysis_no_METAR,correction,0.6170750774519739,0.25
+Naive Bayes_no_METAR,Quadratic Discriminant Analysis_no_METAR,no,0.31731050786291115,1.0
+Naive Bayes_no_METAR,Quadratic Discriminant Analysis_no_METAR,exactcorrection,0.625,1.0
+Naive Bayes_no_METAR,Quadratic Discriminant Analysis_no_METAR,exact,0.625,1.0
+Naive Bayes_no_METAR,Quadratic Discriminant Analysis_METAR,correction,0.03763531378731436,4.321428571428571
+Naive Bayes_no_METAR,Quadratic Discriminant Analysis_METAR,no,0.02334220201289086,5.142857142857143
+Naive Bayes_no_METAR,Quadratic Discriminant Analysis_METAR,exactcorrection,0.03569813817739487,8.0
+Naive Bayes_no_METAR,Quadratic Discriminant Analysis_METAR,exact,0.03569813817739487,8.0
+Naive Bayes_METAR,Multilayer Perceptron_all,correction,1.0,0.0
+Naive Bayes_METAR,Multilayer Perceptron_all,no,0.8727801237939118,0.02564102564102564
+Naive Bayes_METAR,Multilayer Perceptron_all,exactcorrection,0.9999999999999996,19.0
+Naive Bayes_METAR,Multilayer Perceptron_all,exact,0.9999999999999996,19.0
+Naive Bayes_METAR,Multilayer Perceptron_no_METAR,correction,1.0,0.0
+Naive Bayes_METAR,Multilayer Perceptron_no_METAR,no,0.8727801237939118,0.02564102564102564
+Naive Bayes_METAR,Multilayer Perceptron_no_METAR,exactcorrection,0.9999999999999996,19.0
+Naive Bayes_METAR,Multilayer Perceptron_no_METAR,exact,0.9999999999999996,19.0
+Naive Bayes_METAR,Multilayer Perceptron_METAR,correction,0.04417134490844271,4.05
+Naive Bayes_METAR,Multilayer Perceptron_METAR,no,0.025347318677468325,5.0
+Naive Bayes_METAR,Multilayer Perceptron_METAR,exactcorrection,0.04138946533203125,5.0
+Naive Bayes_METAR,Multilayer Perceptron_METAR,exact,0.04138946533203125,5.0
+Naive Bayes_METAR,AdaBoost_all,correction,0.8743670611628918,0.025
+Naive Bayes_METAR,AdaBoost_all,no,1.0,0.0
+Naive Bayes_METAR,AdaBoost_all,exactcorrection,1.0,20.0
+Naive Bayes_METAR,AdaBoost_all,exact,1.0,20.0
+Naive Bayes_METAR,AdaBoost_no_METAR,correction,0.22994905679421007,1.4411764705882353
+Naive Bayes_METAR,AdaBoost_no_METAR,no,0.17006696145390077,1.8823529411764706
+Naive Bayes_METAR,AdaBoost_no_METAR,exactcorrection,0.22948101302608848,13.0
+Naive Bayes_METAR,AdaBoost_no_METAR,exact,0.22948101302608848,13.0
+Naive Bayes_METAR,AdaBoost_METAR,correction,0.5402913746074199,0.375
+Naive Bayes_METAR,AdaBoost_METAR,no,0.4142161782425251,0.6666666666666666
+Naive Bayes_METAR,AdaBoost_METAR,exactcorrection,0.5412561893463135,10.0
+Naive Bayes_METAR,AdaBoost_METAR,exact,0.5412561893463135,10.0
+Naive Bayes_METAR,Quadratic Discriminant Analysis_all,correction,1.0,0.0
+Naive Bayes_METAR,Quadratic Discriminant Analysis_all,no,0.8694170607412391,0.02702702702702703
+Naive Bayes_METAR,Quadratic Discriminant Analysis_all,exactcorrection,1.0,18.0
+Naive Bayes_METAR,Quadratic Discriminant Analysis_all,exact,1.0,18.0
+Naive Bayes_METAR,Quadratic Discriminant Analysis_no_METAR,correction,1.0,0.0
+Naive Bayes_METAR,Quadratic Discriminant Analysis_no_METAR,no,0.8694170607412391,0.02702702702702703
+Naive Bayes_METAR,Quadratic Discriminant Analysis_no_METAR,exactcorrection,1.0,18.0
+Naive Bayes_METAR,Quadratic Discriminant Analysis_no_METAR,exact,1.0,18.0
+Naive Bayes_METAR,Quadratic Discriminant Analysis_METAR,correction,0.0035092897047450697,8.521739130434783
+Naive Bayes_METAR,Quadratic Discriminant Analysis_METAR,no,0.001761701921433807,9.782608695652174
+Naive Bayes_METAR,Quadratic Discriminant Analysis_METAR,exactcorrection,0.002599477767944336,4.0
+Naive Bayes_METAR,Quadratic Discriminant Analysis_METAR,exact,0.002599477767944336,4.0
+Multilayer Perceptron_all,Multilayer Perceptron_no_METAR,correction,0.6830913983096086,0.16666666666666666
+Multilayer Perceptron_all,Multilayer Perceptron_no_METAR,no,0.4142161782425251,0.6666666666666666
+Multilayer Perceptron_all,Multilayer Perceptron_no_METAR,exactcorrection,0.6875,2.0
+Multilayer Perceptron_all,Multilayer Perceptron_no_METAR,exact,0.6875,2.0
+Multilayer Perceptron_all,Multilayer Perceptron_METAR,correction,0.08172275229865922,3.0303030303030303
+Multilayer Perceptron_all,Multilayer Perceptron_METAR,no,0.05551109809787105,3.6666666666666665
+Multilayer Perceptron_all,Multilayer Perceptron_METAR,exactcorrection,0.08014331245794892,11.0
+Multilayer Perceptron_all,Multilayer Perceptron_METAR,exact,0.08014331245794892,11.0
+Multilayer Perceptron_all,AdaBoost_all,correction,1.0,0.0
+Multilayer Perceptron_all,AdaBoost_all,no,0.5637028616507731,0.3333333333333333
+Multilayer Perceptron_all,AdaBoost_all,exactcorrection,1.0,1.0
+Multilayer Perceptron_all,AdaBoost_all,exact,1.0,1.0
+Multilayer Perceptron_all,AdaBoost_no_METAR,correction,0.00766076113517946,7.111111111111111
+Multilayer Perceptron_all,AdaBoost_no_METAR,no,0.0026997960632601883,9.0
+Multilayer Perceptron_all,AdaBoost_no_METAR,exactcorrection,0.00390625,0.0
+Multilayer Perceptron_all,AdaBoost_no_METAR,exact,0.00390625,0.0
+Multilayer Perceptron_all,AdaBoost_METAR,correction,0.5321712241488487,0.3902439024390244
+Multilayer Perceptron_all,AdaBoost_METAR,no,0.43487965849578347,0.6097560975609756
+Multilayer Perceptron_all,AdaBoost_METAR,exactcorrection,0.5327092552361137,18.0
+Multilayer Perceptron_all,AdaBoost_METAR,exact,0.5327092552361137,18.0
+Multilayer Perceptron_all,Quadratic Discriminant Analysis_all,correction,0.6830913983096086,0.16666666666666666
+Multilayer Perceptron_all,Quadratic Discriminant Analysis_all,no,0.4142161782425251,0.6666666666666666
+Multilayer Perceptron_all,Quadratic Discriminant Analysis_all,exactcorrection,0.6875,2.0
+Multilayer Perceptron_all,Quadratic Discriminant Analysis_all,exact,0.6875,2.0
+Multilayer Perceptron_all,Quadratic Discriminant Analysis_no_METAR,correction,0.6830913983096086,0.16666666666666666
+Multilayer Perceptron_all,Quadratic Discriminant Analysis_no_METAR,no,0.4142161782425251,0.6666666666666666
+Multilayer Perceptron_all,Quadratic Discriminant Analysis_no_METAR,exactcorrection,0.6875,2.0
+Multilayer Perceptron_all,Quadratic Discriminant Analysis_no_METAR,exact,0.6875,2.0
+Multilayer Perceptron_all,Quadratic Discriminant Analysis_METAR,correction,0.008009942329880016,7.03125
+Multilayer Perceptron_all,Quadratic Discriminant Analysis_METAR,no,0.004677734981047276,8.0
+Multilayer Perceptron_all,Quadratic Discriminant Analysis_METAR,exactcorrection,0.0070003666914999485,8.0
+Multilayer Perceptron_all,Quadratic Discriminant Analysis_METAR,exact,0.0070003666914999485,8.0
+Multilayer Perceptron_no_METAR,Multilayer Perceptron_METAR,correction,0.1507627750266412,2.064516129032258
+Multilayer Perceptron_no_METAR,Multilayer Perceptron_METAR,no,0.10599754842494528,2.6129032258064515
+Multilayer Perceptron_no_METAR,Multilayer Perceptron_METAR,exactcorrection,0.14961278438568115,11.0
+Multilayer Perceptron_no_METAR,Multilayer Perceptron_METAR,exact,0.14961278438568115,11.0
+Multilayer Perceptron_no_METAR,AdaBoost_all,correction,1.0,0.0
+Multilayer Perceptron_no_METAR,AdaBoost_all,no,0.7054569861112734,0.14285714285714285
+Multilayer Perceptron_no_METAR,AdaBoost_all,exactcorrection,1.0,3.0
+Multilayer Perceptron_no_METAR,AdaBoost_all,exact,1.0,3.0
+Multilayer Perceptron_no_METAR,AdaBoost_no_METAR,correction,0.04550026389635857,4.0
+Multilayer Perceptron_no_METAR,AdaBoost_no_METAR,no,0.019630657257290702,5.444444444444445
+Multilayer Perceptron_no_METAR,AdaBoost_no_METAR,exactcorrection,0.0390625,1.0
+Multilayer Perceptron_no_METAR,AdaBoost_no_METAR,exact,0.0390625,1.0
+Multilayer Perceptron_no_METAR,AdaBoost_METAR,correction,0.7487740417065472,0.10256410256410256
+Multilayer Perceptron_no_METAR,AdaBoost_METAR,no,0.6309540411841706,0.23076923076923078
+Multilayer Perceptron_no_METAR,AdaBoost_METAR,exactcorrection,0.7492586247608418,18.0
+Multilayer Perceptron_no_METAR,AdaBoost_METAR,exact,0.7492586247608418,18.0
+Multilayer Perceptron_no_METAR,Quadratic Discriminant Analysis_all,correction,0.7518296340458492,0.1
+Multilayer Perceptron_no_METAR,Quadratic Discriminant Analysis_all,no,1.0,0.0
+Multilayer Perceptron_no_METAR,Quadratic Discriminant Analysis_all,exactcorrection,1.0,5.0
+Multilayer Perceptron_no_METAR,Quadratic Discriminant Analysis_all,exact,1.0,5.0
+Multilayer Perceptron_no_METAR,Quadratic Discriminant Analysis_no_METAR,correction,0.7518296340458492,0.1
+Multilayer Perceptron_no_METAR,Quadratic Discriminant Analysis_no_METAR,no,1.0,0.0
+Multilayer Perceptron_no_METAR,Quadratic Discriminant Analysis_no_METAR,exactcorrection,1.0,5.0
+Multilayer Perceptron_no_METAR,Quadratic Discriminant Analysis_no_METAR,exact,1.0,5.0
+Multilayer Perceptron_no_METAR,Quadratic Discriminant Analysis_METAR,correction,0.017622090962324415,5.633333333333334
+Multilayer Perceptron_no_METAR,Quadratic Discriminant Analysis_METAR,no,0.010587137334056926,6.533333333333333
+Multilayer Perceptron_no_METAR,Quadratic Discriminant Analysis_METAR,exactcorrection,0.016124801710247997,8.0
+Multilayer Perceptron_no_METAR,Quadratic Discriminant Analysis_METAR,exact,0.016124801710247997,8.0
+Multilayer Perceptron_METAR,AdaBoost_all,correction,0.12271259472816963,2.3823529411764706
+Multilayer Perceptron_METAR,AdaBoost_all,no,0.08634782098366274,2.9411764705882355
+Multilayer Perceptron_METAR,AdaBoost_all,exactcorrection,0.12144948495551944,12.0
+Multilayer Perceptron_METAR,AdaBoost_all,exact,0.12144948495551944,12.0
+Multilayer Perceptron_METAR,AdaBoost_no_METAR,correction,0.8501067391385259,0.03571428571428571
+Multilayer Perceptron_METAR,AdaBoost_no_METAR,no,0.7054569861112734,0.14285714285714285
+Multilayer Perceptron_METAR,AdaBoost_no_METAR,exactcorrection,0.8505540192127228,13.0
+Multilayer Perceptron_METAR,AdaBoost_no_METAR,exact,0.8505540192127228,13.0
+Multilayer Perceptron_METAR,AdaBoost_METAR,correction,0.30743416592739237,1.0416666666666667
+Multilayer Perceptron_METAR,AdaBoost_METAR,no,0.22067136191984324,1.5
+Multilayer Perceptron_METAR,AdaBoost_METAR,exactcorrection,0.30745625495910645,9.0
+Multilayer Perceptron_METAR,AdaBoost_METAR,exact,0.30745625495910645,9.0
+Multilayer Perceptron_METAR,Quadratic Discriminant Analysis_all,correction,0.1507627750266412,2.064516129032258
+Multilayer Perceptron_METAR,Quadratic Discriminant Analysis_all,no,0.10599754842494528,2.6129032258064515
+Multilayer Perceptron_METAR,Quadratic Discriminant Analysis_all,exactcorrection,0.14961278438568115,11.0
+Multilayer Perceptron_METAR,Quadratic Discriminant Analysis_all,exact,0.14961278438568115,11.0
+Multilayer Perceptron_METAR,Quadratic Discriminant Analysis_no_METAR,correction,0.1507627750266412,2.064516129032258
+Multilayer Perceptron_METAR,Quadratic Discriminant Analysis_no_METAR,no,0.10599754842494528,2.6129032258064515
+Multilayer Perceptron_METAR,Quadratic Discriminant Analysis_no_METAR,exactcorrection,0.14961278438568115,11.0
+Multilayer Perceptron_METAR,Quadratic Discriminant Analysis_no_METAR,exact,0.14961278438568115,11.0
+Multilayer Perceptron_METAR,Quadratic Discriminant Analysis_METAR,correction,0.26725749315438463,1.2307692307692308
+Multilayer Perceptron_METAR,Quadratic Discriminant Analysis_METAR,no,0.16551785869746605,1.9230769230769231
+Multilayer Perceptron_METAR,Quadratic Discriminant Analysis_METAR,exactcorrection,0.266845703125,4.0
+Multilayer Perceptron_METAR,Quadratic Discriminant Analysis_METAR,exact,0.266845703125,4.0
+AdaBoost_all,AdaBoost_no_METAR,correction,0.01332832878081758,6.125
+AdaBoost_all,AdaBoost_no_METAR,no,0.004677734981047276,8.0
+AdaBoost_all,AdaBoost_no_METAR,exactcorrection,0.0078125,0.0
+AdaBoost_all,AdaBoost_no_METAR,exact,0.0078125,0.0
+AdaBoost_all,AdaBoost_METAR,correction,0.6352562959972483,0.225
+AdaBoost_all,AdaBoost_METAR,no,0.5270892568655381,0.4
+AdaBoost_all,AdaBoost_METAR,exactcorrection,0.6358280026288412,18.0
+AdaBoost_all,AdaBoost_METAR,exact,0.6358280026288412,18.0
+AdaBoost_all,Quadratic Discriminant Analysis_all,correction,1.0,0.0
+AdaBoost_all,Quadratic Discriminant Analysis_all,no,0.7054569861112734,0.14285714285714285
+AdaBoost_all,Quadratic Discriminant Analysis_all,exactcorrection,1.0,3.0
+AdaBoost_all,Quadratic Discriminant Analysis_all,exact,1.0,3.0
+AdaBoost_all,Quadratic Discriminant Analysis_no_METAR,correction,1.0,0.0
+AdaBoost_all,Quadratic Discriminant Analysis_no_METAR,no,0.7054569861112734,0.14285714285714285
+AdaBoost_all,Quadratic Discriminant Analysis_no_METAR,exactcorrection,1.0,3.0
+AdaBoost_all,Quadratic Discriminant Analysis_no_METAR,exact,1.0,3.0
+AdaBoost_all,Quadratic Discriminant Analysis_METAR,correction,0.014806109127348454,5.9393939393939394
+AdaBoost_all,Quadratic Discriminant Analysis_METAR,no,0.009023438818080326,6.818181818181818
+AdaBoost_all,Quadratic Discriminant Analysis_METAR,exactcorrection,0.013530986849218607,9.0
+AdaBoost_all,Quadratic Discriminant Analysis_METAR,exact,0.013530986849218607,9.0
+AdaBoost_no_METAR,AdaBoost_METAR,correction,0.5958830905651775,0.28125
+AdaBoost_no_METAR,AdaBoost_METAR,no,0.47950012218695337,0.5
+AdaBoost_no_METAR,AdaBoost_METAR,exactcorrection,0.5966148958541453,14.0
+AdaBoost_no_METAR,AdaBoost_METAR,exact,0.5966148958541453,14.0
+AdaBoost_no_METAR,Quadratic Discriminant Analysis_all,correction,0.04550026389635857,4.0
+AdaBoost_no_METAR,Quadratic Discriminant Analysis_all,no,0.019630657257290702,5.444444444444445
+AdaBoost_no_METAR,Quadratic Discriminant Analysis_all,exactcorrection,0.0390625,1.0
+AdaBoost_no_METAR,Quadratic Discriminant Analysis_all,exact,0.0390625,1.0
+AdaBoost_no_METAR,Quadratic Discriminant Analysis_no_METAR,correction,0.04550026389635857,4.0
+AdaBoost_no_METAR,Quadratic Discriminant Analysis_no_METAR,no,0.019630657257290702,5.444444444444445
+AdaBoost_no_METAR,Quadratic Discriminant Analysis_no_METAR,exactcorrection,0.0390625,1.0
+AdaBoost_no_METAR,Quadratic Discriminant Analysis_no_METAR,exact,0.0390625,1.0
+AdaBoost_no_METAR,Quadratic Discriminant Analysis_METAR,correction,0.24821307898992026,1.3333333333333333
+AdaBoost_no_METAR,Quadratic Discriminant Analysis_METAR,no,0.17793172526825074,1.8148148148148149
+AdaBoost_no_METAR,Quadratic Discriminant Analysis_METAR,exactcorrection,0.24778856337070465,10.0
+AdaBoost_no_METAR,Quadratic Discriminant Analysis_METAR,exact,0.24778856337070465,10.0
+AdaBoost_METAR,Quadratic Discriminant Analysis_all,correction,0.7487740417065472,0.10256410256410256
+AdaBoost_METAR,Quadratic Discriminant Analysis_all,no,0.6309540411841706,0.23076923076923078
+AdaBoost_METAR,Quadratic Discriminant Analysis_all,exactcorrection,0.7492586247608418,18.0
+AdaBoost_METAR,Quadratic Discriminant Analysis_all,exact,0.7492586247608418,18.0
+AdaBoost_METAR,Quadratic Discriminant Analysis_no_METAR,correction,0.7487740417065472,0.10256410256410256
+AdaBoost_METAR,Quadratic Discriminant Analysis_no_METAR,no,0.6309540411841706,0.23076923076923078
+AdaBoost_METAR,Quadratic Discriminant Analysis_no_METAR,exactcorrection,0.7492586247608418,18.0
+AdaBoost_METAR,Quadratic Discriminant Analysis_no_METAR,exact,0.7492586247608418,18.0
+AdaBoost_METAR,Quadratic Discriminant Analysis_METAR,correction,0.03705621856411898,4.3478260869565215
+AdaBoost_METAR,Quadratic Discriminant Analysis_METAR,no,0.021810119143722443,5.260869565217392
+AdaBoost_METAR,Quadratic Discriminant Analysis_METAR,exactcorrection,0.03468966484069824,6.0
+AdaBoost_METAR,Quadratic Discriminant Analysis_METAR,exact,0.03468966484069824,6.0
+Quadratic Discriminant Analysis_all,Quadratic Discriminant Analysis_no_METAR,correction,0.0,inf
+Quadratic Discriminant Analysis_all,Quadratic Discriminant Analysis_no_METAR,no,,
+Quadratic Discriminant Analysis_all,Quadratic Discriminant Analysis_no_METAR,exactcorrection,1.0,0.0
+Quadratic Discriminant Analysis_all,Quadratic Discriminant Analysis_no_METAR,exact,1.0,0.0
+Quadratic Discriminant Analysis_all,Quadratic Discriminant Analysis_METAR,correction,0.017622090962324415,5.633333333333334
+Quadratic Discriminant Analysis_all,Quadratic Discriminant Analysis_METAR,no,0.010587137334056926,6.533333333333333
+Quadratic Discriminant Analysis_all,Quadratic Discriminant Analysis_METAR,exactcorrection,0.016124801710247997,8.0
+Quadratic Discriminant Analysis_all,Quadratic Discriminant Analysis_METAR,exact,0.016124801710247997,8.0
+Quadratic Discriminant Analysis_no_METAR,Quadratic Discriminant Analysis_METAR,correction,0.017622090962324415,5.633333333333334
+Quadratic Discriminant Analysis_no_METAR,Quadratic Discriminant Analysis_METAR,no,0.010587137334056926,6.533333333333333
+Quadratic Discriminant Analysis_no_METAR,Quadratic Discriminant Analysis_METAR,exactcorrection,0.016124801710247997,8.0
+Quadratic Discriminant Analysis_no_METAR,Quadratic Discriminant Analysis_METAR,exact,0.016124801710247997,8.0
