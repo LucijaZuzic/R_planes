@@ -80,7 +80,7 @@ for (i in 2:ncol(data_fr)) {
 
       grid_new_data <- list()
 
-      use_len_add <- 100
+      use_len_add <- 300
 
       for (k in 1:ncol(data_fr_list$train_data)) {
         mini_all <- min(

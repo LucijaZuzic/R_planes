@@ -138,103 +138,53 @@ model_list <- c(
 df_predictions_train <- data.frame(read.csv("predictions_train_new.csv"))
 df_predictions_test <- data.frame(read.csv("predictions_test_new.csv"))
 
-rn_train <- c()
-ry_train <- c()
-for (i in seq(2, length(names(df_predictions_train)), 3)) {
-  lst_yn <- print_a_row(
-    df_predictions_train$train_label,
-    df_predictions_train[, i],
-    ry_train, rn_train
-  )
-  rn_train <- lst_yn$n
-  ry_train <- lst_yn$y
-}
-print("Train")
-print(rn_train)
-print(ry_train)
-process_list(ry_train, rn_train)
+skip_val <- 8
+names <-  c(
+  "all",
+  "METAR",
+  "no METAR",
+  "select",
+  "no distance",
+  "no length",
+  "no duration",
+  "no speed"
+)
 
-rn_train <- c()
-ry_train <- c()
-for (i in seq(3, length(names(df_predictions_train)), 3)) {
-  lst_yn <- print_a_row(
-    df_predictions_train$train_label,
-    df_predictions_train[, i],
-    ry_train, rn_train
-  )
-  rn_train <- lst_yn$n
-  ry_train <- lst_yn$y
-}
-print("Train no METAR")
-print(rn_train)
-print(ry_train)
-process_list(ry_train, rn_train)
-nms_train <- c()
+for (j in seq(1, skip_val)) {
+ 
+  rn_train <- c()
+  ry_train <- c()
+  for (i in seq(j, length(names(df_predictions_train)), skip_val)) {
+    lst_yn <- print_a_row(
+      df_predictions_train$train_label,
+      df_predictions_train[, i],
+      ry_train, rn_train
+    )
+    rn_train <- lst_yn$n
+    ry_train <- lst_yn$y
+  }
+  print(paste("Train", names[j]))
+  print(rn_train)
+  print(ry_train)
+  process_list(ry_train, rn_train)
+  
+  rn_test <- c()
+  ry_test <- c()
+  for (i in seq(j, length(names(df_predictions_test)), skip_val)) {
+    lst_yn <- print_a_row(
+      df_predictions_test$test_label,
+      df_predictions_test[, i],
+      ry_test, rn_test
+    )
+    rn_test <- lst_yn$n
+    ry_test <- lst_yn$y
+  }
+  print(paste("Test", names[j]))
+  print(rn_test)
+  print(ry_test)
+  process_list(ry_test, rn_test)
 
-rn_train <- c()
-ry_train <- c()
-for (i in seq(4, length(names(df_predictions_train)), 3)) {
-  lst_yn <- print_a_row(
-    df_predictions_train$train_label,
-    df_predictions_train[, i],
-    ry_train, rn_train
-  )
-  rn_train <- lst_yn$n
-  ry_train <- lst_yn$y
 }
-print("Train METAR")
-print(rn_train)
-print(ry_train)
-process_list(ry_train, rn_train)
-
-nms_test <- c()
-rn_test <- c()
-ry_test <- c()
-for (i in seq(2, length(names(df_predictions_test)), 3)) {
-  lst_yn <- print_a_row(
-    df_predictions_test$test_label,
-    df_predictions_test[, i],
-    ry_test, rn_test
-  )
-  rn_test <- lst_yn$n
-  ry_test <- lst_yn$y
-}
-print("Test")
-print(rn_test)
-print(ry_test)
-process_list(ry_test, rn_test)
-
-rn_test <- c()
-ry_test <- c()
-for (i in seq(3, length(names(df_predictions_test)), 3)) {
-  lst_yn <- print_a_row(
-    df_predictions_test$test_label,
-    df_predictions_test[, i],
-    ry_test, rn_test
-  )
-  rn_test <- lst_yn$n
-  ry_test <- lst_yn$y
-}
-print("Test no METAR")
-print(rn_test)
-print(ry_test)
-process_list(ry_test, rn_test)
-
-rn_test <- c()
-ry_test <- c()
-for (i in seq(4, length(names(df_predictions_test)), 3)) {
-  lst_yn <- print_a_row(
-    df_predictions_test$test_label,
-    df_predictions_test[, i],
-    ry_test, rn_test
-  )
-  rn_test <- lst_yn$n
-  ry_test <- lst_yn$y
-}
-print("Test METAR")
-print(rn_test)
-print(ry_test)
-process_list(ry_test, rn_test)
 
 rn_test <- c()
 ry_test <- c()

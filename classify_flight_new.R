@@ -39,12 +39,32 @@ data_fr <- subset(data_fr, select = -c(filenames_for_trajs_new))
 data_fr_no_metar <- subset(data_fr,
   select = -c(metar_t, metar_p, metar_p0, metar_u, metar_ff, metar_td)
 )
+data_fr_select <- subset(data_fr,
+  select = c(label_col, traj_distance, traj_length, traj_duration, traj_speed)
+)
+data_fr_no_distance <- subset(data_fr,
+  select = c(label_col, traj_length, traj_duration, traj_speed)
+)
+data_fr_no_length <- subset(data_fr,
+  select = c(label_col, traj_distance, traj_duration, traj_speed)
+)
+data_fr_no_duration <- subset(data_fr,
+  select = c(label_col, traj_distance, traj_length, traj_speed)
+)
+data_fr_no_speed <- subset(data_fr,
+  select = c(label_col, traj_distance, traj_length, traj_duration)
+)
 data_fr_metar <- subset(data_fr,
   select = c(label_col, metar_t, metar_p, metar_p0, metar_u, metar_ff, metar_td)
 )
 
 data_fr_list <- preprocesing_function(data_fr)
 data_fr_no_metar_list <- preprocesing_function(data_fr_no_metar)
+data_fr_select_list <- preprocesing_function(data_fr_select)
+data_fr_no_distance_list <- preprocesing_function(data_fr_no_distance)
+data_fr_no_length_list <- preprocesing_function(data_fr_no_length)
+data_fr_no_duration_list <- preprocesing_function(data_fr_no_duration)
+data_fr_no_speed_list <- preprocesing_function(data_fr_no_speed)
 data_fr_metar_list <- preprocesing_function(data_fr_metar)
 
 model_list <- c(
@@ -82,6 +102,36 @@ for (model_name in model_list) {
     data_fr_no_metar_list$test_label,
     tree_name = "trees_new/all_no_metar_tree.pdf"
   )
+  model_select_used_list <- model_use(
+    model_name, data_fr_select_list$train_data,
+    data_fr_select_list$test_data, data_fr_select_list$train_label,
+    data_fr_select_list$test_label,
+    tree_name = "trees_new/all_select_tree.pdf"
+  )
+  model_no_distance_used_list <- model_use(
+    model_name, data_fr_no_distance_list$train_data,
+    data_fr_no_distance_list$test_data, data_fr_no_distance_list$train_label,
+    data_fr_no_distance_list$test_label,
+    tree_name = "trees_new/all_no_distance_tree.pdf"
+  )
+  model_no_length_used_list <- model_use(
+    model_name, data_fr_no_length_list$train_data,
+    data_fr_no_length_list$test_data, data_fr_no_length_list$train_label,
+    data_fr_no_length_list$test_label,
+    tree_name = "trees_new/all_no_length_tree.pdf"
+  )
+  model_no_duration_used_list <- model_use(
+    model_name, data_fr_no_duration_list$train_data,
+    data_fr_no_duration_list$test_data, data_fr_no_duration_list$train_label,
+    data_fr_no_duration_list$test_label,
+    tree_name = "trees_new/all_no_duration_tree.pdf"
+  )
+  model_no_speed_used_list <- model_use(
+    model_name, data_fr_no_speed_list$train_data,
+    data_fr_no_speed_list$test_data, data_fr_no_speed_list$train_label,
+    data_fr_no_speed_list$test_label,
+    tree_name = "trees_new/all_no_speed_tree.pdf"
+  )
   model_metar_used_list <- model_use(
     model_name, data_fr_metar_list$train_data,
     data_fr_metar_list$test_data, data_fr_metar_list$train_label,
@@ -93,6 +143,11 @@ for (model_name in model_list) {
 
   colname_model <- paste(model_name, "all", sep = "_")
   colname_no_metar_model <- paste(model_name, "no", "METAR", sep = "_")
+  colname_select_model <- paste(model_name, "select", sep = "_")
+  colname_no_distance_model <- paste(model_name, "no_distance", sep = "_")
+  colname_no_length_model <- paste(model_name, "no_length", sep = "_")
+  colname_no_duration_model <- paste(model_name, "no_duration", sep = "_")
+  colname_no_speed_model <- paste(model_name, "no_speed", sep = "_")
   colname_metar_model <- paste(model_name, "METAR", sep = "_")
 
   if (model_name == "k-NN") {
@@ -158,6 +213,131 @@ for (model_name in model_list) {
   ))
   df_predictions_test[[colname_metar_model]] <-
     model_metar_used_list$test_predicted
+    
+  print("select")
+
+  if (model_name == "k-NN") {
+    print(paste("k =", model_select_used_list$k_val))
+    colname_select_model <- paste(colname_select_model,
+      model_select_used_list$k_val,
+      sep = "_"
+    )
+  }
+
+  print("Train")
+  print(table(
+    model_select_used_list$train_predicted,
+    data_fr_select_list$train_label
+  ))
+  df_predictions_train[[colname_select_model]] <-
+    model_select_used_list$train_predicted
+  print("Test")
+  print(table(
+    model_select_used_list$test_predicted,
+    data_fr_select_list$test_label
+  ))
+  df_predictions_test[[colname_select_model]] <-
+    model_select_used_list$test_predicted
+    
+  print("no_distance")
+
+  if (model_name == "k-NN") {
+    print(paste("k =", model_no_distance_used_list$k_val))
+    colname_select_model <- paste(colname_select_model,
+      model_no_distance_used_list$k_val,
+      sep = "_"
+    )
+  }
+
+  print("Train")
+  print(table(
+    model_no_distance_used_list$train_predicted,
+    data_fr_no_distance_list$train_label
+  ))
+  df_predictions_train[[colname_no_distance_model]] <-
+    model_no_distance_used_list$train_predicted
+  print("Test")
+  print(table(
+    model_no_distance_used_list$test_predicted,
+    data_fr_no_distance_list$test_label
+  ))
+  df_predictions_test[[colname_no_distance_model]] <-
+    model_no_distance_used_list$test_predicted
+
+  print("no_length")
+
+  if (model_name == "k-NN") {
+    print(paste("k =", model_no_length_used_list$k_val))
+    colname_select_model <- paste(colname_select_model,
+      model_no_length_used_list$k_val,
+      sep = "_"
+    )
+  }
+
+  print("Train")
+  print(table(
+    model_no_length_used_list$train_predicted,
+    data_fr_no_length_list$train_label
+  ))
+  df_predictions_train[[colname_no_length_model]] <-
+    model_no_length_used_list$train_predicted
+  print("Test")
+  print(table(
+    model_no_length_used_list$test_predicted,
+    data_fr_no_length_list$test_label
+  ))
+  df_predictions_test[[colname_no_length_model]] <-
+    model_no_length_used_list$test_predicted
+
+  print("no_duration")
+
+  if (model_name == "k-NN") {
+    print(paste("k =", model_no_duration_used_list$k_val))
+    colname_select_model <- paste(colname_select_model,
+      model_no_duration_used_list$k_val,
+      sep = "_"
+    )
+  }
+
+  print("Train")
+  print(table(
+    model_no_duration_used_list$train_predicted,
+    data_fr_no_duration_list$train_label
+  ))
+  df_predictions_train[[colname_no_duration_model]] <-
+    model_no_duration_used_list$train_predicted
+  print("Test")
+  print(table(
+    model_no_duration_used_list$test_predicted,
+    data_fr_no_duration_list$test_label
+  ))
+  df_predictions_test[[colname_no_duration_model]] <-
+    model_no_duration_used_list$test_predicted
+
+  print("no_speed")
+
+  if (model_name == "k-NN") {
+    print(paste("k =", model_no_speed_used_list$k_val))
+    colname_select_model <- paste(colname_select_model,
+      model_no_speed_used_list$k_val,
+      sep = "_"
+    )
+  }
+
+  print("Train")
+  print(table(
+    model_no_speed_used_list$train_predicted,
+    data_fr_no_speed_list$train_label
+  ))
+  df_predictions_train[[colname_no_speed_model]] <-
+    model_no_speed_used_list$train_predicted
+  print("Test")
+  print(table(
+    model_no_speed_used_list$test_predicted,
+    data_fr_no_speed_list$test_label
+  ))
+  df_predictions_test[[colname_no_speed_model]] <-
+    model_no_speed_used_list$test_predicted
 }
 
 write.csv(df_predictions_train, "predictions_train_new.csv", row.names = FALSE)
