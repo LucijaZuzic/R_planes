@@ -77,16 +77,23 @@ for d in dicti_vars:
     for var in dicti_vars[d]:
         strpr = "Variable"
         for k in dicti_vars[d][var]:
+            if "Mean" in k or "Median" in k or "Sd" in k:
+                continue
+            if "Wilcoxon" in k or "Welch" in k or "Wilk" in k or "Smirnov" in k:
+                continue
             if "confidence" in k:
                 continue
             strpr += " & " + k
-        print(strpr)
+        print(strpr + " \\\\ \\hline")
         break
     test_larger = dict()
     for var in dicti_vars[d]:
         strpr = var
         for k in dicti_vars[d][var]:
+            if "Mean" in k or "Median" in k or "Sd" in k:
+                continue
             if "Wilcoxon" in k or "Welch" in k or "Wilk" in k or "Smirnov" in k:
+                continue
                 if "confidence" in k:
                     continue
                 strpr += " & $" + str(stringify(dicti_vars["All"][var][k]["p-value"], 3, False)[0]) + "$"
@@ -95,6 +102,40 @@ for d in dicti_vars:
                 test_larger[k][dicti_vars["All"][var][k]["p-value"] > 0.05].add(var)
             else:
                 strpr += " & $" + str(stringify(dicti_vars["All"][var][k], 3, False)[0]) + "$"
-        print(strpr.replace(".0$", "$"))
+        print(strpr.replace(".0$", "$") + " \\\\ \\hline")
+    for t in test_larger:
+        print(t, test_larger[t][True])
+
+for d in dicti_vars:
+    print(d)
+    for var in dicti_vars[d]:
+        strpr = "Variable"
+        for k in dicti_vars[d][var]:
+            if "Mean" not in k and "Median" not in k and "Sd" not in k:
+                continue
+            if "Wilcoxon" in k or "Welch" in k or "Wilk" in k or "Smirnov" in k:
+                continue
+            if "confidence" in k:
+                continue
+            strpr += " & " + k
+        print(strpr + " \\\\ \\hline")
+        break
+    test_larger = dict()
+    for var in dicti_vars[d]:
+        strpr = var
+        for k in dicti_vars[d][var]:
+            if "Mean" not in k and "Median" not in k and "Sd" not in k:
+                continue
+            if "Wilcoxon" in k or "Welch" in k or "Wilk" in k or "Smirnov" in k:
+                continue
+                if "confidence" in k:
+                    continue
+                strpr += " & $" + str(stringify(dicti_vars["All"][var][k]["p-value"], 3, False)[0]) + "$"
+                if k not in test_larger:
+                    test_larger[k] = {True: set(), False: set()}
+                test_larger[k][dicti_vars["All"][var][k]["p-value"] > 0.05].add(var)
+            else:
+                strpr += " & $" + str(stringify(dicti_vars["All"][var][k], 3, False)[0]) + "$"
+        print(strpr.replace(".0$", "$") + " \\\\ \\hline")
     for t in test_larger:
         print(t, test_larger[t][True])

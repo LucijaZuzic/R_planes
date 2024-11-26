@@ -54,7 +54,7 @@ def transform_feat(feature_use):
         units_use = "m / s^{2}"
     
     if new_name == "dc":
-        new_name = "Direction change (arithemtic average)"
+        new_name = "Direction change (arithmetic average)"
         units_use = ""
     
     if new_name == "sddc":
@@ -95,9 +95,9 @@ df_var_keys = [c for c in list(df_var_keys_dict.keys()) if "label" not in c]
 plt.rcParams["svg.fonttype"] = "none"
 rc('font',**{'family':'Arial'})
 #plt.rcParams.update({"font.size": 7})
-SMALL_SIZE = 5
-MEDIUM_SIZE = 5
-BIGGER_SIZE = 5
+SMALL_SIZE = 7
+MEDIUM_SIZE = 7
+BIGGER_SIZE = 7
 plt.rc('font', size=SMALL_SIZE)          # controls default text sizes
 plt.rc('axes', titlesize=SMALL_SIZE)     # fontsize of the axes title
 plt.rc('axes', labelsize=MEDIUM_SIZE)    # fontsize of the x and y labels
@@ -105,7 +105,7 @@ plt.rc('xtick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
 plt.rc('ytick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
 plt.rc('legend', fontsize=SMALL_SIZE)    # legend fontsize
 plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
-plt.figure(figsize = (29.7 / 1.1 * cm, 21 / 1.1 * cm), dpi = 300)
+plt.figure(figsize = (29.7 / 1 * cm, 21 / 1 * cm), dpi = 300)
 for ix, var in enumerate(df_var_keys):
     plt.subplot(3, 6, ix + 1)
     p = df[var]
@@ -124,9 +124,9 @@ plt.close()
 plt.rcParams["svg.fonttype"] = "none"
 rc('font',**{'family':'Arial'})
 #plt.rcParams.update({"font.size": 7})
-SMALL_SIZE = 5
-MEDIUM_SIZE = 5
-BIGGER_SIZE = 5
+SMALL_SIZE = 7
+MEDIUM_SIZE = 7
+BIGGER_SIZE = 7
 plt.rc('font', size=SMALL_SIZE)          # controls default text sizes
 plt.rc('axes', titlesize=SMALL_SIZE)     # fontsize of the axes title
 plt.rc('axes', labelsize=MEDIUM_SIZE)    # fontsize of the x and y labels
@@ -134,7 +134,7 @@ plt.rc('xtick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
 plt.rc('ytick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
 plt.rc('legend', fontsize=SMALL_SIZE)    # legend fontsize
 plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
-plt.figure(figsize = (29.7 / 1.1 * cm, 21 / 1.1 * cm), dpi = 300)
+plt.figure(figsize = (29.7 / 1 * cm, 21 / 1 * cm), dpi = 300)
 for ix, var in enumerate(df_var_keys):
     plt.subplot(3, 6, ix + 1)
     p = df[var]

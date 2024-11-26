@@ -57,7 +57,7 @@ transform_feat <- function(feature_use) {
   }
 
   if (new_name == "dc") {
-    new_name <- "Direction change (arithemtic average)"
+    new_name <- "Direction change (arithmetic average)"
     units_use <- ""
   }
 

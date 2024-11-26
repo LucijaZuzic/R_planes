@@ -1,6 +1,24 @@
 import numpy as np
 import pandas as pd
 
+mode_max = {
+    "FP": False,
+    "TP": True,
+    "FN": False,
+    "TN": True,
+    "Sensitivity": True,
+    "FNR": False,
+    "Specificity": True,
+    "FPR": False,
+    "PPV": True,
+    "FDR": False,
+    "NPV": True,
+    "FOR": False,
+    "Acc": True,
+    "BA": True,
+    "F1": True
+}
+
 def calculate_conf_matrix(actual, predicted):
     tp = 0
     fp = 0
@@ -80,19 +98,41 @@ def calculate_metrics(metric_set):
             "BA": ba,
             "F1": f1}
 
-def print_a_model(values_compare, short_model, smodels):
-    for key_val in ["Model", "Acc"]:
+def print_a_model(values_compare, short_model, smodels, code = ""):
+    print("\t\t\multicolumn{" + str(len(smodels) + 1) + "}{|c|}{" + code + "} \\\\ \\hline")
+    for key_val in values_compare:
         str_pr = key_val
+        ix = 0
+        while values_compare[key_val][smodels[ix]] == "NA":
+            ix += 1
+        best_model = smodels[ix]
+        best_val = values_compare[key_val][smodels[ix]]
+        if key_val != "Model":
+            for model in smodels:
+                if key_val in mode_max and mode_max[key_val]:
+                    if values_compare[key_val][model] != "NA" and values_compare[key_val][model] > best_val:
+                        best_model = model
+                        best_val = values_compare[key_val][model]
+                else:
+                    if values_compare[key_val][model] != "NA" and values_compare[key_val][model] < best_val:
+                        best_model = model
+                        best_val = values_compare[key_val][model]
         for model in smodels:
             v = values_compare[key_val][model]
             if key_val == "Model":
                 str_pr += " & " + short_model[v.split("_")[0]]
                 continue
             if v != "NA":
-                if key_val not in ["FP", "TP", "FN", "TN"]:
-                    v = "$" + str(np.round(v * 100, 2)) + "$"
+                if v == best_val and key_val in mode_max:
+                    if key_val not in ["FP", "TP", "FN", "TN"]:
+                        v = "$\\mathbf{" + str(np.round(v * 100, 2)) + "}$"
+                    else:
+                        v = "$\\mathbf{" + str(v) + "}$"
                 else:
-                    v = "$" + str(v) + "$"
+                    if key_val not in ["FP", "TP", "FN", "TN"]:
+                        v = "$" + str(np.round(v * 100, 2)) + "$"
+                    else:
+                        v = "$" + str(v) + "$"
             str_pr += " & " + v
         print("\t\t" + str_pr + " \\\\ \\hline")
 
@@ -130,14 +170,14 @@ short_model = {
     "Quadratic Discriminant Analysis": "QDA",
 }
 ks = set([x.split("_")[0] for x in df_test_keys])
-print_a_model(values_compare, short_model, [m for m in df_test_keys if "all" in m])
-print_a_model(values_compare, short_model, [m for m in df_test_keys if "no_METAR" in m])
-print_a_model(values_compare, short_model, [m for m in df_test_keys if "METAR" in m and "no_METAR" not in m])
-print_a_model(values_compare, short_model, [m for m in df_test_keys if "select" in m])
-print_a_model(values_compare, short_model, [m for m in df_test_keys if "no_distance" in m])
-print_a_model(values_compare, short_model, [m for m in df_test_keys if "no_duration" in m])
-print_a_model(values_compare, short_model, [m for m in df_test_keys if "no_speed" in m])
-print_a_model(values_compare, short_model, [m for m in df_test_keys if "no_length" in m])
+print_a_model(values_compare, short_model, [m for m in df_test_keys if "all" in m], "all")
+print_a_model(values_compare, short_model, [m for m in df_test_keys if "no_METAR" in m], "no_METAR")
+print_a_model(values_compare, short_model, [m for m in df_test_keys if "METAR" in m and "no_METAR" not in m], "METAR")
+#print_a_model(values_compare, short_model, [m for m in df_test_keys if "select" in m], "select")
+#print_a_model(values_compare, short_model, [m for m in df_test_keys if "no_distance" in m], "no_distance")
+#print_a_model(values_compare, short_model, [m for m in df_test_keys if "no_duration" in m], "no_duration")
+#print_a_model(values_compare, short_model, [m for m in df_test_keys if "no_speed" in m], "no_speed")
+#print_a_model(values_compare, short_model, [m for m in df_test_keys if "no_length" in m], "no_length")
 for ix1 in range(1, 18):
     subset_set = [k + "_" + str(ix1) for k in ks if "label" not in k]
     model_set = []
@@ -150,7 +190,7 @@ for ix1 in range(1, 18):
         if found_val:
             model_set.append(m)
     #print(ix1, len(model_set))
-    #print_a_model(values_compare, short_model, model_set)
+    #print_a_model(values_compare, short_model, model_set, str(ix1))
     for ix2 in range(ix1 + 1, 18):
         subset_set = [k + "_" + str(ix1) + "_" + str(ix2) for k in ks if "label" not in k]
         model_set = []
@@ -162,5 +202,6 @@ for ix1 in range(1, 18):
                     break
             if found_val:
                 model_set.append(m)
-        #print(ix1, ix2, len(model_set))
-        #print_a_model(values_compare, short_model, model_set)
+        if ix1 == 1 and ix2 == 9:
+            #print(ix1, ix2, len(model_set))
+            print_a_model(values_compare, short_model, model_set, str(ix1) + "_" + str(ix2))

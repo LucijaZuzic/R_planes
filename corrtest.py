@@ -56,7 +56,7 @@ def transform_feat(feature_use):
         units_use = "m / s^{2}"
     
     if new_name == "dc":
-        new_name = "Direction change (arithemtic average)"
+        new_name = "Direction change (arithmetic average)"
         units_use = ""
     
     if new_name == "sddc":
@@ -161,9 +161,9 @@ print(len(ix_df_newest))
 plt.rcParams["svg.fonttype"] = "none"
 rc('font',**{'family':'Arial'})
 #plt.rcParams.update({"font.size": 7})
-SMALL_SIZE = 5
-MEDIUM_SIZE = 5
-BIGGER_SIZE = 5
+SMALL_SIZE = 7
+MEDIUM_SIZE = 7
+BIGGER_SIZE = 7
 
 plt.rc('font', size=SMALL_SIZE)          # controls default text sizes
 plt.rc('axes', titlesize=SMALL_SIZE)     # fontsize of the axes title
@@ -172,16 +172,16 @@ plt.rc('xtick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
 plt.rc('ytick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
 plt.rc('legend', fontsize=SMALL_SIZE)    # legend fontsize
 plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
-plt.figure(figsize = (29.7 / 1.7 * cm, 21 / 1.7 * cm), dpi = 300)
-sns.heatmap(dfr, annot = True, fmt = '.2f', cbar_kws={'label': '$p$-value'}, cmap="coolwarm")
-plt.title("Correlation")
-plt.xlabel("Variables")
-#plt.ylabel("Variables")
-#plt.xticks(rotation=90)
+plt.figure(figsize = (29.7 / 1.5 * cm, 21 / 1.5 * cm), dpi = 300)
+sns.heatmap(dfr, annot = True, fmt = '.2f', cbar_kws={'label': 'Correlation Meter'}, cmap="coolwarm")
+#plt.title("Correlation")
+plt.xlabel("Features")
+#plt.ylabel("Features")
+plt.xticks(rotation=90)
 plt.yticks(rotation=0)
-#plt.xticks([i + 0.5 for i in range(len(tick_labels))], ["The " + translate_algo[l].replace(" in ", "\nin ") for l in tick_labels])
-plt.xticks([])
-plt.yticks([i + 0.5 for i in range(len(df_var_keys))], [transform_feat(l) for l in df_var_keys])
+plt.xticks([i + 0.5 for i in range(len(df_var_keys))], [transform_feat(l) for l in df_var_keys])
+plt.yticks([])
+#plt.yticks([i + 0.5 for i in range(len(df_var_keys))], [transform_feat(l) for l in df_var_keys])
 #plt.show()
 plt.savefig("corrplot.png", bbox_inches = "tight")
 plt.savefig("corrplot.pdf", bbox_inches = "tight")
