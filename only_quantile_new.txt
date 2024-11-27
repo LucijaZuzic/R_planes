@@ -590,7 +590,7 @@ data:  df_clus_yes[, i]
 D = 0.51902, p-value < 2.2e-16
 alternative hypothesis: two-sided
 
-[1] "Direction change (arithemtic average)"
+[1] "Direction change (arithmetic average)"
 [1] "All"
           0%          25%          50%          75%         100% 
 0.0003390841 0.1342094442 0.1524245384 0.1794633665 0.8763398633 
