@@ -6,9 +6,9 @@ mode_max = {
     "TP": True,
     "FN": False,
     "TN": True,
-    "Sensitivity": True,
+    "TPR": True,
     "FNR": False,
-    "Specificity": True,
+    "TNR": True,
     "FPR": False,
     "PPV": True,
     "FDR": False,
@@ -86,9 +86,9 @@ def calculate_metrics(metric_set):
     #print(prev_y, det_prev_y, dr_y)
     #print(prev_n, det_prev_n, dr_n)
     #print(acc, ba, f1)
-    return {"Sensitivity": tpr,
+    return {"TPR": tpr,
             "FNR": fnr,
-            "Specificity": tnr,
+            "TNR": tnr,
             "FPR": fpr,
             "PPV": ppv,
             "FDR": fdr,
@@ -107,7 +107,10 @@ def calculate_metrics(metric_set):
 def print_a_model(values_compare, short_model, smodels, code = ""):
     print("\t\t\multicolumn{" + str(len(smodels) + 1) + "}{|c|}{" + code + "} \\\\ \\hline")
     for key_val in values_compare:
-        str_pr = key_val
+        str_pr = key_val.split(" ")[0]
+        str_pr_empty = ""
+        if "(" in key_val:
+            str_pr_empty = key_val.split(" ")[1]
         ix = 0
         while values_compare[key_val][smodels[ix]] == "NA":
             ix += 1
@@ -125,6 +128,7 @@ def print_a_model(values_compare, short_model, smodels, code = ""):
                         best_val = values_compare[key_val][model]
         for model in smodels:
             v = values_compare[key_val][model]
+            str_pr_empty += " &"
             if key_val == "Model":
                 str_pr += " & " + short_model[v.split("_")[0]]
                 continue
@@ -138,9 +142,16 @@ def print_a_model(values_compare, short_model, smodels, code = ""):
                     if key_val not in ["FP", "TP", "FN", "TN"]:
                         v = "$" + str(np.round(v * 100, 2)) + "$"
                     else:
-                        v = "$" + str(v) + "$"
-            str_pr += " & " + v
-        print("\t\t" + str_pr + " \\\\ \\hline")
+                            v = "$" + str(v) + "$"
+            if "(" in key_val:
+                str_pr += " & \\multirow{2}{*}{" + v + "}"
+            else:
+                str_pr += " & " + v
+        if "(" in key_val: 
+            print("\t\t" + str_pr + " \\\\")
+            print("\t\t" + str_pr_empty + " \\\\ \\hline")
+        else:
+            print("\t\t" + str_pr + " \\\\ \\hline")
 
 df_test = pd.read_csv("predictions_test_newest.csv", index_col = False)
 df_test_keys = list(df_test.keys())
