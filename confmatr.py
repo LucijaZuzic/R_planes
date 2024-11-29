@@ -16,7 +16,13 @@ mode_max = {
     "FOR": False,
     "Acc": True,
     "BA": True,
-    "F1": True
+    "F1": True,
+    "DR (P)": True,
+    "DR (N)": True,
+    "DP (P)": True,
+    "DP (N)": True,
+    "P (P)": True,
+    "P (N)": True
 }
 
 def calculate_conf_matrix(actual, predicted):
