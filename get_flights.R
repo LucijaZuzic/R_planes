@@ -64,8 +64,7 @@ get_data <- function(start_airport) {
 
       data_res <- getAirportDepartures(start_airport, as.character(dt),
         as.character(dt + 24 * 3600),
-        timeZone = "Europe/Zagreb", maxQueryAttempts = 1000000,
-        username = "lzuzic", password = "uGJp64kA"
+        timeZone = "Europe/Zagreb", maxQueryAttempts = 1000000
       )
 
       repeating <- length(data_res) == 0
